@@ -29,7 +29,10 @@
 
 
 \section*{Abstract}
-Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A\cite{Boyce2009}. In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}. Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state. Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
+Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A\cite{Boyce2009}. 
+In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}. 
+Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state. 
+Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
 
 \pagebreak
 \section*{Outline}
@@ -37,7 +40,8 @@ Despite innovations in sampling techniques for molecular dynamics (MD), reliable
    \begin{itemize}
    \item Medicinal chemistry programs typically focus on changes in ligand binding affinity from incremental changes to the ligand.
    \item Focus on how the protein adapts to the changes in the ligand is generally neglected.
-   \item T4 L99A is well studied experimentally and computationally. It is frequently used as a model binding site in free energy prediction studies.
+   \item T4 L99A is well studied experimentally and computationally. 
+      It is frequently used as a model binding site in free energy prediction studies.
    \item In this study, 8 congeneric ligands were investigated, where addition of a single methyl group was used to lengthen the ligand.
    \item Through determination of protein-ligand bound x-ray crystal structures it was revealed T4 lysozyme adopts 3 discrete conformations in response the series of growing ligands.
    \item Consideration of the protein adaptations into discrete conformations may be an important aspect in inhibitor design.
@@ -46,7 +50,8 @@ Despite innovations in sampling techniques for molecular dynamics (MD), reliable
 \section{Discrete Conformations and the Ligands}
    \begin{itemize}
    \item T4 L99A contains an engineered apolar cavity which is our binding site of interest.
-   \item The 8 congeneric ligands are all apolar and begins with a simple benzene ring. Subsequent ligands are simply addition of a methyl group to generate a growing tail up until n-hexylbenzene.
+   \item The 8 congeneric ligands are all apolar and begins with a simple benzene ring. 
+      Subsequent ligands are simply addition of a methyl group to generate a growing tail up until n-hexylbenzene.
    \item In response to the growing ligand, the crystal structures show the protein will adopt into 3 conformations aptly named: closed, intermediate, and open.
    \item Primarily, the motion of the protein occurs in the F-helix (residues 107-115), which serves as a sort of gating mechanism into the apolar cavity.
    \item As the ligand tail expands, the F-helix transitions from closed to open, exposing the cavity to the bulk solvent.
@@ -93,8 +98,6 @@ Despite innovations in sampling techniques for molecular dynamics (MD), reliable
        \\ Section "Energy of Ligand Binding and Conformational Strain"
     \item Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to solubility limits.
     \item Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rises linearly.
-    \item ??? FTA: "If we attributed all of the discrepancy between the observed ΔΔGbind and that predicted by transfer free energies to the cost of changing conformations from the closed to the intermediate to the open states, then the maximum energy for the intermediate conformation, represented by the ethyl- and n-propylbenzene complexes, and for the open conformation, represented by the n-butylbenzene complex, cannot exceed 0.8 and 1.4 kcal/mol, respectively (Table 1). Thus, both the co-occupancy of the conformations in individual crystal structures and the retention of substantial ligand affinity for the larger protein cavity conformations suggest that the intermediate and open conformations represent relatively low-energy, accessible states"
-      \\ Is this saying that the intermediate ligands being ~0.8kcal/mol and closed ~1.4kcal/mol ???
     \end{itemize}
 
 \section{Methods}
@@ -118,8 +121,11 @@ Despite innovations in sampling techniques for molecular dynamics (MD), reliable
    \item Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
    \item When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
    \item When using the LigandFEP protocol, two options would occur:
-      \\If the simulation starts from the protein closed state, the benzene crystal position was used as a reference. The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar. For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
-      \\If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference. The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
+      \\If the simulation starts from the protein closed state, the benzene crystal position was used as a reference. 
+      The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar. 
+      For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
+      \\If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference. 
+      The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
    \item All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
    \begin{itemize}
       \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
@@ -135,7 +141,8 @@ Despite innovations in sampling techniques for molecular dynamics (MD), reliable
    \item ***INSERT TABLE COMPARING OPLS2005/OPLS3 BETWEEN TWO PROTOCOLS***
       \\ Both are within the same MUE/RMSE range
    \item Highlight inconsistency in predicted RBFE when the protein starting conformation is varied.
-   \item Predicted ddGs are in the wrong direction frequently when starting from protein closed. If we assume smaller to larger ligands should yield favorable (-) ddGs.
+   \item Predicted ddGs are in the wrong direction frequently when starting from protein closed. 
+      If we assume smaller to larger ligands should yield favorable (-) ddGs.
    \end{itemize}
 
 \subsection{Small Ligands}
