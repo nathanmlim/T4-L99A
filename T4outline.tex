@@ -141,18 +141,18 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
       Despite use of FEP/REST, free energy predictions when starting from the protein closed or open conformational state, were unable to converge to the same predicted ddG.
       Visualization of these simulations (ex. closed ligands to open ligands) show the protein remains trapped in its initial state.
       Free energy predictions from simulations starting from the protein closed state give a positive ddG, a result from strain in the protein as the ligand begins to grow in the binding cavity.
-   \item For example, in the transformation of toluene to n-hexylbenzene, a tail of 5 carbon atoms are being inserted in the apolar cavity when closed.
-      Over the course of the FEP/REST simulation (Lambda=1, corresponding to the n-hexylbenzene state), the tail can be seen pushing against the F-helix to try open the cavity.
-      As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG (+4.20 kcal/mol)
-      Expectedly, if we start from the protein open state, the predicted ddGs are negative (-1.32 kcal/mol) as we do not see the occurrence of large protein-ligand strain.
+   \item For example, in the transformation of benzene to n-hexylbenzene, a tail of 6 carbon atoms are being inserted in the apolar cavity when closed.
+      Over the course of the FEP/REST simulation (Lambda=1, corresponding to the n-hexylbenzene state), the tail can be seen pushing against the F-helix to try open the cavity, albeit unsuccessfully.
+      As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG (+4.13 kcal/mol)
+      Expectedly, if we start from the protein open state, the predicted ddG is negative (-0.61 kcal/mol) as we do not see the occurrence of large protein-ligand strain.
       Instead, the protein remains open and relaxed, already accommodated for the large ligand.
-      Overall, the discrepancy between the two FEP calculations is a whopping +5.52 kcal/mol.
+      Overall, the discrepancy between the two FEP calculations is a whopping +4.74 kcal/mol.
       Clearly, neither of the simulations are remotely close to converging to the same value. 
    \item Note: the binding affinity of the open ligands to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
       For cases involving open ligands, we only focus on the convergence of the predicted free energies between simulations starting from protein closed or open.
    \item Without prior knowledge of preferred protein conformational states on ligand binding, we can arrive at very different binding affinity predictions.
       If we only had the crystal structure of the closed protein-ligand complexes, we would incorrectly arrive at the conclusion that larger ligands such as n-hexylbenzene are much worse than smaller ones.
-      On the other hand, the opposite would be concluded in that larger ligands are much better binders, if only the open protein-ligand complexes were available.
+      On the other hand, the opposite would be concluded in that larger ligands are better binders, if only the open protein-ligand complexes were available.
       Fortunately, in the case of T4-L99A, knowledge of protein-ligand conformational states is known from the x-ray crystallography studies. \cite{Merski2015}
    \item This knowledge of various protein-ligand states is not always the case, especially in early drug discovery phases, where sometimes only the apo crystal structure of a potential therapeutic target exists.
       Dangerously, a medicinal chemist can dock a library of ligands and run free energy calculations to predict and rank binding affinities.
@@ -169,10 +169,14 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
       At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states. 
       Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions. 
       Towards the end was Gly113 which was observed to undergo some minor motions as well.
-   \item After running the same transformation (toluene to n-hexylbenzene) with the inclusion of aforementioned residues, 
-      we only see a very slight reduction in the difference of the final predicted ddGs between protein closed or open simulations.
-      For simulations 
-     
+   \item After running the same transformation (benzene to n-hexylbenzene) with the inclusion of aforementioned residues, 
+      we see a reduction in the difference of the final predicted ddGs between protein closed or open simulations (+1.37 kcal/mol).
+      Simulations starting from closed give a predicted ddG of +2.74 kcal/mol and from open +1.37 kcal/mol.
+      Upon closer inspection of the closed simulations corresponding to the final state of n-hexylbenzene, we find that the protein does not remain trapped in its initial state.
+      Instead, the region of the helix around Gly113 briefly opens to relieve the strain but quickly closes back. 
+      Hence, we still see some strain energy as the protein fails to completely stabilize into the open conformation.
+      Viewing the open simulations, reveals that the protein is no longer trapped only in the open state and makes transitions into the intermediate and closed states.
+      In making these transitions, the protein also experiences strain as the tail pushes the F-helix back into open from the other conformational states.
 
 
 
