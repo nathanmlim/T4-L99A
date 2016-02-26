@@ -121,10 +121,10 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
    \item Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
    \item When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
    \item When using the LigandFEP protocol, two options would occur:
-      \\If the simulation starts from the protein closed state, the benzene crystal position was used as a reference. 
+      If the simulation starts from the protein closed state, the benzene crystal position was used as a reference. 
       The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar. 
       For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
-      \\If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference. 
+      If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference. 
       The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
    \item All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
    \begin{itemize}
@@ -143,9 +143,13 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
       Free energy predictions from simulations starting from the protein closed state give a positive ddG, a result from strain in the protein as the ligand begins to grow in the binding cavity.
    \item For example, in the transformation of toluene to n-hexylbenzene, a tail of 5 carbon atoms are being inserted in the apolar cavity when closed.
       Over the course of the FEP/REST simulation (Lambda=1, corresponding to the n-hexylbenzene state), the tail can be seen pushing against the F-helix to try open the cavity.
-      As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG.
-      Expectedly, if we start from the protein open state, the predicted ddGs are negative as we do not see the occurrence of protein-ligand strain.
+      As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG (+4.20 kcal/mol)
+      Expectedly, if we start from the protein open state, the predicted ddGs are negative (-1.32 kcal/mol) as we do not see the occurrence of large protein-ligand strain.
       Instead, the protein remains open and relaxed, already accommodated for the large ligand.
+      Overall, the discrepancy between the two FEP calculations is a whopping +5.52 kcal/mol.
+      Clearly, neither of the simulations are remotely close to converging to the same value. 
+   \item Note: the binding affinity of the open ligands to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
+      For cases involving open ligands, we only focus on the convergence of the predicted free energies between simulations starting from protein closed or open.
    \item Without prior knowledge of preferred protein conformational states on ligand binding, we can arrive at very different binding affinity predictions.
       If we only had the crystal structure of the closed protein-ligand complexes, we would incorrectly arrive at the conclusion that larger ligands such as n-hexylbenzene are much worse than smaller ones.
       On the other hand, the opposite would be concluded in that larger ligands are much better binders, if only the open protein-ligand complexes were available.
@@ -162,9 +166,12 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
    \item In order to get the protein out of its trapped initial state, we included residues from the F-helix into the REST region.
       Inclusion of residues into the REST region would allow for faster transitions between states by effectively heating up key regions in the F-helix.
       Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
-      At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states,
-      Val111 being in the middle of the helix was observed to undergo the largest motion during transitions, 
-      and towards the end was Gly113 which was observed to undergo some minor motions as well.
+      At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states. 
+      Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions. 
+      Towards the end was Gly113 which was observed to undergo some minor motions as well.
+   \item After running the same transformation (toluene to n-hexylbenzene) with the inclusion of aforementioned residues, 
+      we only see a very slight reduction in the difference of the final predicted ddGs between protein closed or open simulations.
+      For simulations 
      
 
 
