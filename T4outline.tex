@@ -28,15 +28,14 @@
    \item Highlight improvement to FEP/REST \cite{REST2} method by inclusion of protein atoms.
 \end{itemize}
 
+\pagebreak
 
-\section*{Abstract}
+\section{Abstract}
 Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A\cite{Boyce2009}. 
 In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}. 
 Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state. 
 Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
 
-\pagebreak
-\section*{Outline}
 \section{General Background/Introduction}
 Medicinal chemistry programs typically focus on changes in ligand binding affinity from incremental changes to the ligand.
 Focus on how the protein adapts to the changes in the ligand is generally neglected.
@@ -93,38 +92,6 @@ Details of the ligand binding affinities and how they were obtained can be found
 Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to solubility limits.
 Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rises linearly.
 
-\section{Methods}
-\subsection{FEP Protocols}
-Two FEP protocols developed from Schrodinger were used in this project: FEP+ and LigandFEP.
-FEP+ is a fully automated workflow that will plan the perturbation pathways based of the LOMAP mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
-LigandFEP, aimed for academics, is limited in the sense that the user must plan each perturbation instead. 
-LigandFEP does not use the MCS but rather plans the transformation by minimizing the core RMSD.
-Both protocols still use the default relaxation protocol and FEP/REST methodology and were run on GPUs with Desmond.
-FEP/REST simulations were performed for 5-55ns depending on the ligand transformation involved. 
-In both protocols, forcefield parameters OPLS3 and OPLS2005 were used.\\
-
-***INSERT FEP MAPPER IMAGE HERE***\\
-
-Trials including protein atoms in the REST region will be referred to with 'pREST'
-Considering the F-helix ranged from residues 107-115, residues selected to include into the REST region were Glu108, Val111, and Gly113 as sort of a start, mid and end point. 
-
-\subsection{Protein/Ligand Preparation}
-Protein structures were taken from PDBS: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively.
-Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
-When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
-When using the LigandFEP protocol, two options would occur:\\
-(1) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference.\\
-(2) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar.\\
-
-For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
-If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference. 
-The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
-All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
-   \begin{itemize}
-      \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
-      \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
-   \end{itemize}
-   
 \section{Discussion}
 \subsection{Sensitivity to initial protein conformational state}
 By looking at cases that involve a conformation change in the protein, we see a large dependence of the final predicted ddG on the initial protein conformational state.
@@ -201,7 +168,39 @@ Close attention should be exercised when performing alchemical transformations t
 More importanty, as FEP calculations become a more common part of the computer-aided drug design process, we illustrate that it still requires some level of expertise.
 Although FEP calculations have shown tremendous recent successes \cite{FEPplus}, we are still bounded by problems of adequate sampling and computational power.
 
-\section{Supporting Information}   
+\pagebreak
+\section{Supporting Information}
+\subsection{Methods-FEP Protocols}
+Two FEP protocols developed from Schrodinger were used in this project: FEP+ and LigandFEP.
+FEP+ is a fully automated workflow that will plan the perturbation pathways based of the LOMAP mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
+LigandFEP, aimed for academics, is limited in the sense that the user must plan each perturbation instead.
+LigandFEP does not use the MCS but rather plans the transformation by minimizing the core RMSD.
+Both protocols still use the default relaxation protocol and FEP/REST methodology and were run on GPUs with Desmond.
+FEP/REST simulations were performed for 5-55ns depending on the ligand transformation involved.
+In both protocols, forcefield parameters OPLS3 and OPLS2005 were used.\\
+
+***INSERT FEP MAPPER IMAGE HERE***\\
+
+Trials including protein atoms in the REST region will be referred to with 'pREST'
+Considering the F-helix ranged from residues 107-115, residues selected to include into the REST region were Glu108, Val111, and Gly113 as sort of a start, mid and end point.
+
+\subsection{Methods-Protein/Ligand Preparation}
+Protein structures were taken from PDBS: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively.
+Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
+When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
+When using the LigandFEP protocol, two options would occur:\\
+(1) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference.\\
+(2) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar.\\
+
+For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
+If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference.
+The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
+All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
+   \begin{itemize}
+   \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
+   \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
+   \end{itemize}
+
 \subsection{FEP+ vs. LigandFEP}
    \begin{itemize}
    \item Comparisons between the two protocols will be used to show that, although limited, LigandFEP does not result in a difference in performance of accurate predicted relative binding free energies.
@@ -213,7 +212,7 @@ Although FEP calculations have shown tremendous recent successes \cite{FEPplus},
       If we assume smaller to larger ligands should yield favorable (-) ddGs.
    \end{itemize}
 
-\subsection{Small Ligands}
+\subsection{Case studies: Small Ligands}
    \begin{itemize}
    \item Small transformations and ligands generally occupy protein closed state.
    \item Equal performance with either FF.
@@ -243,7 +242,7 @@ Although FEP calculations have shown tremendous recent successes \cite{FEPplus},
    \item Show pREST increases agreement with experiment and lowers error from protein starting conformation.
    \end{itemize}
 
-\subsection{Intermediate Ligands}
+\subsection{Case studies: Intermediate Ligands}
 
 
    
