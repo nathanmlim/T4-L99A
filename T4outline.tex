@@ -21,8 +21,11 @@
 
 \section*{Objectives}
 \begin{itemize}
-   \item Model and capture protein conformational change in the T4 Lysozyme L99A apolar cavity.
-   \item Accurately predict relative binding free energies while sampling protein conformational changes.
+   \item Assess convergence of relative free energy calculations involving modest amounts of protein conformational change
+   \item Assess the implications of protein sampling challenges for accuracy of relative free energy calculations
+   \item Highlight how even modest ligand changes can induce conformational changes in ``rigid'' proteins which pose significant sampling challenges
+   \item  Test how well we can model and capture protein conformational change in the T4 Lysozyme L99A apolar cavity (?) %Maybe same as above
+   \item Accurately predict relative binding free energies while sampling protein conformational changes. %Seems like a possible outcome and less an objective
    \item Compare performance of FEP plus \cite{FEPplus} and LigandFEP.
    \item Compare performance of OPLS2005 and OPLS3 forcefield parameters.
    \item Highlight improvement to FEP/REST \cite{REST2} method by inclusion of protein atoms.
@@ -95,7 +98,7 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
 \section{Discussion}
 \subsection{Sensitivity to initial protein conformational state}
 By looking at cases that involve a conformation change in the protein, we see a large dependence of the final predicted ddG on the initial protein conformational state.
-These cases are when the alchemical transformation involves ligands that primarily occupy the closed state to ligands that occupy the intermediate or open states. (See ligand/loop occupancy table)
+These cases are when the alchemical transformation involves changing ligands that primarily occupy the closed state into ligands that occupy the intermediate or open states. (See ligand/loop occupancy table)
 Despite use of FEP/REST, free energy predictions when starting from the protein closed or open conformational state, were unable to converge to the same predicted ddG.
 Visualization of these simulations (ex. closed ligands to open ligands) show the protein remains trapped in its initial state.
 Free energy predictions from simulations starting from the protein closed state give a positive ddG, a result from strain in the protein as the ligand begins to grow in the binding cavity.
@@ -120,6 +123,11 @@ Dangerously, a medicinal chemist can dock a library of ligands and run free ener
 Without knowing the protein can undergo various changes to accommodate different or larger ligands, the chemist would discard ligands with "low" binding affinities.
 Here in T4-L99A, a relatively small (~1-3\AA) and localized motion in a helix is shown to drastically impact binding affinity predictions.
 This demonstrates that special attention and care should be exercised in binding affinity predictions where regions of flexibility surround the binding site.
+%DLM: This last is a great and careful take-away sentence; it's one that will both fly with Schrodinger AND probably makes our point well.
+
+%DLM: I think the above subsection is largely on the right track. There's a lot of wordsmithing I would do (which can come later) but I generallly like the content. The one main content point I would make at this point is that I think you want to start off the subsection with saying what you're getting at in a less technical and more direct way that sort of cuts to the chase. For example, maybe something like, "Here, we found that relative free energy calculations can suffer from substantial convergence problems resulting from relatively modest protein conformational changes, and these problems have profound implications for the accuracy of computed relative free energies in these cases. Particularly, we find that calculated relative free energies depend on the initial protein conformational state by up to X kcal/mol, even with simulations of up to Y ns per lambda window, far more than is typically used in the XYZ standard protocol for these calculations." 
+%Word-smithing wise, be sure to see the Plaxco science writing paper if you've not already read it: https://www.dropbox.com/s/hmxdcl100wdf9dr/Plaxco_-Protein%20Science.pdf?dl=0
+%Caitlin found the suggestions there useful enough - particularly the one about each paragraph having a point and the first sentence summarizing it - that she started writing comments into her LaTeX where there is a one-liner before each paragraph which summarizes what the paragraph is supposed to do. YMMV, but the general idea is very helpful for writing. 
       
 \subsection{Inclusion of protein atoms into the REST region (pREST)}
 In order to get the protein out of its trapped initial state, we included residues from the F-helix into the REST region.
@@ -136,6 +144,7 @@ Instead, the region of the helix around Gly113 briefly opens to relieve the stra
 Hence, we still see some strain energy as the protein fails to completely stabilize into the open conformation.
 Viewing the open simulations, reveals that the protein is no longer trapped only in the open state and makes transitions into the intermediate and closed states.
 In making these transitions, the protein also experiences strain as the tail pushes the F-helix back into open from the other conformational states.\\
+%DLM: Again, content so far is good but may need summary statements. One thing that tends to make me lose interest is when papers get too much into technical details without keeping me aware of the big picture, which is a danger you're running here. You may want a summary statement at the top of this subsection which orients people, i.e. perhaps following after your opening "In order to..." statement (which is good), you might say something like, "This was expected to... and indeed we found that this improved ... but was still inadequate [or whatever] because we still found a dependence of up to ... depending on the starting protein conformational state, even with simulations of up to... This seemed to be particularly due to .... To be more specific, we examined (get into existing stuff)." Though, to some extent, some of your detailed results discussed here may belong in results rather than in discussion (?). 
 
 ***INSERT RMSD GRAPH SHOWING TRANSITIONS BETWEEN STATES FOR BENZENE TO NHEXYL***\\
 ***By comparing these graphs we show that inclusion of protein residues in the REST region does allow for more/faster transitions between states***\\
@@ -143,22 +152,25 @@ In making these transitions, the protein also experiences strain as the tail pus
 
 Here we have shown pREST allows for more motion in the helix in comparison to the default REST protocol.
 Although there is a reduction in the disrepancy, it is still fairly large (+1.37 kcal/mol).
-Thus, we cannot say these are converged; a result from inadequate sampling of all the protein conformational states.
+Thus, we cannot say these are converged; a result from inadequate sampling of all the protein conformational states. %DLM: the "a result from..." reference is unclear. Do you mean "this poor convergence results from..."?
 Such is the case of closed pREST simulations of n-hexylbenzene, where we only see a partial opening of the helix.
 Similarly, in open pREST simulations with n-hexylbenzene, the helix does not enter the closed conformation.
 Where as it is expected to at least partially occupy the closed state, according to the loop/ligand occupancy table.
 It seems likely that the overall motion of the helix is not entirely accessible in the range of up to 50ns (longest we have simulated).\\
+%DLM: This is seeming overly detailed for a discussion section. Maybe this is a "results and discussion" section? Or, "Analysis and discussion"? I see how you have it currently laid out there is not an earlier "Results" section (though the binding affinities are already given) so maybe the title of this section needs broadening.
+%DLM: As mentioned in person, this is NOT a problem with what you've written, it's just a question of whether this much detail belongs here or somewhere else. I also mentioned imagining how you'd react to this level of detail being provided in a talk about a system with which you weren't familiar. 
+%DLM: It may be that this is when you need to identify a target journal, as some will give more leeway in terms of deciding what headers to use than others. Ideas: JCTC, J Comp Chem, JACS (probably would reject it due to being "not of general interest", though we could argue it's appropriate given the impact of the earlier Schrodinger article), etc. Open for input. Or J. Phys. Chem. B (Adrian Roitberg is an editor?)
 
-***INSERT DATA FROM 55ns pREST simulations***\\
+***INSERT DATA FROM 55ns pREST simulations***\\ %DLM: Belongs in results?
 ***Table showing all closed to open cases***\\
 ***Here we can show that the discrepancy does not entirely go away, but gradually gets smaller with smaller perturbations***\\
 ***Show that in 50ns the protein is only barely able to stabilize in the open state and vice versa***\\
 
 Despite adjustments to FEP/REST and longer simulations where we only take the last 30-40\% of snapshots, we do not entirely eliminate the dependence on the starting protein conformational state.
-It is much easier to do so by performing smaller perturbations and/or running longer simulations.
+It is much easier to do so by performing smaller perturbations and/or running longer simulations. %DLM: How does ``smaller perturbations'' help? Isn't the problem an issue more of "at what point does the protein start to change conformation?" rather than "how big is the perturbation?" i.e. maybe just one methyl addition can be a problem if it's the right methyl, right?
 But this is may not always be feasible in industrial medicinal chemistry programs, where as ligands grow more drug-like they typically increase in size and complexity.
 As a result of increased complexity, FEP calculations commonly require large insertions and deletions of atoms.
-Thereby, requiring much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries.
+Thereby, requiring much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries. %Grammar, not a complete sentence.
 
 \section{Concluding Thoughts}
 Overall, we have shown that identification of discrete protein conformational states is an important factor to consider in inhibitor design.
