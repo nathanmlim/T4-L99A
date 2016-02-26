@@ -161,7 +161,7 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
       This demonstrates that special attention and care should be exercised in binding affinity predictions where regions of flexibility surround the binding site.
    \end{itemize}
       
-\subsection{Inclusion of protein atoms into the REST region (pREST)}
+\subsection{Improvements from inclusion of protein atoms into the REST region (pREST)}
    \begin{itemize}
    \item In order to get the protein out of its trapped initial state, we included residues from the F-helix into the REST region.
       Inclusion of residues into the REST region would allow for faster transitions between states by effectively heating up key regions in the F-helix.
@@ -177,13 +177,35 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
       Hence, we still see some strain energy as the protein fails to completely stabilize into the open conformation.
       Viewing the open simulations, reveals that the protein is no longer trapped only in the open state and makes transitions into the intermediate and closed states.
       In making these transitions, the protein also experiences strain as the tail pushes the F-helix back into open from the other conformational states.
-
-
-
-
+   \item ***INSERT RMSD GRAPH SHOWING TRANSITIONS BETWEEN STATES FOR BENZENE TO NHEXYL***
+      ***By comparing these graphs we show that inclusion of protein residues in the REST region does allow for more/faster transitions between states***
+      ***Compare pREST runs with default REST in order to show that pREST allows for the protein to get of being trapped in its initial state.
+   \item Here we have shown pREST allows for more motion in the helix in comparison to the default REST protocol.
+      Although there is a reduction in the disrepancy, it is still fairly large (+1.37 kcal/mol).
+      Thus, we cannot say these are converged; a result from inadequate sampling of all the protein conformational states.
+      Such is the case of closed pREST simulations of n-hexylbenzene, where we only see a partial opening of the helix.
+      Similarly, in open pREST simulations with n-hexylbenzene, the helix does not enter the closed conformation.
+      Where as it is expected to at least partially occupy the closed state, according to the loop/ligand occupancy table.
+      It seems likely that the overall motion of the helix is not entirely accessible in the range of up to 50ns (longest we have simulated).
+   \item ***INSERT DATA FROM 55ns pREST simulations?***
+      ***Table showing all closed to open cases?***
+      ***Here we can show that the discrepancy does not entirely go away, but gradually gets smaller with smaller perturbations***
+      ***Show that in 50ns the protein is only barely able to stabilize in the open state and vice versa***
+   \item Despite adjustments to FEP/REST and longer simulations where we only take the last 30-40\% of snapshots, 
+      we do not entirely eliminate the dependence on the starting protein conformational state.
+      It is much easier to do so by performing smaller perturbations and/or running longer simulations.
+      But this is may not always be feasible in industrial medicinal chemistry programs, where as ligands grow more drug-like they typically increase in size and complexity.
+      As a result of increased complexity, FEP calculations commonly require large insertions and deletions of atoms.
+      Thereby, requiring much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries.
    \end{itemize}
 
-
+\section{Concluding Thoughts}
+Overall, we have shown that identification of discrete protein conformational states is an important factor to consider in inhibitor design.
+In this study, we demonstrated that there can be a large dependence of predicted binding free energies on the intial protein conformational state.
+Even while using enhanced sampling techniques and longer simulations than typical, we were unable to completely converge all of our calculations.
+Close attention should be exercised when performing alchemical transformations that involve large perturbations and/or result in a large conformational change in the protein structure.
+More importanty, as FEP calculations become a more common part of the computer-aided drug design process, we illustrate that it still requires some level of expertise.
+Although FEP calculations have shown tremendous recent successes \cite{FEPplus}, we are still bounded by problems of adequate sampling and computational power.
 
 \section{Supporting Information}   
 \subsection{FEP+ vs. LigandFEP}
