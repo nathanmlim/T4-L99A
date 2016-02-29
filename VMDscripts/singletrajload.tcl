@@ -45,9 +45,11 @@ proc loadrepl {ci cdir sta fin} {
       set refc [atomselect $conf_c "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
       set refi [atomselect $conf_i "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
       set refo [atomselect $conf_o "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
+
       #Select trajectory we are comparing and loop over frames
       set traj [atomselect $repmolid "backbone and resid 77 to 120 and not resid 107 to 115"]
       set num_frames [molinfo $repmolid get numframes]
+      
       for {set frame 0} {$frame < $num_frames} {incr frame} {
          #Get the correct frame
          $traj frame $frame
@@ -68,11 +70,12 @@ proc loadrepl {ci cdir sta fin} {
          set rmsdc [measure rmsd $comp $chelix]
          set rmsdi [measure rmsd $comp $ihelix]
          set rmsdo [measure rmsd $comp $ohelix]
-
-         puts "RMSD of $frame is $rmsdc , $rmsdi, $rmsdo"
-
+         
+         lappend rmsd_list (${frame} ${rmsdc} ${rmsdi} ${rmsdo})
          }
 
+   #output our RMSD values
+   puts $rmsd_list
    } else {
       puts "Did not find trajectory directory, untaring trajectories"
       set tarloc [file join {*}[lrange [file split $cpath] 0 end-2]]
@@ -81,7 +84,6 @@ proc loadrepl {ci cdir sta fin} {
       exec tar -xvzf $tarfile --directory $tarloc
    }
 }
-
 
 
 loadrepl 2 c_exp_opls3 0 209
