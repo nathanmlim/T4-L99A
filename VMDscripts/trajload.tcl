@@ -1,9 +1,9 @@
 #Set general working directory and job number of each respectable job
-set ci 1
+set ci 2
 set oi 1
 set cpi 1
 set opi 1
-set cdir c_opls3
+set cdir c_exp_opls3
 set odir o_opls3
 set cpdir c_opls3_rest1
 set opdir o_opls3_rest1
