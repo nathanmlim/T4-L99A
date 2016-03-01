@@ -6,11 +6,26 @@ proc loadrepl {path jobnum repnum sta fin} {
    if {[file isdirectory $cpath]} {
       #Get paths of cms/trj files
       set cms [glob -directory $cpath -type f "*replica${repnum}-out.cms"]
+      set ene [glob -directory $cpath -type f "*replica${repnum}.ene"]
       set trj [glob -directory $cpath "*replica${repnum}_trj"]
       set dtr [glob -directory $trj -type f *{dtr}]
       
-      puts "Loading ${path}_${jobnum}-replica${repnum}"
       
+      #Parse the ene file
+      #while {[gets $enefile line] >= 0} {
+      #   if {[string match "#*" $line]} {
+           #Pass over comments
+      #     continue 
+      #   }
+      #   set contents [split $line "\n"]
+         #set test [regexp -inline -all -- {\S+} $contents]
+      #   foreach ele $contents {
+      #      puts [lindex [regexp -inline -all {\S+} $ele]]
+      #   }
+      #}
+      
+
+      puts "Loading ${path}_${jobnum}-replica${repnum}"
       #Load cms file/trajectories
       mol new ${cms} type {mae} first $sta last $fin step 1 waitfor 1
       mol addfile ${dtr} type {dtr} first $sta last $fin step 1 waitfor all
@@ -56,6 +71,7 @@ proc loadrepl {path jobnum repnum sta fin} {
       #Initialize output for writing RMSD
       file mkdir ${path}_${jobnum}
       set output [open ./${path}_${jobnum}/replica${repnum}.rmsd a]
+      file copy $ene ./${path}_${jobnum}/replica${repnum}.ene
       puts $output "FrameNum Closed Int Open" 
       
       #Loop over trajectory frames
@@ -84,6 +100,7 @@ proc loadrepl {path jobnum repnum sta fin} {
          }
 
       close $output
+   
    } else {
       puts "Did not find trajectory directory, untaring trajectories"
       set tarloc [file join {*}[lrange [file split $cpath] 0 end-2]]
