@@ -70,8 +70,8 @@ proc loadrepl {path jobnum repnum sta fin} {
       
       #Initialize output for writing RMSD
       file mkdir ${path}_${jobnum}
-      set output [open ./${path}_${jobnum}/replica${repnum}.rmsd a]
-      file copy $ene ./${path}_${jobnum}/replica${repnum}.ene
+      set output [open ./${path}_${jobnum}/replica${repnum}.rmsd w]
+      file copy -force $ene ./${path}_${jobnum}/replica${repnum}.ene
       puts $output "FrameNum Closed Int Open" 
       
       #Loop over trajectory frames
