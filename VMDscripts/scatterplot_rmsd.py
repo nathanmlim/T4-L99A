@@ -1,4 +1,4 @@
-import glob,re
+import os,glob,re
 import numpy as np
 import matplotlib.pyplot as plt
 from optparse import OptionParser
@@ -10,7 +10,7 @@ parser.add_option("-d","--directory", dest="dir")
 parser.add_option("-f","--filename", dest="fname")
 parser.add_option("-t","--header", dest="header")
 parser.add_option("-r","--replica", dest="repnum")
-parser.add_option("-e","--energy",action="store_true",dest="plotene",default=True)
+parser.add_option("-e","--energy",action="store_true",dest="plotene",default=False)
 (options,args) = parser.parse_args()
 
 def loadrmsd(file):
@@ -26,7 +26,19 @@ def loadrmsd(file):
     states = np.argmin(rmsddata[:,1:],axis=1)
 
     return rmsddata, states
-    
+
+def loadene(file):
+   #Load ene file for each replica
+   enedata = np.genfromtxt(file, skip_header=9, dtype=float)
+   return enedata
+
+def freqcount(state):
+   freq = Counter(state)
+   c_freq = freq[0] / float( len(state) )
+   i_freq = freq[1] / float( len(state) )
+   o_freq = freq[2] / float( len(state) )
+
+   return c_freq,i_freq,o_freq
              
 def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    #Unpack rmsd dictionary
@@ -47,6 +59,7 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    ax.plot( time, data[:,1], 'k', linewidth=2)
 
    if plotene == True:
+      print "{} - Overlaying energies on replica{}".format(options.dir, repnum)
       #Unpack energy dictionary
       #Skipping time 0
       enetime = enedata[:,0]
@@ -84,17 +97,16 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    #Title and Output settings
    ax.set_title(options.header + r' $\lambda_{%s}$' %repnum, x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
-   plt.savefig("{}/RMSD-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
 
-def freqcount(state):
-   freq = Counter(state)
-   c_freq = freq[0] / float( len(state) )
-   i_freq = freq[1] / float( len(state) )
-   o_freq = freq[2] / float( len(state) )
-   
-   return c_freq,i_freq,o_freq
-   
+   if not os.path.exists("{}/plots".format(options.dir)):
+      os.makedirs("{}/plots".format(options.dir))
 
+   if plotene == True:
+      plt.savefig("{}/plots/RMSDene-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
+   else:
+      plt.savefig("{}/plots/RMSD-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
+
+   
 def compare_rmsdplot(lam0,lam1):
    print "{} - Plotting RMSD of end states".format(options.dir)
    #Unpack the dictionary
@@ -158,7 +170,6 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].set_xticks(major_xticks)
    ax[1].set_xticks(minor_xticks,minor=True)
    ax[1].xaxis.grid(True)
-
    
    #Title and Output settings
    ax[0].set_title(options.header + r' $\lambda_0$', x=0.25)
@@ -167,29 +178,25 @@ def compare_rmsdplot(lam0,lam1):
    plt.savefig("{}/RMSD-0v1.png".format(options.dir,options.fname), additional_artists=box) #, bbox_inches='tight')
 
 
-def loadene(file):
-   #Load ene file for each replica
-   enedata = np.genfromtxt(file, skip_header=9, dtype=float)
-   return enedata
 
 rmsdfiles = sorted(glob.glob("{}/{}*.rmsd".format(options.dir, options.fname)))
 enefiles = sorted(glob.glob("{}/{}*.ene".format(options.dir, options.fname)))
 
+#Load ene files
 allene = {}
 for file in enefiles:
     repnum = file.strip('.ene').split('replica')[1]
     allene[repnum] = loadene(file)
 
-
+#Load RMSD files
 allrmsd = {}
 for file in rmsdfiles:
    repnum = file.strip('.rmsd').split('replica')[1]
-  
-   #Load RMSD files
    rmsddata, states = loadrmsd(file)
    allrmsd[repnum] = [rmsddata, states]
-   
-#Plot RMSD for individual replicas
+
+
+#Plot RMSD for replicas
 try:
    if int(options.repnum) <= 11:   
       rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)
@@ -199,4 +206,4 @@ except ValueError:
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
 
 #Plot RMSD for end states only
-#compare_rmsdplot(allrmsd['0'],allrmsd['11'])
+compare_rmsdplot(allrmsd['0'],allrmsd['11'])
