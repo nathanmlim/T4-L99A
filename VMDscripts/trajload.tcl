@@ -113,5 +113,7 @@ proc loadrepl {path jobnum repnum sta fin} {
 
 #loadrepl {path jobnum repnum sta fin}
 for {set repnum 0} { $repnum < 12} {incr repnum} { 
-   loadrepl c_exp_opls3 2 $repnum 0 209
+   loadrepl o_opls3_rest1 1 $repnum 0 209
 }
+
+quit

@@ -45,3 +45,5 @@ mol modstyle 1 $conf_o Lines 1.000000
 mol modcolor 1 $conf_o ColorID 7
 
 display resetview
+
+source trajload.tcl

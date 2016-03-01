@@ -1,6 +1,7 @@
 import os,glob,re
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 from optparse import OptionParser
 from collections import Counter
 
@@ -14,18 +15,17 @@ parser.add_option("-e","--energy",action="store_true",dest="plotene",default=Fal
 (options,args) = parser.parse_args()
 
 def loadrmsd(file):
+   #Start at frame5 to frame 187 to mach sliding time
+   #Frames output every 24ps, sliding time is averaged every 30ps...
+   #s_start = int(1)
+   #s_end = int(210) #5ns
+   #s_end = int(-22) #25ns
     
-    #Start at frame5 to frame 187 to mach sliding time
-    #Frames output every 24ps, sliding time is averaged every 30ps...
-    #s_start = int(1)
-    #s_end = int(210) #5ns
-    #s_end = int(-22) #25ns
-    
-    #Load rmsd file for each replica
-    rmsddata = np.genfromtxt(file, skip_header=1, dtype=float)
-    states = np.argmin(rmsddata[:,1:],axis=1)
+   #Load rmsd file for each replica
+   rmsddata = np.genfromtxt(file, skip_header=1, dtype=float)
+   states = np.argmin(rmsddata[:,1:],axis=1)
 
-    return rmsddata, states
+   return rmsddata, states
 
 def loadene(file):
    #Load ene file for each replica
@@ -64,28 +64,34 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       #Skipping time 0
       enetime = enedata[:,0]
       enetotal = enedata[:,1]
+      #Share x-axis
       ax1 = ax.twinx()
+      ax1.set_ylim(-50000,0)
       ax1.plot( enetime, enetotal, '-r', linewidth=5)
    
-   o=None
    #Colored Scatterplot points to state of minimum RMSD
    for t,s,r in zip(time,state,data[:,1]):
       if s == 0:
-         c = ax.scatter( t, r, color = 'purple', clip_on=False, s=75)
+         c = ax.scatter( t, r, color = 'purple', clip_on=False,s=75, label='C {:.2%}'.format(c_freq))
       elif s == 1:
-         i = ax.scatter( t, r, color = 'c', clip_on=False, s=75)
+         i = ax.scatter( t, r, color = 'c', clip_on=False, s=75, label='I {:.2%}'.format(i_freq))
       elif s == 2:
-         o = ax.scatter( t, r, color = 'g', clip_on=False, s=75)
-
-   #Legend settings
-   box = []
-   if o:
-      lgd = ax.legend( (c, i, o), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq), 'O {:.2%}'.format(o_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8})
-   if not o:
-      lgd = ax.legend( (c, i), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
-   box.append(lgd)
+         o = ax.scatter( t, r, color = 'g', clip_on=False, s=75, label='O {:.2%}'.format(o_freq))
    
-   #Axis settings
+   #Legend Settings
+   #Work around to eliminate duplicate items in legend
+   handleobj = []
+   handles,labels = ax.get_legend_handles_labels()
+   uniqlabels = sorted(list(set(labels)))
+   for uni in uniqlabels:
+      idx = labels.index(uni)
+      handleobj.append( handles[idx] )
+   
+   box = []
+   lgd = ax.legend(handleobj, uniqlabels, scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8} )
+   box.append(lgd)
+
+   #X-Axis settings
    plt.xlabel("Time(ps)")
    plt.xlim( (0,5000) )
    major_xticks = np.arange(0,5000,500)
@@ -93,6 +99,15 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    ax.set_xticks(major_xticks) 
    ax.set_xticks(minor_xticks,minor=True)
    ax.xaxis.grid(True)
+
+   #Y-axis settings
+   ax.set_ylim( (0.5,4.5) )
+   major_yticks = np.arange(0.5,4.5,0.5)
+   minor_yticks = np.arange(0.5,4.5,0.5)
+   ax.set_yticks(major_yticks)
+   ax.set_yticks(minor_yticks,minor=True)
+   ax.yaxis.grid(True, which='major')
+
    
    #Title and Output settings
    ax.set_title(options.header + r' $\lambda_{%s}$' %repnum, x=0.25)
@@ -105,7 +120,7 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       plt.savefig("{}/plots/RMSDene-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
    else:
       plt.savefig("{}/plots/RMSD-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
-
+   plt.clf()
    
 def compare_rmsdplot(lam0,lam1):
    print "{} - Plotting RMSD of end states".format(options.dir)
@@ -159,7 +174,19 @@ def compare_rmsdplot(lam0,lam1):
       lgd1 = ax[1].legend( (c, i), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
    box.append(lgd1)
 
-   #Axis settings
+   #Y-axis settings
+   ax[0].set_ylim( (0.5,4.5) )
+   ax[1].set_ylim( (0.5,4.5) )
+   major_yticks = np.arange(0.5,4.5,.5)
+   minor_yticks = np.arange(0.5,4.5,.5)
+   ax[0].set_yticks(major_yticks)
+   ax[0].set_yticks(minor_yticks,minor=True)
+   ax[0].yaxis.grid(True, which='major')
+   ax[1].set_yticks(major_yticks)
+   ax[1].set_yticks(minor_yticks,minor=True)
+   ax[1].yaxis.grid(True, which='major')
+
+   #X-axis settings
    plt.xlabel("Time(ps)")
    plt.xlim( (0,5000) )
    major_xticks = np.arange(0,5000,500)
@@ -172,16 +199,49 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].xaxis.grid(True)
    
    #Title and Output settings
-   ax[0].set_title(options.header + r' $\lambda_0$', x=0.25)
-   ax[1].set_title(options.header + r' $\lambda_{11}$', x=0.25)
+   lig = options.header.split(' to ')
+   ax[0].set_title(lig[0]+ r' $\lambda_0$', x=0.25)
+   ax[1].set_title(lig[1]+ r' $\lambda_{11}$', x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
    plt.savefig("{}/RMSD-0v1.png".format(options.dir,options.fname), additional_artists=box) #, bbox_inches='tight')
+   plt.clf()
 
+def stackedbar(rmsddata,enedata):
+   time = rmsddata['0'][0][:,0]
+   n = len(rmsddata['0'][1])
+   #Build numpy array of states for all replicas
+   statelist = []
+   for i in range(12):
+       statelist.append( rmsddata[str(i)][1] )
+   statearr = np.vstack(statelist)
+   #Initialized our figure
+   fig = plt.figure(figsize=(12,6))
+   ax = fig.add_subplot(1,1,1)
 
+   #Fix color map
+   cmap = mpl.colors.ListedColormap(['purple','c','green'])
+   #Set bounds, must be +-1 from max/min values
+   bounds=[0,1,2,3]
+   norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
+   ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
+
+   plt.xticks(np.arange(-0.5,n,1))
+   ax.xaxis.set_ticklabels([])
+   ax.xaxis.grid(True, which='major',color='black',linewidth=1)
+
+   #Y-axis parameters
+   ax.set_yticks(np.arange(0,12,1.0))
+   ax.set_yticks(np.arange(-0.5,12,1.0),minor=True)
+   ax.yaxis.grid(True, which='minor',color='black', linestyle='-',linewidth=2)
+
+   #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
+   ax.set_title(options.header+' Colormap', x=0.25)
+   plt.savefig('{}/stackedbar.png'.format(options.dir))
+   plt.clf()
+      
 
 rmsdfiles = sorted(glob.glob("{}/{}*.rmsd".format(options.dir, options.fname)))
 enefiles = sorted(glob.glob("{}/{}*.ene".format(options.dir, options.fname)))
-
 #Load ene files
 allene = {}
 for file in enefiles:
@@ -200,10 +260,15 @@ for file in rmsdfiles:
 try:
    if int(options.repnum) <= 11:   
       rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)
+      
+      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, plotene=True )
 except ValueError:
    if options.repnum == 'all':
       for i in range(12):
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
+         rmsdplot(allrmsd[str(i)],allene[str(i)],i,plotene=True)
 
 #Plot RMSD for end states only
 compare_rmsdplot(allrmsd['0'],allrmsd['11'])
+#Plot stackedbar graph for colormap of replicas
+stackedbar(allrmsd,allene)
