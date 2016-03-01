@@ -100,7 +100,9 @@ proc loadrepl {path jobnum repnum sta fin} {
          }
 
       close $output
-   
+      mol delete $repmolid
+
+      
    } else {
       puts "Did not find trajectory directory, untaring trajectories"
       set tarloc [file join {*}[lrange [file split $cpath] 0 end-2]]
@@ -113,7 +115,7 @@ proc loadrepl {path jobnum repnum sta fin} {
 
 #loadrepl {path jobnum repnum sta fin}
 for {set repnum 0} { $repnum < 12} {incr repnum} { 
-   loadrepl o_opls3_rest1 1 $repnum 0 209
+   loadrepl c_opls3_rest1_extend 1e $repnum 0 2293
 }
 
 quit
