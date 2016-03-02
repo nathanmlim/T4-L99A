@@ -151,43 +151,50 @@ def compare_rmsdplot(lam0,lam1):
    time = data0[:,0] * 24 *0.001
   
    fig, ax = plt.subplots(2, sharex=True, sharey=True, figsize=(10,5) )
-   box = []
    
    c_freq, i_freq, o_freq = freqcount(state0)
-   o=None
    ax[0].plot( time, data0[:,1,], 'k', linewidth=2)
    #Colored Scatterplot points to state of minimum RMSD
    for t,s,r in zip(time,state0,data0[:,1]):
       if s == 0:
-         c = ax[0].scatter( t, r, color = 'purple', clip_on=False, s=75)
+         c = ax[0].scatter( t, r, color = 'purple', clip_on=False, s=75, label='C {:.2%}'.format(c_freq))
       elif s == 1:
-         i = ax[0].scatter( t, r, color = 'c', clip_on=False, s=75)
+         i = ax[0].scatter( t, r, color = 'c', clip_on=False, s=75, label='I {:.2%}'.format(i_freq))
       elif s == 2:
-         o = ax[0].scatter( t, r, color = 'g', clip_on=False, s=75)
+         o = ax[0].scatter( t, r, color = 'g', clip_on=False, s=75, label='O {:.2%}'.format(o_freq))
+   
+   box = []
+   #Legend Settings
+   #Work around to eliminate duplicate items in legend
+   handleobj = []
+   handles,labels = ax[0].get_legend_handles_labels()
+   uniqlabels = sorted(list(set(labels)))
+   for uni in uniqlabels:
+      idx = labels.index(uni)
+      handleobj.append( handles[idx] )
 
-   #Legend settings
-   if o:
-      lgd = ax[0].legend( (c, i, o), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq), 'O {:.2%}'.format(o_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8})
-   if not o:
-      lgd = ax[0].legend( (c, i), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
+   lgd = ax[0].legend(handleobj, uniqlabels, scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8} )
    box.append(lgd)
-    
+
    c_freq, i_freq, o_freq = freqcount(state1)
-   o1=None
    ax[1].plot( time, data1[:,1], 'k', linewidth=2)
    #Colored Scatterplot points to state of minimum RMSD
    for t,s,r in zip(time,state1,data1[:,1]):
       if s == 0:
-         c1 = ax[1].scatter( t, r, color = 'purple', clip_on=False, s=75)
+         c1 = ax[1].scatter( t, r, color = 'purple', clip_on=False, s=75, label='C {:.2%}'.format(c_freq))
       elif s == 1:
-         i1 = ax[1].scatter( t, r, color = 'c', clip_on=False, s=75)
+         i1 = ax[1].scatter( t, r, color = 'c', clip_on=False, s=75, label='I {:.2%}'.format(i_freq))
       elif s == 2:
-         o1 = ax[1].scatter( t, r, color = 'g', clip_on=False, s=75)
+         o1 = ax[1].scatter( t, r, color = 'g', clip_on=False, s=75, label='O {:.2%}'.format(o_freq))
 
-   if o1:
-      lgd1 = ax[1].legend( (c1, i1, o1), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq), 'O {:.2%}'.format(o_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8})
-   if not o1:
-      lgd1 = ax[1].legend( (c1, i1), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
+   handleobj = []
+   handles,labels = ax[1].get_legend_handles_labels()
+   uniqlabels = sorted(list(set(labels)))
+   for uni in uniqlabels:
+      idx = labels.index(uni)
+      handleobj.append( handles[idx] )
+
+   lgd1 = ax[1].legend(handleobj, uniqlabels, scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8} )
    box.append(lgd1)
 
    #Y-axis settings
