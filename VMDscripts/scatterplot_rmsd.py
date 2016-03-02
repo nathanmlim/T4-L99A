@@ -41,7 +41,6 @@ def loadene(file,timeframe):
    #Get its index for slicing
    sta = find_nearest(enedata[:,0], int(sta)*24)
    fin = find_nearest(enedata[:,0], int(fin)*24)
-
    enedata = enedata[sta:fin,:]
 
    return enedata
@@ -245,13 +244,14 @@ def colormap(rmsddata,enedata):
    time = rmsddata['0'][0][:,0] * 24 *0.001
    lowx = int(round(time[0]/0.5)*0.5)
    upx = int(round(time[-1]/0.5)*0.5)
-
    n = len(rmsddata['0'][1])
+
    #Build numpy array of states for all replicas
    statelist = []
    for i in range(12):
        statelist.append( rmsddata[str(i)][1] )
    statearr = np.vstack(statelist)
+
    #Initialized our figure
    fig = plt.figure(figsize=(12,6))
    ax = fig.add_subplot(1,1,1)
@@ -262,10 +262,10 @@ def colormap(rmsddata,enedata):
    bounds=[0,1,2,3]
    norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
    ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
-
-   major_xticks = np.arange(lowx,upx,1)
-   ax.xaxis.set_ticklabels(time)
+   
+   major_xticks = np.arange(0,n,41.5)
    ax.set_xticks(major_xticks)
+   ax.xaxis.set_ticklabels(np.arange(lowx,upx,1))
    #ax.xaxis.grid(True, which='major',color='black',linewidth=1)
 
    #Y-axis parameters
