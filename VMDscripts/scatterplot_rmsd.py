@@ -12,24 +12,45 @@ parser.add_option("-f","--filename", dest="fname")
 parser.add_option("-t","--header", dest="header")
 parser.add_option("-r","--replica", dest="repnum")
 parser.add_option("-e","--energy",action="store_true",dest="plotene",default=False)
+parser.add_option("-x","--timeframe",dest="timeframe")
 (options,args) = parser.parse_args()
 
-def loadrmsd(file):
+def loadrmsd(file,timeframe):
    #Start at frame5 to frame 187 to mach sliding time
    #Frames output every 24ps, sliding time is averaged every 30ps...
    #s_start = int(1)
    #s_end = int(210) #5ns
    #s_end = int(-22) #25ns
     
+   
    #Load rmsd file for each replica
    rmsddata = np.genfromtxt(file, skip_header=1, dtype=float)
    states = np.argmin(rmsddata[:,1:],axis=1)
 
+   sta,fin = timeframe.split('-')
+   rmsddata = rmsddata[int(sta):int(fin),:]
+   states = states[int(sta):int(fin)]
+
    return rmsddata, states
 
-def loadene(file):
+def loadene(file,timeframe):
    #Load ene file for each replica
    enedata = np.genfromtxt(file, skip_header=9, dtype=float)
+
+   #Define timeframe for analysis
+   sta,fin = timeframe.split('-')
+
+   def find_nearest(array,value):
+       idx = (np.abs(array-value)).argmin()
+       return int(idx)
+
+   #Convert framenum to timepoints and find nearest timepoint
+   #Get its index for slicing
+   sta = find_nearest(enedata[:,0], int(sta)*24)
+   fin = find_nearest(enedata[:,0], int(fin)*24)
+
+   enedata = enedata[sta:fin,:]
+
    return enedata
 
 def freqcount(state):
@@ -44,12 +65,11 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    #Unpack rmsd dictionary
    data = rmsddata[0]
    state =rmsddata[1]
-
    print "{} - Plotting RMSD of replica{}".format(options.dir, repnum)
 
    #Change frame numbers to timepoints
    #Frames output every ~24ps
-   time = data[:,0] * 24
+   time = data[:,0] * 24 *0.001
    
    #Count frequency of states for scatterplot
    c_freq, i_freq, o_freq = freqcount(state)
@@ -62,7 +82,7 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       print "{} - Overlaying energies on replica{}".format(options.dir, repnum)
       #Unpack energy dictionary
       #Skipping time 0
-      enetime = enedata[:,0]
+      enetime = enedata[:,0] *0.001
       enetotal = enedata[:,1]
       #Share x-axis
       ax1 = ax.twinx()
@@ -90,12 +110,14 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    box = []
    lgd = ax.legend(handleobj, uniqlabels, scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8} )
    box.append(lgd)
-
+   
    #X-Axis settings
-   plt.xlabel("Time(ps)")
-   plt.xlim( (0,5000) )
-   major_xticks = np.arange(0,5000,500)
-   minor_xticks = np.arange(0,5000,250)
+   lowx = round(time[0]/0.5)*0.5
+   upx = round(time[-1]/0.5)*0.5
+   ax.set_xlabel("Time(ns)")
+   plt.xlim( (lowx,upx) )
+   major_xticks = np.arange(lowx,upx,0.5)
+   minor_xticks = np.arange(lowx,upx,0.25)
    ax.set_xticks(major_xticks) 
    ax.set_xticks(minor_xticks,minor=True)
    ax.xaxis.grid(True)
@@ -117,9 +139,9 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       os.makedirs("{}/plots".format(options.dir))
 
    if plotene == True:
-      plt.savefig("{}/plots/RMSDene-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
+      plt.savefig("{}/plots/eneRMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
    else:
-      plt.savefig("{}/plots/RMSD-{}{}.png".format(options.dir,options.fname,repnum), additional_artists=box) #bbox_inches='tight')
+      plt.savefig("{}/plots/RMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
    plt.clf()
    
 def compare_rmsdplot(lam0,lam1):
@@ -132,7 +154,7 @@ def compare_rmsdplot(lam0,lam1):
 
    #Change frame numbers to timepoints
    #Frames output every ~24ps
-   time = data0[:,0] * 24
+   time = data0[:,0] * 24 *0.001
   
    fig, ax = plt.subplots(2, sharex=True, sharey=True, figsize=(10,5) )
    box = []
@@ -187,10 +209,12 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].yaxis.grid(True, which='major')
 
    #X-axis settings
-   plt.xlabel("Time(ps)")
-   plt.xlim( (0,5000) )
-   major_xticks = np.arange(0,5000,500)
-   minor_xticks = np.arange(0,5000,250)
+   lowx = round(time[0]/0.5)*0.5
+   upx = round(time[-1]/0.5)*0.5
+   plt.xlabel("Time(ns)")
+   plt.xlim( (lowx,upx) )
+   major_xticks = np.arange(lowx,upx,0.5)
+   minor_xticks = np.arange(lowx,upx,0.25)
    ax[0].set_xticks(major_xticks)
    ax[0].set_xticks(minor_xticks,minor=True)
    ax[0].xaxis.grid(True)
@@ -199,15 +223,23 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].xaxis.grid(True)
    
    #Title and Output settings
-   lig = options.header.split(' to ')
-   ax[0].set_title(lig[0]+ r' $\lambda_0$', x=0.25)
-   ax[1].set_title(lig[1]+ r' $\lambda_{11}$', x=0.25)
+   tline = options.header.strip().split()
+   if 'pREST' in tline:
+      subtitle = 'pREST'
+   else:
+      subtitle = ''
+   ax[0].set_title(tline[0]+' '+subtitle+ r' $\lambda_0$', x=0.25)
+   ax[1].set_title(tline[2]+' '+subtitle+ r' $\lambda_{11}$', x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
-   plt.savefig("{}/RMSD-0v1.png".format(options.dir,options.fname), additional_artists=box) #, bbox_inches='tight')
+   plt.savefig("{}/RMSD-0v1_{}-{}ns.png".format(options.dir,lowx,upx), additional_artists=box) #, bbox_inches='tight')
    plt.clf()
 
-def stackedbar(rmsddata,enedata):
-   time = rmsddata['0'][0][:,0]
+def colormap(rmsddata,enedata):
+
+   time = rmsddata['0'][0][:,0] * 24 *0.001
+   lowx = round(time[0]/0.5)*0.5
+   upx = round(time[-1]/0.5)*0.5
+
    n = len(rmsddata['0'][1])
    #Build numpy array of states for all replicas
    statelist = []
@@ -235,40 +267,40 @@ def stackedbar(rmsddata,enedata):
    ax.yaxis.grid(True, which='minor',color='black', linestyle='-',linewidth=2)
 
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
-   ax.set_title(options.header+' Colormap', x=0.25)
-   plt.savefig('{}/stackedbar.png'.format(options.dir))
+   ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
+   plt.savefig('{}/colormap_{}-{}ns.png'.format(options.dir,lowx,upx))
    plt.clf()
       
 
 rmsdfiles = sorted(glob.glob("{}/{}*.rmsd".format(options.dir, options.fname)))
 enefiles = sorted(glob.glob("{}/{}*.ene".format(options.dir, options.fname)))
+
+
 #Load ene files
 allene = {}
 for file in enefiles:
     repnum = file.strip('.ene').split('replica')[1]
-    allene[repnum] = loadene(file)
+    allene[repnum] = loadene(file,options.timeframe)
 
 #Load RMSD files
 allrmsd = {}
 for file in rmsdfiles:
    repnum = file.strip('.rmsd').split('replica')[1]
-   rmsddata, states = loadrmsd(file)
+   rmsddata, states = loadrmsd(file,options.timeframe)
    allrmsd[repnum] = [rmsddata, states]
-
 
 #Plot RMSD for replicas
 try:
    if int(options.repnum) <= 11:   
-      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)
-      
-      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, plotene=True )
+      #rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
+      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, plotene=True)
 except ValueError:
    if options.repnum == 'all':
       for i in range(12):
-         rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
+         #rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,plotene=True)
 
 #Plot RMSD for end states only
 compare_rmsdplot(allrmsd['0'],allrmsd['11'])
 #Plot stackedbar graph for colormap of replicas
-stackedbar(allrmsd,allene)
+colormap(allrmsd,allene)
