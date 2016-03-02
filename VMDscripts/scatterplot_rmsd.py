@@ -263,8 +263,9 @@ def colormap(rmsddata,enedata):
    norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
    ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
 
-   #plt.xticks(np.arange(-0.5,n,1))
-   #ax.xaxis.set_ticklabels([])
+   major_xticks = np.arange(lowx,upx,1)
+   ax.xaxis.set_ticklabels(time)
+   ax.set_xticks(major_xticks)
    #ax.xaxis.grid(True, which='major',color='black',linewidth=1)
 
    #Y-axis parameters
