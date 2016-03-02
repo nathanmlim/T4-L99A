@@ -79,7 +79,7 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       enetotal = enedata[:,1]
       #Share x-axis
       ax1 = ax.twinx()
-      ax1.set_ylim(-50000,0)
+      #ax1.set_ylim(-50000,0)
       ax1.plot( enetime, enetotal, '-r', linewidth=5)
    
    #Colored Scatterplot points to state of minimum RMSD
@@ -127,14 +127,15 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    #Title and Output settings
    ax.set_title(options.header + r' $\lambda_{%s}$' %repnum, x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
-
-   if not os.path.exists("{}/plots".format(options.dir)):
-      os.makedirs("{}/plots".format(options.dir))
+   
+   outdir = "{}/plots/{}-{}ns/".format(options.dir,lowx,upx)
+   if not os.path.exists(outdir):
+      os.makedirs(outdir)
 
    if plotene == True:
-      plt.savefig("{}/plots/eneRMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
+      plt.savefig(outdir+"eneRMSD-{}{}.png".format(options.fname,repnum), additional_artists=box) #bbox_inches='tight')
    else:
-      plt.savefig("{}/plots/RMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
+      plt.savefig(outdir+"RMSD-{}{}.png".format(options.fname,repnum), additional_artists=box) #bbox_inches='tight')
    plt.close('all')
    
 def compare_rmsdplot(lam0,lam1):
@@ -184,9 +185,9 @@ def compare_rmsdplot(lam0,lam1):
          o1 = ax[1].scatter( t, r, color = 'g', clip_on=False, s=75)
 
    if o1:
-      lgd1 = ax[1].legend( (c, i, o), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq), 'O {:.2%}'.format(o_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8})
+      lgd1 = ax[1].legend( (c1, i1, o1), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq), 'O {:.2%}'.format(o_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=3, prop={'size':8})
    if not o1:
-      lgd1 = ax[1].legend( (c, i), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
+      lgd1 = ax[1].legend( (c1, i1), ('C {:.2%}'.format(c_freq) , 'I {:.2%}'.format(i_freq) ) , scatterpoints=1, loc=4, bbox_to_anchor=(0.,1.02,1.,1.), ncol=2, prop={'size':8})
    box.append(lgd1)
 
    #Y-axis settings
@@ -224,7 +225,12 @@ def compare_rmsdplot(lam0,lam1):
    ax[0].set_title(tline[0]+' '+subtitle+ r' $\lambda_0$', x=0.25)
    ax[1].set_title(tline[2]+' '+subtitle+ r' $\lambda_{11}$', x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
-   plt.savefig("{}/RMSD-0v1_{}-{}ns.png".format(options.dir,lowx,upx), additional_artists=box) #, bbox_inches='tight')
+
+   outdir = "{}/plots/{}-{}ns/".format(options.dir,lowx,upx)
+   if not os.path.exists(outdir):
+      os.makedirs(outdir)
+
+   plt.savefig(outdir+"RMSD-0v1.png", additional_artists=box) #, bbox_inches='tight')
    plt.close('all')
 
 def colormap(rmsddata,enedata):
@@ -250,9 +256,9 @@ def colormap(rmsddata,enedata):
    norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
    ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
 
-   plt.xticks(np.arange(-0.5,n,1))
-   ax.xaxis.set_ticklabels([])
-   ax.xaxis.grid(True, which='major',color='black',linewidth=1)
+   #plt.xticks(np.arange(-0.5,n,1))
+   #ax.xaxis.set_ticklabels([])
+   #ax.xaxis.grid(True, which='major',color='black',linewidth=1)
 
    #Y-axis parameters
    ax.set_yticks(np.arange(0,12,1.0))
@@ -261,7 +267,12 @@ def colormap(rmsddata,enedata):
 
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
    ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
-   plt.savefig('{}/colormap_{}-{}ns.png'.format(options.dir,lowx,upx))
+   
+   outdir = "{}/plots/{}-{}ns/".format(options.dir,lowx,upx)
+   if not os.path.exists(outdir):
+      os.makedirs(outdir)
+
+   plt.savefig(outdir+'colormap.png'.format(options.dir))
    plt.close('all')
       
 
@@ -286,12 +297,10 @@ for file in rmsdfiles:
 try:
    if int(options.repnum) <= 11:   
       rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
-      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, plotene=True)
 except ValueError:
    if options.repnum == 'all':
       for i in range(12):
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
-         rmsdplot(allrmsd[str(i)],allene[str(i)],i,plotene=True)
 
 #Plot RMSD for end states only
 compare_rmsdplot(allrmsd['0'],allrmsd['11'])
