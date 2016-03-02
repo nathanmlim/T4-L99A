@@ -16,13 +16,6 @@ parser.add_option("-x","--timeframe",dest="timeframe")
 (options,args) = parser.parse_args()
 
 def loadrmsd(file,timeframe):
-   #Start at frame5 to frame 187 to mach sliding time
-   #Frames output every 24ps, sliding time is averaged every 30ps...
-   #s_start = int(1)
-   #s_end = int(210) #5ns
-   #s_end = int(-22) #25ns
-    
-   
    #Load rmsd file for each replica
    rmsddata = np.genfromtxt(file, skip_header=1, dtype=float)
    states = np.argmin(rmsddata[:,1:],axis=1)
@@ -112,12 +105,12 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
    box.append(lgd)
    
    #X-Axis settings
-   lowx = round(time[0]/0.5)*0.5
-   upx = round(time[-1]/0.5)*0.5
+   lowx = int(round(time[0]/0.5)*0.5)
+   upx = int(round(time[-1]/0.5)*0.5)
    ax.set_xlabel("Time(ns)")
    plt.xlim( (lowx,upx) )
-   major_xticks = np.arange(lowx,upx,0.5)
-   minor_xticks = np.arange(lowx,upx,0.25)
+   major_xticks = np.arange(lowx,upx,1.0)
+   minor_xticks = np.arange(lowx,upx,0.5)
    ax.set_xticks(major_xticks) 
    ax.set_xticks(minor_xticks,minor=True)
    ax.xaxis.grid(True)
@@ -142,7 +135,7 @@ def rmsdplot(rmsddata,enedata,repnum,plotene=False):
       plt.savefig("{}/plots/eneRMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
    else:
       plt.savefig("{}/plots/RMSD-{}{}_{}-{}ns.png".format(options.dir,options.fname,repnum,lowx,upx), additional_artists=box) #bbox_inches='tight')
-   plt.clf()
+   plt.close('all')
    
 def compare_rmsdplot(lam0,lam1):
    print "{} - Plotting RMSD of end states".format(options.dir)
@@ -209,12 +202,12 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].yaxis.grid(True, which='major')
 
    #X-axis settings
-   lowx = round(time[0]/0.5)*0.5
-   upx = round(time[-1]/0.5)*0.5
+   lowx = int(round(time[0]/0.5)*0.5)
+   upx = int(round(time[-1]/0.5)*0.5)
    plt.xlabel("Time(ns)")
    plt.xlim( (lowx,upx) )
-   major_xticks = np.arange(lowx,upx,0.5)
-   minor_xticks = np.arange(lowx,upx,0.25)
+   major_xticks = np.arange(lowx,upx,1)
+   minor_xticks = np.arange(lowx,upx,0.5)
    ax[0].set_xticks(major_xticks)
    ax[0].set_xticks(minor_xticks,minor=True)
    ax[0].xaxis.grid(True)
@@ -232,13 +225,13 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].set_title(tline[2]+' '+subtitle+ r' $\lambda_{11}$', x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
    plt.savefig("{}/RMSD-0v1_{}-{}ns.png".format(options.dir,lowx,upx), additional_artists=box) #, bbox_inches='tight')
-   plt.clf()
+   plt.close('all')
 
 def colormap(rmsddata,enedata):
 
    time = rmsddata['0'][0][:,0] * 24 *0.001
-   lowx = round(time[0]/0.5)*0.5
-   upx = round(time[-1]/0.5)*0.5
+   lowx = int(round(time[0]/0.5)*0.5)
+   upx = int(round(time[-1]/0.5)*0.5)
 
    n = len(rmsddata['0'][1])
    #Build numpy array of states for all replicas
@@ -269,7 +262,7 @@ def colormap(rmsddata,enedata):
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
    ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
    plt.savefig('{}/colormap_{}-{}ns.png'.format(options.dir,lowx,upx))
-   plt.clf()
+   plt.close('all')
       
 
 rmsdfiles = sorted(glob.glob("{}/{}*.rmsd".format(options.dir, options.fname)))
@@ -292,12 +285,12 @@ for file in rmsdfiles:
 #Plot RMSD for replicas
 try:
    if int(options.repnum) <= 11:   
-      #rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
+      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
       rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, plotene=True)
 except ValueError:
    if options.repnum == 'all':
       for i in range(12):
-         #rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
+         rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,plotene=True)
 
 #Plot RMSD for end states only
