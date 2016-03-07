@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: T4paper.aux
+The style file: achemso.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: acs-T4paper.bib
+Database file #2: references.bib
+You've used 5 entries,
+            2478 wiz_defined-function locations,
+            779 strings with 8003 characters,
+and the built_in function-call counts, 2564 in all, are:
+= -- 163
+> -- 229
+< -- 2
++ -- 92
+- -- 87
+* -- 289
+:= -- 362
+add.period$ -- 4
+call.type$ -- 5
+change.case$ -- 3
+chr.to.int$ -- 1
+cite$ -- 5
+duplicate$ -- 146
+empty$ -- 113
+format.name$ -- 90
+if$ -- 453
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 46
+num.names$ -- 12
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 116
+swap$ -- 204
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 0
+while$ -- 18
+width$ -- 0
+write$ -- 72

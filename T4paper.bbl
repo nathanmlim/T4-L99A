@@ -1,0 +1,63 @@
+\providecommand{\latin}[1]{#1}
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{5}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
+
+\bibitem[Boyce \latin{et~al.}(2009)Boyce, Mobley, Rocklin, Graves, Dill, and
+  Shoichet]{Boyce2009}
+Boyce,~S.~E.; Mobley,~D.~L.; Rocklin,~G.~J.; Graves,~A.~P.; Dill,~K.~A.;
+  Shoichet,~B.~K. \emph{Journal of Molecular Biology} \textbf{2009},
+  \emph{394}, 747 -- 763\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Merski \latin{et~al.}(2015)Merski, Fischer, Balius, Eidam, and
+  Shoichet]{Merski2015}
+Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
+  \emph{Proceedings of the National Academy of Sciences} \textbf{2015},
+  \emph{112}, 5039--5044\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2015)Wang, Wu, Deng, Kim, Pierce, Krilov, Lupyan,
+  Robinson, Dahlgren, Greenwood, Romero, Masse, Knight, Steinbrecher, Beuming,
+  Damm, Harder, Sherman, Brewer, Wester, Murcko, Frye, Farid, Lin, Mobley,
+  Jorgensen, Berne, Friesner, and Abel]{FEPplus}
+Wang,~L.; Wu,~Y.; Deng,~Y.; Kim,~B.; Pierce,~L.; Krilov,~G.; Lupyan,~D.;
+  Robinson,~S.; Dahlgren,~M.~K.; Greenwood,~J.; Romero,~D.~L.; Masse,~C.;
+  Knight,~J.~L.; Steinbrecher,~T.; Beuming,~T.; Damm,~W.; Harder,~E.;
+  Sherman,~W.; Brewer,~M.; Wester,~R.; Murcko,~M.; Frye,~L.; Farid,~R.;
+  Lin,~T.; Mobley,~D.~L.; Jorgensen,~W.~L.; Berne,~B.~J.; Friesner,~R.~A.;
+  Abel,~R. \emph{Journal of the American Chemical Society} \textbf{2015},
+  \emph{137}, 2695--2703, PMID: 25625324\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2011)Wang, Friesner, and Berne]{REST2}
+Wang,~L.; Friesner,~R.~A.; Berne,~B.~J. \emph{The Journal of Physical Chemistry
+  B} \textbf{2011}, \emph{115}, 9431--9438, PMID: 21714551\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}
