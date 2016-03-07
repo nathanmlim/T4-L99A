@@ -62,6 +62,8 @@ proc loadrepl {path jobnum repnum sta fin} {
       set refc [atomselect $conf_c "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
       set refi [atomselect $conf_i "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
       set refo [atomselect $conf_o "backbone and resid 77 to 120 and not resid 107 to 115" frame 0]
+      set ligrefo [atomselect $conf_o "resid 200 and not water" frame 0]
+      puts [$ligrefo num]
 
       #Select trajectory we are comparing and loop over frames
       set traj [atomselect $repmolid "backbone and resid 77 to 120 and not resid 107 to 115"]
@@ -90,17 +92,25 @@ proc loadrepl {path jobnum repnum sta fin} {
          set chelix [atomselect $conf_c "(backbone and resid 107 to 115) and name C CA N" frame 0]
          set ihelix [atomselect $conf_i "(backbone and resid 107 to 115) and name C CA N" frame 0]
          set ohelix [atomselect $conf_o "(backbone and resid 107 to 115) and name C CA N" frame 0]
+         set ligtraj [atomselect $repmolid "resid 200 and not water" frame $frame]  
 
          #Compute RMSD of F-helix to crystal structures
          set rmsdc [measure rmsd $comp $chelix]
          set rmsdi [measure rmsd $comp $ihelix]
          set rmsdo [measure rmsd $comp $ohelix]
-         
-         puts $output "${frame} ${rmsdc} ${rmsdi} ${rmsdo}"
-         }
 
-      close $output
-      mol delete $repmolid
+         #if {$repnum == 11 } {
+            #puts [$ligtraj num]
+            #set ligrmsd [measure rmsd $ligtraj $ligrefo]
+          #  puts $ligrmsd
+          #  puts $output "${frame} ${rmsdc} ${rmsdi} ${rmsdo} ${ligrmsd}"
+         #} else {
+        puts $output "${frame} ${rmsdc} ${rmsdi} ${rmsdo}"
+          #}
+   }
+
+   close $output
+   mol delete $repmolid
 
       
    } else {
@@ -115,7 +125,10 @@ proc loadrepl {path jobnum repnum sta fin} {
 
 #loadrepl {path jobnum repnum sta fin}
 for {set repnum 0} { $repnum < 12} {incr repnum} { 
-   loadrepl c_opls3_rest1_extend 1e $repnum 0 2293
+   #loadrepl c_exp_opls3 15 $repnum 0 210
+   #loadrepl o_exp_opls3 17 $repnum 0 210
+   #loadrepl c_exp_opls3_rest1 7e $repnum 0 1042
+   loadrepl o_exp_opls3_rest1 7 $repnum 0 1042
 }
 
 quit

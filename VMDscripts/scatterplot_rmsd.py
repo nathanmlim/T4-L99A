@@ -150,7 +150,9 @@ def compare_rmsdplot(lam0,lam1):
    time = data0[:,0] * 24 *0.001
   
    fig, ax = plt.subplots(2, sharex=True, sharey=True, figsize=(10,5) )
-   
+   ###LONG ADJUSTMENTS###
+   #fig, ax = plt.subplots(2, sharex=True, sharey=True, figsize=(50,5) )
+
    c_freq, i_freq, o_freq = freqcount(state0)
    ax[0].plot( time, data0[:,1,], 'k', linewidth=2)
    #Colored Scatterplot points to state of minimum RMSD
@@ -232,12 +234,59 @@ def compare_rmsdplot(lam0,lam1):
    ax[1].set_title(tline[2]+' '+subtitle+ r' $\lambda_{11}$', x=0.25)
    fig.text(0.07, 0.5, 'RMSD to Closed', va='center', rotation='vertical')
 
-   outdir = "{}/plots/{}-{}ns/".format(options.dir,lowx,upx)
+   outdir = "{}/plots/endstates/".format(options.dir)
    if not os.path.exists(outdir):
       os.makedirs(outdir)
 
-   plt.savefig(outdir+"RMSD-0v1.png", additional_artists=box) #, bbox_inches='tight')
+   plt.savefig(outdir+"RMSD-{}-{}ns.png".format(lowx,upx), additional_artists=box) #, bbox_inches='tight')
    plt.close('all')
+
+def single_colormap(rmsddata,enedata):
+
+   time = rmsddata['0'][0][:,0] * 24 *0.001
+   lowx = int(round(time[0]/0.5)*0.5)
+   upx = int(round(time[-1]/0.5)*0.5)
+   n = len(rmsddata['0'][1])
+
+   #Build numpy array of states for all replicas
+   statelist = []
+   statelist.append( rmsddata['0'][1] )
+   statelist.append( rmsddata['11'][1] )
+   statearr = np.vstack(statelist)
+
+   #Initialized our figure
+   fig = plt.figure(figsize=(5,3))
+   ###LONG ADJUSTMENTS""
+   #fig = plt.figure(figsize=(50,3))
+   ax = fig.add_subplot(1,1,1)
+
+   #Fix color map
+   cmap = mpl.colors.ListedColormap(['purple','c','green'])
+   #Set bounds, must be +-1 from max/min values
+   bounds=[0,1,2,3]
+   norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
+   ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
+
+   major_xticks = np.arange(0,n,41.5)
+   ax.set_xticks(major_xticks)
+   ax.xaxis.set_ticklabels(np.arange(lowx,upx,1))
+   #ax.xaxis.grid(True, which='major',color='black',linewidth=1)
+
+   #Y-axis parameters
+   ax.set_yticks(np.arange(0,2,1.0))
+   ax.set_yticks(np.arange(-0.5,2,1.0),minor=True)
+   ax.yaxis.grid(True, which='minor',color='black', linestyle='-',linewidth=2)
+
+   #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
+   ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
+
+   outdir = "{}/plots/colormap/".format(options.dir)
+   if not os.path.exists(outdir):
+      os.makedirs(outdir)
+
+   plt.savefig(outdir+'cmapendstates-{}-{}ns.png'.format(lowx,upx))
+   plt.close('all')
+
 
 def colormap(rmsddata,enedata):
 
@@ -276,11 +325,11 @@ def colormap(rmsddata,enedata):
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
    ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
    
-   outdir = "{}/plots/{}-{}ns/".format(options.dir,lowx,upx)
+   outdir = "{}/plots/colormap/".format(options.dir)
    if not os.path.exists(outdir):
       os.makedirs(outdir)
 
-   plt.savefig(outdir+'colormap.png'.format(options.dir))
+   plt.savefig(outdir+'cmap-{}-{}ns.png'.format(lowx,upx))
    plt.close('all')
       
 
@@ -310,7 +359,9 @@ except ValueError:
       for i in range(12):
          rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
 
+
 #Plot RMSD for end states only
 compare_rmsdplot(allrmsd['0'],allrmsd['11'])
 #Plot stackedbar graph for colormap of replicas
 colormap(allrmsd,allene)
+single_colormap(allrmsd,allene)
