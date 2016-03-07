@@ -1,0 +1,310 @@
+\documentclass[journal=jctcce,manuscript=article]{achemso}
+
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+\usepackage[T1]{fontenc}       % Use modern font encodings
+\usepackage{indentfirst}
+
+\author{Nathan Lim}
+\email{limn1@uci.edu}
+\affiliation[University of California, Irvine]
+{Department of Pharmaceutical Sciences}
+
+\title{Sensitivity in predicted relative binding free energies from incremental ligand changes within a model binding site}
+
+\begin{document}
+
+\begin{abstract}
+Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A\cite{Boyce2009}.
+In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}.
+Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state.
+Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
+\end{abstract}
+
+\pagebreak
+
+\section{Introduction}
+Medicinal chemistry programs typically focus on changes in ligand binding affinity from incremental changes to the ligand.
+Focus on how the protein adapts to the changes in the ligand is generally neglected.
+T4 L99A is well studied experimentally and computationally.
+It is frequently used as a model binding site in free energy prediction studies.
+In this study, 8 congeneric ligands were investigated, where addition of a single methyl group was used to lengthen the ligand.
+Through determination of protein-ligand bound x-ray crystal structures it was revealed T4 lysozyme adopts 3 discrete conformations in response the series of growing ligands.
+Consideration of the protein adaptations into discrete conformations may be an important aspect in inhibitor design.
+
+\section{Results}
+\subsection*{Closed-Open transformations}
+For example, in the transformation of benzene to n-hexylbenzene, a tail of 6 carbon atoms are being inserted in the apolar cavity when closed.
+Over the course of the FEP/REST simulation (Lambda=1, corresponding to the n-hexylbenzene state), the tail can be seen pushing against the F-helix to try open the cavity, albeit unsuccessfully.
+As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG (+4.13 kcal/mol)
+Expectedly, if we start from the protein open state, the predicted ddG is negative (-0.61 kcal/mol) as we do not see the occurrence of large protein-ligand strain.
+Instead, the protein remains open and relaxed, already accommodated for the large ligand.
+Overall, the discrepancy between the two FEP calculations is a whopping +4.74 kcal/mol.
+Clearly, neither of the simulations are remotely close to converging to the same value.
+
+It should be noted that the binding affinity of the open ligands to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
+For cases involving open ligands, we only focus on the convergence of the predicted free energies between simulations starting from protein closed or open.
+
+\subsection*{REST improvements}
+Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
+At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states.
+Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions.
+Towards the end was Gly113 which was observed to undergo some minor motions as well.
+
+After running the same transformation (benzene to n-hexylbenzene) with the inclusion of aforementioned residues, we see a reduction in the difference of the final predicted ddGs between protein closed or open simulations (+1.37 kcal/mol).
+Simulations starting from closed give a predicted ddG of +2.74 kcal/mol and from open +1.37 kcal/mol.
+Upon closer inspection of the closed simulations corresponding to the final state of n-hexylbenzene, we find that the protein does not remain trapped in its initial state.
+Instead, the region of the helix around Gly113 briefly opens to relieve the strain but quickly closes back.
+Hence, we still see some strain energy as the protein fails to completely stabilize into the open conformation.
+Viewing the open simulations, reveals that the protein is no longer trapped only in the open state and makes transitions into the intermediate and closed states.
+In making these transitions, the protein also experiences strain as the tail pushes the F-helix back into open from the other conformational states.\\
+
+***INSERT RMSD GRAPH SHOWING TRANSITIONS BETWEEN STATES FOR BENZENE TO NHEXYL***\\
+***By comparing these graphs we show that inclusion of protein residues in the REST region does allow for more/faster transitions between states***\\
+***Compare pREST runs with default REST in order to show that pREST allows for the protein to get of being trapped in its initial state.\\
+
+Here we have shown pREST allows for more motion in the helix in comparison to the default REST protocol.
+Although there is a reduction in the discrepancy, it is still fairly large (+1.37 kcal/mol).
+Thus, we cannot say these are converged, where this poor convergence results from inadequate sampling of all the protein conformational states.
+Such is the case of closed pREST simulations of n-hexylbenzene, where we only see a partial opening of the helix.
+Similarly, in open pREST simulations with n-hexylbenzene, the helix does not enter the closed conformation.
+Where as it is expected to at least partially occupy the closed state, according to the loop/ligand occupancy table.
+It seems likely that the overall motion of the helix is not entirely accessible in the range of up to 50ns (longest we have simulated).\\
+
+***INSERT DATA FROM 55ns pREST simulations***\\
+***Table showing all closed to open cases***\\
+***Here we can show that the discrepancy does not entirely go away, but gradually gets smaller with smaller perturbations***\\
+***Show that in 50ns the protein is only barely able to stabilize in the open state and vice versa***\\
+
+\section{Discussion}
+\subsection*{Sensitivity to initial protein conformational state}
+Here, we found that relative free energy calculations can suffer from substantial convergence problems resulting from relatively modest protein conformational changes.
+These problems have profound implications for the accuracy of computed relative free energies in these cases.
+Particularly, we find that calculated relative free energies depend on the initial protein conformational state by up to 4 kcal/mol.
+Even with simulations of up to 55ns per lambda window, far more than is typically used in the 5ns standard protocol for these calculations, we do not completely converge our calculated relative free energies.
+
+By looking at cases that involve a conformation change in the protein, we can clearly see the large dependence of the final predicted ddG on the initial protein conformational state.
+These cases are when the alchemical transformation involves changing ligands that primarily occupy the closed state into ligands that occupy the intermediate or open states (Table ~\ref{tbl:ligoff}).
+Despite use of FEP/REST, free energy predictions when starting from the protein closed or open conformational state, were unable to converge to the same predicted ddG.
+Visualization of these simulations (ex. closed ligands to open ligands) show the protein remains trapped in its initial state.
+Free energy predictions from simulations starting from the protein closed state give a positive ddG, a result from strain in the protein as the ligand begins to grow in the binding cavity.
+
+Without prior knowledge of preferred protein conformational states on ligand binding, we can arrive at very different binding affinity predictions.
+If we only had the crystal structure of the closed protein-ligand complexes, we would incorrectly arrive at the conclusion that larger ligands such as n-hexylbenzene are much worse than smaller ones.
+On the other hand, the opposite would be concluded in that larger ligands are better binders, if only the open protein-ligand complexes were available.
+Fortunately, in the case of T4-L99A, knowledge of protein-ligand conformational states is known from the x-ray crystallography studies. \cite{Merski2015}
+
+This knowledge of various protein-ligand states is not always the case, especially in early drug discovery phases, where sometimes only the apo crystal structure of a potential therapeutic target exists.
+Dangerously, a medicinal chemist can dock a library of ligands and run free energy calculations to predict and rank binding affinities.
+Without knowing the protein can undergo various changes to accommodate different or larger ligands, the chemist would discard ligands with "low" binding affinities.
+Here in T4-L99A, a relatively small (~1-3\AA) and localized motion in a helix is shown to drastically impact binding affinity predictions.
+This demonstrates that special attention and care should be exercised in binding affinity predictions where regions of flexibility surround the binding site.
+
+\subsection*{Inclusion of protein atoms into the REST region (pREST)}
+In order to get the protein out of its trapped initial state, we included residues from the F-helix into the REST region.
+Inclusion of residues into the REST region was expected to allow for faster transitions between states by effectively heating up key regions in the F-helix.
+Indeed in most cases, we found that this improved the time and frequency to transition between conformational states.
+But in cases of large alchemical transformations, this was still inadequate to entirely eliminate the dependence on the starting protein conformational state, even with simulations of up to 55ns.
+
+Despite adjustments to FEP/REST and longer simulations where we only take the last 30-40\% of snapshots, we do not entirely eliminate the dependence on the starting protein conformational state.
+It is much easier to do so by performing smaller perturbations and/or running longer simulations.
+But this is may not always be feasible in industrial medicinal chemistry programs, where as ligands grow more drug-like they typically increase in size and complexity.
+As a result of increased complexity, FEP calculations commonly require large insertions and deletions of atoms.
+In turn, this would require much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries.
+
+\section{Conclusions}
+Overall, we have shown that identification of discrete protein conformational states is an important factor to consider in inhibitor design.
+In this study, we demonstrated that there can be a large dependence of predicted binding free energies on the initial protein conformational state.
+Even while using enhanced sampling techniques and longer simulations than typical, we were unable to completely converge all of our calculations.
+Close attention should be exercised when performing alchemical transformations that involve large perturbations and/or result in a large conformational change in the protein structure.
+More importantly, as FEP calculations become a more common part of the computer-aided drug design process, we illustrate that it still requires some level of expertise.
+Although FEP calculations have shown tremendous recent successes \cite{FEPplus}, we are still bounded by problems of adequate sampling and computational power.
+
+\section{Methods}
+\subsection{FEP Protocols}
+Two FEP protocols developed from Schrodinger were used in this project: FEP+ and LigandFEP.
+FEP+ is a fully automated workflow that will plan the perturbation pathways based of the LOMAP mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
+LigandFEP, aimed for academics, is limited in the sense that the user must plan each perturbation instead.
+LigandFEP does not use the MCS but rather plans the transformation by minimizing the core RMSD.
+Both protocols still use the default relaxation protocol and FEP/REST methodology and were run on GPUs with Desmond.
+FEP/REST simulations were performed for 5-55ns depending on the ligand transformation involved.
+In both protocols, forcefield parameters OPLS3 and OPLS2005 were used.\\
+
+***INSERT FEP MAPPER IMAGE HERE***\\
+
+Trials including protein atoms in the REST region will be referred to with 'pREST'
+Considering the F-helix ranged from residues 107-115, residues selected to include into the REST region were Glu108, Val111, and Gly113 as sort of a start, mid and end point.
+
+\subsection{Protein/Ligand Preparation}
+Protein structures were taken from PDBS: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively.
+Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
+When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
+When using the LigandFEP protocol, two options would occur:\\
+(1) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference.\\
+(2) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar.\\
+
+For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
+If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference.
+The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
+All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
+   \begin{itemize}
+   \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
+   \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
+   \end{itemize}
+
+
+\pagebreak
+
+\section{Potential Journals}
+\begin{itemize}
+   \item Journal of Chemical Theory and Computation (H-index: 94)
+   \item Journal of Computational Chemistry (H-index: 139)
+   \item Journal of Physical Chemistry B. (H-index: 295)
+   \item Journal of American Chemical Society (H-index: 412)
+\end{itemize}
+
+\section{Objectives}
+\begin{itemize}
+   \item Assess convergence of relative free energy calculations involving modest amounts of protein conformational change
+   \item Assess the implication of protein sampling challenges for accuracy of relative free energy calculations
+   \item Highlight how even modest ligand changes can induce conformational changes in "rigid" proteins which pose significant sampling challenges
+   \item Test how well we can model and capture protein conformational change in the T4 Lysozyme L99A apolar cavity
+   \item Accurately predict relative binding free energies while sampling protein conformational changes
+   \item Compare performance of FEP plus \cite{FEPplus} and LigandFEP.
+   \item Compare performance of OPLS2005 and OPLS3 forcefield parameters.
+   \item Highlight improvement to FEP/REST \cite{REST2} method by inclusion of protein atoms.
+\end{itemize}
+
+\begin{acknowledgement}
+\begin{itemize}
+   \item David L. Mobley
+   \item Robert Abel
+   \item Lingle Wang
+   \item Dima Lupyan
+   \item Joseph Goose
+\end{itemize}
+\end{acknowledgement}
+
+\begin{suppinfo}
+\section{Experimental}
+\subsection{Discrete Conformations and the Ligands}
+T4 L99A contains an engineered apolar cavity which is our binding site of interest.
+The 8 congeneric ligands are all apolar and begins with a simple benzene ring.
+Subsequent ligands are simply addition of a methyl group to generate a growing tail up until n-hexylbenzene.
+In response to the growing ligand, the crystal structures show the protein will adopt into 3 conformations aptly named: closed, intermediate, and open.
+Primarily, the motion of the protein occurs in the F-helix (residues 107-115), which serves as a sort of gating mechanism into the apolar cavity.
+As the ligand tail expands, the F-helix transitions from closed to open, exposing the cavity to the bulk solvent.
+From observed electron densities of the F-helix in \cite{Merski2015}-Fig2, the ligands occupy each of the conformations given in Table: ~\ref{tbl:loopocc}
+
+From a protein conformation clustering analysis, shown \cite{Merski2015}, Val111 occupies 3 distinct states iin accordance to the 3 protein conformations.
+Visualization of side-chain Val111 from the x-stal structures, shows the backbone alpha-carbon moving ~1.25\AA when transitioning from closed to intermediate, ~3.25\AA intermediate to open, and ~3.50\AA closed to open.
+From our MD simulations, it is primarily the repulsive interactions between the ligands and Val111 that drive the F-helix to the open state.
+
+\subsection{Ligand Binding Affinities}
+Table ~\ref{tbl:ligaff}
+Details of the ligand binding affinities and how they were obtained can be found in the paper \cite{Merski2015} \\
+***Section "Energy of Ligand Binding and Conformational Strain"***\\
+Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to solubility limits.
+Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rises linearly.
+
+\section{FEP+ vs. LigandFEP}
+   \begin{itemize}
+   \item Comparisons between the two protocols will be used to show that, although limited, LigandFEP does not result in a difference in performance of accurate predicted relative binding free energies.
+   \item Comparisons between FFs will show that the new and improved OPLS3 parameters are give better RBFE predictions for larger transformations.
+   \item ***INSERT TABLE COMPARING OPLS2005/OPLS3 BETWEEN TWO PROTOCOLS***
+      \\ Both are within the same MUE/RMSE range
+   \item Highlight inconsistency in predicted RBFE when the protein starting conformation is varied.
+   \item Predicted ddGs are in the wrong direction frequently when starting from protein closed.
+      If we assume smaller to larger ligands should yield favorable (-) ddGs.
+   \end{itemize}
+
+\section{OPLS_2005 vs. OPLS3}
+
+\section{Case studies}
+\subsection{Small Ligands}
+   \begin{itemize}
+   \item Small transformations and ligands generally occupy protein closed state.
+   \item Equal performance with either FF.
+   \item Highlight good case: Toluene to Ethylbenzene with OPLS3
+      \begin{itemize}
+      \item Small perturbation: Adding one carbon
+      \item Both ligands occupy the closed state with some intermediate
+      \item Protein starting conformation does not result in a large discrepancy in predicted ddGs.
+      \item ***INSERT RMSD GRAPH***
+      \item RMSD graph over the lambda=0 and lambda=1 corresponding to the toluene and ethylbenzene end states shows at each time point which conformation (reference to crystal structure) the simulation has the lowest RMSD to.
+         \\ Purple = Closed, Teal = Intermediate, and Green = Open.
+      \item Highlight good sampling/number of transitions between either state when starting from closed.
+      \item Highlight points ~0-1ns are still stuck in open conformation. 240ps relaxation protocol wasn't sufficient to discard few open points.
+         \\ Show that this does not have a large impact in the final ddG from sliding time.
+      \end{itemize}
+
+   \item Highlight not-so-good case: Toluene to n-propylbenzene
+      \begin{itemize}
+      \item Perturbation involves adding two carbons
+      \item Discrepancy from protein starting conformation increases.
+      \item Highlight more open points are present (0-2ns) in open runs.
+      \end{itemize}
+   \item Growing ligands require more time for helix to relax out of open state.
+   \item Inclusion of protein residues in REST region should allow for faster transition between states which will give us a lower discrepancy between open/closed runs.
+   \item Apply pREST to previous case and show faster relaxation out of open conformation resulting in a lower discrepancy.
+   \item ***INSERT COMPARISON BETWEEN NORMAL AND PREST RUNS WITH EXPERIMENTAL ddG ***
+   \item Show pREST increases agreement with experiment and lowers error from protein starting conformation.
+   \end{itemize}
+
+\subsection{Intermediate Ligands}
+
+\subsection{Open Ligands}
+
+\end{suppinfo}
+
+\section{Figures}
+\begin{equation}
+  \begin{minipage}[c]{0.80\linewidth}
+    \centering
+    As illustrated here, the width of \\
+    the minipage needs to allow some  \\
+    space for the number to fit in to.
+    %\includegraphics{graphic}
+  \end{minipage}
+  \label{eqn:graphic}
+\end{equation}
+
+\section{Tables}
+\begin{table}
+  \caption{Loop Occupancies \cite{Merski2015}}
+  \label{tbl:loopocc}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Ligand           & Closed & Intermediate & Open  \\
+  Benzene          & 90\%   & -            &       \\
+  Toluene          & 80\%   & 20\%         &       \\
+  Ethylbenzene     & 50\%   & 50\%         &       \\
+  n-propylbenzene  & 60\%   & 40\%         &       \\
+  sec-butylbenzene & 40\%   & 60\%         &       \\
+  n-butylbenzene   & 10\%   & 60\%         & 30\%  \\
+  n-pentylbenzene  & 30\%   &              & 70\%  \\
+  n-hexylbenzene   & 30\%   &              & 70\%  \\
+  \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}
+   \caption{Ligand Binding Affinities}
+   \label{tbl:ligaff}
+   \begin{tabular}{|c|c|c|c|}
+   \hline
+   Ligand           & dGexp (kcal/mol) \\
+   benzene          & -5.19            \\
+   toluene          & -5.52            \\
+   ethylbenzene     & -5.76            \\
+   n-propylbenzene  & -6.55            \\
+   sec-butylbenzene & N/A              \\
+   n-butylbenzene   & -6.70            \\
+   n-pentylbenzene  & N/A              \\
+   n-hexylbenzene   & N/A              \\
+   \hline
+   \end{tabular}
+\end{table}
+
+
+\bibliography{references}
+\end{document}
