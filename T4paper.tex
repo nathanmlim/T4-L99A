@@ -2,7 +2,8 @@
 
 \usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
 \usepackage[T1]{fontenc}       % Use modern font encodings
-\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
 
 \author{Nathan Lim}
 \email{limn1@uci.edu}
@@ -22,27 +23,54 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
 
 \pagebreak
 
+%%%%WRITING TIPS%%%%%
+%ALWAYS ACTIVE VOICE --> Direct, emphasize the performer of the action.
+%"First sentence of each paragraph should tell the reader what you expect them to get out of the paragraph that follows"
+
+%"Results should typically start with a paragraph describing your approach in broad terms"
+%"Give them the conceptual tools to understand your work but not more"
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Introduction}
+%Jotted down ideas only
 Medicinal chemistry programs typically focus on changes in ligand binding affinity from incremental changes to the ligand.
 Focus on how the protein adapts to the changes in the ligand is generally neglected.
 T4 L99A is well studied experimentally and computationally.
 It is frequently used as a model binding site in free energy prediction studies.
 In this study, 8 congeneric ligands were investigated, where addition of a single methyl group was used to lengthen the ligand.
-Through determination of protein-ligand bound x-ray crystal structures it was revealed T4 lysozyme adopts 3 discrete conformations in response the series of growing ligands.
+Through determination of protein-ligand bound x-ray crystal structures it was revealed T4 Lysozyme adopts 3 discrete conformations in response the series of growing ligands.
 Consideration of the protein adaptations into discrete conformations may be an important aspect in inhibitor design.
 
 \section{Results}
-\subsection*{Closed-Open transformations}
-For example, in the transformation of benzene to n-hexylbenzene, a tail of 6 carbon atoms are being inserted in the apolar cavity when closed.
-Over the course of the FEP/REST simulation (Lambda=1, corresponding to the n-hexylbenzene state), the tail can be seen pushing against the F-helix to try open the cavity, albeit unsuccessfully.
-As a result, we see a high energy strain from the protein as it attempts to accommodate the much larger ligand, which is reflected in the predicted ddG (+4.13 kcal/mol)
-Expectedly, if we start from the protein open state, the predicted ddG is negative (-0.61 kcal/mol) as we do not see the occurrence of large protein-ligand strain.
-Instead, the protein remains open and relaxed, already accommodated for the large ligand.
-Overall, the discrepancy between the two FEP calculations is a whopping +4.74 kcal/mol.
-Clearly, neither of the simulations are remotely close to converging to the same value.
+\subsection*{Dependence on protein starting conformation}
+%P1: Open with the main problem in default protocol. 
+%Describing the approach in broad terms. 
+%Give them the conceptual tool to understand most of the work.
+%Drive back the main problem in default protocol.
+Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
+To illustrate this, we begin our molecular dynamics simulations from either the protein closed or open conformation and perform alchemical transformations to ligands that occupy the opposite protein conformational state.
+In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix are used to determine the conformational state of the protein over the course of the trajectory.
+From our RMSD analysis, we demonstrate the standard 5ns simulation time and default REST region selection are insufficient to adequately sample the motion in the F-helix and eliminate the dependence on the initial protein state.  
 
-It should be noted that the binding affinity of the open ligands to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
-For cases involving open ligands, we only focus on the convergence of the predicted free energies between simulations starting from protein closed or open.
+%P2: Discuss closed-open case to show the problem in default protocol
+An examination of the largest alchemical transformation, benzene to n-hexylbenzene, highlights the sampling problems faced when using the standard FEP/REST protocol.
+From experimental data of ligand occupancies (Table~\ref{tbl:loop-occ}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state and fewer in the closed state.
+Instead, we find the protein remains trapped in its initial conformational state whether we start from closed (Fig~\ref{fig:c_opls3_1/RMSD-replica11}) or open (Fig~\ref{fig:o_opls3_1/RMSD-replica11}) over the course of the 5ns trajectory.
+From the protein closed trajectory, the protein only begins to enter the intermediate state around 3ns but never enters the open conformation.
+As the protein strains to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results and is reflected in the positivity of the calculated $\Delta\Delta G$(+2.4 kcal/mol)
+On the other hand, in the protein open trajectory, the protein already begins in its preferred state for n-hexylbenzene and stays only in this open state.
+Expectedly, the calculated $\Delta\Delta G$ comes out negative(-0.6 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity.
+Ultimately, we arrive at two very different relative free energies, where the discrepancy is a whopping +3.0 kcal/mol, for the same transformation of benzene to n-hexylbenzene\footnotemark.
+Despite the use of FEP/REST, it is clear that we are unable to adequately sample all the relevant states within the 5ns time frame, resulting in such a large difference in calculated $\Delta\Delta G$.
+
+\footnotetext{It should be noted that the binding affinities of n-pentyl/n-hexylbenzene to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
+For cases involving these ligands, we only focus on the convergence of the calculated free energies between simulations starting from protein closed or open.}
+
+%P3: Discuss close-int case to show there is still a dependence even for small changes
+
+
 
 \subsection*{REST improvements}
 Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
@@ -83,7 +111,7 @@ Particularly, we find that calculated relative free energies depend on the initi
 Even with simulations of up to 55ns per lambda window, far more than is typically used in the 5ns standard protocol for these calculations, we do not completely converge our calculated relative free energies.
 
 By looking at cases that involve a conformation change in the protein, we can clearly see the large dependence of the final predicted ddG on the initial protein conformational state.
-These cases are when the alchemical transformation involves changing ligands that primarily occupy the closed state into ligands that occupy the intermediate or open states (Table ~\ref{tbl:ligocc}).
+These cases are when the alchemical transformation involves changing ligands that primarily occupy the closed state into ligands that occupy the intermediate or open states (Table ~\ref{tbl:lig-occ}).
 Despite use of FEP/REST, free energy predictions when starting from the protein closed or open conformational state, were unable to converge to the same predicted ddG.
 Visualization of these simulations (ex. closed ligands to open ligands) show the protein remains trapped in its initial state.
 Free energy predictions from simulations starting from the protein closed state give a positive ddG, a result from strain in the protein as the ligand begins to grow in the binding cavity.
@@ -193,14 +221,14 @@ Subsequent ligands are simply addition of a methyl group to generate a growing t
 In response to the growing ligand, the crystal structures show the protein will adopt into 3 conformations aptly named: closed, intermediate, and open.
 Primarily, the motion of the protein occurs in the F-helix (residues 107-115), which serves as a sort of gating mechanism into the apolar cavity.
 As the ligand tail expands, the F-helix transitions from closed to open, exposing the cavity to the bulk solvent.
-From observed electron densities of the F-helix in \cite{Merski2015}-Fig2, the ligands occupy each of the conformations given in Table: ~\ref{tbl:loopocc}
+From observed electron densities of the F-helix in \cite{Merski2015}-Fig2, the ligands occupy each of the conformations given in Table: ~\ref{tbl:loop-occ}
 
 From a protein conformation clustering analysis, shown \cite{Merski2015}, Val111 occupies 3 distinct states iin accordance to the 3 protein conformations.
 Visualization of side-chain Val111 from the x-stal structures, shows the backbone alpha-carbon moving ~1.25\AA when transitioning from closed to intermediate, ~3.25\AA intermediate to open, and ~3.50\AA closed to open.
 From our MD simulations, it is primarily the repulsive interactions between the ligands and Val111 that drive the F-helix to the open state.
 
 \subsection{Ligand Binding Affinities}
-Table ~\ref{tbl:ligaff}
+Table ~\ref{tbl:lig-aff}
 Details of the ligand binding affinities and how they were obtained can be found in the paper \cite{Merski2015} \\
 ***Section "Energy of Ligand Binding and Conformational Strain"***\\
 Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to solubility limits.
@@ -260,54 +288,56 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
 \pagebreak
 
 \section{Figures}
-\begin{equation}
-  \begin{minipage}[c]{0.80\linewidth}
-    \centering
-    As illustrated here, the width of \\
-    the minipage needs to allow some  \\
-    space for the number to fit in to.
-    %\includegraphics{graphic}
-  \end{minipage}
-  \label{eqn:graphic}
-\end{equation}
+\begin{figure}
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth]{VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png}}
+   \caption{Closed - Benzene to n-Hexylbenzene 0-5ns RMSD Replica11}
+   \label{fig:c_opls3_1/RMSD-replica11}
+\end{figure}
+
+\begin{figure}
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth]{VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png}}
+   \caption{Open - Benzene to n-Hexylbenzene 0-5ns RMSD Replica11}
+   \label{fig:o_opls3_1/RMSD-replica11}
+\end{figure}
+
 
 \section{Tables}
-
-\begin{table}
-  \caption{Loop Occupancies \cite{Merski2015}}
-  \label{tbl:loopocc}
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Ligand           & Closed & Intermediate & Open  \\
-  Benzene          & 90\%   & -            &       \\
-  Toluene          & 80\%   & 20\%         &       \\
-  Ethylbenzene     & 50\%   & 50\%         &       \\
-  n-propylbenzene  & 60\%   & 40\%         &       \\
-  sec-butylbenzene & 40\%   & 60\%         &       \\
-  n-butylbenzene   & 10\%   & 60\%         & 30\%  \\
-  n-pentylbenzene  & 30\%   &              & 70\%  \\
-  n-hexylbenzene   & 30\%   &              & 70\%  \\
-  \hline
-  \end{tabular}
+\begin{table}[]
+\centering
+\caption{Loop Occupancies \cite{Merski2015}}
+\label{tbl:loop-occ}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Ligand}                                                 & \textbf{C} & \textbf{I} & \textbf{O} \\ \hline
+\cellcolor[HTML]{800080} benzene          & \cellcolor[HTML]{C0C0C0}0.9        & -          & -          \\ \hline
+\cellcolor[HTML]{800080} toluene          & \cellcolor[HTML]{C0C0C0}0.8        & 0.2        & -          \\ \hline
+\cellcolor[HTML]{800080} ethylbenzene     & \cellcolor[HTML]{C0C0C0}0.5        & 0.5        & -          \\ \hline
+\cellcolor[HTML]{800080} n-propylbenzene  & \cellcolor[HTML]{C0C0C0}0.6        & 0.4        & -          \\ \hline
+\cellcolor[HTML]{00FFFF} sec-butylbenzene & 0.4        & \cellcolor[HTML]{C0C0C0}0.6        & -          \\ \hline
+\cellcolor[HTML]{00FFFF} n-butylbenzene   & 0.1        & \cellcolor[HTML]{C0C0C0}0.6        & 0.3        \\ \hline
+\cellcolor[HTML]{008000} n-pentylbenzene  & 0.3        &    -        & \cellcolor[HTML]{C0C0C0}0.7        \\ \hline
+\cellcolor[HTML]{008000} n-hexylbenzene   & 0.3        &    -       & \cellcolor[HTML]{C0C0C0}0.7        \\ \hline
+\end{tabular}
 \end{table}
 
-\begin{table}
-   \caption{Ligand Binding Affinities}
-   \label{tbl:ligaff}
-   \begin{tabular}{|c|c|c|c|}
-   \hline
-   Ligand           & dGexp (kcal/mol) \\
-   benzene          & -5.19            \\
-   toluene          & -5.52            \\
-   ethylbenzene     & -5.76            \\
-   n-propylbenzene  & -6.55            \\
-   sec-butylbenzene & N/A              \\
-   n-butylbenzene   & -6.70            \\
-   n-pentylbenzene  & N/A              \\
-   n-hexylbenzene   & N/A              \\
-   \hline
-   \end{tabular}
+\begin{table}[]
+\centering
+\caption{Ligand Binding Affinities}
+\label{tbl:lig-aff}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textit{\textbf{PDB}} & \textbf{Ligand}                          & \textbf{\begin{tabular}[c]{@{}c@{}} \boldmath$\Delta G_{exp}$ \\ (kcal/mol)\end{tabular}} & \textbf{Error} \\ \hline
+\textit{4W52}         & \cellcolor[HTML]{800080}benzene          & -5.19                                                                & 0.16           \\ \hline
+\textit{4W53}         & \cellcolor[HTML]{800080}toluene          & -5.52                                                                & 0.04           \\ \hline
+\textit{4W54}         & \cellcolor[HTML]{800080}ethylbenzene     & -5.76                                                                & 0.07           \\ \hline
+\textit{4W55}         & \cellcolor[HTML]{800080}n-propylbenzene  & -6.55                                                                & 0.02           \\ \hline
+\textit{4W56}         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & N/A                                                                  & -              \\ \hline
+\textit{4W57}         & \cellcolor[HTML]{00FFFF}n-butylbenezene  & -6.70                                                                & 0.02           \\ \hline
+\textit{4W58}         & \cellcolor[HTML]{008000}n-pentylbenzene  & N/A                                                                  & -              \\ \hline
+\textit{4W59}         & \cellcolor[HTML]{008000}n-hexylbenzene   & N/A                                                                  & -              \\ \hline
+\end{tabular}
 \end{table}
+
 
 \pagebreak
 
