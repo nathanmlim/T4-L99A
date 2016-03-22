@@ -1,5 +1,5 @@
 proc loadrepl {path jobnum repnum sta fin} {
-   set fepdir /media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/FEP_SCHOLAR/
+   set fepdir /media/limn1/SG1TB1/Projects/LigFEP_T4/COMPLETE_SETUP/FEP_SCHOLAR/
    set cpath ${fepdir}${path}/fep_scholar_${jobnum}/fep_scholar_${jobnum}_fep1/fep_scholar_${jobnum}_2/fep_scholar_${jobnum}_complex_fep1/fep_scholar_${jobnum}_complex_10
 
    #Check if the parent trajectory path exists
@@ -124,11 +124,12 @@ proc loadrepl {path jobnum repnum sta fin} {
 
 
 #loadrepl {path jobnum repnum sta fin}
-for {set repnum 0} { $repnum < 12} {incr repnum} { 
-   #loadrepl c_exp_opls3 15 $repnum 0 210
+for {set repnum 0} { $repnum < 12} {incr repnum} {
+   loadrepl c_exp_opls3 11 $repnum 0 210
+   loadrepl o_exp_opls3 24 $repnum 0 210
    #loadrepl o_exp_opls3 17 $repnum 0 210
    #loadrepl c_exp_opls3_rest1 7e $repnum 0 1042
-   loadrepl o_exp_opls3_rest1 7 $repnum 0 1042
+   #loadrepl o_exp_opls3_rest1 7 $repnum 0 1042
 }
 
 quit

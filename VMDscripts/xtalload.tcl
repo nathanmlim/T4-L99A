@@ -1,15 +1,15 @@
 #Load in Crystal Structures
-mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W53_toluene_closed.mae} type {mae} first 0 last -1 step 1 waitfor 1
+mol new {/media/limn1/SG1TB1/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W53_toluene_closed.mae} type {mae} first 0 last -1 step 1 waitfor 1
 set conf_c [molinfo top get id]
 mol rename $conf_c closed-4W53
 puts $conf_c
 
-mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W57_nbutyl_int.mae} type {mae} first 0 last -1 step 1 waitfor 1
+mol new {/media/limn1/SG1TB1/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W57_nbutyl_int.mae} type {mae} first 0 last -1 step 1 waitfor 1
 set conf_i [molinfo top get id]
 mol rename $conf_i int-4W57
 puts $conf_i
 
-mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W59_nhexyl_open.mae} type {mae} first 0 last -1 step 1 waitfor 1
+mol new {/media/limn1/SG1TB1/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W59_nhexyl_open.mae} type {mae} first 0 last -1 step 1 waitfor 1
 set conf_o [molinfo top get id]
 mol rename $conf_o open-4W59
 puts $conf_o
