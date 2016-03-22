@@ -51,32 +51,44 @@ Consideration of the protein adaptations into discrete conformations may be an i
 %Drive back the main problem in default protocol.
 Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
 To illustrate this, we begin our molecular dynamics simulations from either the protein closed or open conformation and perform alchemical transformations to ligands that occupy the opposite protein conformational state.
-In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix are used to determine the conformational state of the protein over the course of the trajectory.
-From our RMSD analysis, we demonstrate the standard 5ns simulation time and default REST region selection are insufficient to adequately sample the motion in the F-helix and eliminate the dependence on the initial protein state.  
+In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix is used to determine the conformational state of the protein over the course of the trajectory.
+Here, we demonstrate the standard 5ns simulation time and default REST region selection are insufficient to allow for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.  
 
 %P2: Discuss closed-open case to show the problem in default protocol
 An examination of the largest alchemical transformation, benzene to n-hexylbenzene, highlights the sampling problems faced when using the standard FEP/REST protocol.
-From experimental data of ligand occupancies (Table~\ref{tbl:loop-occ}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state and fewer in the closed state.
+From experimental data of ligand occupancies (Table~\ref{tbl:loop-occ}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state over the closed state.
 Instead, we find the protein remains trapped in its initial conformational state whether we start from closed (Fig~\ref{fig:c_opls3_1/RMSD-replica11}) or open (Fig~\ref{fig:o_opls3_1/RMSD-replica11}) over the course of the 5ns trajectory.
 From the protein closed trajectory, the protein only begins to enter the intermediate state around 3ns but never enters the open conformation.
-As the protein strains to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results and is reflected in the positivity of the calculated $\Delta\Delta G$(+2.4 kcal/mol)
+As the protein strains to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results and is reflected in the positivity of $\Delta\Delta G_{calc}$(+4.13 kcal/mol)
 On the other hand, in the protein open trajectory, the protein already begins in its preferred state for n-hexylbenzene and stays only in this open state.
-Expectedly, the calculated $\Delta\Delta G$ comes out negative(-0.6 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity.
-Ultimately, we arrive at two very different relative free energies, where the discrepancy is a whopping +3.0 kcal/mol, for the same transformation of benzene to n-hexylbenzene\footnotemark.
-Despite the use of FEP/REST, it is clear that we are unable to adequately sample all the relevant states within the 5ns time frame, resulting in such a large difference in calculated $\Delta\Delta G$.
+Expectedly, the $\Delta\Delta G_{calc}$ comes out negative(-0.61 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity.
+Ultimately, we arrive at two very different relative free energies, where the discrepancy is a whopping +4.74 kcal/mol, for the same transformation of benzene to n-hexylbenzene\footnotemark.
+Collectively, when we view the discrepancy of all calculations involving closed-open transformations we find the root-mean-square-error (RMSE) to be +4 kcal/mol (Table~\ref{tbl:C-O}). 
+Clearly, despite the use of FEP/REST, we are unable to adequately sample all the relevant states within the standard 5ns time frame, resulting in such large differences in $\Delta\Delta G_{calc}$.
 
 \footnotetext{It should be noted that the binding affinities of n-pentyl/n-hexylbenzene to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
 For cases involving these ligands, we only focus on the convergence of the calculated free energies between simulations starting from protein closed or open.}
 
 %P3: Discuss close-int case to show there is still a dependence even for small changes
-
-
+In the case of moderate alchemical transformations, such as cases that involve the set of closed ligands (i.e. benzene to n-propylbenzene) to intermediate ligands (i.e. sec-/n-butylbenzene), we find that the calculated free energies still have a dependence on the initial protein conformation using the default protocol, albeit much smaller.
+For this set of transformations to the intermediate state, the RMSE of the difference in $\Delta\Delta G_{calc}$ for protein closed versus open simulations is +0.60 kcal/mol (Table~\ref{tbl:C-I}), much closer to convergence than closed to open transformations.
+Although, when we compare $\Delta\Delta G_{calc}$ against $\Delta\Delta G_{exp}$ for transformations involving n-butylbenzene, we find that simulations starting from the protein closed conformation are further from converging to $\Delta\Delta G_{exp}$ than when starting from the protein open conformation.
+From the protein closed trajectories, the RMSE from $\Delta\Delta G_{exp}$ is +1.33 kcal/mol (Table~\ref{tbl:C-nbutyl_closed}) while the protein open trajectories have a RMSE of +0.63 kcal/mol (Table~\ref{tbl:C-nbutyl_open}).
+Based from experimental evidence (Table~\ref{tbl:loop-occ}), we should expect to see some sampling (~30\%) of the open conformation for the n-butylbenzene ligand.
+Evidently, the  $\Delta\Delta G_{calc}$ dependence on protein starting conformation is again from remaining trapped throughout the trajectory, resulting in inadequate sampling in the protein closed simulations (Fig.~\ref{fig:c_exp_opls3_11/RMSD-replica11}) versus the protein open simulations (Fig.~\ref{fig:o_exp_opls3_24/RMSD-replica11}).
+Despite performing much smaller alchemical transformations, we still encounter sampling problems, evident when making comparisons of the calculated free energies to experimental.
 
 \subsection*{REST improvements}
-Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
-At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states.
-Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions.
-Towards the end was Gly113 which was observed to undergo some minor motions as well.
+%Stick into methods or supplemental info?
+%Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
+%At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states.
+%Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions.
+%Towards the end was Gly113 which was observed to undergo some minor motions as well.
+
+%P1: Recap problem, summarize solution, and its effect
+Primarily, we are encountering sampling issues when facing the challenge of opening the helix from the closed state.
+In order to facilitate the protein motion, we included 3 key residues spanning the F-helix region into the REST region. %(see Methods for details?)
+By expanding the REST region, we were able drive the F-helix out its initial state trap faster and effectively reduce our problem in inadequate sampling.
 
 After running the same transformation (benzene to n-hexylbenzene) with the inclusion of aforementioned residues, we see a reduction in the difference of the final predicted ddGs between protein closed or open simulations (+1.37 kcal/mol).
 Simulations starting from closed give a predicted ddG of +2.74 kcal/mol and from open +1.37 kcal/mol.
@@ -285,24 +297,37 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
 
 \end{suppinfo}
 
-\pagebreak
+\clearpage
 
 \section{Figures}
-\begin{figure}
-   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth]{VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png}}
+\begin{figure}[!ht]
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth,height=8cm]{VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png}}
    \caption{Closed - Benzene to n-Hexylbenzene 0-5ns RMSD Replica11}
    \label{fig:c_opls3_1/RMSD-replica11}
 \end{figure}
 
-\begin{figure}
-   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth]{VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png}}
+\begin{figure}[!h]
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth,height=8cm]{VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png}}
    \caption{Open - Benzene to n-Hexylbenzene 0-5ns RMSD Replica11}
    \label{fig:o_opls3_1/RMSD-replica11}
 \end{figure}
 
+\begin{figure}[!h]
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth,height=8cm]{VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png}}
+   \caption{Closed - Benzene to n-butylbenzene 0-5ns RMSD Replica11}
+   \label{fig:c_exp_opls3_11/RMSD-replica11}
+\end{figure}
+
+\begin{figure}[!h]
+   \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth,height=8cm]{VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png}}
+   \caption{Open - Benzene to n-butylbenzene 0-5ns RMSD Replica11}
+   \label{fig:o_exp_opls3_24/RMSD-replica11}
+\end{figure}
+
+\clearpage
 
 \section{Tables}
-\begin{table}[]
+\begin{table}[!htb]
 \centering
 \caption{Loop Occupancies \cite{Merski2015}}
 \label{tbl:loop-occ}
@@ -320,13 +345,13 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
 \end{tabular}
 \end{table}
 
-\begin{table}[]
+\begin{table}[!htb]
 \centering
 \caption{Ligand Binding Affinities}
 \label{tbl:lig-aff}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textit{\textbf{PDB}} & \textbf{Ligand}                          & \textbf{\begin{tabular}[c]{@{}c@{}} \boldmath$\Delta G_{exp}$ \\ (kcal/mol)\end{tabular}} & \textbf{Error} \\ \hline
+\textit{\textbf{PDB}} & \textbf{Ligand}                          & \boldmath$\Delta G_{exp}$                                            & \textbf{Error} \\ \hline
 \textit{4W52}         & \cellcolor[HTML]{800080}benzene          & -5.19                                                                & 0.16           \\ \hline
 \textit{4W53}         & \cellcolor[HTML]{800080}toluene          & -5.52                                                                & 0.04           \\ \hline
 \textit{4W54}         & \cellcolor[HTML]{800080}ethylbenzene     & -5.76                                                                & 0.07           \\ \hline
@@ -338,8 +363,75 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
 \end{tabular}
 \end{table}
 
+\begin{table}[!htb]
+\centering
+\caption{Closed-Intermediate Transformations}
+\label{tbl:C-I}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                        & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.58                                   & \textit{0.07}                       & -0.59                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}1.17 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.28                                  & \textit{0.06}                       & -1.27                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.99 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.24                                   & \textit{0.07}                       & -0.23                                & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.47 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.99                                   & \textit{0.06}                       & 0.63                                 & \textit{0.04}                       & \cellcolor[HTML]{9AFF99}0.36 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 2.36                                   & \textit{0.09}                       & 2.14                                 & \textit{0.11}                       & \cellcolor[HTML]{9AFF99}0.22 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.47                                   & \textit{0.07}                       & 1.14                                 & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.33 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.90                                   & \textit{0.08}                       & 1.77                                 & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.13 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 2.86                                   & \textit{0.06}                       & 2.67                                 & \textit{0.05}                       & \cellcolor[HTML]{9AFF99}0.19 \\ \hline
+\end{tabular}
+\end{table}
 
-\pagebreak
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Open Transformations}
+\label{tbl:C-O}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                       & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-pentylbenzene & 2.36                                   & \textit{0.12}                       & -1.33                                & \textit{0.11}                       & \cellcolor[HTML]{FFCCC9}3.69 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.77                                   & \textit{0.09}                       & 0.34                                 & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}1.43 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-pentylbenzene & 2.45                                   & \textit{0.08}                       & 0.46                                 & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}1.99 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-pentylbenzene & 3.46                                   & \textit{0.08}                       & -0.22                                & \textit{0.08}                       & \cellcolor[HTML]{FFCCC9}3.68 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 4.13                                   & \textit{0.16}                       & -0.61                                & \textit{0.15}                       & \cellcolor[HTML]{FFCCC9}4.74 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 2.90                                   & \textit{0.14}                       & -1.63                                & \textit{0.08}                       & \cellcolor[HTML]{FFCCC9}4.53 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-hexylbenzene  & 3.63                                   & \textit{0.11}                       & -0.76                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}4.39 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-hexylbenzene  & 5.85                                   & \textit{0.10}                       & 0.13                                 & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}5.72 \\ \hline
+\end{tabular}
+
+  \textsuperscript{\emph{a}} Some text;
+  \textsuperscript{\emph{b}} Some more text.
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed to n-butylbenzene Transformations (Closed Protein)}
+\label{tbl:C-nbutyl_closed}
+\begin{tabular}{|c|c|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                      & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & \textbf{C-Exp Err}           \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.58                                   & \textit{0.07}                       & \cellcolor[HTML]{FFCCC9}2.09 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.28                                  & \textit{0.06}                       & \cellcolor[HTML]{9AFF99}0.90 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.24                                   & \textit{0.07}                       & \cellcolor[HTML]{FFCCC9}1.18 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.99                                   & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}1.14 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed to n-butylbenzene Transformations (Open Protein)}
+\label{tbl:C-nbutyl_open}
+\begin{tabular}{|c|c|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                      & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{O-Exp Err}           \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.59                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.92 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -1.27                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.09 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.23                                & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.71 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.63                                 & \textit{0.04}                       & \cellcolor[HTML]{9AFF99}0.78 \\ \hline
+\end{tabular}
+\end{table}
+
+\clearpage
 
 \bibliography{references}
 \end{document}
