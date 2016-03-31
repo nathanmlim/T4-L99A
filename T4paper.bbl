@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{5}
+\begin{mcitethebibliography}{6}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -34,6 +34,15 @@ Boyce,~S.~E.; Mobley,~D.~L.; Rocklin,~G.~J.; Graves,~A.~P.; Dill,~K.~A.;
 Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
   \emph{Proceedings of the National Academy of Sciences} \textbf{2015},
   \emph{112}, 5039--5044\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2013)Wang, Deng, Knight, Wu, Kim, Sherman,
+  Shelley, Lin, and Abel]{FEP/REST}
+Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
+  Shelley,~J.~C.; Lin,~T.; Abel,~R. \emph{Journal of Chemical Theory and
+  Computation} \textbf{2013}, \emph{9}, 1282--1293, PMID: 26588769\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
