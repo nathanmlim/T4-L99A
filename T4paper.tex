@@ -50,47 +50,50 @@ Consideration of the protein adaptations into discrete conformations may be an i
 %Give them the conceptual tool to understand most of the work.
 %Drive back the main problem in default protocol.
 Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
-To illustrate this, we begin our molecular dynamics simulations from either the protein closed or open conformation and perform alchemical transformations to ligands that occupy the opposite protein conformational state.
+To illustrate this, we begin our molecular dynamics simulations from either the protein closed or open conformation and perform alchemical transformations to ligands that occupy the opposite protein conformational state. %DLM: Grammar preference for "both ... and" rather than "either .. or" (i.e. you tried both in all cases). 
 In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix is used to determine the conformational state of the protein over the course of the trajectory.
-Here, we demonstrate the standard 5ns simulation time and default REST region selection are insufficient for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.  
+Here, we demonstrate the standard 5ns simulation time and default REST region selection are insufficient for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.  %DLM: References to "the standard" keep throwing me off because I'm not used to referring to standards for these things. Maybe clarify occasionally "Schrodinger's standard" (?) or similar? Not necessarily on every use of "standard", but periodically.
 
 %P2: Discuss closed-open case to show the problem in default protocol
 An examination of the largest alchemical transformation, benzene to n-hexylbenzene, highlights the sampling problems faced when using the standard FEP/REST protocol.
 From experimental data of ligand occupancies (Table~\ref{tbl:loop-occ}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state over the closed state.
 Instead, we find the protein remains trapped in its initial conformational state whether we start from closed (Fig~\ref{fig:c_opls3_1/RMSD-replica11}) or open (Fig~\ref{fig:o_opls3_1/RMSD-replica11}) over the course of the 5ns trajectory.
 From the protein closed trajectory, the protein only begins to enter the intermediate state around 3ns but never enters the open conformation.
-As the protein strains to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results and is reflected in the positivity of $\Delta\Delta G_{calc}$(+4.13 kcal/mol)
-On the other hand, in the protein open trajectory, the protein already begins in its preferred state for n-hexylbenzene and stays only in this open state.
-Expectedly, the $\Delta\Delta G_{calc}$ comes out negative(-0.61 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity.
-Ultimately, we arrive at two very different relative free energies, where the discrepancy is a whopping +4.74 kcal/mol, for the same transformation of benzene to n-hexylbenzene\footnotemark.
-Collectively, when we view the discrepancy of all calculations involving closed-open transformations we find the root-mean-square-error (RMSE) to be +4 kcal/mol (Table~\ref{tbl:C-O}). 
+As the protein strains to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results and is reflected in the positivity of $\Delta\Delta G_{calc}$(+4.13 kcal/mol) %DLM: Simplify grammar? i.e., "results, yielding a positive value for ...." 
+On the other hand, in the protein open trajectory, the protein already begins in its preferred state for n-hexylbenzene and stays only in this open state. %DLM: "in the ... trajectory": There is more than one trajectory, right? Maybe you mean "in the simulations starting from the open structure"?
+Expectedly, the $\Delta\Delta G_{calc}$ comes out negative(-0.61 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity. %DLM: I don't like "expectedly," and I think the preferred choice is "As expected..." (Yes, I realize "unexpectedly" is normal, but for whatever reason "expectedly" is not normal usage).
+Ultimately, we arrive at two very different relative free energies, where the discrepancy is a whopping +4.74 kcal/mol, %DLM: We prefer to avoid editorializing in results, so "whopping" is probably out of place. You just say how big it is, and if needed, why that value is too big. If you want to say something more than "the discrepancy is +4.74 kcal/mol", you could say "... as large as 4.74 kcal/mol" or similar.
+ for the same transformation of benzene to n-hexylbenzene\footnotemark.
+Collectively, when we view the discrepancy of all calculations involving closed-open transformations we find the root-mean-square-error (RMSE) to be +4 kcal/mol (Table~\ref{tbl:C-O}).  %DLM may need to say error relative to what (i.e. this is like the RMS discrepancy or something, right?) Maybe should use RMSD and mention on first use that it will be used to measure the RMS deviation between trials starting from open and those starting from closed, and use RMSE for RMS error relative to experiment (when needed).
 Clearly, despite the use of FEP/REST, we are unable to adequately sample all the relevant states within the standard 5ns time frame, resulting in such large differences in $\Delta\Delta G_{calc}$.
 
 \footnotetext{It should be noted that the binding affinities of n-pentyl/n-hexylbenzene to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
 For cases involving these ligands, we only focus on the convergence of the calculated free energies between simulations starting from protein closed or open.}
 
 %P3: Discuss close-int case to show there is still a dependence even for small changes
-In the case of more moderate alchemical transformations, such as cases that involve the set of closed ligands (i.e. benzene to n-propylbenzene) to intermediate ligands (i.e. sec-/n-butylbenzene), we find that the calculated free energies still have a dependence on the initial protein conformation using the default protocol, albeit much smaller.
+In the case of more moderate alchemical transformations, such as cases that involve the set of closed ligands (i.e. benzene to n-propylbenzene) to intermediate ligands (i.e. sec-/n-butylbenzene), we find that the calculated free energies still have a dependence on the initial protein conformation using the default protocol, albeit much smaller. %DLM: Hanging "albeit much smaller" is a little confusing; consider putting it with the thing it modifies (i.e. "calculated free energies still have some (albeit much smaller) dependence on the..."). 
 For the set of transformations to the intermediate state, the discrepancy RMSE in $\Delta\Delta G_{calc}$ for protein closed versus open simulations is +0.60 kcal/mol (Table~\ref{tbl:C-I}). 
-Although, when we compare $\Delta\Delta G_{calc}$ against $\Delta\Delta G_{exp}$ for transformations involving n-butylbenzene, we find that simulations starting from the protein closed conformation are further from converging to $\Delta\Delta G_{exp}$ than when starting from the protein open conformation.
+However, when we compare $\Delta\Delta G_{calc}$ against $\Delta\Delta G_{exp}$ for transformations involving n-butylbenzene, we find that simulations starting from the protein closed conformation are further from converging to $\Delta\Delta G_{exp}$ than when starting from the protein open conformation.
 From the protein closed trajectories, the RMSE from $\Delta\Delta G_{exp}$ is +1.40 kcal/mol (Table~\ref{tbl:C-nbutyl_closed}) while the protein open trajectories have a RMSE of +0.70 kcal/mol (Table~\ref{tbl:C-nbutyl_open}).
-Based from experimental evidence (Table~\ref{tbl:loop-occ}), we should expect to see some sampling (~30\%) of the open conformation for the n-butylbenzene ligand.
+Based on experimental evidence (Table~\ref{tbl:loop-occ}), we should expect to see some sampling (~30\%) of the open conformation for the n-butylbenzene ligand if the calculations are converged.
 Evidently, the  $\Delta\Delta G_{calc}$ dependence on protein starting conformation is again from remaining trapped throughout the trajectory, resulting in inadequate sampling in the protein closed simulations (Fig.~\ref{fig:c_exp_opls3_11/RMSD-replica11}) versus the protein open simulations (Fig.~\ref{fig:o_exp_opls3_24/RMSD-replica11}).
+%DLM: Rewording needed in previous sentence. My brain parses it as a grammar error, i.e. that you're saying that the starting protein conformation remains trapped throughout 
 Despite performing much smaller alchemical transformations, we still encounter sampling problems, evident when making comparisons of the calculated free energies to experimental.
 
 \subsection*{REST improvements (pREST)}
 %P1: Recap problem, summarize solution and its effect
-Primarily, we encounter major sampling problems when we begin our simulations from the protein closed state and attempt to open the helix.
+Primarily, we encounter major sampling problems when we begin our simulations from the protein closed state and attempt to open the helix. %DLM: Minor clarification, it's not that we attempt to open the helix; we attempt a mutation which should result in the helix opening.
 In order to facilitate protein motion, we included 3 key residues spanning the F-helix region into the REST region, which we will denote simulations using this with pREST. %(see Methods for details?)
-By expanding the REST region, we are able to drive the F-helix out its initial state trap faster by locally heating up key regions and thereby reduce our problem in inadequate sampling.
+By expanding the REST region, we are able to drive the F-helix out its initial state trap faster by locally heating up key regions and thereby reduce our problem with inadequate sampling.
 
 %P2 REST improvement qualitatively
 To demonstrate the REST improvement over the default protocol, we return to the case of benzene to n-hexylbenzene.
 Here, we show the facilitation of the helix motion by first referring to Fig~\ref{fig:c_opls3_1/RMSD-replica11} which shows that there is no sampling of the open state for the default protocol.
-On the other hand with the pREST, we see a few open state points around 3ns and even a single open point before closing again after our initial timestep (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}.
+On the other hand with the pREST, we see a few open state points around 3ns and even a single open point before closing again after our initial timestep (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}. %DLM: "timestep" not the right word? 
 Alternatively, we can further illustrate the enhancement of protein transitions by viewing all replicas collectively. 
 In Fig~\ref{fig:c_opls3_1/colormap} and Fig~\ref{fig:c_opls3_rest1_1/colormap}, we perform the same RMSD analysis but instead represent each time point as a colored bar and no longer plot the raw RMSD.
 Visually, it is easy to see that there are far less transitions in default simulations (Fig~\ref{fig:c_opls3_1/colormap}) as opposed to pREST simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}).
+%Nice graphs! Will need axis/color labels though. But these are very helpful.
  
 %P3 REST improvement quantitatively in C-O and C-I sets
 Collectively, for all our closed/open and closed/intermediate transformations using pREST, we find only some minor improvements in the discrepancy RMSE and even cases where we perform worse.
@@ -101,20 +104,22 @@ This is indicative of the fact that pREST is indeed improving sampling, but it i
 \subsection*{Longer pREST simulations}
 %P1 Recap problem, summarize solution and effect
 Although we see improvements in sampling with pREST, the standard timeframe of 5ns clearly is not long enough completely capture the transition of closed to open in the helix.
-Here, we simulate 55ns for closed/open transformations and take the final 15ns of the simulation while for closed/intermediate we simulate 25ns and take the last 10ns of the simulation, discarding the initial time as additional equilibration time.
+Here, we simulate 55ns for closed/open transformations and take the final 15ns of the simulation while for closed/intermediate we simulate 25ns and take the last 10ns of the simulation, discarding the initial time as additional equilibration time. %DLM: SOmewhere - not necessarily here - you'll want to explain why these choices for times were made. 
 In simply running longer, we allow our simulations to perform more exchanges across replicas and thereby allow for better sampling of all conformational states.
 
 %P2 Longer simulation improvements qualitatively
 Returning to our most extreme transformation, benzene to n-hexylbenzene, we have shown pREST alone does not allow for adequate sampling of the open state (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}).
 Now, when we run much longer we see far more frequent transitions between all the protein conformational states in the final 10ns window (Fig~\ref{fig:c_opls3_rest1_1/45-55ns/RMSD-replica11}).
 In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we illustrate the dramatic increase in protein conformational transitions in stark contrast of our 5ns simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}). 
+%DLM: If I were reviewing this I would ask if it's really that the transitions are more frequent, or if it's that you have the other protein conformation present in some replicas (lambda values) and it is walking between lambda values. That is to say, do you actually see the protein transitioning more often, or do you just see more frequent appearance of the open conformation in simulations? (This can be deconvoluted rigorously, it turns out; we may want to talk about this aspect.) 
 
 %P3 Longer simulation improvements quantitatively
 By simulating longer with pREST we dramatically increase our sampling and almost entirely eliminate the dependence on the initial protein conformational state.
 For the set of closed/open transformations the discrepancy RMSE dramatically falls to +0.57 kcal/mol (Table ~\ref{tbl:C-O_pREST-40-55ns}).
-In the set of closed/intermediate transformations, only a few cases required additional simulation time, after doing so we obtain an overall RMSE of +0.42 kcal/mol (Table ~\ref{tbl:C-I_pRESText}).
+In the set of closed/intermediate transformations, only a few cases required additional simulation time, after doing so we obtain an overall RMSE of +0.42 kcal/mol (Table ~\ref{tbl:C-I_pRESText}). %DLM: Additional in addition to what? 5 ns per window? And is this the ~50 ns additional time, or something else? 
 There still remains some discrepancy between $\Delta\Delta G_{calc}$ from protein open or closed simulations, but it now falls within a much more reasonable range of less than +1kcal/mol. 
  
+ %DLM: I'm not looking at discussion yet. Should I be? 
 \section{Discussion}
 \subsection*{Sensitivity to initial protein conformational state}
 Here, we found that relative free energy calculations can suffer from substantial convergence problems resulting from relatively modest protein conformational changes.
