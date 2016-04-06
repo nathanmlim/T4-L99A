@@ -18,14 +18,20 @@
 \end{itemize}
 
 \section*{Potential Journals}
+\begin{itemize}
+   \item Journal of Chemical Theory and Computation (H-index: 94)
+   \item Journal of Computational Chemistry (H-index: 139) 
+   \item Journal of Physical Chemistry B. (H-index: 295)
+   \item Journal of American Chemical Society (H-index: 412)
+\end{itemize}
 
 \section*{Objectives}
 \begin{itemize}
    \item Assess convergence of relative free energy calculations involving modest amounts of protein conformational change
-   \item Assess the implications of protein sampling challenges for accuracy of relative free energy calculations
-   \item Highlight how even modest ligand changes can induce conformational changes in ``rigid'' proteins which pose significant sampling challenges
-   \item  Test how well we can model and capture protein conformational change in the T4 Lysozyme L99A apolar cavity (?) %Maybe same as above
-   \item Accurately predict relative binding free energies while sampling protein conformational changes. %Seems like a possible outcome and less an objective
+   \item Assess the implication of protein sampling challenges for accuracy of relative free energy calculations
+   \item Highlight how even modest ligand changes can induce conformational changes in "rigid" proteins which pose significant sampling challenges
+   \item Test how well we can model and capture protein conformational change in the T4 Lysozyme L99A apolar cavity
+   \item Accurately predict relative binding free energies while sampling protein conformational changes
    \item Compare performance of FEP plus \cite{FEPplus} and LigandFEP.
    \item Compare performance of OPLS2005 and OPLS3 forcefield parameters.
    \item Highlight improvement to FEP/REST \cite{REST2} method by inclusion of protein atoms.
@@ -96,8 +102,13 @@ Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to so
 Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rises linearly.
 
 \section{Discussion}
-\subsection{Sensitivity to initial protein conformational state}
-By looking at cases that involve a conformation change in the protein, we see a large dependence of the final predicted ddG on the initial protein conformational state.
+\subsection*{Sensitivity to initial protein conformational state}
+Here, we found that relative free energy calculations can suffer from substantial convergence problems resulting from relatively modest protein conformational changes.
+These problems have profound implications for the accuracy of computed relative free energies in these cases. 
+Particularly, we find that calculated relative free energies depend on the initial protein conformational state by up to 4 kcal/mol. 
+Even with simulations of up to 55ns per lambda window, far more than is typically used in the 5ns standard protocol for these calculations, we do not completely converge our calculated relative free energies.
+ 
+By looking at cases that involve a conformation change in the protein, we can clearly see the large dependence of the final predicted ddG on the initial protein conformational state.
 These cases are when the alchemical transformation involves changing ligands that primarily occupy the closed state into ligands that occupy the intermediate or open states. (See ligand/loop occupancy table)
 Despite use of FEP/REST, free energy predictions when starting from the protein closed or open conformational state, were unable to converge to the same predicted ddG.
 Visualization of these simulations (ex. closed ligands to open ligands) show the protein remains trapped in its initial state.
@@ -129,9 +140,12 @@ This demonstrates that special attention and care should be exercised in binding
 %Word-smithing wise, be sure to see the Plaxco science writing paper if you've not already read it: https://www.dropbox.com/s/hmxdcl100wdf9dr/Plaxco_-Protein%20Science.pdf?dl=0
 %Caitlin found the suggestions there useful enough - particularly the one about each paragraph having a point and the first sentence summarizing it - that she started writing comments into her LaTeX where there is a one-liner before each paragraph which summarizes what the paragraph is supposed to do. YMMV, but the general idea is very helpful for writing. 
       
-\subsection{Inclusion of protein atoms into the REST region (pREST)}
+\subsection*{Inclusion of protein atoms into the REST region (pREST)}
 In order to get the protein out of its trapped initial state, we included residues from the F-helix into the REST region.
-Inclusion of residues into the REST region would allow for faster transitions between states by effectively heating up key regions in the F-helix.
+Inclusion of residues into the REST region was expected to allow for faster transitions between states by effectively heating up key regions in the F-helix.
+Indeed in most cases, we found that this improved the time and frequency to transition between conformational states.
+But in cases of large alchemical transformations, this was still inadequate to entirely eliminate the dependence on the starting protein conformational state, even with simulations of up to 55ns.
+
 Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
 At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states. 
 Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions. 
@@ -151,8 +165,8 @@ In making these transitions, the protein also experiences strain as the tail pus
 ***Compare pREST runs with default REST in order to show that pREST allows for the protein to get of being trapped in its initial state.\\
 
 Here we have shown pREST allows for more motion in the helix in comparison to the default REST protocol.
-Although there is a reduction in the disrepancy, it is still fairly large (+1.37 kcal/mol).
-Thus, we cannot say these are converged; a result from inadequate sampling of all the protein conformational states. %DLM: the "a result from..." reference is unclear. Do you mean "this poor convergence results from..."?
+Although there is a reduction in the discrepancy, it is still fairly large (+1.37 kcal/mol).
+Thus, we cannot say these are converged, where this poor convergence results from inadequate sampling of all the protein conformational states.
 Such is the case of closed pREST simulations of n-hexylbenzene, where we only see a partial opening of the helix.
 Similarly, in open pREST simulations with n-hexylbenzene, the helix does not enter the closed conformation.
 Where as it is expected to at least partially occupy the closed state, according to the loop/ligand occupancy table.
@@ -170,7 +184,7 @@ Despite adjustments to FEP/REST and longer simulations where we only take the la
 It is much easier to do so by performing smaller perturbations and/or running longer simulations. %DLM: How does ``smaller perturbations'' help? Isn't the problem an issue more of "at what point does the protein start to change conformation?" rather than "how big is the perturbation?" i.e. maybe just one methyl addition can be a problem if it's the right methyl, right?
 But this is may not always be feasible in industrial medicinal chemistry programs, where as ligands grow more drug-like they typically increase in size and complexity.
 As a result of increased complexity, FEP calculations commonly require large insertions and deletions of atoms.
-Thereby, requiring much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries. %Grammar, not a complete sentence.
+In turn, this would require much longer simulation times or additional computational power, which are not desirable factors when working with large ligand libraries.
 
 \section{Concluding Thoughts}
 Overall, we have shown that identification of discrete protein conformational states is an important factor to consider in inhibitor design.

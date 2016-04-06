@@ -1,0 +1,955 @@
+# VMD for LINUXAMD64, version 1.9.2 (December 29, 2014)
+# Log file '/home/limn1/Documents/T4-L99A/VMDscripts/loadxtals.log', created by user limn1
+menu files off
+menu files on
+display resetview
+mol addrep 0
+display resetview
+mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W53_toluene_closed.mae} type {mae} first 0 last -1 step 1 waitfor 1
+animate style Loop
+display resetview
+mol addrep 1
+display resetview
+mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W57_nbutyl_int.mae} type {mae} first 0 last -1 step 1 waitfor 1
+animate style Loop
+display resetview
+mol addrep 2
+display resetview
+mol new {/media/limn1/SG1TB/Projects/LigFEP_T4/COMPLETE_SETUP/input_structures/prepped_PDB/4W59_nhexyl_open.mae} type {mae} first 0 last -1 step 1 waitfor 1
+animate style Loop
+menu graphics off
+menu graphics on
+mol color Name
+mol representation Lines 1.000000
+mol selection resid 104 to 120
+mol material Opaque
+mol modrep 0 0
+mol modstyle 0 0 NewRibbons 0.300000 12.000000 3.000000 0
+mol modcolor 0 0 ColorID 0
+mol modcolor 0 0 ColorID 11
+mol modcolor 0 1 ColorID 11
+mol modcolor 0 1 ColorID 10
+mol modstyle 0 1 NewRibbons 0.300000 12.000000 3.000000 0
+mol modselect 0 1 resid 104 to 120
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 0.666667
+rotate z by 0.266667
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 2.000000
+rotate z by 0.800000
+rotate z by 3.000000
+rotate z by 1.200000
+rotate z by 4.000000
+rotate z by 1.600000
+rotate z by 0.666667
+rotate z by 0.266667
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 1.000000
+rotate z by 0.400000
+rotate z by 0.333333
+rotate z by 0.133333
+rotate z by -1.000000
+rotate z by -0.400000
+rotate z by -1.000000
+rotate z by -0.400000
+rotate z by -2.000000
+rotate z by -0.800000
+rotate z by -2.000000
+rotate z by -0.800000
+rotate z by -4.666667
+rotate z by -1.866667
+rotate z by -5.333333
+rotate z by -2.133333
+rotate z by -6.333333
+rotate z by -2.533334
+rotate z by -6.666667
+rotate z by -2.666667
+rotate z by -6.333333
+rotate z by -2.533334
+rotate z by -5.000000
+rotate z by -2.000000
+rotate z by -1.666667
+rotate z by -0.666667
+rotate z by -0.333333
+rotate z by -0.133333
+rotate z by -0.333333
+rotate z by -0.133333
+rotate z by 0.666667
+rotate z by 0.266667
+rotate z by 0.333333
+rotate z by 0.133333
+rotate z by 0.666667
+rotate z by 0.266667
+rotate z by 0.333333
+rotate z by 0.133333
+rotate z by 0.666667
+rotate z by 0.266667
+rotate z by 2.000000
+rotate z by 0.800000
+rotate z by 1.666667
+rotate z by 0.666667
+rotate z by 1.333333
+rotate z by 0.533333
+rotate z by 0.333333
+rotate z by 0.133333
+rotate z by 0.333333
+rotate z by 0.133333
+mol modcolor 0 2 ColorID 10
+mol modcolor 0 2 ColorID 7
+mol modstyle 0 2 NewRibbons 0.300000 12.000000 3.000000 0
+mol modselect 0 2 resid 104 to 120
+mol color ColorID 7
+mol representation NewRibbons 0.300000 12.000000 3.000000 0
+mol selection resid 104 to 120
+mol material Opaque
+mol modrep 0 2
+menu graphics off
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate x by 0.266667
+rotate x by 0.333333
+rotate y by 0.333333
+rotate x by 0.133333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate y by 0.333333
+rotate x by 0.133333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate y by 0.333333
+rotate x by 0.266667
+rotate y by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 1.000000
+rotate y by 1.000000
+rotate x by 0.400000
+rotate y by 0.400000
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.333333
+rotate x by 0.266667
+rotate y by 0.133333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 1.333333
+rotate x by 0.266667
+rotate y by 0.533333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 1.000000
+rotate y by 0.666667
+rotate x by 0.400000
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 1.000000
+rotate x by 0.266667
+rotate y by 0.400000
+rotate x by 1.333333
+rotate y by 0.666667
+rotate x by 0.533333
+rotate y by 0.266667
+rotate x by 1.000000
+rotate y by 0.666667
+rotate x by 0.400000
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.333333
+rotate x by 0.133333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 1.666667
+rotate x by 0.266667
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.666667
+rotate x by 0.133333
+rotate y by 0.666667
+rotate x by 0.666667
+rotate y by 2.000000
+rotate x by 0.266667
+rotate y by 0.800000
+rotate x by 0.666667
+rotate y by 1.333333
+rotate x by 0.266667
+rotate y by 0.533333
+rotate x by 0.666667
+rotate y by 1.666667
+rotate x by 0.266667
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.666667
+rotate x by 0.133333
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.000000
+rotate x by 0.133333
+rotate y by 0.400000
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 1.333333
+rotate y by 0.533333
+rotate y by 1.666667
+rotate y by 0.666667
+rotate y by 0.333333
+rotate y by 0.133333
+translate by 0.000000 -0.010000 0.000000
+translate by 0.000000 -0.010000 0.000000
+translate by 0.000000 -0.010000 0.000000
+translate by 0.000000 -0.020000 0.000000
+translate by 0.000000 -0.050000 0.000000
+translate by 0.020000 -0.020000 0.000000
+translate by 0.010000 -0.020000 0.000000
+translate by 0.010000 -0.000000 0.000000
+translate by 0.010000 -0.010000 0.000000
+translate by 0.000000 -0.010000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.010000 -0.010000 0.000000
+translate by 0.020000 -0.000000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.030000 -0.020000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.020000 -0.010000 0.000000
+translate by 0.020000 -0.000000 0.000000
+translate by 0.020000 -0.000000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.040000 -0.000000 0.000000
+translate by 0.030000 -0.000000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.020000 -0.010000 0.000000
+translate by 0.040000 -0.020000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.020000 -0.010000 0.000000
+translate by -0.030000 -0.000000 0.000000
+translate by -0.020000 -0.000000 0.000000
+translate by -0.030000 0.020000 0.000000
+translate by -0.030000 0.010000 0.000000
+translate by -0.050000 0.020000 0.000000
+translate by -0.020000 -0.000000 0.000000
+translate by -0.010000 -0.000000 0.000000
+translate by -0.010000 -0.000000 0.000000
+translate by -0.020000 -0.000000 0.000000
+translate by -0.010000 -0.000000 0.000000
+translate by 0.000000 0.010000 0.000000
+translate by -0.010000 -0.000000 0.000000
+translate by 0.000000 0.010000 0.000000
+translate by -0.010000 0.010000 0.000000
+translate by -0.010000 0.010000 0.000000
+translate by -0.010000 0.010000 0.000000
+translate by 0.000000 0.010000 0.000000
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.666667
+rotate y by -0.266667
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.666667
+rotate y by -0.266667
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -1.333333
+rotate y by -0.533333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.030000
+translate by 0.000000 0.000000 -0.020000
+translate by 0.000000 0.000000 -0.010000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.040000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.040000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.010000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.020000
+translate by 0.000000 0.000000 0.040000
+translate by 0.000000 0.000000 0.030000
+translate by 0.000000 0.000000 0.040000
+translate by 0.000000 0.000000 0.010000
+display resetview
+translate by 0.030000 -0.000000 0.000000
+translate by 0.020000 -0.010000 0.000000
+translate by 0.010000 -0.010000 0.000000
+translate by 0.050000 -0.010000 0.000000
+translate by 0.040000 -0.020000 0.000000
+translate by 0.030000 -0.020000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.070000 -0.020000 0.000000
+translate by 0.060000 -0.020000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.040000 -0.010000 0.000000
+translate by 0.030000 -0.010000 0.000000
+translate by 0.020000 -0.010000 0.000000
+translate by 0.010000 -0.000000 0.000000
+translate by -0.030000 -0.000000 0.000000
+translate by -0.020000 -0.000000 0.000000
+translate by -0.050000 0.020000 0.000000
+translate by -0.160000 0.040000 0.000000
+translate by -0.190000 0.050000 0.000000
+translate by -0.200000 0.030000 0.000000
+translate by -0.210000 0.040000 0.000000
+translate by -0.020000 0.010000 0.000000
+translate by -0.010000 -0.000000 0.000000
+translate by 0.000000 0.010000 0.000000
+translate by -0.010000 -0.000000 0.000000
+display resetview
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.333333
+rotate x by 0.133333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate y by 0.666667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 1.000000
+rotate x by 0.266667
+rotate y by 0.400000
+rotate x by 0.666667
+rotate y by 1.666667
+rotate x by 0.266667
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.333333
+rotate x by 0.133333
+rotate y by 0.533333
+rotate x by 0.333333
+rotate y by 1.000000
+rotate x by 0.133333
+rotate y by 0.400000
+rotate x by 0.333333
+rotate y by 1.000000
+rotate x by 0.133333
+rotate y by 0.400000
+rotate x by 0.666667
+rotate y by 1.000000
+rotate x by 0.266667
+rotate y by 0.400000
+rotate y by 0.666667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.333333
+rotate y by 1.333333
+rotate x by 0.133333
+rotate y by 0.533333
+rotate x by 0.333333
+rotate y by 1.000000
+rotate x by 0.133333
+rotate y by 0.400000
+rotate x by 1.000000
+rotate y by 1.666667
+rotate x by 0.400000
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.666667
+rotate x by 0.133333
+rotate y by 0.666667
+rotate x by 0.333333
+rotate y by 1.666667
+rotate x by 0.133333
+rotate y by 0.666667
+rotate y by 1.333333
+rotate y by 0.533333
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate x by -0.666667
+rotate y by 0.666667
+rotate x by -0.266667
+rotate y by 0.266667
+rotate x by -0.333333
+rotate y by 0.666667
+rotate x by -0.133333
+rotate y by 0.266667
+rotate x by -0.333333
+rotate y by 0.666667
+rotate x by -0.133333
+rotate y by 0.266667
+rotate x by -0.666667
+rotate y by 1.000000
+rotate x by -0.266667
+rotate y by 0.400000
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 2.333333
+rotate y by 0.933333
+rotate y by 1.000000
+rotate y by 0.400000
+rotate y by 1.000000
+rotate y by 0.400000
+rotate x by -0.666667
+rotate y by 1.333333
+rotate x by -0.266667
+rotate y by 0.533333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.666667
+rotate x by 0.266667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate y by 0.666667
+rotate x by 0.133333
+rotate y by 0.266667
+rotate x by 0.666667
+rotate y by 0.333333
+rotate x by 0.266667
+rotate y by 0.133333
+rotate x by 1.000000
+rotate y by 0.333333
+rotate x by 0.400000
+rotate y by 0.133333
+rotate x by 1.333333
+rotate y by 0.333333
+rotate x by 0.533333
+rotate y by 0.133333
+rotate x by 2.000000
+rotate y by 0.333333
+rotate x by 0.800000
+rotate y by 0.133333
+rotate x by 1.333333
+rotate x by 0.533333
+rotate x by 2.000000
+rotate x by 0.800000
+rotate x by 1.333333
+rotate x by 0.533333
+rotate x by 1.000000
+rotate x by 0.400000
+rotate x by 1.000000
+rotate x by 0.400000
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.333333
+rotate y by -0.666667
+rotate x by 0.133333
+rotate y by -0.266667
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.666667
+rotate x by 0.266667
+rotate x by 1.666667
+rotate y by -1.000000
+rotate x by 0.666667
+rotate y by -0.400000
+rotate x by 2.000000
+rotate y by -0.333333
+rotate x by 0.800000
+rotate y by -0.133333
+rotate x by 2.000000
+rotate y by -0.666667
+rotate x by 0.800000
+rotate y by -0.266667
+rotate x by 1.666667
+rotate y by -0.666667
+rotate x by 0.666667
+rotate y by -0.266667
+rotate x by 1.000000
+rotate y by -0.333333
+rotate x by 0.400000
+rotate y by -0.133333
+rotate x by 0.666667
+rotate x by 0.266667
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate x by 0.333333
+rotate x by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate x by -1.000000
+rotate y by 0.666667
+rotate x by -0.400000
+rotate y by 0.266667
+rotate x by -1.666667
+rotate y by 1.000000
+rotate x by -0.666667
+rotate y by 0.400000
+rotate x by -2.666667
+rotate y by 2.000000
+rotate x by -1.066667
+rotate y by 0.800000
+rotate x by -1.666667
+rotate y by 1.000000
+rotate x by -0.666667
+rotate y by 0.400000
+rotate x by -1.333333
+rotate y by 1.000000
+rotate x by -0.533333
+rotate y by 0.400000
+rotate x by -1.333333
+rotate y by 0.666667
+rotate x by -0.533333
+rotate y by 0.266667
+rotate x by -1.333333
+rotate y by 0.666667
+rotate x by -0.533333
+rotate y by 0.266667
+rotate x by -1.000000
+rotate y by 0.666667
+rotate x by -0.400000
+rotate y by 0.266667
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -1.333333
+rotate y by 0.666667
+rotate x by -0.533333
+rotate y by 0.266667
+rotate x by -1.333333
+rotate y by 1.000000
+rotate x by -0.533333
+rotate y by 0.400000
+rotate x by -1.333333
+rotate y by 0.333333
+rotate x by -0.533333
+rotate y by 0.133333
+rotate x by -1.333333
+rotate y by 1.000000
+rotate x by -0.533333
+rotate y by 0.400000
+rotate x by -1.666667
+rotate y by 0.666667
+rotate x by -0.666667
+rotate y by 0.266667
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -1.000000
+rotate x by -0.400000
+rotate x by -0.333333
+rotate x by -0.133333
+rotate x by -0.333333
+rotate x by -0.133333
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate x by -0.333333
+rotate y by -0.333333
+rotate x by -0.133333
+rotate y by -0.133333
+rotate y by -0.666667
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -1.000000
+rotate x by -0.133333
+rotate y by -0.400000
+rotate x by -0.333333
+rotate y by -1.333333
+rotate x by -0.133333
+rotate y by -0.533333
+rotate x by -0.333333
+rotate y by -1.333333
+rotate x by -0.133333
+rotate y by -0.533333
+rotate y by -3.000000
+rotate y by -1.200000
+rotate x by -0.333333
+rotate y by -2.333333
+rotate x by -0.133333
+rotate y by -0.933333
+rotate x by -0.333333
+rotate y by -2.000000
+rotate x by -0.133333
+rotate y by -0.800000
+rotate y by -1.666667
+rotate y by -0.666667
+rotate y by -1.000000
+rotate y by -0.400000
+rotate y by -1.000000
+rotate y by -0.400000
+rotate y by -1.000000
+rotate y by -0.400000
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate y by -0.333333
+rotate y by -0.133333
+rotate y by -0.333333
+rotate y by -0.133333
+rotate x by -0.333333
+rotate y by -0.333333
+rotate x by -0.133333
+rotate y by -0.133333
+rotate y by -0.666667
+rotate y by -0.266667
+rotate y by -0.333333
+rotate y by -0.133333
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate y by -0.666667
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -0.666667
+rotate x by -0.133333
+rotate y by -0.266667
+rotate y by -0.666667
+rotate y by -0.266667
+rotate x by -0.333333
+rotate y by -0.333333
+rotate x by -0.133333
+rotate y by -0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate x by -0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -0.666667
+rotate y by 0.666667
+rotate x by -0.266667
+rotate y by 0.266667
+rotate x by -0.666667
+rotate y by 0.333333
+rotate x by -0.266667
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.666667
+rotate x by -0.133333
+rotate y by 0.266667
+rotate x by -1.000000
+rotate y by 0.333333
+rotate x by -0.400000
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate x by -0.666667
+rotate y by 0.333333
+rotate x by -0.266667
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate y by 0.333333
+rotate x by -0.133333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by -0.333333
+rotate x by -0.133333
+rotate y by 0.666667
+rotate y by 0.266667
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate y by 0.333333
+rotate y by 0.133333
+rotate x by 0.666667
+rotate x by 0.266667
+rotate x by 0.333333
+rotate x by 0.133333
+rotate x by 0.333333
+rotate x by 0.133333
+# VMD for LINUXAMD64, version 1.9.2 (December 29, 2014)
+# end of log file.
