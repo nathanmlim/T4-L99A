@@ -32,28 +32,19 @@ eprint = {
 }
 }
 
-@article{FEP/REST,
-author = {Lingle Wang and Yuqing Deng and Jennifer L. Knight and Yujie Wu and Byungchan Kim and Woody Sherman and John C. Shelley and Teng Lin and Robert Abel},
-title = {Modeling Local Structural Rearrangements Using FEP/REST: Application to Relative Binding Affinity Predictions of CDK2 Inhibitors},
-journal = {Journal of Chemical Theory and Computation},
-volume = {9},
-number = {2},
-pages = {1282-1293},
-year = {2013},
-doi = {10.1021/ct300911a},
-    note ={PMID: 26588769},
-
-URL = { 
-        http://dx.doi.org/10.1021/ct300911a
-    
-},
-eprint = { 
-        http://dx.doi.org/10.1021/ct300911a
-    
+@article{REST,
+author = {Liu, Pu and Kim, Byungchan and Friesner, Richard A. and Berne, B. J.}, 
+title = {Replica exchange with solute tempering: A method for sampling biological systems in explicit water},
+volume = {102}, 
+number = {39}, 
+pages = {13749-13754}, 
+year = {2005}, 
+doi = {10.1073/pnas.0506346102}, 
+abstract ={An innovative replica exchange (parallel tempering) method called replica exchange with solute tempering (REST) for the efficient sampling of aqueous protein solutions is presented here. The method bypasses the poor scaling with system size of standard replica exchange and thus reduces the number of replicas (parallel processes) that must be used. This reduction is accomplished by deforming the Hamiltonian function for each replica in such a way that the acceptance probability for the exchange of replica configurations does not depend on the number of explicit water molecules in the system. For proof of concept, REST is compared with standard replica exchange for an alanine dipeptide molecule in water. The comparisons confirm that REST greatly reduces the number of CPUs required by regular replica exchange and increases the sampling efficiency. This method reduces the CPU time required for calculating thermodynamic averages and for the ab initio folding of proteins in explicit water.}, 
+URL = {http://www.pnas.org/content/102/39/13749.abstract}, 
+eprint = {http://www.pnas.org/content/102/39/13749.full.pdf}, 
+journal = {Proceedings of the National Academy of Sciences of the United States of America} 
 }
-
-}
-
 @article{REST2,
 author = {Lingle Wang and Richard A. Friesner and B. J. Berne},
 title = {Replica Exchange with Solute Scaling: A More Efficient Version of Replica Exchange with Solute Tempering (REST2)},
@@ -75,6 +66,42 @@ eprint = {
 }
 
 }
+@article{FEP/REST,
+author = {Wang, Lingle and Berne, B. J. and Friesner, Richard A.}, 
+title = {On achieving high accuracy and reliability in the calculation of relative protein–ligand binding affinities},
+volume = {109}, 
+number = {6}, 
+pages = {1937-1942}, 
+year = {2012}, 
+doi = {10.1073/pnas.1114017109}, 
+abstract ={We apply a free energy perturbation simulation method, free energy perturbation/replica exchange with solute tempering, to two modifications of protein–ligand complexes that lead to significant conformational changes, the first in the protein and the second in the ligand. The approach is shown to facilitate sampling in these challenging cases where high free energy barriers separate the initial and final conformations and leads to superior convergence of the free energy as demonstrated both by consistency of the results (independence from the starting conformation) and agreement with experimental binding affinity data. The second case, consisting of two neutral thrombin ligands that are taken from a recent medicinal chemistry program for this interesting pharmaceutical target, is of particular significance in that it demonstrates that good results can be obtained for large, complex ligands, as opposed to relatively simple model systems. To achieve quantitative agreement with experiment in the thrombin case, a next generation force field, Optimized Potentials for Liquid Simulations 2.0, is required, which provides superior charges and torsional parameters as compared to earlier alternatives.}, 
+URL = {http://www.pnas.org/content/109/6/1937.abstract}, 
+eprint = {http://www.pnas.org/content/109/6/1937.full.pdf}, 
+journal = {Proceedings of the National Academy of Sciences} 
+}
+
+@article{FEP/RESTapp,
+author = {Lingle Wang and Yuqing Deng and Jennifer L. Knight and Yujie Wu and Byungchan Kim and Woody Sherman and John C. Shelley and Teng Lin and Robert Abel},
+title = {Modeling Local Structural Rearrangements Using FEP/REST: Application to Relative Binding Affinity Predictions of CDK2 Inhibitors},
+journal = {Journal of Chemical Theory and Computation},
+volume = {9},
+number = {2},
+pages = {1282-1293},
+year = {2013},
+doi = {10.1021/ct300911a},
+    note ={PMID: 26588769},
+
+URL = { 
+        http://dx.doi.org/10.1021/ct300911a
+    
+},
+eprint = { 
+        http://dx.doi.org/10.1021/ct300911a
+    
+}
+
+}
+
 @article{Boyce2009,
 title = "Predicting Ligand Binding Affinity with Alchemical Free Energy Methods in a Polar Model Binding Site ",
 journal = "Journal of Molecular Biology ",
@@ -93,3 +120,152 @@ keywords = "T4 lysozyme",
 keywords = "model cavity site",
 keywords = "hydrophobic and polar "
 }
+
+﻿@Article{LOMAP,
+author="Liu, Shuai
+and Wu, Yujie
+and Lin, Teng
+and Abel, Robert
+and Redmann, Jonathan P.
+and Summa, Christopher M.
+and Jaber, Vivian R.
+and Lim, Nathan M.
+and Mobley, David L.",
+title="Lead optimization mapper: automating free energy calculations for lead optimization",
+journal="Journal of Computer-Aided Molecular Design",
+year="2013",
+volume="27",
+number="9",
+pages="755--770",
+abstract="Alchemical free energy calculations hold increasing promise as an aid to drug discovery efforts. However, applications of these techniques in discovery projects have been relatively few, partly because of the difficulty of planning and setting up calculations. Here, we introduce lead optimization mapper, LOMAP, an automated algorithm to plan efficient relative free energy calculations between potential ligands within a substantial library of perhaps hundreds of compounds. In this approach, ligands are first grouped by structural similarity primarily based on the size of a (loosely defined) maximal common substructure, and then calculations are planned within and between sets of structurally related compounds. An emphasis is placed on ensuring that relative free energies can be obtained between any pair of compounds without combining the results of too many different relative free energy calculations (to avoid accumulation of error) and by providing some redundancy to allow for the possibility of error and consistency checking and provide some insight into when results can be expected to be unreliable. The algorithm is discussed in detail and a Python implementation, based on both Schr{\"o}dinger's and OpenEye's APIs, has been made available freely under the BSD license.",
+issn="1573-4951",
+doi="10.1007/s10822-013-9678-y",
+url="http://dx.doi.org/10.1007/s10822-013-9678-y"
+}
+
+Schrödinger Release 2015-3: Desmond Molecular Dynamics System, version 4.3, D. E. Shaw Research, New York, NY, 2015. Maestro-Desmond Interoperability Tools, version 4.3, Schrödinger, New York, NY, 2015.
+@Misc{DESMONDSoftware,
+author={{D.E. Shaw Research, Schr\"{o}dinger}},
+title={Schr\"{o}dinger Release 2015-3: Desmond Molecular Dynamics System},
+version={4.3},
+address={New York, NY},
+year={2015}
+}
+@article{DESMONDPaper1,
+author = {Devleena Shivakumar and Joshua Williams and Yujie Wu and Wolfgang Damm and John Shelley and Woody Sherman},
+title = {Prediction of Absolute Solvation Free Energies using Molecular Dynamics Free Energy Perturbation and the OPLS Force Field},
+journal = {Journal of Chemical Theory and Computation},
+volume = {6},
+number = {5},
+pages = {1509-1519},
+year = {2010},
+doi = {10.1021/ct900587b},
+    note ={PMID: 26615687},
+
+URL = { 
+        http://dx.doi.org/10.1021/ct900587b
+    
+},
+eprint = { 
+        http://dx.doi.org/10.1021/ct900587b
+    
+}
+}
+
+
+﻿@article {DESMONDPaper2,
+author = {Guo, Zuojun and Mohanty, Udayan and Noehre, Justin and Sawyer, Tomi K. and Sherman, Woody and Krilov, Goran},
+title = {Probing the α-Helical Structural Stability of Stapled p53 Peptides: Molecular Dynamics Simulations and Analysis},
+journal = {Chemical Biology & Drug Design},
+volume = {75},
+number = {4},
+publisher = {Blackwell Publishing Ltd},
+issn = {1747-0285},
+url = {http://dx.doi.org/10.1111/j.1747-0285.2010.00951.x},
+doi = {10.1111/j.1747-0285.2010.00951.x},
+pages = {348--359},
+keywords = {circular dichroism, drug design, hDM2, molecular dynamic simulations, p53, protein–protein interfaces, stapled peptide, α-helicity},
+year = {2010},
+}
+
+
+Schrödinger Release 2015-3: Maestro, version 10.3, Schrödinger, LLC, New York, NY, 2015.
+@Misc{Maestro,
+author={{Schr\"{o}dinger}},
+title={Schr\"{o}dinger Release 2015-3: Maestro},
+version={10.3},
+address={New York, NY},
+year={2015}
+}
+
+Schrödinger Release 2015-3: Schrödinger Suite 2015-3 Protein Preparation Wizard; Epik version 3.3, Schrödinger, LLC, New York, NY, 2015; Impact version 6.8, Schrödinger, LLC, New York, NY, 2015; Prime version 4.1, Schrödinger, LLC, New York, NY, 2015.
+@Misc{ProteinPrepWizSoftware,
+author={{Schr\"{o}dinger}},
+title={Schr\"{o}dinger Release 2015-3: Schr\"{o}dinger Suite 2015-3 Protein Preparation Wizard},
+address={New York, NY},
+year={2015}
+}
+﻿@Article{ProteinPrepWizPaper,
+author="Madhavi Sastry, G.
+and Adzhigirey, Matvey
+and Day, Tyler
+and Annabhimoju, Ramakrishna
+and Sherman, Woody",
+title="Protein and ligand preparation: parameters, protocols, and influence on virtual screening enrichments",
+journal="Journal of Computer-Aided Molecular Design",
+year="2013",
+volume="27",
+number="3",
+pages="221--234",
+abstract="Structure-based virtual screening plays an important role in drug discovery and complements other screening approaches. In general, protein crystal structures are prepared prior to docking in order to add hydrogen atoms, optimize hydrogen bonds, remove atomic clashes, and perform other operations that are not part of the x-ray crystal structure refinement process. In addition, ligands must be prepared to create 3-dimensional geometries, assign proper bond orders, and generate accessible tautomer and ionization states prior to virtual screening. While the prerequisite for proper system preparation is generally accepted in the field, an extensive study of the preparation steps and their effect on virtual screening enrichments has not been performed. In this work, we systematically explore each of the steps involved in preparing a system for virtual screening. We first explore a large number of parameters using the Glide validation set of 36 crystal structures and 1,000 decoys. We then apply a subset of protocols to the DUD database. We show that database enrichment is improved with proper preparation and that neglecting certain steps of the preparation process produces a systematic degradation in enrichments, which can be large for some targets. We provide examples illustrating the structural changes introduced by the preparation that impact database enrichment. While the work presented here was performed with the Protein Preparation Wizard and Glide, the insights and guidance are expected to be generalizable to structure-based virtual screening with other docking methods.",
+issn="1573-4951",
+doi="10.1007/s10822-013-9644-8",
+url="http://dx.doi.org/10.1007/s10822-013-9644-8"
+}
+
+
+@MANUAL{LigandFEP,
+title = {Schr\"{o}dinger Academy Molecular Dynamics Ligand FEP Tutorial},
+author = {Lim, Nathan M.},
+organization = {Schr\"{o}dinger},
+address = {New York, NY},
+year = {2015},
+}
+
+@article {OPLS2005,
+author = {Banks, Jay L. and Beard, Hege S. and Cao, Yixiang and Cho, Art E. and Damm, Wolfgang and Farid, Ramy and Felts, Anthony K. and Halgren, Thomas A. and Mainz, Daniel T. and Maple, Jon R. and Murphy, Robert and Philipp, Dean M. and Repasky, Matthew P. and Zhang, Linda Y. and Berne, Bruce J. and Friesner, Richard A. and Gallicchio, Emilio and Levy, Ronald M.},
+title = {Integrated Modeling Program, Applied Chemical Theory (IMPACT)},
+journal = {Journal of Computational Chemistry},
+volume = {26},
+number = {16},
+publisher = {Wiley Subscription Services, Inc., A Wiley Company},
+issn = {1096-987X},
+url = {http://dx.doi.org/10.1002/jcc.20292},
+doi = {10.1002/jcc.20292},
+pages = {1752--1780},
+keywords = {IMPACT, Monte Carlo simulation, QM/MM applications},
+year = {2005},
+}
+
+@article{OPLS3,
+author = {Edward Harder and Wolfgang Damm and Jon Maple and Chuanjie Wu and Mark Reboul and Jin Yu Xiang and Lingle Wang and Dmitry Lupyan and Markus K. Dahlgren and Jennifer L. Knight and Joseph W. Kaus and David S. Cerutti and Goran Krilov and William L. Jorgensen and Robert Abel and Richard A. Friesner},
+title = {OPLS3: A Force Field Providing Broad Coverage of Drug-like Small Molecules and Proteins},
+journal = {Journal of Chemical Theory and Computation},
+volume = {12},
+number = {1},
+pages = {281-296},
+year = {2016},
+doi = {10.1021/acs.jctc.5b00864},
+    note ={PMID: 26584231},
+
+URL = { 
+        http://dx.doi.org/10.1021/acs.jctc.5b00864
+    
+},
+eprint = { 
+        http://dx.doi.org/10.1021/acs.jctc.5b00864
+    
+}
+
+}
+

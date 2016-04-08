@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{6}
+\begin{mcitethebibliography}{13}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -38,11 +38,9 @@ Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Wang \latin{et~al.}(2013)Wang, Deng, Knight, Wu, Kim, Sherman,
-  Shelley, Lin, and Abel]{FEP/REST}
-Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
-  Shelley,~J.~C.; Lin,~T.; Abel,~R. \emph{Journal of Chemical Theory and
-  Computation} \textbf{2013}, \emph{9}, 1282--1293, PMID: 26588769\relax
+\bibitem[Wang \latin{et~al.}(2012)Wang, Berne, and Friesner]{FEP/REST}
+Wang,~L.; Berne,~B.~J.; Friesner,~R.~A. \emph{Proceedings of the National
+  Academy of Sciences} \textbf{2012}, \emph{109}, 1937--1942\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -62,9 +60,73 @@ Wang,~L.; Wu,~Y.; Deng,~Y.; Kim,~B.; Pierce,~L.; Krilov,~G.; Lupyan,~D.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Lim(2015)]{LigandFEP}
+Lim,~N.~M. Schr\"{o}dinger Academy Molecular Dynamics Ligand FEP Tutorial.
+  Schr\"{o}dinger: New York, NY, 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Liu \latin{et~al.}(2013)Liu, Wu, Lin, Abel, Redmann, Summa, Jaber,
+  Lim, and Mobley]{LOMAP}
+Liu,~S.; Wu,~Y.; Lin,~T.; Abel,~R.; Redmann,~J.~P.; Summa,~C.~M.; Jaber,~V.~R.;
+  Lim,~N.~M.; Mobley,~D.~L. \emph{Journal of Computer-Aided Molecular Design}
+  \textbf{2013}, \emph{27}, 755--770\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Liu \latin{et~al.}(2005)Liu, Kim, Friesner, and Berne]{REST}
+Liu,~P.; Kim,~B.; Friesner,~R.~A.; Berne,~B.~J. \emph{Proceedings of the
+  National Academy of Sciences of the United States of America} \textbf{2005},
+  \emph{102}, 13749--13754\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Wang \latin{et~al.}(2011)Wang, Friesner, and Berne]{REST2}
 Wang,~L.; Friesner,~R.~A.; Berne,~B.~J. \emph{The Journal of Physical Chemistry
   B} \textbf{2011}, \emph{115}, 9431--9438, PMID: 21714551\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2013)Wang, Deng, Knight, Wu, Kim, Sherman,
+  Shelley, Lin, and Abel]{FEP/RESTapp}
+Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
+  Shelley,~J.~C.; Lin,~T.; Abel,~R. \emph{Journal of Chemical Theory and
+  Computation} \textbf{2013}, \emph{9}, 1282--1293, PMID: 26588769\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{D.E. Shaw Research, Schr\"{o}dinger}(2015)]{DESMOND}
+{D.E. Shaw Research, Schr\"{o}dinger}, Schr\"{o}dinger Release 2015-3: Desmond
+  Molecular Dynamics System. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Banks \latin{et~al.}(2005)Banks, Beard, Cao, Cho, Damm, Farid, Felts,
+  Halgren, Mainz, Maple, Murphy, Philipp, Repasky, Zhang, Berne, Friesner,
+  Gallicchio, and Levy]{OPLS2005}
+Banks,~J.~L.; Beard,~H.~S.; Cao,~Y.; Cho,~A.~E.; Damm,~W.; Farid,~R.;
+  Felts,~A.~K.; Halgren,~T.~A.; Mainz,~D.~T.; Maple,~J.~R.; Murphy,~R.;
+  Philipp,~D.~M.; Repasky,~M.~P.; Zhang,~L.~Y.; Berne,~B.~J.; Friesner,~R.~A.;
+  Gallicchio,~E.; Levy,~R.~M. \emph{Journal of Computational Chemistry}
+  \textbf{2005}, \emph{26}, 1752--1780\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Harder \latin{et~al.}(2016)Harder, Damm, Maple, Wu, Reboul, Xiang,
+  Wang, Lupyan, Dahlgren, Knight, Kaus, Cerutti, Krilov, Jorgensen, Abel, and
+  Friesner]{OPLS3}
+Harder,~E.; Damm,~W.; Maple,~J.; Wu,~C.; Reboul,~M.; Xiang,~J.~Y.; Wang,~L.;
+  Lupyan,~D.; Dahlgren,~M.~K.; Knight,~J.~L.; Kaus,~J.~W.; Cerutti,~D.~S.;
+  Krilov,~G.; Jorgensen,~W.~L.; Abel,~R.; Friesner,~R.~A. \emph{Journal of
+  Chemical Theory and Computation} \textbf{2016}, \emph{12}, 281--296, PMID:
+  26584231\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

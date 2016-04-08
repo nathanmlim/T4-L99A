@@ -49,7 +49,7 @@ Consideration of the protein adaptations into discrete conformations may be an i
 Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
 To illustrate this, we begin our molecular dynamics simulations both from the protein closed and open conformations then perform alchemical transformations to ligands that occupy the opposite protein conformational state.
 In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix is used to determine the conformational state of the protein over the course of the simulation.
-Here, we demonstrate the default 5ns simulation time and REST region selection in the Schrodinger FEP workflow are insufficient for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.
+Here, we demonstrate the default 5ns simulation time and REST region selection in the Schr\"{o}dinger FEP workflow are insufficient for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.
 
 %P2: Discuss closed-open case to show the problem in default protocol
 An examination of the largest alchemical transformation, benzene to n-hexylbenzene, highlights the sampling problems faced when using the standard FEP/REST protocol.
@@ -168,42 +168,41 @@ Only by expansion of the REST region to include key protein residues and longer 
 More importantly, this demonstrates that special attention and care should be exercised in binding affinity predictions where regions of flexibility surround the binding site.
 
 \section{Methods}
-\subsection{FEP Protocols}
-Two FEP protocols developed from Schrodinger were used in this project: FEP+ and LigandFEP.
-FEP+ is a fully automated workflow that will plan the perturbation pathways based of the LOMAP mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
-LigandFEP, aimed for academics, is limited in the sense that the user must plan each perturbation instead.
-LigandFEP does not use the MCS but rather plans the transformation by minimizing the core RMSD.
-Both protocols still use the default relaxation protocol and FEP/REST methodology and were run on GPUs with Desmond.
-FEP/REST simulations were performed for 5-55ns depending on the ligand transformation involved.
-In both protocols, forcefield parameters OPLS3 and OPLS2005 were used.\\
+\subsection*{FEP Protocols and Simulation Details}
+Two FEP protocols developed from Schr\"{o}dinger were used in this project: FEP+\cite{FEPplus} and LigandFEP\cite{LigandFEP}.
+FEP+ is a fully automated work flow that will plan the perturbation pathways based off the LOMAP \cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
+LigandFEP is an academic toolkit that will generate the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
+Both FEP protocols use the default Desmond relaxation protocol, described previously \cite{FEPplus} in the supporting information, and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}.
+FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine\cite{DESMONDSoftware,DESMONDPaper1,DESMONDPaper2} with OPLS2005\cite{OPLS2005} and OPLS3\cite{OPLS3} forcefield parameters.
+Simulations were carried out to an arbitrarily chosen length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
 
-***INSERT FEP MAPPER IMAGE HERE***\\
+In this study, by default, only heavy atoms in the ligand were included in the REST region unless specified otherwise.
+Further details on the temperature profile and how the REST region is selected has been discussed previously\cite{FEP/REST,FEPplus} in the supporting information.
+Simulations that included protein heavy atoms in the REST region are referred to with the 'pREST' label, where selection of the particular residues is described as follows.
 
-Trials including protein atoms in the REST region will be referred to with 'pREST'
-Considering the F-helix ranged from residues 107-115, residues selected to include into the REST region were Glu108, Val111, and Gly113 as sort of a start, mid and end point.
-Based on the crystal structures and molecular dynamics (MD) simulations and since the F-helix spans residues 107 to 115, we selected residues Glu108, Val111, and Gly113.
-At the start of the helix sits Glu108 which appears to serve as a hinge point for the transition between conformational states.
-Next, Val111 appears in the middle of the helix and was observed to undergo the largest motion during transitions.
-Towards the end was Gly113 which was observed to undergo some minor motions as well.
+Based on visual inspection of our molecular dynamics simulations and considering the F-helix spans residues 107-115, we selected residues Glu108, Val111, and Gly113 to include into the REST region (Fig~\ref{fig:C2O}).
+Near the start of the helix sits Glu108 which appears as a hinge point for the opening and closing of the binding cavity (Fig~\ref{fig:Glu108-C2O}).
+Following, Val111 appears in the middle of the helix and was observed to undergo the largest motion during protein conformational changes (Fig~\ref{fig:Val111-C2O}).
+Gly113 was included in order to collectively have hot regions approximately at the start, middle and end points of the helix.
 
-
-\subsection{Protein/Ligand Preparation}
-Protein structures were taken from PDBS: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively.
+\subsection*{Protein/Ligand Preparation}
+Protein structures were taken from PDBs: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively (\cite{Merski2015})..
 Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF: 4W59).
 When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
-When using the LigandFEP protocol, two options would occur:\\
-(1) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference.\\
-(2) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments Toolbar.\\
+When using the LigandFEP protocol, a similar workflow to the tutorial \cite{LigandFEP} was followed.
+Generally, two options were taken:\\
+(1a) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference (PDB:4W52).\\
+(1b) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments toolbar in Maestro\cite{Maestro}.\\
+(2a) If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference (PDF: 4W59).\\
+(2b) The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.\\
+For ligands with a longer tail, the tail fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
+This was done in an attempt to minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to include in the REST region. 
 
-For ligands with a longer tail, the fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
-If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference.
-The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.
-All proteins were prepared and aligned in Maestro using the 'Protein Preparation Wizard' tool and the following settings enabled:
+All proteins were prepared and aligned in Maestro\cite{Maestro} using the 'Protein Preparation Wizard'\cite{ProteinPrepWizSoftware,ProteinPrepWizPaper} tool and the following settings enabled:
    \begin{itemize}
    \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
    \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
    \end{itemize}
-
 
 \pagebreak
 
@@ -391,6 +390,25 @@ It seems likely that the overall motion of the helix is not entirely accessible 
    \caption{Closed - Benzene to n-Hexylbenzene 45-55ns Colormap pREST}
    \label{fig:c_opls3_rest1_1/cmap-45-55ns}
 \end{figure}
+
+\begin{figure}[!ht]
+   \frame{\includegraphics[trim={5cm 2cm 3cm 1cm}, clip, width=\textwidth,height=10cm]{VMDscripts/Figures/C2O.png}}
+   \caption{pREST residues}
+   \label{fig:C2O}
+\end{figure}
+
+\begin{figure}[!ht]
+   \frame{\includegraphics[trim={1cm 1cm 8cm 2cm}, clip, width=\textwidth,height=10cm]{VMDscripts/Figures/Glu108-C2O.png}}
+   \caption{Residue Glu108}
+   \label{fig:Glu108-C2O}
+\end{figure}
+
+\begin{figure}[!ht]
+   \frame{\includegraphics[trim={5cm 0cm 0cm 1cm}, clip, width=\textwidth,height=10cm]{VMDscripts/Figures/Val111-C2O.png}}
+   \caption{Residue Val111}
+   \label{fig:Val111-C2O}
+\end{figure}
+
 
 \clearpage
 
