@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{13}
+\begin{mcitethebibliography}{18}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -100,9 +100,27 @@ Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[{D.E. Shaw Research, Schr\"{o}dinger}(2015)]{DESMOND}
+\bibitem[{D.E. Shaw Research, Schr\"{o}dinger}(2015)]{DESMONDSoftware}
 {D.E. Shaw Research, Schr\"{o}dinger}, Schr\"{o}dinger Release 2015-3: Desmond
   Molecular Dynamics System. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Shivakumar \latin{et~al.}(2010)Shivakumar, Williams, Wu, Damm,
+  Shelley, and Sherman]{DESMONDPaper1}
+Shivakumar,~D.; Williams,~J.; Wu,~Y.; Damm,~W.; Shelley,~J.; Sherman,~W.
+  \emph{Journal of Chemical Theory and Computation} \textbf{2010}, \emph{6},
+  1509--1519, PMID: 26615687\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Guo \latin{et~al.}(2010)Guo, Mohanty, Noehre, Sawyer, Sherman, and
+  Krilov]{DESMONDPaper2}
+Guo,~Z.; Mohanty,~U.; Noehre,~J.; Sawyer,~T.~K.; Sherman,~W.; Krilov,~G.
+  \emph{Chemical Biology & Drug Design} \textbf{2010}, \emph{75},
+  348--359\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -127,6 +145,28 @@ Harder,~E.; Damm,~W.; Maple,~J.; Wu,~C.; Reboul,~M.; Xiang,~J.~Y.; Wang,~L.;
   Krilov,~G.; Jorgensen,~W.~L.; Abel,~R.; Friesner,~R.~A. \emph{Journal of
   Chemical Theory and Computation} \textbf{2016}, \emph{12}, 281--296, PMID:
   26584231\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger}(2015)]{Maestro}
+{Schr\"{o}dinger}, Maestro Release 2015-3. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger}(2015)]{ProteinPrepWizSoftware}
+{Schr\"{o}dinger}, Schr\"{o}dinger Suite 2015-3 Protein Preparation Wizard.
+  2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Madhavi~Sastry \latin{et~al.}(2013)Madhavi~Sastry, Adzhigirey, Day,
+  Annabhimoju, and Sherman]{ProteinPrepWizPaper}
+Madhavi~Sastry,~G.; Adzhigirey,~M.; Day,~T.; Annabhimoju,~R.; Sherman,~W.
+  \emph{Journal of Computer-Aided Molecular Design} \textbf{2013}, \emph{27},
+  221--234\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  7 APR 2016 19:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  7 APR 2016 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,4 +477,335 @@ Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
 Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xc
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+) (./T4paper.aux)
+\openout1 = `T4paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+\openout3 = `acs-T4paper.bib'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.2698pt, 469.75539pt, 72.2698pt)
+* v-part:(T,H,B)=(72.2698pt, 650.43037pt, 72.2698pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75539pt
+* \textheight=650.43037pt
+* \oddsidemargin=-0.00018pt
+* \evensidemargin=-0.00018pt
+* \topmargin=-37.00018pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count150
+\scratchdimen=\dimen166
+\scratchbox=\box45
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen167
+\MPnumerator=\count154
+\makeMPintoPDFobject=\count155
+\everyMPtoPDFconversion=\toks38
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Overfull \hbox (6.91692pt too wide) in paragraph at lines 95--99
+[]\T1/cmr/m/n/12 Collectively, for all our closed/open and closed/intermediate 
+trans-for-ma-tions us-ing pREST,
+ []
+
+[5] [6] [7] [8]
+Overfull \hbox (5.50476pt too wide) in paragraph at lines 189--200
+\T1/cmr/m/n/12 Protein struc-tures were taken from PDBs: 4W52,4W53,4W54,4W55,4W
+56,4W57,4W58,4W59
+ []
+
+[9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 203.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 203.
+ [10] [11] [12]
+[13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 335.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [16]
+<VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png, id=72, 722.7pt x 361.35pt
+>
+File: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
+g)
+ <use VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png us
+ed on input line 341.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+<VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png, id=75, 722.7pt x 361.35pt
+>
+File: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
+g)
+ <use VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png us
+ed on input line 347.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+<VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png, id=77, 722.7pt x 361
+.35pt>
+File: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png Graphic file (ty
+pe png)
+ <use VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.p
+ng used on input line 353.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png, id=79, 722.7pt x 361
+.35pt>
+File: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png Graphic file (ty
+pe png)
+ <use VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.p
+ng used on input line 359.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png, id=81, 722.
+7pt x 361.35pt>
+File: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png Graphic
+ file (type png)
+
+<use VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-re
+plica11.png used on input line 365.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+<VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png, id=83, 867.24pt x 433.62pt
+>
+File: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png Graphic file (type png
+)
+ <use VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png>
+Package pdftex.def Info: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png use
+d on input line 371.
+(pdftex.def)             Requested size: 469.76843pt x 227.62247pt.
+
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png, id=85, 867.2
+4pt x 433.62pt>
+File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png Graphic 
+file (type png)
+
+<use VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png>
+Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
+-0-5ns.png used on input line 377.
+(pdftex.def)             Requested size: 469.76843pt x 227.62247pt.
+
+<VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png, id=87, 72
+2.7pt x 361.35pt>
+File: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png Graph
+ic file (type png)
+
+<use VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png>
+Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-
+replica11.png used on input line 383.
+(pdftex.def)             Requested size: 469.76942pt x 227.61887pt.
+
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png, id=89, 867
+.24pt x 433.62pt>
+File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png Graphi
+c file (type png)
+
+<use VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png>
+Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
+-45-55ns.png used on input line 389.
+(pdftex.def)             Requested size: 469.76843pt x 227.62247pt.
+
+<VMDscripts/Figures/C2O.png, id=91, 1186.4325pt x 783.92876pt>
+File: VMDscripts/Figures/C2O.png Graphic file (type png)
+
+<use VMDscripts/Figures/C2O.png>
+Package pdftex.def Info: VMDscripts/Figures/C2O.png used on input line 395.
+(pdftex.def)             Requested size: 469.76273pt x 284.52907pt.
+
+<VMDscripts/Figures/Glu108-C2O.png, id=93, 819.06pt x 783.92876pt>
+File: VMDscripts/Figures/Glu108-C2O.png Graphic file (type png)
+
+<use VMDscripts/Figures/Glu108-C2O.png>
+Package pdftex.def Info: VMDscripts/Figures/Glu108-C2O.png used on input line 4
+01.
+(pdftex.def)             Requested size: 469.76027pt x 284.52907pt.
+
+<VMDscripts/Figures/Val111-C2O.png, id=95, 819.06pt x 783.92876pt>
+File: VMDscripts/Figures/Val111-C2O.png Graphic file (type png)
+
+<use VMDscripts/Figures/Val111-C2O.png>
+Package pdftex.def Info: VMDscripts/Figures/Val111-C2O.png used on input line 4
+07.
+(pdftex.def)             Requested size: 469.75755pt x 284.52473pt.
+ [17
+
+ <./VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/o_opls3_
+1/plots/0-5ns/RMSD-replica11.png>]
+[18 <./VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/
+o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png>] [19 <./VMDscripts/c_opls3_rest1
+_extend_1e/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/c_opls3_1/plots/colorm
+ap/cmap-0-5ns.png>] [20 <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cm
+ap-0-5ns.png> <./VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica1
+1.png>] [21 <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.p
+ng> <./VMDscripts/Figures/C2O.png>] [22 <./VMDscripts/Figures/Glu108-C2O.png> <
+./VMDscripts/Figures/Val111-C2O.png>] [23
+
+] [24] [25] (./T4paper.bbl
+Underfull \hbox (badness 1721) in paragraph at lines 64--71
+[]\T1/cmr/m/n/12 Lim, N. M. Schrödinger Academy Molec-u-lar Dy-nam-ics Lig-and 
+FEP Tu-to-rial.
+ []
+
+[26
+
+]
+! Misplaced alignment tab character &.
+<argument> Chemical Biology &
+                              Drug Design
+l.122   \emph{Chemical Biology & Drug Design}
+                                              \textbf{2010}, \emph{75},
+? 
+) [27] (./T4paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 11486 strings out of 493304
+ 202727 string characters out of 6139871
+ 301982 words of memory out of 5000000
+ 14723 multiletter control sequences out of 15000+600000
+ 27252 words of font info for 65 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 60i,12n,94p,10407b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.
+enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbi1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sftt1200.pfb>
+Output written on T4paper.pdf (27 pages, 1084119 bytes).
+PDF statistics:
+ 238 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+

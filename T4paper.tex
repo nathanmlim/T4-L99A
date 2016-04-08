@@ -15,7 +15,7 @@
 \begin{document}
 
 \begin{abstract}
-Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A\cite{Boyce2009}.
+Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A \cite{Boyce2009}.
 In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}.
 Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state.
 Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
@@ -46,7 +46,7 @@ Consideration of the protein adaptations into discrete conformations may be an i
 %Describing the approach in broad terms. 
 %Give them the conceptual tool to understand most of the work.
 %Drive back the main problem in default protocol.
-Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
+Using the default FEP/REST methodology \cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
 To illustrate this, we begin our molecular dynamics simulations both from the protein closed and open conformations then perform alchemical transformations to ligands that occupy the opposite protein conformational state.
 In this study, root-mean-square-deviation (RMSD) of the backbone atoms in the F-helix is used to determine the conformational state of the protein over the course of the simulation.
 Here, we demonstrate the default 5ns simulation time and REST region selection in the Schr\"{o}dinger FEP workflow are insufficient for adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.
@@ -172,8 +172,8 @@ More importantly, this demonstrates that special attention and care should be ex
 Two FEP protocols developed from Schr\"{o}dinger were used in this project: FEP+\cite{FEPplus} and LigandFEP\cite{LigandFEP}.
 FEP+ is a fully automated work flow that will plan the perturbation pathways based off the LOMAP \cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
 LigandFEP is an academic toolkit that will generate the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
-Both FEP protocols use the default Desmond relaxation protocol, described previously \cite{FEPplus} in the supporting information, and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}.
-FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine\cite{DESMONDSoftware,DESMONDPaper1,DESMONDPaper2} with OPLS2005\cite{OPLS2005} and OPLS3\cite{OPLS3} forcefield parameters.
+Both FEP protocols use the default Desmond relaxation protocol, described previously \cite{FEPplus} in the supporting information, and the FEP/REST methodology \cite{REST,REST2,FEP/REST,FEP/RESTapp}.
+FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine \cite{DESMONDSoftware,DESMONDPaper1,DESMONDPaper2} with OPLS2005 \cite{OPLS2005} and OPLS3 \cite{OPLS3} forcefield parameters.
 Simulations were carried out to an arbitrarily chosen length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
 
 In this study, by default, only heavy atoms in the ligand were included in the REST region unless specified otherwise.
@@ -192,13 +192,13 @@ When using the FEP+ protocol, ligand crystal structure positions were used as th
 When using the LigandFEP protocol, a similar workflow to the tutorial \cite{LigandFEP} was followed.
 Generally, two options were taken:\\
 (1a) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference (PDB:4W52).\\
-(1b) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments toolbar in Maestro\cite{Maestro}.\\
+(1b) The corresponding ligand in the transformation was built by duplicating benzene in place and adding a methyl from the Build/Fragments toolbar in Maestro \cite{Maestro}.\\
 (2a) If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference (PDF: 4W59).\\
 (2b) The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting a methyl group.\\
 For ligands with a longer tail, the tail fragments would be added in the same direction as the crystal structure, but not overlaid or docked via Glide.
 This was done in an attempt to minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to include in the REST region. 
 
-All proteins were prepared and aligned in Maestro\cite{Maestro} using the 'Protein Preparation Wizard'\cite{ProteinPrepWizSoftware,ProteinPrepWizPaper} tool and the following settings enabled:
+All proteins were prepared and aligned in Maestro \cite{Maestro} using the 'Protein Preparation Wizard' \cite{ProteinPrepWizSoftware,ProteinPrepWizPaper} tool and the following settings enabled:
    \begin{itemize}
    \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
    \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
