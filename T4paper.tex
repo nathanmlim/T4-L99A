@@ -39,8 +39,6 @@ Through determination of protein-ligand bound x-ray crystal structures it was re
 Consideration of the protein adaptations into discrete conformations may be an important aspect in inhibitor design.
 
 \section{Results}
-%DLM: Sometimes I like to use subsection headers in the "titles should be statements" vein, i.e. "Dependence on protein starting conformation" could be "Calculated free energies depend strongly on starting protein conformation", and so on. 
-
 %%%%"Results should typically start with a paragraph describing your approach in broad terms"
 %%%%"Give them the conceptual tools to understand your work but not more"
 \subsection*{Calculated free energies depend strongly on starting protein conformation}
@@ -107,9 +105,8 @@ In simply running longer, we allow our simulations to perform more exchanges acr
 
 %P2 Longer simulation improvements qualitatively
 Returning to our most extreme transformation, benzene to n-hexylbenzene, we have shown pREST alone does not allow for adequate sampling of the open state (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}).
-Now, when we run much longer we see far more frequent transitions between all the protein conformational states in the final 10ns window (Fig~\ref{fig:c_opls3_rest1_1/45-55ns/RMSD-replica11}).
+Now, when we run much longer we see far more sampling of the open protein conformational state in the final 10ns window (Fig~\ref{fig:c_opls3_rest1_1/45-55ns/RMSD-replica11}).
 In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we illustrate the dramatic increase in protein conformational sampling in stark contrast to our 5ns simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}). 
-%DLM: If I were reviewing this I would ask if it's really that the transitions are more frequent, or if it's that you have the other protein conformation present in some replicas (lambda values) and it is walking between lambda values. That is to say, do you actually see the protein transitioning more often, or do you just see more frequent appearance of the open conformation in simulations? (This can be deconvoluted rigorously, it turns out; we may want to talk about this aspect.) 
 
 %P3 Longer simulation improvements quantitatively
 By simulating longer with pREST we dramatically increase our sampling of the intermediate/open states and almost entirely eliminate the dependence on the initial protein conformational state.
