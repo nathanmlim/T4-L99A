@@ -1,0 +1,185 @@
+\documentclass[T4paper.tex]{subfiles}
+\begin{document}
+
+\begin{table}[!htb]
+\centering
+\caption{Loop Occupancies \cite{Merski2015}}
+\label{tbl:loop-occ}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Ligand}                                                 & \textbf{C} & \textbf{I} & \textbf{O} \\ \hline
+\cellcolor[HTML]{800080} benzene          & \cellcolor[HTML]{C0C0C0}0.9        & -          & -          \\ \hline
+\cellcolor[HTML]{800080} toluene          & \cellcolor[HTML]{C0C0C0}0.8        & 0.2        & -          \\ \hline
+\cellcolor[HTML]{800080} ethylbenzene     & \cellcolor[HTML]{C0C0C0}0.5        & 0.5        & -          \\ \hline
+\cellcolor[HTML]{800080} n-propylbenzene  & \cellcolor[HTML]{C0C0C0}0.6        & 0.4        & -          \\ \hline
+\cellcolor[HTML]{00FFFF} sec-butylbenzene & 0.4        & \cellcolor[HTML]{C0C0C0}0.6        & -          \\ \hline
+\cellcolor[HTML]{00FFFF} n-butylbenzene   & 0.1        & \cellcolor[HTML]{C0C0C0}0.6        & 0.3        \\ \hline
+\cellcolor[HTML]{008000} n-pentylbenzene  & 0.3        &    -        & \cellcolor[HTML]{C0C0C0}0.7        \\ \hline
+\cellcolor[HTML]{008000} n-hexylbenzene   & 0.3        &    -       & \cellcolor[HTML]{C0C0C0}0.7        \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Ligand Binding Affinities}
+\label{tbl:lig-aff}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textit{\textbf{PDB}} & \textbf{Ligand}                          & \boldmath$\Delta G_{exp}$                                            & \textbf{Error} \\ \hline
+\textit{4W52}         & \cellcolor[HTML]{800080}benzene          & -5.19                                                                & 0.16           \\ \hline
+\textit{4W53}         & \cellcolor[HTML]{800080}toluene          & -5.52                                                                & 0.04           \\ \hline
+\textit{4W54}         & \cellcolor[HTML]{800080}ethylbenzene     & -5.76                                                                & 0.07           \\ \hline
+\textit{4W55}         & \cellcolor[HTML]{800080}n-propylbenzene  & -6.55                                                                & 0.02           \\ \hline
+\textit{4W56}         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & N/A                                                                  & -              \\ \hline
+\textit{4W57}         & \cellcolor[HTML]{00FFFF}n-butylbenezene  & -6.70                                                                & 0.02           \\ \hline
+\textit{4W58}         & \cellcolor[HTML]{008000}n-pentylbenzene  & N/A                                                                  & -              \\ \hline
+\textit{4W59}         & \cellcolor[HTML]{008000}n-hexylbenzene   & N/A                                                                  & -              \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Intermediate Transformations}
+\label{tbl:C-I}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                        & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.58                                   & \textit{0.07}                       & -0.59                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}1.17 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.28                                  & \textit{0.06}                       & -1.27                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.99 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.24                                   & \textit{0.07}                       & -0.23                                & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.47 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.99                                   & \textit{0.06}                       & 0.63                                 & \textit{0.04}                       & \cellcolor[HTML]{9AFF99}0.36 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 2.36                                   & \textit{0.09}                       & 2.14                                 & \textit{0.11}                       & \cellcolor[HTML]{9AFF99}0.22 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.47                                   & \textit{0.07}                       & 1.14                                 & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.33 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.90                                   & \textit{0.08}                       & 1.77                                 & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.13 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 2.86                                   & \textit{0.06}                       & 2.67                                 & \textit{0.05}                       & \cellcolor[HTML]{9AFF99}0.19 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Intermediate Transformations pREST}
+\label{tbl:C-I_pREST}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                        & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.10                                   & \textit{0.11}                       & -0.72                                & \textit{0.12}                       & \cellcolor[HTML]{FFCCC9}0.62 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.90                                  & \textit{0.09}                       & -0.36                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}1.26 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.20                                   & \textit{0.09}                       & -0.43                                & \textit{0.08}                       & \cellcolor[HTML]{9AFF99}0.23 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 1.00                                  & \textit{0.07}                       & 0.49                                 & \textit{0.06}                       & \cellcolor[HTML]{9AFF99}0.51 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 0.45                                   & \textit{0.08}                       & 1.34                                 & \textit{0.12}                       & \cellcolor[HTML]{9AFF99}0.89 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 0.60                                   & \textit{0.12}                       & 0.60                                 & \textit{0.10}                       & \cellcolor[HTML]{9AFF99}0.0 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.09                                   & \textit{0.10}                       & 1.69                                 & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.60 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.88                                   & \textit{0.07}                       & 3.05                                 & \textit{0.08}                       & \cellcolor[HTML]{9AFF99}1.17 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Intermediate Transformations pREST 15-25ns}
+\label{tbl:C-I_pRESText}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                        & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -1.15                                   & \textit{0.09}                       & -0.72                                & \textit{0.12}                       & \cellcolor[HTML]{FFCCC9}0.43 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.52                                  & \textit{0.09}                       & -0.36                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.16 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene   & -0.20                                   & \textit{0.09}                       & -0.43                                & \textit{0.08}                       & \cellcolor[HTML]{9AFF99}0.23 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene   & 0.53                                  & \textit{0.07}                       & 0.49                                 & \textit{0.06}                       & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 0.45                                   & \textit{0.08}                       & 1.34                                 & \textit{0.12}                       & \cellcolor[HTML]{9AFF99}0.89 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 0.60                                   & \textit{0.12}                       & 0.60                                 & \textit{0.10}                       & \cellcolor[HTML]{9AFF99}0.0 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.09                                   & \textit{0.10}                       & 1.69                                 & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.60 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}sec-butylbenzene & 1.88                                   & \textit{0.07}                       & 1.84                                 & \textit{0.06}                       & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Open Transformations}
+\label{tbl:C-O}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                       & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-pentylbenzene & 2.36                                   & \textit{0.12}                       & -1.33                                & \textit{0.11}                       & \cellcolor[HTML]{FFCCC9}3.69 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.77                                   & \textit{0.09}                       & 0.34                                 & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}1.43 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-pentylbenzene & 2.45                                   & \textit{0.08}                       & 0.46                                 & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}1.99 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-pentylbenzene & 3.46                                   & \textit{0.08}                       & -0.22                                & \textit{0.08}                       & \cellcolor[HTML]{FFCCC9}3.68 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 4.13                                   & \textit{0.16}                       & -0.61                                & \textit{0.15}                       & \cellcolor[HTML]{FFCCC9}4.74 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 2.90                                   & \textit{0.14}                       & -1.63                                & \textit{0.08}                       & \cellcolor[HTML]{FFCCC9}4.53 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-hexylbenzene  & 3.63                                   & \textit{0.11}                       & -0.76                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}4.39 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-hexylbenzene  & 5.85                                   & \textit{0.10}                       & 0.13                                 & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}5.72 \\ \hline
+\end{tabular}
+
+  \textsuperscript{\emph{a}} Some text;
+  \textsuperscript{\emph{b}} Some more text.
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Open Transformations pREST}
+\label{tbl:C-O_pREST}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                       & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.45                                   & \textit{0.13}                       & 0.15                                & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}1.30 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.40                                   & \textit{0.13}                       & 0.82                                 & \textit{0.11}                       & \cellcolor[HTML]{FFCCC9}0.58 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-pentylbenzene & 2.89                                   & \textit{0.10}                       & 1.32                                 & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}1.57 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-pentylbenzene & 4.40                                   & \textit{0.12}                       & 1.06                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}3.34 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 2.74                                   & \textit{0.19}                       & 1.37                                & \textit{0.13}                       & \cellcolor[HTML]{FFCCC9}1.37 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 3.21                                   & \textit{0.15}                       & -1.08                                & \textit{0.09}                       & \cellcolor[HTML]{FFCCC9}4.29 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-hexylbenzene  & 3.39                                   & \textit{0.11}                       & -0.14                                & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}3.53 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-hexylbenzene  & 4.93                                   & \textit{0.12}                       & 1.28                                 & \textit{0.10}                       & \cellcolor[HTML]{FFCCC9}3.65 \\ \hline
+\end{tabular}
+
+  \textsuperscript{\emph{a}} Some text;
+  \textsuperscript{\emph{b}} Some more text.
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Open Transformations pREST 40-55ns}
+\label{tbl:C-O_pREST-40-55ns}
+\begin{tabular}{|c|c|c|l|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                       & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{C-O Diff}            \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.86                                   & \textit{0.06}                       & 1.50                                & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}0.36 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-pentylbenzene & 1.03                                   & \textit{0.06}                       & 0.71                                 & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}0.32 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-pentylbenzene & 1.69                                   & \textit{0.06}                       & 1.60                                 & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}0.09 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-pentylbenzene & 3.43                                   & \textit{0.04}                       & 2.44                                & \textit{0.04}                       & \cellcolor[HTML]{FFCCC9}0.99 \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 2.14                                   & \textit{0.08}                       & 1.41                                & \textit{0.07}                       & \cellcolor[HTML]{FFCCC9}0.73 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{008000}n-hexylbenzene  & 0.33                                   & \textit{0.08}                       & 1.16                                & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}0.84 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{008000}n-hexylbenzene  & 1.97                                   & \textit{0.07}                       & 2.39                                & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}0.42 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{008000}n-hexylbenzene  & 3.49                                   & \textit{0.06}                       & 3.44                                 & \textit{0.05}                       & \cellcolor[HTML]{FFCCC9}0.05 \\ \hline
+\end{tabular}
+
+  \textsuperscript{\emph{a}} Some text;
+  \textsuperscript{\emph{b}} Some more text.
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed to n-butylbenzene Transformations (Closed Protein)}
+\label{tbl:C-nbutyl_closed}
+\begin{tabular}{|c|c|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                      & {\color[HTML]{800080} \textbf{Closed}} & {\color[HTML]{800080} \textit{Err}} & \textbf{C-Exp Err}           \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.58                                   & \textit{0.07}                       & \cellcolor[HTML]{FFCCC9}2.09 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.28                                  & \textit{0.06}                       & \cellcolor[HTML]{9AFF99}0.90 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.24                                   & \textit{0.07}                       & \cellcolor[HTML]{FFCCC9}1.18 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.99                                   & \textit{0.06}                       & \cellcolor[HTML]{FFCCC9}1.14 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Closed to n-butylbenzene Transformations (Open Protein)}
+\label{tbl:C-nbutyl_open}
+\begin{tabular}{|c|c|c|l|c|}
+\hline
+\textbf{Ligand 1}                       & \textbf{Ligand 2}                      & {\color[HTML]{008000} \textbf{Open}} & {\color[HTML]{008000} \textit{Err}} & \textbf{O-Exp Err}           \\ \hline
+\cellcolor[HTML]{800080}benzene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.59                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.92 \\ \hline
+\cellcolor[HTML]{800080}toluene         & \cellcolor[HTML]{00FFFF}n-butylbenzene & -1.27                                & \textit{0.09}                       & \cellcolor[HTML]{9AFF99}0.09 \\ \hline
+\cellcolor[HTML]{800080}ethylbenzene    & \cellcolor[HTML]{00FFFF}n-butylbenzene & -0.23                                & \textit{0.07}                       & \cellcolor[HTML]{9AFF99}0.71 \\ \hline
+\cellcolor[HTML]{800080}n-propylbenzene & \cellcolor[HTML]{00FFFF}n-butylbenzene & 0.63                                 & \textit{0.04}                       & \cellcolor[HTML]{9AFF99}0.78 \\ \hline
+\end{tabular}
+\end{table}
+\end{document}
