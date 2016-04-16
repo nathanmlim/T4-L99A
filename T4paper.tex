@@ -35,14 +35,13 @@ Through determination of protein-ligand bound x-ray crystal structures it was re
 Consideration of the protein adaptations into discrete conformations may be an important aspect in inhibitor design.
 
 \section{Methods}
-\subsection*{FEP protocols}
-Using the Schr\"{o}dinger application suite (release 2015-3), two FEP protocols were used in this project: FEP+\cite{FEPplus} and LigandFEP\cite{LigandFEP}.
-FEP+ is a fully automated work flow that plans perturbation pathways based off the LOMAP \cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
-LigandFEP is an academic toolkit that generates the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
-Both FEP protocols use the default Desmond relaxation protocol and the FEP/REST methodology \cite{REST,REST2,FEP/REST,FEP/RESTapp}.
-Results and discussion sections will present information from using the LigandFEP protocol, additional data not discussed here can be found in the supplementary info.
-
 \subsection*{Protein/Ligand preparation}
+All proteins were prepared and aligned in Maestro\cite{Maestro} using the `Protein Preparation Wizard'\cite{ProteinPrepWizSoftware,Epik,Impact,Prime,ProteinPrepWizPaper} tool and with the following settings enabled (as they appear in the Maestro menu):
+   \begin{itemize}
+   \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
+   \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
+   \end{itemize}
+
 Protein structures were taken from PDBs: 4W52,4W53,4W54,4W55,4W56,4W57,4W58,4W59 corresponding to bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively\cite{Merski2015}.
 Each simulation will start from either the protein closed state (PDB:4W52) or the open state (PDF:4W59).
 When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
@@ -54,25 +53,17 @@ Generally, two options were taken:\\
 (2a) If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference for fragment building (PDF:4W59).\\
 (2b) The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting methyl groups.\\
 
-Ligand tail fragments were added using the Build/Fragments toolbar in Maestro \cite{Maestro} and were not overlaid or docked. 
+Ligand tail fragments were added using the Build/Fragments toolbar in Maestro  and were not overlaid or docked. 
 As the ligand tails were built, bonds were manually rotated so that the tail was oriented in a similar manner as in their corresponding crystal structure.
 Following, the newly added atoms in the tail were locally minimized, leaving the core in its initial position.
 This was done in an attempt to minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to include in the REST region. 
 
-All proteins were prepared and aligned in Maestro using the `Protein Preparation Wizard'\cite{ProteinPrepWizSoftware,Epik,Impact,Prime,ProteinPrepWizPaper} tool and with the following settings enabled (as they appear in the Maestro menu):
-   \begin{itemize}
-   \item Preprocess: Assign bond orders, Add hydrogens, Create zero-order bonds to metals, Create disulfide bonds, Cap termini, Delete waters beyond 5\AA from het groups
-   \item Refine: Sample water orientations, Use PROPKA pH: 7.0, Remove waters with less than 3 H-bonds to non-waters, and restrained minimization.
-   \end{itemize}
-
-\subsection*{Simulation details}
-Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
-In summary, solute molecules are restrained to their initial positions while minimizing using a Brownian dynamics NVT integrator for 100ps, followed by 12ps simulations at 10K with a NVT ensemble and then a NPT ensemble using the Langevin method \cite{Langevin}.
-Next, a 24ps simulation followed by a final 240ps simulation with solute molecules unrestrained, both are carried at room temperature with a NPT ensemble using Langevin.
-Production simulations were carried out to a length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
-FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with OPLS2005\cite{OPLS2005} and OPLS3\cite{OPLS3} forcefield parameters.
-Calculated free energies were determined using the Bennett acceptance ratio\cite{BAR} (BAR) with error estimations using both bootstrapping and BAR analytical error prediction\cite{BARerror}.
-Hysteresis around closed thermodynamic cycles and best estimates of the free energies with their errors were calculated using the cycle closure algorithm discussed in a previous publication\cite{FEP/REST}.
+\subsection*{FEP protocols}
+Using the Schr\"{o}dinger application suite (release 2015-3)\cite{Maestro-Desmond}, two FEP protocols were used in this project: FEP+\cite{FEPplus} and LigandFEP\cite{LigandFEP}.
+FEP+ is a fully automated work flow that plans perturbation pathways based off the LOMAP\cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
+LigandFEP is an academic toolkit that generates the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
+Both FEP protocols use the default Desmond relaxation protocol and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}.
+Results and discussion sections will present information from using the LigandFEP protocol, additional data not discussed here can be found in the supplementary info.
 
 \subsection*{REST region selection}
 In this study, by default, only heavy atoms in the ligand were included in the REST region unless specified otherwise.
@@ -83,11 +74,49 @@ Glu108 sits near the start of the helix which appears as a hinge point for the o
 Following, Val111 appears in the middle of the helix and was observed to undergo the largest motion during protein conformational changes (Fig~\ref{fig:Val111-C2O}).
 Gly113 was included in order to collectively have hot regions approximately at the start, middle and end points of the helix.
 
-\subsection*{RMSD analysis}
-%DLM: Methods seems to end abruptly. Other things to maybe include:
-% How was analysis done
-% How you did your RMSD calculations/colorcoding
-% Anything else needed to ensure someone could reproduce your calculations (maybe ultimately ask someone who has run Desmond, but not done these calculations, to have a look at it for reproducibility - i.e. while we have the paper with the Schrodinger folks to edit would be a good time for this. Maybe Vickie or Caitlin, I think they've run Desmond before...?)
+\subsection*{Simulation details}
+Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
+In summary, solute molecules are restrained to their initial positions while minimizing using a Brownian dynamics NVT integrator for 100ps, followed by 12ps simulations at 10K with a NVT ensemble and then a NPT ensemble using the Langevin method \cite{Langevin}.
+Next, a 24ps simulation followed by a final 240ps simulation with solute molecules unrestrained, both are carried at room temperature with a NPT ensemble using Langevin.
+Production simulations were carried out to a length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
+FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with OPLS2005\cite{OPLS2005} and OPLS3\cite{OPLS3} forcefield parameters.
+
+\subsection*{Alchemical transformation set classification and color coding}
+Here, we divide the ligands into three categories---closed, intermediate, or open---based simply on the primary protein conformation the ligand occupies, using the experimental occupancy rates as reference (Table~\ref{tbl:loop-occ}).
+Any references to the protein closed set will be colored purple, intermediate with cyan, and green for the open set.
+To be explicit, the set of closed ligands refers to benzene, toluene, ethylbenzene, and n-propylbenzene; n-/sec-butylbenzene for intermediate; and n-pentyl/n-hexylbezene for open ligands.
+Alchemical transformations were grouped based on the expected final protein conformational state, yielding two categories: closed-intermediate and closed-open.
+For example, the alchemical transformation of benzene to n-butylbenzene falls into closed-intermediate while benzene to n-hexylbenzene is a closed-open transformation. 
+
+\subsection*{Calculation of free energies and measurement of inconsistency}
+Throughout this study, we make comparisons between simulations that start from the protein open state versus the protein closed state by taking the difference between the final $\Delta\Delta Gs_{calc}$.
+Then, we calculate the level of inconsistency---referred to as the Root-Mean-Square-Inconsistency (RMSI)\footnotemark---in the final predicted $\Delta\Delta Gs_{calc}$ for the closed-intermediate and closed-open alchemical transformation sets. 
+The RMSIs are calculated by using the differences in the $\Delta\Delta Gs_{calc}$ (from protein closed and open simulations) within each transformation set to compute the root-mean-squared.
+Calculated free energies were determined using the Bennett acceptance ratio\cite{BAR} (BAR) with error estimations using both bootstrapping and BAR analytical error prediction\cite{BARerror}.
+Hysteresis around closed thermodynamic cycles and best estimates of the free energies with their errors were calculated using the cycle closure algorithm discussed in a previous publication\cite{FEP/REST}.
+\footnotetext{We introduce this RMSI term in order to distinguish it from other similar terms like RMS-Error (RMSE) which would refer to comparisons with $\Delta\Delta Gs_{exp}$ or RMS-Deviation (RMSD) which we use in the context of tracking the helix motion and determining the protein state during a simulation.}
+
+\subsection*{Determining the protein conformation state using RMSD}
+In this study, we determine the state of the protein by computing the root-mean-square-deviation (RMSD) of the protein backbone atoms spanning the F-helix relative to their positions found in the closed (PDB:4W53), intermediate (PDB:4W57), and open (PDB:4W59) crystal structures.
+The set of RMSDs is computed over the course of the simulation, whereby we use the state with the lowest RMSD to color each time point correspondingly in our analyses of RMSD/time and color maps. 
+Here, we use VMD \cite(???) to align and compute the RMSD of our Desmond trajectories to the crystal structures.
+Further details on the procedure and the scripts used for these analyses can be found in the supplementary info.
+
+For the RMSD/time analysis, see Figure~\ref{fig:o_opls3_1/RMSD-replica11}) for reference. 
+Here, we plot the RMSD to the closed helix, represented by the black line, where each time point is colored according to the lowest RMSD state.
+We apply the RMSD/time analysis only to the simulations that are physically relevant or in other words the end-state replica (i.e. $\Lambda_0/\Lambda_{11}$).
+By tracking the RMSD relative to the closed helix, we can monitor if the protein opens (by high RMSD with green points) or closes (by low RMSD with purpe points).
+Additionally, we can gain some insight on the time required to capture the opening or closing of the binding cavity.
+
+It is important to note that by limiting our view to only the end-states, we encounter time points that may appear contradictory, at a glance. 
+For example, between 3-4ns there are two frames where the protein is closed and the RMSD is slightly greater than 2.0\AA.
+Following, there is one frame where the protein is open but the RMSD is lower than 2.0\AA.
+This appears to be an artifact of coordinate swapping during replica exchanges from other lambda windows, resulting in apparently contradictory time points.
+
+We address this limitation by viewing all replicas in what we call a color map, see Figure~\ref{fig:c_opls3_rest1_1/colormap} for an example.
+In this analysis, we color time points according to the lowest RMSD state for all replicas but do not track the RMSD relative to the closed state as intermediate lambdas are not physically relevant.
+Instead, we gain a better view of the overall protein conformational sampling through a collective view of all replicas and the states they occupy over their separate trajectories. 
+Using color maps, it becomes visually easy to see if intermediate---higher temperature---lambda windows are able to sample, say the open state, and if this leads to an enhancement in sampling at the end states via replica exchange.
 
 \section{Results}
 \subsection*{Calculated free energies depend strongly on starting protein conformation}
@@ -108,8 +137,8 @@ From the protein closed simulation, the protein only begins to enter the interme
 As the protein tries to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results, yielding a positive value for $\Delta\Delta G_{calc}$(+4.13 kcal/mol).
 On the other hand, in the protein open simulations, the protein already begins in its preferred state for n-hexylbenzene and stays only in this open state.
 As expected, the $\Delta\Delta G_{calc}$ comes out negative(-0.61 kcal/mol) as there is no occurrence of large protein-ligand strain in order to open the cavity.
-Ultimately, we arrive at two very different relative free energies values, where the discrepancy is as large as +4.74 kcal/mol for the same transformation of benzene to n-hexylbenzene\footnotemark.
-Collectively, when we view the discrepancy of all calculations involving closed-open transformations we find the root-mean-square-inconsistency (RMSI) to be +4 kcal/mol (Table~\ref{tbl:C-O}).  
+Ultimately, we arrive at two very different relative free energies values, where the inconsistency is as large as +4.74 kcal/mol for the same transformation of benzene to n-hexylbenzene\footnotemark.
+Collectively, when we view the inconsistency of all calculations involving closed-open transformations we find the RMSI to be +4 kcal/mol (Table~\ref{tbl:C-O}).  
 Clearly, despite the use of FEP/REST, we are unable to adequately sample all the relevant states within the standard 5ns time frame, resulting in such large differences in $\Delta\Delta G_{calc}$.
 
 \footnotetext{It should be noted that the binding affinities of n-pentyl/n-hexylbenzene to T4-L99A are not known and were inaccessible in experimental studies due to solubility limits. \cite{Merski2015}
@@ -134,9 +163,9 @@ By expanding the REST region, we are able to drive the F-helix out its initial s
 To demonstrate the REST improvement over the default protocol, we return to the case of benzene to n-hexylbenzene.
 Here, we show the facilitation of the helix motion by first referring to Fig~\ref{fig:c_opls3_1/RMSD-replica11} which shows that there is no sampling of the open state for the default protocol.
 On the other hand with the pREST, we see a few open state points around 3ns and even a single open point before closing again in our initial step. (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}.
-Alternatively, we can further illustrate the enhancement of protein transitions by viewing all replicas collectively. 
+Alternatively, we can further illustrate the enhancement of protein sampling by viewing all replicas collectively. 
 In Fig~\ref{fig:c_opls3_1/colormap} and Fig~\ref{fig:c_opls3_rest1_1/colormap}, we perform the same RMSD analysis but instead represent each time point as a colored bar and no longer plot the raw RMSD.
-Visually, it is easy to see that there are far less transitions in default simulations (Fig~\ref{fig:c_opls3_1/colormap}) as opposed to pREST simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}).
+Visually, it is easy to see that there are far less sampling in default simulations (Fig~\ref{fig:c_opls3_1/colormap}) as opposed to pREST simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}).
 %DLM: Nice graphs! Will need axis/color labels though. But these are very helpful.
  
 %P3 REST improvement quantitatively in C-O and C-I sets
@@ -160,7 +189,7 @@ In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we ill
 By simulating longer with pREST we dramatically increase our sampling of the intermediate/open states and almost entirely eliminate the dependence on the initial protein conformational state.
 For the set of closed/open transformations the RMSI dramatically falls to +0.57 kcal/mol (Table ~\ref{tbl:C-O_pREST-40-55ns}).
 In the set of closed/intermediate transformations, only a few cases required an extended simulation time of 25ns, after doing so we obtain an overall RMSI of +0.42 kcal/mol (Table ~\ref{tbl:C-I_pRESText}). 
-There still remains some discrepancy between $\Delta\Delta G_{calc}$ from protein open or closed simulations, but it now falls within a much more reasonable range of less than +1 kcal/mol. 
+There still remains some inconsistency between $\Delta\Delta G_{calc}$ from protein open or closed simulations, but it now falls within a much more reasonable range of less than +1 kcal/mol. 
  
 \section{Discussion}
 %P1: Restate problem: Convergence issues from protein conformational changes

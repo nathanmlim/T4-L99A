@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{27}
+\begin{mcitethebibliography}{28}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -38,6 +38,61 @@ Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{Maestro}
+{Schr\"{o}dinger, LLC}, Schr\"{o}dinger Release 2015-3: Maestro, version 10.3.
+  2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{ProteinPrepWizSoftware}
+{Schr\"{o}dinger, LLC}, Schr\"{o}dinger Suite 2015-3 Protein Preparation
+  Wizard. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{Epik}
+{Schr\"{o}dinger, LLC}, Epik, version 3.3. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{Impact}
+{Schr\"{o}dinger, LLC}, Impact, version 6.8. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{Prime}
+{Schr\"{o}dinger, LLC}, Prime, version 4.1. 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Madhavi~Sastry \latin{et~al.}(2013)Madhavi~Sastry, Adzhigirey, Day,
+  Annabhimoju, and Sherman]{ProteinPrepWizPaper}
+Madhavi~Sastry,~G.; Adzhigirey,~M.; Day,~T.; Annabhimoju,~R.; Sherman,~W.
+  \emph{Journal of Computer-Aided Molecular Design} \textbf{2013}, \emph{27},
+  221--234\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lim(2015)]{LigandFEP}
+Lim,~N.~M. Schr\"{o}dinger Academy Molecular Dynamics Ligand FEP Tutorial.
+  Schr\"{o}dinger: New York, NY, 2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[{Schr\"{o}dinger, LLC}(2015)]{Maestro-Desmond}
+{Schr\"{o}dinger, LLC}, Maestro-Desmond Interoperability Tools, version 4.3.
+  2015\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Wang \latin{et~al.}(2015)Wang, Wu, Deng, Kim, Pierce, Krilov, Lupyan,
   Robinson, Dahlgren, Greenwood, Romero, Masse, Knight, Steinbrecher, Beuming,
   Damm, Harder, Sherman, Brewer, Wester, Murcko, Frye, Farid, Lin, Mobley,
@@ -49,13 +104,6 @@ Wang,~L.; Wu,~Y.; Deng,~Y.; Kim,~B.; Pierce,~L.; Krilov,~G.; Lupyan,~D.;
   Lin,~T.; Mobley,~D.~L.; Jorgensen,~W.~L.; Berne,~B.~J.; Friesner,~R.~A.;
   Abel,~R. \emph{Journal of the American Chemical Society} \textbf{2015},
   \emph{137}, 2695--2703, PMID: 25625324\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Lim(2015)]{LigandFEP}
-Lim,~N.~M. Schr\"{o}dinger Academy Molecular Dynamics Ligand FEP Tutorial.
-  Schr\"{o}dinger: New York, NY, 2015\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -100,49 +148,9 @@ Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[{Schr\"{o}dinger}()]{Maestro}
-{Schr\"{o}dinger}, Maestro Release 2015-3\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{Schr\"{o}dinger}()]{ProteinPrepWizSoftware}
-{Schr\"{o}dinger}, Schr\"{o}dinger Suite 2015-3 Protein Preparation
-  Wizard\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{Schr\"{o}dinger}()]{Epik}
-{Schr\"{o}dinger}, Schr\"{o}dinger Suite 2015-3 Epik\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{Schr\"{o}dinger}()]{Impact}
-{Schr\"{o}dinger}, Schr\"{o}dinger Suite 2015-3 Impact\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{Schr\"{o}dinger}()]{Prime}
-{Schr\"{o}dinger}, Schr\"{o}dinger Suite 2015-3 Prime\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Madhavi~Sastry \latin{et~al.}(2013)Madhavi~Sastry, Adzhigirey, Day,
-  Annabhimoju, and Sherman]{ProteinPrepWizPaper}
-Madhavi~Sastry,~G.; Adzhigirey,~M.; Day,~T.; Annabhimoju,~R.; Sherman,~W.
-  \emph{Journal of Computer-Aided Molecular Design} \textbf{2013}, \emph{27},
-  221--234\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[{D.E. Shaw Research, Schr\"{o}dinger}()]{DESMONDSoftware}
-{D.E. Shaw Research, Schr\"{o}dinger}, Schr\"{o}dinger Release 2015-3: Desmond
-  Molecular Dynamics System\relax
+\bibitem[{D.E. Shaw Research}(2015)]{DESMONDSoftware}
+{D.E. Shaw Research}, Schr\"{o}dinger Release 2015-3: Desmond Molecular
+  Dynamics System, version 4.3. 2015\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
