@@ -11,71 +11,43 @@ plt.rcParams['legend.handlelength'] = 0
 
 
 def xyplot(data,xlabel,units):
+      x = data[1:,0]
+      y = data[1:,1]
+      y1 = data[1:,
+      #y2 = data[:,2]
       if units == 'kcal':
          bounds = 1
       else:
          bounds = 4
-      ideal_line = [i for i in range(-7,7)]
+      ideal_line = [i for i in range(-2,2)]
       line1 = [i+bounds for i in ideal_line]
       line2 = [i-bounds for i in ideal_line]
       #Plot data      
       ax1 = plt.figure(figsize=[10,10]).add_subplot(111)
-
-      #C vs O
-      x = data[:,0]
-      xerr = data[:,1]
-      y = data[:,2]
-      yerr = data[:,3]
-      RMSE = stats.rmse(x, y)
-      R = stats.rsquared(x, y)
-      N = len(y)
-
-      #ax1.axis([0,4,0,4])
-      #ax1.axis([-3,6,-3,6])
-      ax1.errorbar(x,y, xerr=[xerr,xerr], yerr=[yerr,yerr], fmt='o', color='black', markersize=10)
-      ax1.plot(ideal_line,ideal_line, color='red')
-      ax1.plot(ideal_line,line1, linestyle='--', color='red')
-      ax1.plot(ideal_line,line2, linestyle='--', color='red')
-      ax1.set_xlabel(r'$\Delta\Delta$G Closed ({}/mol)'.format(units), fontsize=20)
-      ax1.set_ylabel(r'$\Delta\Delta$G Open ({}/mol)'.format(units), fontsize=20)
-      txt = "N={}\n".format(N)+"RMSI={:.2}\n".format(RMSE)+r"$R^2$={:.2}".format(R)
-
-      ###C/O vs Exp
-      """
-      exp = data[:,0]
-      experr = data [:,1]
-      c = data[:,2]
-      cerr = data[:,3]
-      o = data[:,4]
-      oerr = data[:,5]
-
-      ax1.axis([-2.5,1.5,-2.5,1.5])
-      ax1.errorbar(exp, c,xerr=[experr,experr], yerr=[cerr,cerr], fmt='o' , color='purple',markersize=10)
-      ax1.errorbar(exp, o,xerr=[experr,experr], yerr=[oerr,oerr], fmt='o', color='g', markersize=10)
-      cRMSE = stats.rmse(c, exp)
-      oRMSE = stats.rmse(o, exp)
-      cR = stats.rsquared(c, exp)
-      oR = stats.rsquared(o,exp)
-      cN = len(c)
-      oN = len(o)
+      ax1.axis([-2,1,-2,1])
+      ax1.scatter(x,y,color='purple', s=200, label='C')
+      ax1.scatter(x,y1,color='g', s=200, label='O')
       ax1.plot(ideal_line,ideal_line, color='black')
       ax1.plot(ideal_line,line1, linestyle='--', color='black')
       ax1.plot(ideal_line,line2, linestyle='--', color='black')
-      ax1.set_xlabel(r' $\Delta\Delta$G exp  ({}/mol)'.format(units), fontsize=20)
-      ax1.set_ylabel(r' $\Delta\Delta$G calc ({}/mol)'.format(units), fontsize=20)
-      txt = "RMSE: C={:.2} O={:.2} \n".format(cRMSE,oRMSE)+r"$R^2:$ C={:.2} O={:.2}".format(cR,oR)
-      """
       #Set axes parameters
-      ax1.tick_params(axis='both',labelsize=18)
+      #ax1.set_xlim(-1*ymax,ymax)
+      #ax1.set_ylim(-1*ymax,ymax)
+      ax1.set_xlabel('{}({}/mol)'.format(xlabel,units))
+      ax1.set_ylabel('ddG Predicted ({}/mol)'.format(units))
+      #ax1.set_title(r'{} - {} ddG'.format( method, dGtype ))
 
+      #Statistics
+      #RMSE = stats.rmse(y, x)
+      #R = stats.rsquared(y, x)
+      #N = len(y)
 
       #Figure caption
+      #txt = "Figure Subcaption Here\n"+"RMSE={:.2}".format(RMSE)+r" $R^2$={:.2}".format(R)+" N={}".format(N)
       #an = ax1.annotate(txt, xy=(0.5,-1), ha='center', xytext=(0,-60), xycoords='axes fraction', textcoords='offset points', bbox=dict(boxstyle="square",fc="w"))
       #wrapText(an)
-      leg = ax1.legend([txt],loc=2, handlelength=0,handletextpad=0,fancybox=True)
-      #for item in leg.legendHandles:
-      #   item.set_visible(False)
-      plt.savefig('./C2O_pREST_xyplot.png', bbox_inches='tight')
+      #ax1.legend([txt],loc=2,fontsize='small')
+      plt.savefig('./results.png', bbox_inches='tight')
       plt.cla()
 
 # Text Wrapping
@@ -182,5 +154,5 @@ def textBox(text, axes, ha='left', fontsize=12, margin=None, frame=True, **kwarg
     return an
 
 
-data = np.genfromtxt('C2O_pREST.txt')
+data = np.genfromtxt('expdata.txt')
 xyplot(data,'ddGexp','kcal')

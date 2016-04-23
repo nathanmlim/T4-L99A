@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{28}
+\begin{mcitethebibliography}{34}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -38,9 +38,32 @@ Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Overington \latin{et~al.}(2006)Overington, Al-Lazikani, and
+  Hopkins]{overington2006many}
+Overington,~J.~P.; Al-Lazikani,~B.; Hopkins,~A.~L. \emph{Nature reviews Drug
+  discovery} \textbf{2006}, \emph{5}, 993--996\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Landry and Gies(2008)Landry, and Gies]{FCP:FCP548}
+Landry,~Y.; Gies,~J.-P. \emph{Fundamental \& Clinical Pharmacology}
+  \textbf{2008}, \emph{22}, 1--18\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lundstrom(2009)]{Lundstrom2009}
+Lundstrom,~K. In \emph{G Protein-Coupled Receptors in Drug Discovery};
+  Leifert,~R.~W., Ed.; Humana Press: Totowa, NJ, 2009; Chapter An Overview on
+  GPCRs and Drug Discovery: Structure-Based Drug Design and Structural Biology
+  on GPCRs, pp 51--66\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[{Schr\"{o}dinger, LLC}(2015)]{Maestro}
-{Schr\"{o}dinger, LLC}, Schr\"{o}dinger Release 2015-3: Maestro, version 10.3.
-  2015\relax
+{Schr\"{o}dinger, LLC}, Maestro, version 10.3. 2015\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -149,8 +172,8 @@ Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
 \bibitem[{D.E. Shaw Research}(2015)]{DESMONDSoftware}
-{D.E. Shaw Research}, Schr\"{o}dinger Release 2015-3: Desmond Molecular
-  Dynamics System, version 4.3. 2015\relax
+{D.E. Shaw Research}, Desmond Molecular Dynamics System, version 4.3.
+  2015\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -179,7 +202,7 @@ Shivakumar,~D.; Williams,~J.; Wu,~Y.; Damm,~W.; Shelley,~J.; Sherman,~W.
 \bibitem[Guo \latin{et~al.}(2010)Guo, Mohanty, Noehre, Sawyer, Sherman, and
   Krilov]{DESMONDPaper2}
 Guo,~Z.; Mohanty,~U.; Noehre,~J.; Sawyer,~T.~K.; Sherman,~W.; Krilov,~G.
-  \emph{Chemical Biology & Drug Design} \textbf{2010}, \emph{75},
+  \emph{Chemical Biology \& Drug Design} \textbf{2010}, \emph{75},
   348--359\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
@@ -237,10 +260,32 @@ Hahn,~A.~M.; Then,~H. \emph{Physical Review E} \textbf{2009}, \emph{80},
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
+\bibitem[Humphrey \latin{et~al.}(1996)Humphrey, Dalke, and Schulten]{VMDpaper}
+Humphrey,~W.; Dalke,~A.; Schulten,~K. \emph{Journal of Molecular Graphics}
+  \textbf{1996}, \emph{14}, 33--38\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Eargle \latin{et~al.}(2006)Eargle, Wright, and
+  Luthey-Schulten]{VMDalignment}
+Eargle,~J.; Wright,~D.; Luthey-Schulten,~Z. \emph{Bioinformatics}
+  \textbf{2006}, \emph{22}, 504--506\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
 \bibitem[Bowman \latin{et~al.}(2013)Bowman, Pande, and No{\'e}]{MSM}
 Bowman,~G.~R.; Pande,~V.~S.; No{\'e},~F. \emph{An introduction to markov state
   models and their application to long timescale molecular simulation};
   Springer Science \& Business Media, 2013; Vol. 797\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morton \latin{et~al.}(1995)Morton, Baase, and Matthews]{T4affinity}
+Morton,~A.; Baase,~W.~A.; Matthews,~B.~W. \emph{Biochemistry} \textbf{1995},
+  \emph{34}, 8564--8575, PMID: 7612598\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
