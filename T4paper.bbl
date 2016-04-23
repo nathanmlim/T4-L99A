@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{34}
+\begin{mcitethebibliography}{52}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -20,15 +20,6 @@
   {\relax}
   {\relax}
 
-\bibitem[Boyce \latin{et~al.}(2009)Boyce, Mobley, Rocklin, Graves, Dill, and
-  Shoichet]{Boyce2009}
-Boyce,~S.~E.; Mobley,~D.~L.; Rocklin,~G.~J.; Graves,~A.~P.; Dill,~K.~A.;
-  Shoichet,~B.~K. \emph{Journal of Molecular Biology} \textbf{2009},
-  \emph{394}, 747 -- 763\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Merski \latin{et~al.}(2015)Merski, Fischer, Balius, Eidam, and
   Shoichet]{Merski2015}
 Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
@@ -58,6 +49,194 @@ Lundstrom,~K. In \emph{G Protein-Coupled Receptors in Drug Discovery};
   Leifert,~R.~W., Ed.; Humana Press: Totowa, NJ, 2009; Chapter An Overview on
   GPCRs and Drug Discovery: Structure-Based Drug Design and Structural Biology
   on GPCRs, pp 51--66\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Homeyer \latin{et~al.}(2014)Homeyer, Stoll, Hillisch, and
+  Gohlke]{doi:10.1021/ct5000296}
+Homeyer,~N.; Stoll,~F.; Hillisch,~A.; Gohlke,~H. \emph{Journal of Chemical
+  Theory and Computation} \textbf{2014}, \emph{10}, 3331--3344, PMID:
+  26588302\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chipot and Pohorille(2007)Chipot, and Pohorille]{chipot2007free}
+Chipot,~C.; Pohorille,~A. \emph{Free energy calculations}; Springer, 2007\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Chodera \latin{et~al.}(2011)Chodera, Mobley, Shirts, Dixon, Branson,
+  and Pande]{chodera2011alchemical}
+Chodera,~J.~D.; Mobley,~D.~L.; Shirts,~M.~R.; Dixon,~R.~W.; Branson,~K.;
+  Pande,~V.~S. \emph{Current opinion in structural biology} \textbf{2011},
+  \emph{21}, 150--160\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Knight and Brooks(2009)Knight, and Brooks]{knight2009lambda}
+Knight,~J.~L.; Brooks,~C.~L. \emph{Journal of computational chemistry}
+  \textbf{2009}, \emph{30}, 1692--1700\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Zheng \latin{et~al.}(2008)Zheng, Chen, and Yang]{zheng2008random}
+Zheng,~L.; Chen,~M.; Yang,~W. \emph{Proceedings of the National Academy of
+  Sciences} \textbf{2008}, \emph{105}, 20227--20232\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Gallicchio and Levy(2011)Gallicchio, and Levy]{gallicchio2011advances}
+Gallicchio,~E.; Levy,~R.~M. \emph{Current opinion in structural biology}
+  \textbf{2011}, \emph{21}, 161--166\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hansen and van Gunsteren(2014)Hansen, and van
+  Gunsteren]{doi:10.1021/ct500161f}
+Hansen,~N.; van Gunsteren,~W.~F. \emph{Journal of Chemical Theory and
+  Computation} \textbf{2014}, \emph{10}, 2632--2647, PMID: 26586503\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2015)Wang, Wu, Deng, Kim, Pierce, Krilov, Lupyan,
+  Robinson, Dahlgren, Greenwood, Romero, Masse, Knight, Steinbrecher, Beuming,
+  Damm, Harder, Sherman, Brewer, Wester, Murcko, Frye, Farid, Lin, Mobley,
+  Jorgensen, Berne, Friesner, and Abel]{FEPplus}
+Wang,~L.; Wu,~Y.; Deng,~Y.; Kim,~B.; Pierce,~L.; Krilov,~G.; Lupyan,~D.;
+  Robinson,~S.; Dahlgren,~M.~K.; Greenwood,~J.; Romero,~D.~L.; Masse,~C.;
+  Knight,~J.~L.; Steinbrecher,~T.; Beuming,~T.; Damm,~W.; Harder,~E.;
+  Sherman,~W.; Brewer,~M.; Wester,~R.; Murcko,~M.; Frye,~L.; Farid,~R.;
+  Lin,~T.; Mobley,~D.~L.; Jorgensen,~W.~L.; Berne,~B.~J.; Friesner,~R.~A.;
+  Abel,~R. \emph{Journal of the American Chemical Society} \textbf{2015},
+  \emph{137}, 2695--2703, PMID: 25625324\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2012)Wang, Berne, and Friesner]{FEP/REST}
+Wang,~L.; Berne,~B.~J.; Friesner,~R.~A. \emph{Proceedings of the National
+  Academy of Sciences} \textbf{2012}, \emph{109}, 1937--1942\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Eriksson \latin{et~al.}(1992)Eriksson, Baase, Zhang, Heinz, Blaber,
+  Baldwin, and Matthews]{eriksson1992response}
+Eriksson,~A.~E.; Baase,~W.~A.; Zhang,~X.-J.; Heinz,~D.~W.; Blaber,~M.;
+  Baldwin,~E.~P.; Matthews,~B.~W. \emph{Science} \textbf{1992}, \emph{255},
+  178--183\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Eriksson \latin{et~al.}(1993)Eriksson, Baase, and
+  Matthews]{eriksson1993similar}
+Eriksson,~A.; Baase,~W.~A.; Matthews,~B.~W. \emph{Journal of molecular biology}
+  \textbf{1993}, \emph{229}, 747--769\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morton \latin{et~al.}(1995)Morton, Baase, and Matthews]{T4affinity}
+Morton,~A.; Baase,~W.~A.; Matthews,~B.~W. \emph{Biochemistry} \textbf{1995},
+  \emph{34}, 8564--8575, PMID: 7612598\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Morton and Matthews(1995)Morton, and
+  Matthews]{doi:10.1021/bi00027a007}
+Morton,~A.; Matthews,~B.~W. \emph{Biochemistry} \textbf{1995}, \emph{34},
+  8576--8588, PMID: 7612599\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wei \latin{et~al.}(2002)Wei, Baase, Weaver, Matthews, and
+  Shoichet]{wei2002model}
+Wei,~B.~Q.; Baase,~W.~A.; Weaver,~L.~H.; Matthews,~B.~W.; Shoichet,~B.~K.
+  \emph{Journal of molecular biology} \textbf{2002}, \emph{322}, 339--355\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wei \latin{et~al.}(2004)Wei, Weaver, Ferrari, Matthews, and
+  Shoichet]{wei2004testing}
+Wei,~B.~Q.; Weaver,~L.~H.; Ferrari,~A.~M.; Matthews,~B.~W.; Shoichet,~B.~K.
+  \emph{Journal of molecular biology} \textbf{2004}, \emph{337},
+  1161--1182\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Graves \latin{et~al.}(2005)Graves, Brenk, and
+  Shoichet]{graves2005decoys}
+Graves,~A.~P.; Brenk,~R.; Shoichet,~B.~K. \emph{Journal of medicinal chemistry}
+  \textbf{2005}, \emph{48}, 3714--3728\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mobley \latin{et~al.}(2007)Mobley, Graves, Chodera, McReynolds,
+  Shoichet, and Dill]{Mobley20071118}
+Mobley,~D.~L.; Graves,~A.~P.; Chodera,~J.~D.; McReynolds,~A.~C.;
+  Shoichet,~B.~K.; Dill,~K.~A. \emph{Journal of Molecular Biology}
+  \textbf{2007}, \emph{371}, 1118 -- 1134\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Hermans and Wang(1997)Hermans, and Wang]{hermans1997inclusion}
+Hermans,~J.; Wang,~L. \emph{Journal of the American Chemical Society}
+  \textbf{1997}, \emph{119}, 2707--2714\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Boresch \latin{et~al.}(2003)Boresch, Tettinger, Leitgeb, and
+  Karplus]{boresch2003absolute}
+Boresch,~S.; Tettinger,~F.; Leitgeb,~M.; Karplus,~M. \emph{The Journal of
+  Physical Chemistry B} \textbf{2003}, \emph{107}, 9535--9551\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Deng and Roux(2006)Deng, and Roux]{deng2006calculation}
+Deng,~Y.; Roux,~B. \emph{Journal of Chemical Theory and Computation}
+  \textbf{2006}, \emph{2}, 1255--1273\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mann and Hermans(2000)Mann, and Hermans]{mann2000modeling}
+Mann,~G.; Hermans,~J. \emph{Journal of molecular biology} \textbf{2000},
+  \emph{302}, 979--989\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Boyce \latin{et~al.}(2009)Boyce, Mobley, Rocklin, Graves, Dill, and
+  Shoichet]{Boyce2009}
+Boyce,~S.~E.; Mobley,~D.~L.; Rocklin,~G.~J.; Graves,~A.~P.; Dill,~K.~A.;
+  Shoichet,~B.~K. \emph{Journal of Molecular Biology} \textbf{2009},
+  \emph{394}, 747 -- 763\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Wang \latin{et~al.}(2013)Wang, Deng, Knight, Wu, Kim, Sherman,
+  Shelley, Lin, and Abel]{FEP/RESTapp}
+Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
+  Shelley,~J.~C.; Lin,~T.; Abel,~R. \emph{Journal of Chemical Theory and
+  Computation} \textbf{2013}, \emph{9}, 1282--1293, PMID: 26588769\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -116,21 +295,6 @@ Lim,~N.~M. Schr\"{o}dinger Academy Molecular Dynamics Ligand FEP Tutorial.
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Wang \latin{et~al.}(2015)Wang, Wu, Deng, Kim, Pierce, Krilov, Lupyan,
-  Robinson, Dahlgren, Greenwood, Romero, Masse, Knight, Steinbrecher, Beuming,
-  Damm, Harder, Sherman, Brewer, Wester, Murcko, Frye, Farid, Lin, Mobley,
-  Jorgensen, Berne, Friesner, and Abel]{FEPplus}
-Wang,~L.; Wu,~Y.; Deng,~Y.; Kim,~B.; Pierce,~L.; Krilov,~G.; Lupyan,~D.;
-  Robinson,~S.; Dahlgren,~M.~K.; Greenwood,~J.; Romero,~D.~L.; Masse,~C.;
-  Knight,~J.~L.; Steinbrecher,~T.; Beuming,~T.; Damm,~W.; Harder,~E.;
-  Sherman,~W.; Brewer,~M.; Wester,~R.; Murcko,~M.; Frye,~L.; Farid,~R.;
-  Lin,~T.; Mobley,~D.~L.; Jorgensen,~W.~L.; Berne,~B.~J.; Friesner,~R.~A.;
-  Abel,~R. \emph{Journal of the American Chemical Society} \textbf{2015},
-  \emph{137}, 2695--2703, PMID: 25625324\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Liu \latin{et~al.}(2013)Liu, Wu, Lin, Abel, Redmann, Summa, Jaber,
   Lim, and Mobley]{LOMAP}
 Liu,~S.; Wu,~Y.; Lin,~T.; Abel,~R.; Redmann,~J.~P.; Summa,~C.~M.; Jaber,~V.~R.;
@@ -151,22 +315,6 @@ Liu,~P.; Kim,~B.; Friesner,~R.~A.; Berne,~B.~J. \emph{Proceedings of the
 \bibitem[Wang \latin{et~al.}(2011)Wang, Friesner, and Berne]{REST2}
 Wang,~L.; Friesner,~R.~A.; Berne,~B.~J. \emph{The Journal of Physical Chemistry
   B} \textbf{2011}, \emph{115}, 9431--9438, PMID: 21714551\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Wang \latin{et~al.}(2012)Wang, Berne, and Friesner]{FEP/REST}
-Wang,~L.; Berne,~B.~J.; Friesner,~R.~A. \emph{Proceedings of the National
-  Academy of Sciences} \textbf{2012}, \emph{109}, 1937--1942\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Wang \latin{et~al.}(2013)Wang, Deng, Knight, Wu, Kim, Sherman,
-  Shelley, Lin, and Abel]{FEP/RESTapp}
-Wang,~L.; Deng,~Y.; Knight,~J.~L.; Wu,~Y.; Kim,~B.; Sherman,~W.;
-  Shelley,~J.~C.; Lin,~T.; Abel,~R. \emph{Journal of Chemical Theory and
-  Computation} \textbf{2013}, \emph{9}, 1282--1293, PMID: 26588769\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -279,13 +427,6 @@ Eargle,~J.; Wright,~D.; Luthey-Schulten,~Z. \emph{Bioinformatics}
 Bowman,~G.~R.; Pande,~V.~S.; No{\'e},~F. \emph{An introduction to markov state
   models and their application to long timescale molecular simulation};
   Springer Science \& Business Media, 2013; Vol. 797\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Morton \latin{et~al.}(1995)Morton, Baase, and Matthews]{T4affinity}
-Morton,~A.; Baase,~W.~A.; Matthews,~B.~W. \emph{Biochemistry} \textbf{1995},
-  \emph{34}, 8564--8575, PMID: 7612598\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

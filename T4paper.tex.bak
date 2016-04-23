@@ -6,6 +6,7 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{subfiles}
 \usepackage{subcaption}
+\usepackage{multirow}
 
 \author{Nathan Lim}
 \email{limn1@uci.edu}
@@ -26,14 +27,24 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
 \pagebreak
 
 \section{Introduction}
-Proteins play a central role in many biological processes by modulating many key signaling pathways.
+Proteins play a central role in many biological processes by modulating many key signalling pathways.
 It is unsurprising to find that proteins make up the vast majority of pharmaceutical drug targets.
 Many small-molecules on the market today induce their therapeutic effect by modulating the proteins biological activity through binding\cite{overington2006many,FCP:FCP548,Lundstrom2009}.
 Thus, optimization of protein-ligand binding affinities is a central goal in early pharmaceutical drug design projects.
 
-Recent advancements in technology and computational chemistry have led to many medicinal chemists turning to computer-aided drug design techniques for this lead optimization problem.
-Here, accuracy and reliability of the being used is critical
-The most rigorous approach to computing protein-ligand binding affinities being 
+Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques for this lead optimization problem.
+Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities.
+Using methods like free energy perturbations (FEP) and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be accurately computed through using an alchemical pathway. \cite(doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda)
+By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided \cite(???).
+Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to the tremendous success of using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
+
+Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST), to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
+In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally and computationally by docking and free energy methods. %\cite{http://www.sciencedirect.com/science/article/pii/S0022283607007760 26-32, 30,32, 18,19,23,33}
+Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
+Through a series of eight congeneric ligands, that grow by a single methyl addition, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
+Using this FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
+In this study---while using the implemented default FEP/REST protocol---we demonstrate how the kinetically distinct protein states and structural rearrangement affects the accuracy and reliability of our predicted relative binding affinities.
+Further, we illustrate the importance of sufficient sampling of protein conformational changes and some modifications or possible techniques to address this issue.
 
 \section{Methods}
 \subsection*{Protein/Ligand preparation}
@@ -59,14 +70,14 @@ Following, the newly added atoms in the tail were locally minimized while leavin
 This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to be included in the REST region. 
 
 \subsection*{Classification of alchemical transformations and color coding}
-Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Fig~\ref{fig:loop-occ},Table~\ref{tbl:loop-occ}).
+Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Fig~\ref{fig:loop-occ},Table~\ref{tbl:expdata}).
 To be explicit, the set of closed ligands refers to benzene, toluene, ethylbenzene, and n-propylbenzene; n-/sec-butylbenzene for intermediate; and n-pentyl/n-hexylbezene for open ligands.
 The various protein states and ligands are then assigned a color accordingly: purple for closed, cyan for intermediate, and green for the open state.
 
 Our sets of alchemical transformations consisted of 3 groups: `closed-intermediate', `closed-open', and an `experimental' ligand set.
 The first two sets were classified based on the expected conformational change that would result from the alchemical transformation.
 For example, the alchemical transformation of benzene to n-butylbenzene falls into closed-intermediate while benzene to n-hexylbenzene is a closed-open transformation.
-In our experimental set, we perform all possible combinations of transformations for ligands with available experimental binding affinities.
+In our experimental set, we perform all possible combinations of transformations for ligands with available experimental binding affinities (Table~\ref{tbl:expdata}).
 Ligands with available experimental binding affinities consisted of benzene, toluene, ethylbenzene, n-propylbenzene, and n-butylbenzene.
 This gives a total of 26 alchemical transformations in this study, 8 from `closed-intermediate', 8 from `closed-open', and 10 from the experimental set.
  
@@ -154,7 +165,7 @@ In this study, we demonstrate using the default Schr\"{o}dinger FEP protocol set
 %P2: Discuss closed-open case to show the problem in default protocol
 \subsubsection*{Closed-Open Ligand Transformations}
 An examination of the largest alchemical transformation, benzene to n-hexylbenzene, clearly highlights the sampling challenges faced when using the standard FEP/REST protocol.
-From experimental data of ligand occupancies (Table~\ref{tbl:loop-occ}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state over the closed state.
+From experimental data of ligand occupancies (Table~\ref{tbl:expdata}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state over the closed state.
 Instead, we find the protein remains trapped in its initial conformational state whether we start from closed (Fig~\ref{fig:c_opls3_1/RMSD-replica11}) or open (Fig~\ref{fig:o_opls3_1/RMSD-replica11}) over the course of the 5ns simulation.
 From the protein closed simulation, the protein only briefly samples the intermediate state around 3ns but never enters the open conformation.
 As the protein tries to accommodate n-hexylbenzene and enter its preferred open state, protein-ligand strain results, yielding a positive value for $\Delta\Delta G_{calc}$(+4.13 kcal/mol).
@@ -177,7 +188,7 @@ Considering this set involves a smaller protein conformational change and smalle
 
 Although, the collective RMSI for closed-intermediate transformations falls below the acceptable range of less than 1 kcal/mol, we can still see a dependence on the initial protein configuration by viewing transformations involving n-butylbenzene.
 For these cases in particular, we observe the same pattern of protein closed simulations yielding positive free energies and negative for protein open simulations. 
-We do not see this pattern for transformations with sec-butylbenzene as it does not partially occupy the open state, unlike n-butylbenzene (Table~\ref{tbl:loop-occ}).
+We do not see this pattern for transformations with sec-butylbenzene as it does not partially occupy the open state, unlike n-butylbenzene (Table~\ref{tbl:expdata}).
 Through this observation, we demonstrate further that with the default protocol does not eliminate the free energy dependence on the protein starting conformation, even for smaller perturbations.
 
 \subsubsection*{Experimental Ligand Transformations}
@@ -224,7 +235,7 @@ We only show the final 10ns in our RMSD/time analysis to avoid overcrowding data
 %P3 Longer simulation improvements quantitatively
 By simulating longer with pREST we dramatically increase our sampling of the intermediate and open protein states and almost entirely eliminate the dependence on the initial protein conformational state.
 For the set of closed-open transformations the RMSI dramatically falls to +0.57 kcal/mol (Fig.~\ref{fig:C2O_xyplot_pREST},Table ~\ref{tbl:C-O_pREST-40-55ns}) and a RMSI of +0.42 kcal/mol for the closed-intermediate (Fig.~\ref{fig:C2I_xyplot_pREST},Table ~\ref{tbl:C-I_pRESText}).
-Similarly, for experimental ligand transformations, our RMSE for protein closed simulations falls to +0.54 kcal/mol (Fig.~\ref{fig:exp_xyplot_pREST}).
+Similarly, for experimental ligand transformations, our RMSE for protein closed simulations falls to +0.54 kcal/mol (Fig.~\ref{fig:exp_xyplot_pREST},Table~\ref{tbl:exp_pREST_set}).
 Now, all our inconsistencies in the final calculated free energies and error from experiment fall within a much more reasonable range of less than +1 kcal/mol.
  
 \section{Discussion}
@@ -239,7 +250,7 @@ Particularly, we find that calculated relative free energies can depend on the i
 %P2: Restate the experiment carried out to remind the reader.
 %Remind main analysis technique and the main idea we can draw from it
 By looking at alchemical transformations that involve a conformation change in the protein, we show the $\Delta\Delta Gs_{calc}$ are sensitive to the initial protein conformational state when utilizing the default implemented FEP protocol.
-Such cases are when the alchemical transformation involves mutating ligands that primarily occupy the closed state (i.e. benzene to n-propyl) into ligands that occupy the intermediate state (i.e. sec-/n-butyl) or, especially, the open state (n-pentyl/n-hexyl) (Table~\ref{tbl:loop-occ}).
+Such cases are when the alchemical transformation involves mutating ligands that primarily occupy the closed state (i.e. benzene to n-propyl) into ligands that occupy the intermediate state (i.e. sec-/n-butyl) or, especially, the open state (n-pentyl/n-hexyl) (Table~\ref{tbl:expdata}).
 By our RMSD analyses, we show the protein remains trapped in its initial state throughout the simulation when using the implemented default protocol.
 Through remaining trapped, we are unable to adequately sample the necessary protein conformational states and thereby obtain inconsistent $\Delta\Delta Gs_{calc}$ depending on whether we start simulations from the open or closed protein configuration.
 
@@ -302,7 +313,7 @@ More importantly, prior to performing binding free energy calculations, we prese
 \clearpage
 \bibliography{references}
 
-\pagebreak
-\subfile{T4supp}
+%\pagebreak
+%\subfile{T4supp}
 
 \end{document}

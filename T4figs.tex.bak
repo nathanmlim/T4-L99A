@@ -109,20 +109,20 @@
 \begin{subfigure}{.5\textwidth}
   \centering
    \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth, height=0.4\textheight]{VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png}}
-   \caption{Default}
+   %\caption{Closed - Benzene to n-Hexylbenzene 0-5ns Colormap}
    \label{fig:c_opls3_1/colormap}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
    \centering
    \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth, height=0.4\textheight]{VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png}}
-   \caption{pREST}
+   %\caption{pREST ColorMap}
    \label{fig:c_opls3_rest1_1/colormap}
 \end{subfigure}
 \centering
 \begin{subfigure}{\textwidth}
    \centering
    \frame{\includegraphics[trim={1.5cm 0 2cm 0.25cm}, clip, width=\textwidth, height=0.4\textheight]{VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png}}
-   \caption{Closed - Benzene to n-Hexylbenzene 45-55ns Colormap pREST}
+   %\caption{Closed - Benzene to n-Hexylbenzene 45-55ns Colormap pREST}
    \label{fig:c_opls3_rest1_1/cmap-45-55ns}
 \end{subfigure}
 \caption{Benzene To n-Hexylbenzene (pREST) Colormap}
@@ -134,42 +134,42 @@
 \begin{subfigure}{.5\textwidth}
   \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/C2O_xyplot.png}}
-   \caption{Closed-Open XYplot (Default)}
+   %\caption{Closed-Open XYplot (Default)}
    \label{fig:C2O_xyplot}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
    \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/C2O_pREST_xyplot.png}}
-   \caption{Closed-Open XYplot (pREST)}
+   %\caption{Closed-Open XYplot (pREST)}
    \label{fig:C2O_xyplot_pREST}
 \end{subfigure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/C2I_xyplot.png}}
-   \caption{Closed-Int XYplot (Default)}
+   %\caption{Closed-Int XYplot (Default)}
    \label{fig:C2I_xyplot}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
    \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/C2I_pREST_xyplot.png}}
-   \caption{Closed-Int XYplot (pREST)}
+   %\caption{Closed-Int XYplot (pREST)}
    \label{fig:C2I_xyplot_pREST}
 \end{subfigure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/exp_xyplot.png}}
-   \caption{Exp XYplot (Default)}
+   %\caption{Exp XYplot (Default)}
    \label{fig:exp_xyplot}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
    \centering
    \frame{\includegraphics[width=\textwidth, height=0.3\textheight]{VMDscripts/XYplot/exp_pREST_xyplot.png}}
-   \caption{Closed-Int XYplot (pREST)}
+   %\caption{Closed-Int XYplot (pREST)}
    \label{fig:exp_xyplot_pREST}
 \end{subfigure}
-\caption{Conf-XY}
+%\caption{Conf-XY}
 \label{fig:xyplot}
 \end{figure}
 
