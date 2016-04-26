@@ -8,12 +8,21 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 
-\author{Nathan Lim}
+\author{Nathan M. Lim}
 \email{limn1@uci.edu}
-\affiliation[University of California, Irvine]
-{Department of Pharmaceutical Sciences}
+\affiliation[University of California---Irvine]
+{Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
+\author{Lingle Wang}
+\affiliation[Schr\"{o}dinger, Inc.]
+{Schr\"{o}dinger, Inc., 120 West 45th Street, New York, New York 10036, United States}
+\author{Robert Abel}
+\affiliation[Schr\"{o}dinger, Inc.]
+{Schr\"{o}dinger, Inc., 120 West 45th Street, New York, New York 10036, United States}
+\author{David L. Mobley}
+\affiliation[University of California---Irvine]
+{Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
 
-\title{Sensitivity in predicted relative binding free energies from incremental ligand changes within a model binding site}
+\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energy calculation protocols and force fields}
 
 \begin{document}
 
@@ -39,7 +48,7 @@ By computing relative binding free energies, much of the computational cost and 
 Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to the tremendous success of using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
 
 Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
-In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}
+In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
 Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
 Through a series of eight congeneric ligands, that grow by a single methyl addition, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
 Using this FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
@@ -63,7 +72,6 @@ Generally, two options were taken:\\
 (1b) The corresponding ligand in the transformation was built by duplicating benzene in place and adding methyl groups.\\
 (2a) If the simulation starts from the protein open state, the n-hexylbenzene crystal position was used as reference for fragment building (PDF:4W59).\\
 (2b) The corresponding ligand in the transformation was built by duplicating n-hexylbenzene in place and deleting methyl groups.\\
-
 Ligand tail fragments were added using the Build/Fragments toolbar in Maestro  and were not overlaid or docked. 
 As the ligand tails were built, bonds were manually rotated so that the tail was oriented in a similar manner as in their corresponding crystal structure.
 Following, the newly added atoms in the tail were locally minimized while leaving the core in its initial position.
@@ -211,12 +219,11 @@ Here, we show the facilitation of the helix motion by first referring to Figure~
 Now with the pREST, we see a few open state points around 3ns and even a single open point before closing again after our initial step (Fig~\ref{fig:c_opls3_rest1_1/RMSD-replica11}).
 Alternatively, we can further illustrate the enhancement of protein sampling by viewing all replicas collectively, using the color maps.
 In reference to Figure~\ref{fig:c_opls3_1/colormap} and Figure~\ref{fig:c_opls3_rest1_1/colormap}, we illustrate that there is far less sampling of the intermediate or open protein states in default simulations versus the pREST simulations.
-%DLM: Nice graphs! Will need axis/color labels though. But these are very helpful.
  
 %P3 REST improvement quantitatively in C-O and C-I sets
 Collectively, we find only some minor improvements in the RMSI for all our closed-open and closed-intermediate transformations while using pREST. 
 For closed-open transformations (Table~\ref{tbl:C-O_pREST}), the RMSI reduces to +2.78 kcal/mol (previously +4 kcal/mol). 
-On the other hand, for closed-intermediate, the RMSI raises slightly to +0.78 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise(?) (Table~\ref{tbl:C-I_pREST}).
+On the other hand, for closed-intermediate, the RMSI raises slightly to +0.78 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise. (Table~\ref{tbl:C-I_pREST}).
 Generally, simulations starting from the closed state had $\Delta\Delta G_{calc}$ values that moved towards favorability (i.e. more negative $\Delta\Delta G_{calc}$), while for protein open simulations $\Delta\Delta G_{calc}$ values tended towards unfavorability (i.e. more positive $\Delta\Delta G_{calc}$).
 This is indicative of the fact that pREST is indeed improving sampling, but it is evident that our $\Delta\Delta G_{calc}$ are still far from convergence, given the RMSI is still large, especially for closed/open transformations.
 

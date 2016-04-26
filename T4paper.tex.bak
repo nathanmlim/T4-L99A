@@ -8,10 +8,19 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 
-\author{Nathan Lim}
+\author{Nathan M. Lim}
 \email{limn1@uci.edu}
-\affiliation[University of California, Irvine]
-{Department of Pharmaceutical Sciences}
+\affiliation[University of California---Irvine]
+{Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
+\author{Lingle Wang}
+\affiliation[Schr\"{o}dinger, Inc.]
+{Schr\"{o}dinger, Inc., 120 West 45th Street, New York, New York 10036, United States}
+\author{Robert Abel}
+\affiliation[Schr\"{o}dinger, Inc.]
+{Schr\"{o}dinger, Inc., 120 West 45th Street, New York, New York 10036, United States}
+\author{David L. Mobley}
+\affiliation[University of California---Irvine]
+{Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
 
 \title{Sensitivity in predicted relative binding free energies from incremental ligand changes within a model binding site}
 
@@ -39,7 +48,7 @@ By computing relative binding free energies, much of the computational cost and 
 Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to the tremendous success of using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
 
 Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
-In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}
+In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
 Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
 Through a series of eight congeneric ligands, that grow by a single methyl addition, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
 Using this FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
