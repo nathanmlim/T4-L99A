@@ -18,7 +18,7 @@
 \begin{document}
 
 \begin{abstract}
-Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A \cite{Boyce2009}.
+Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A.
 In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}.
 Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state.
 Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
@@ -34,12 +34,12 @@ Thus, optimization of protein-ligand binding affinities is a central goal in ear
 
 Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques for this lead optimization problem.
 Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities.
-Using methods like free energy perturbations (FEP) and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be accurately computed through using an alchemical pathway. \cite(doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda)
-By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided \cite(???).
+Using methods like free energy perturbations (FEP) and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be accurately computed through using an alchemical pathway.
+By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided\cite{doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda,zheng2008random,gallicchio2011advances,doi:10.1021/ct500161f}.
 Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to the tremendous success of using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
 
-Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST), to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
-In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally and computationally by docking and free energy methods. %\cite{http://www.sciencedirect.com/science/article/pii/S0022283607007760 26-32, 30,32, 18,19,23,33}
+Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
+In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}
 Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
 Through a series of eight congeneric ligands, that grow by a single methyl addition, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
 Using this FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
@@ -145,7 +145,7 @@ For example in figure~\ref{fig:o_opls3_1/RMSD-replica11}, between 3-4ns there ar
 Following, there is one frame where the protein is open but the RMSD is lower than 2.0\AA.
 This appears to be an artifact of coordinate swapping during replica exchanges from other intermediate lambda windows, resulting in apparently contradictory time points.
 
-We address this limitation by viewing all replicas in what we call a `Color maps', see Figure~\ref{fig:c_opls3_rest1_1/colormap} for an example.
+We address this limitation by viewing all replicas in what we call `Color maps', see Figure~\ref{fig:c_opls3_rest1_1/colormap} for an example.
 Essentially, our 'Color map' analysis is the same as our 'RMSD/time' plots but without the RMSD line plot.
 In other words, we color time points according to the protein state of lowest RMSD and do this for all replicas but do not track the RMSD relative to the closed state.
 Through a collective view of all replicas, we gain a better perspective of the overall protein conformational sampling and the states they occupy over each replica's separate trajectories. 

@@ -279,6 +279,8 @@ def single_colormap(rmsddata,enedata):
 
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
    ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
+   
+
 
    outdir = "{}/plots/colormap/".format(options.dir)
    if not os.path.exists(outdir):
@@ -311,25 +313,31 @@ def colormap(rmsddata,enedata):
    bounds=[0,1,2,3]
    norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
    ax.imshow(statearr,cmap=cmap,norm=norm,interpolation='nearest',origin='lower',aspect='auto')
+   #fig.colorbar(plot)
    
    major_xticks = np.arange(0,n,41.5)
    ax.set_xticks(major_xticks)
    ax.xaxis.set_ticklabels(np.arange(lowx,upx,1))
+   ax.set_xlabel('Time (ns)',fontsize=18)
    #ax.xaxis.grid(True, which='major',color='black',linewidth=1)
 
    #Y-axis parameters
    ax.set_yticks(np.arange(0,12,1.0))
    ax.set_yticks(np.arange(-0.5,12,1.0),minor=True)
-   ax.yaxis.grid(True, which='minor',color='black', linestyle='-',linewidth=2)
-
+   ax.set_ylabel(r' Replica Num',fontsize=18)
+   ax.yaxis.grid(True, which='minor',color='black', linestyle='-',linewidth=5)
    #plt.colorbar(img, cmap=cmap, norm=norm, boundaries=bounds, ticks=[0,1,2],orientation='horizontal')
-   ax.set_title(options.header+' {}-{}ns Colormap'.format(lowx,upx), x=0.25)
-   
+   ax.tick_params(axis='both',labelsize=18)
+   #ax.set_title(options.header+': Color map (Closed-pREST)'.format(lowx,upx), x=0.5)
+   txt = "TEST LEGEND"
+   #an = ax.annotate(txt, xy=(0.5,-1), ha='right', xytext=(0,-60), xycoords='axes fraction', textcoords='offset points', bbox=dict(boxstyle="square",fc="w"))
+
+
    outdir = "{}/plots/colormap/".format(options.dir)
    if not os.path.exists(outdir):
       os.makedirs(outdir)
 
-   plt.savefig(outdir+'cmap-{}-{}ns.png'.format(lowx,upx))
+   plt.savefig(outdir+'cmap-{}-{}ns.png'.format(lowx,upx),bbox_inches='tight')#,additional_artists=box)
    plt.close('all')
       
 
@@ -351,17 +359,17 @@ for file in rmsdfiles:
    allrmsd[repnum] = [rmsddata, states]
 
 #Plot RMSD for replicas
-try:
-   if int(options.repnum) <= 11:   
-      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
-except ValueError:
-   if options.repnum == 'all':
-      for i in range(12):
-         rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
+#try:
+#   if int(options.repnum) <= 11:   
+#      rmsdplot(allrmsd[options.repnum],allene[options.repnum],options.repnum, options.plotene)     
+#except ValueError:
+#   if options.repnum == 'all':
+#      for i in range(12):
+#         rmsdplot(allrmsd[str(i)],allene[str(i)],i,options.plotene)
 
 
 #Plot RMSD for end states only
-compare_rmsdplot(allrmsd['0'],allrmsd['11'])
+#compare_rmsdplot(allrmsd['0'],allrmsd['11'])
 #Plot stackedbar graph for colormap of replicas
 colormap(allrmsd,allene)
-single_colormap(allrmsd,allene)
+#single_colormap(allrmsd,allene)

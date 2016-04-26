@@ -20,7 +20,7 @@ def xyplot(data,xlabel,units):
       line2 = [i-bounds for i in ideal_line]
       #Plot data      
       ax1 = plt.figure(figsize=[10,10]).add_subplot(111)
-
+      """
       #C vs O
       x = data[:,0]
       xerr = data[:,1]
@@ -31,17 +31,16 @@ def xyplot(data,xlabel,units):
       N = len(y)
 
       #ax1.axis([0,4,0,4])
-      #ax1.axis([-3,6,-3,6])
+      ax1.axis([-2,3,-2,3])
       ax1.errorbar(x,y, xerr=[xerr,xerr], yerr=[yerr,yerr], fmt='o', color='black', markersize=10)
       ax1.plot(ideal_line,ideal_line, color='red')
       ax1.plot(ideal_line,line1, linestyle='--', color='red')
       ax1.plot(ideal_line,line2, linestyle='--', color='red')
       ax1.set_xlabel(r'$\Delta\Delta$G Closed ({}/mol)'.format(units), fontsize=20)
       ax1.set_ylabel(r'$\Delta\Delta$G Open ({}/mol)'.format(units), fontsize=20)
-      txt = "N={}\n".format(N)+"RMSI={:.2}\n".format(RMSE)+r"$R^2$={:.2}".format(R)
-
-      ###C/O vs Exp
+      txt = "RMSI={:.2}".format(RMSE)#+r"$R^2$={:.2}".format(R)
       """
+      ###C/O vs Ex
       exp = data[:,0]
       experr = data [:,1]
       c = data[:,2]
@@ -63,8 +62,8 @@ def xyplot(data,xlabel,units):
       ax1.plot(ideal_line,line2, linestyle='--', color='black')
       ax1.set_xlabel(r' $\Delta\Delta$G exp  ({}/mol)'.format(units), fontsize=20)
       ax1.set_ylabel(r' $\Delta\Delta$G calc ({}/mol)'.format(units), fontsize=20)
-      txt = "RMSE: C={:.2} O={:.2} \n".format(cRMSE,oRMSE)+r"$R^2:$ C={:.2} O={:.2}".format(cR,oR)
-      """
+      txt = r"$RMSE^C$"+"= {:.2}\n".format(cRMSE)+r"$RMSE^O$"+"= {:.2}".format(oRMSE)#+r"$R^2:$ C={:.2} O={:.2}".format(cR,oR)
+      
       #Set axes parameters
       ax1.tick_params(axis='both',labelsize=18)
 
@@ -72,10 +71,10 @@ def xyplot(data,xlabel,units):
       #Figure caption
       #an = ax1.annotate(txt, xy=(0.5,-1), ha='center', xytext=(0,-60), xycoords='axes fraction', textcoords='offset points', bbox=dict(boxstyle="square",fc="w"))
       #wrapText(an)
-      leg = ax1.legend([txt],loc=2, handlelength=0,handletextpad=0,fancybox=True)
+      leg = ax1.legend([txt],loc=2, handlelength=0,handletextpad=0,fancybox=True,fontsize=20)
       #for item in leg.legendHandles:
       #   item.set_visible(False)
-      plt.savefig('./C2O_pREST_xyplot.png', bbox_inches='tight')
+      plt.savefig('./exp_pREST_xyplot.png', bbox_inches='tight')
       plt.cla()
 
 # Text Wrapping
@@ -182,5 +181,5 @@ def textBox(text, axes, ha='left', fontsize=12, margin=None, frame=True, **kwarg
     return an
 
 
-data = np.genfromtxt('C2O_pREST.txt')
+data = np.genfromtxt('expdata_pREST.txt')
 xyplot(data,'ddGexp','kcal')
