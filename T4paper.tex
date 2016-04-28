@@ -37,21 +37,22 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
 
 \section{Introduction}
 Proteins play a central role in many biological processes by modulating many key signalling pathways.
+%DLM: "signalling" is the British spelling: http://www.english-for-students.com/American-Spelling.html ; should be "signaling".
 It is unsurprising to find that proteins make up the vast majority of pharmaceutical drug targets.
 Many small-molecules on the market today induce their therapeutic effect by modulating the proteins biological activity through binding\cite{overington2006many,FCP:FCP548,Lundstrom2009}.
 Thus, optimization of protein-ligand binding affinities is a central goal in early pharmaceutical drug design projects.
 
-Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques for this lead optimization problem.
+Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques to assist in lead optimization.
 Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities.
-Using methods like free energy perturbations (FEP) and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be accurately computed through using an alchemical pathway.
+Using methods like free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be accurately computed through using an alchemical pathway.
 By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided\cite{doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda,zheng2008random,gallicchio2011advances,doi:10.1021/ct500161f}.
-Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to the tremendous success of using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
+Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have led to significant success using FEP calculations across a wide range of protein targets with a variety of ligands\cite{FEPplus}. 
 
-Here, we apply the same FEP protocol, which utilities replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
-In this mutant of T4 lysozyme, the introduction of the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
+Here, we apply the now-standard FEP protocol used in~\cite{FEPplus}, which utilizes replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
+In this mutant, the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
 Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
-Through a series of eight congeneric ligands, that grow by a single methyl addition, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
-Using this FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
+Through a series of eight congeneric ligands, each growing by addition of a single methyl, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
+Using the FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
 In this study---while using the implemented default FEP/REST protocol---we demonstrate how the kinetically distinct protein states and structural rearrangement affects the accuracy and reliability of our predicted relative binding affinities.
 Further, we illustrate the importance of sufficient sampling of protein conformational changes and some modifications or possible techniques to address this issue.
 
@@ -257,9 +258,9 @@ Particularly, we find that calculated relative free energies can depend on the i
 %P2: Restate the experiment carried out to remind the reader.
 %Remind main analysis technique and the main idea we can draw from it
 By looking at alchemical transformations that involve a conformation change in the protein, we show the $\Delta\Delta Gs_{calc}$ are sensitive to the initial protein conformational state when utilizing the default implemented FEP protocol.
-Such cases are when the alchemical transformation involves mutating ligands that primarily occupy the closed state (i.e. benzene to n-propyl) into ligands that occupy the intermediate state (i.e. sec-/n-butyl) or, especially, the open state (n-pentyl/n-hexyl) (Table~\ref{tbl:expdata}).
+This sensitivity occurs primarily when the alchemical transformation involves mutating ligands that mainly occupy the closed state (i.e. benzene to n-propyl) into ligands that occupy the intermediate state (i.e. sec-/n-butyl) or, especially, the open state (n-pentyl/n-hexyl) (Table~\ref{tbl:expdata}).
 By our RMSD analyses, we show the protein remains trapped in its initial state throughout the simulation when using the implemented default protocol.
-Through remaining trapped, we are unable to adequately sample the necessary protein conformational states and thereby obtain inconsistent $\Delta\Delta Gs_{calc}$ depending on whether we start simulations from the open or closed protein configuration.
+Because it remains trapped, we are unable to adequately sample the necessary protein conformational states and thereby obtain inconsistent $\Delta\Delta Gs_{calc}$ depending on whether we start simulations from the open or closed protein configuration.
 
 
 %P3: Broader implications of this study
