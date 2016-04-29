@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  26 APR 2016 13:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  29 APR 2016 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,11 +898,11 @@ FEP Tu-to-rial.
 
 [31] [32]) [33] (./T4paper.aux) ) 
 Here is how much of TeX's memory you used:
- 11826 strings out of 493304
- 210440 string characters out of 6139871
+ 11824 strings out of 493304
+ 210419 string characters out of 6139871
  316471 words of memory out of 5000000
- 15035 multiletter control sequences out of 15000+600000
- 27866 words of font info for 67 fonts, out of 8000000 for 9000
+ 15034 multiletter control sequences out of 15000+600000
+ 27180 words of font info for 66 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  60i,12n,94p,10407b,566s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-
@@ -929,12 +929,11 @@ r/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfss1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfti0800.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfti1200.pfb>
-Output written on T4paper.pdf (33 pages, 1860045 bytes).
+ype1/public/cm-super/sfti1200.pfb>
+Output written on T4paper.pdf (33 pages, 1854238 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 174 compressed objects within 2 object streams
+ 288 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
