@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  29 APR 2016 10:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  29 APR 2016 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -930,7 +930,7 @@ type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfss1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfti1200.pfb>
-Output written on T4paper.pdf (33 pages, 1854238 bytes).
+Output written on T4paper.pdf (33 pages, 1854229 bytes).
 PDF statistics:
  288 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams
