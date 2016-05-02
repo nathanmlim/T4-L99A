@@ -278,6 +278,19 @@ note ={PMID: 7612598},
 URL = {http://dx.doi.org/10.1021/bi00027a006   },
 eprint = {http://dx.doi.org/10.1021/bi00027a006}
 }
+@article{doi:10.1021/bi00027a007,
+author = {Andrew Morton and Brian W. Matthews},
+title = {Specificity of ligand binding in a buried nonpolar cavity of T4 lysozyme: Linkage of dynamics and structural plasticity},
+journal = {Biochemistry},
+volume = {34},
+number = {27},
+pages = {8576-8588},
+year = {1995},
+doi = {10.1021/bi00027a007},
+    note ={PMID: 7612599},
+URL = {http://dx.doi.org/10.1021/bi00027a007},
+eprint = { http://dx.doi.org/10.1021/bi00027a007}
+}
 
 @article{doi:10.1021/ct5000296,
 author = {Nadine Homeyer and Friederike Stoll and Alexander Hillisch and Holger Gohlke},
@@ -312,7 +325,127 @@ eprint = {http://dx.doi.org/10.1021/ct5000296}
   year={2009},
   publisher={Wiley Online Library}
 }
-
+@article{zheng2008random,
+  title={Random walk in orthogonal space to achieve efficient free-energy simulation of complex systems},
+  author={Zheng, Lianqing and Chen, Mengen and Yang, Wei},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={105},
+  number={51},
+  pages={20227--20232},
+  year={2008},
+  publisher={National Acad Sciences}
+}
+@article{gallicchio2011advances,
+  title={Advances in all atom sampling methods for modeling protein--ligand binding affinities},
+  author={Gallicchio, Emilio and Levy, Ronald M},
+  journal={Current opinion in structural biology},
+  volume={21},
+  number={2},
+  pages={161--166},
+  year={2011},
+  publisher={Elsevier}
+}
+@article{doi:10.1021/ct500161f,
+author = {Niels Hansen and Wilfred F. van Gunsteren},
+title = {Practical Aspects of Free-Energy Calculations: A Review},
+journal = {Journal of Chemical Theory and Computation},
+volume = {10},
+number = {7},
+pages = {2632-2647},
+year = {2014},
+doi = {10.1021/ct500161f},
+note ={PMID: 26586503},
+URL = {http://dx.doi.org/10.1021/ct500161f},
+eprint = {http://dx.doi.org/10.1021/ct500161f   }
+}
+@article{Mobley20071118,
+title = "Predicting Absolute Ligand Binding Free Energies to a Simple Model Site ",
+journal = "Journal of Molecular Biology ",
+volume = "371",
+number = "4",
+pages = "1118 - 1134",
+year = "2007",
+note = "",
+issn = "0022-2836",
+doi = "http://dx.doi.org/10.1016/j.jmb.2007.06.002",
+url = "http://www.sciencedirect.com/science/article/pii/S0022283607007760",
+author = "David L. Mobley and Alan P. Graves and John D. Chodera and Andrea C. McReynolds and Brian K. Shoichet and Ken A. Dill",
+keywords = "free energy calculation",
+keywords = "docking",
+keywords = "alchemical free energy",
+keywords = "conformational change",
+keywords = "isothermal titration calorimetry "
+}
+@article{eriksson1992response,
+  title={Response of a protein structure to cavity-creating mutations and its relation to the hydrophobic effect},
+  author={Eriksson, A Elisabeth and Baase, Walter A and Zhang, Xue-Jun and Heinz, Dirk W and Blaber, MPBE and Baldwin, Enoch P and Matthews, Brian W},
+  journal={Science},
+  volume={255},
+  number={5041},
+  pages={178--183},
+  year={1992},
+  publisher={American Association for the Advancement of Science}
+}
+@article{eriksson1993similar,
+  title={Similar hydrophobic replacements of Leu99 and Phe153 within the core of T4 lysozyme have different structural and thermodynamic consequences},
+  author={Eriksson, AE and Baase, Walter A and Matthews, Brian W},
+  journal={Journal of molecular biology},
+  volume={229},
+  number={3},
+  pages={747--769},
+  year={1993},
+  publisher={Elsevier}
+}
+@article{wei2002model,
+  title={A model binding site for testing scoring functions in molecular docking},
+  author={Wei, Binqing Q and Baase, Walter A and Weaver, Larry H and Matthews, Brian W and Shoichet, Brian K},
+  journal={Journal of molecular biology},
+  volume={322},
+  number={2},
+  pages={339--355},
+  year={2002},
+  publisher={Elsevier}
+}
+@article{wei2004testing,
+  title={Testing a flexible-receptor docking algorithm in a model binding site},
+  author={Wei, Binqing Q and Weaver, Larry H and Ferrari, Anna M and Matthews, Brian W and Shoichet, Brian K},
+  journal={Journal of molecular biology},
+  volume={337},
+  number={5},
+  pages={1161--1182},
+  year={2004},
+  publisher={Elsevier}
+}
+@article{graves2005decoys,
+  title={Decoys for docking},
+  author={Graves, Alan P and Brenk, Ruth and Shoichet, Brian K},
+  journal={Journal of medicinal chemistry},
+  volume={48},
+  number={11},
+  pages={3714--3728},
+  year={2005},
+  publisher={ACS Publications}
+}
+@article{hermans1997inclusion,
+  title={Inclusion of loss of translational and rotational freedom in theoretical estimates of free energies of binding. Application to a complex of benzene and mutant T4 lysozyme},
+  author={Hermans, Jan and Wang, Lu},
+  journal={Journal of the American Chemical Society},
+  volume={119},
+  number={11},
+  pages={2707--2714},
+  year={1997},
+  publisher={ACS Publications}
+}
+@article{boresch2003absolute,
+  title={Absolute binding free energies: a quantitative approach for their calculation},
+  author={Boresch, Stefan and Tettinger, Franz and Leitgeb, Martin and Karplus, Martin},
+  journal={The Journal of Physical Chemistry B},
+  volume={107},
+  number={35},
+  pages={9535--9551},
+  year={2003},
+  publisher={ACS Publications}
+}
 ﻿@Inbook{Lundstrom2009,
 author="Lundstrom, Kenneth",
 editor="Leifert, R. Wayne",
@@ -326,7 +459,93 @@ isbn="978-1-60327-317-6",
 doi="10.1007/978-1-60327-317-6_4",
 url="http://dx.doi.org/10.1007/978-1-60327-317-6_4"
 }
-
+@article{deng2006calculation,
+  title={Calculation of standard binding free energies: Aromatic molecules in the T4 lysozyme L99A mutant},
+  author={Deng, Yuqing and Roux, Beno{\^\i}t},
+  journal={Journal of Chemical Theory and Computation},
+  volume={2},
+  number={5},
+  pages={1255--1273},
+  year={2006},
+  publisher={ACS Publications}
+}
+@article{mann2000modeling,
+  title={Modeling protein-small molecule interactions: Structure and thermodynamics of noble gases binding in a cavity in mutant phage T4 lysozyme L99A},
+  author={Mann, Geoffrey and Hermans, Jan},
+  journal={Journal of molecular biology},
+  volume={302},
+  number={4},
+  pages={979--989},
+  year={2000},
+  publisher={Elsevier}
+}
+@article{mobley2012perspective,
+  title={Perspective: Alchemical free energy calculations for drug discovery},
+  author={Mobley, David L and Klimovich, Pavel V},
+  journal={The Journal of chemical physics},
+  volume={137},
+  number={23},
+  pages={230901},
+  year={2012},
+  publisher={AIP Publishing}
+}
+@article{doi:10.1021/acs.jctc.5b00214,
+author = {Joseph W. Kaus and Edward Harder and Teng Lin and Robert Abel and J. Andrew McCammon and Lingle Wang},
+title = {How To Deal with Multiple Binding Poses in Alchemical Relative Protein–Ligand Binding Free Energy Calculations},
+journal = {Journal of Chemical Theory and Computation},
+volume = {11},
+number = {6},
+pages = {2670-2679},
+year = {2015},
+doi = {10.1021/acs.jctc.5b00214},
+URL = {http://dx.doi.org/10.1021/acs.jctc.5b00214},
+eprint = {http://dx.doi.org/10.1021/acs.jctc.5b00214}
+}
+@article{Gutteridge200521,
+title = "Conformational Changes Observed in Enzyme Crystal Structures upon Substrate Binding ",
+journal = "Journal of Molecular Biology ",
+volume = "346",
+number = "1",
+pages = "21 - 28",
+year = "2005",
+note = "",
+issn = "0022-2836",
+doi = "http://dx.doi.org/10.1016/j.jmb.2004.11.013",
+url = "http://www.sciencedirect.com/science/article/pii/S0022283604014391",
+author = "Alex Gutteridge and Janet Thornton",
+keywords = "conformational change",
+keywords = "enzymes",
+keywords = "structural bioinformatics",
+keywords = "catalysis",
+keywords = "substrate binding "
+}
+@article{doi:10.1021/jm060167o,
+author = {Jonas Boström,*,† and Anders Hogner,‡ and and Stefan Schmitt‡},
+title = {Do Structurally Similar Ligands Bind in a Similar Fashion?},
+journal = {Journal of Medicinal Chemistry},
+volume = {49},
+number = {23},
+pages = {6716-6725},
+year = {2006},
+doi = {10.1021/jm060167o},
+note ={PMID: 17154502},
+URL = {http://dx.doi.org/10.1021/jm060167o},
+eprint = {http://dx.doi.org/10.1021/jm060167o}
+}
+@article{Mobley2009489,
+title = "Binding of Small-Molecule Ligands to Proteins: “What You See” Is Not Always “What You Get” ",
+journal = "Structure ",
+volume = "17",
+number = "4",
+pages = "489 - 498",
+year = "2009",
+note = "",
+issn = "0969-2126",
+doi = "http://dx.doi.org/10.1016/j.str.2009.02.010",
+url = "http://www.sciencedirect.com/science/article/pii/S0969212609000926",
+author = "David L. Mobley and Ken A. Dill",
+keywords = "\{PROTEINS\} "
+}
 
 @inproceedings{DESMONDarticle,
  author = {Bowers, Kevin J. and Chow, Edmond and Xu, Huafeng and Dror, Ron O. and Eastwood, Michael P. and Gregersen, Brent A. and Klepeis, John L. and Kolossvary, Istvan and Moraes, Mark A. and Sacerdoti, Federico D. and Salmon, John K. and Shan, Yibing and Shaw, David E.},

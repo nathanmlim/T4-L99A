@@ -5,44 +5,44 @@ The style file: achemso.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: acs-T4paper.bib
 Database file #2: references.bib
-You've used 52 entries,
+You've used 57 entries,
             2478 wiz_defined-function locations,
-            1113 strings with 18594 characters,
-and the built_in function-call counts, 19047 in all, are:
-= -- 1481
-> -- 1300
-< -- 25
-+ -- 510
-- -- 458
-* -- 2099
-:= -- 2641
-add.period$ -- 62
-call.type$ -- 52
+            1152 strings with 19894 characters,
+and the built_in function-call counts, 20807 in all, are:
+= -- 1630
+> -- 1395
+< -- 28
++ -- 547
+- -- 490
+* -- 2305
+:= -- 2872
+add.period$ -- 67
+call.type$ -- 57
 change.case$ -- 3
 chr.to.int$ -- 1
-cite$ -- 52
-duplicate$ -- 1038
-empty$ -- 1155
-format.name$ -- 528
-if$ -- 3579
+cite$ -- 57
+duplicate$ -- 1131
+empty$ -- 1276
+format.name$ -- 571
+if$ -- 3918
 int.to.chr$ -- 0
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 328
-num.names$ -- 155
-pop$ -- 96
+newline$ -- 358
+num.names$ -- 170
+pop$ -- 103
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 1
 stack$ -- 0
-substring$ -- 1036
-swap$ -- 1179
-text.length$ -- 104
+substring$ -- 1160
+swap$ -- 1274
+text.length$ -- 114
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 352
+type$ -- 387
 warning$ -- 0
-while$ -- 183
+while$ -- 202
 width$ -- 0
-write$ -- 627
+write$ -- 688
