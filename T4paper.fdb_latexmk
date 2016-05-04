@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex T4paper"] 1462342225 "T4paper.aux" "T4paper.bbl" "T4paper" 1462342408
+["bibtex T4paper"] 1462384538 "T4paper.aux" "T4paper.bbl" "T4paper" 1462384548
   "/usr/share/texlive/texmf-dist/bibtex/bst/achemso/achemso.bst" 1389312011 29475 351cf967892571499a4167dfcd20062c ""
-  "T4paper.aux" 1462342235 18522 6acd065b0d83c4353e0493884bcf2fc9 ""
+  "T4paper.aux" 1462384548 18237 a425b8e9e2f93ffefaf03fde7cb13f2c ""
   "T4paper.bcf" 0 -1 0 ""
-  "acs-T4paper.bib" 1462342235 274 d05d1590d1d1f9ee4f80c3934f0a0c88 ""
+  "acs-T4paper.bib" 1462384548 274 d05d1590d1d1f9ee4f80c3934f0a0c88 ""
   "references.bib" 1462342380 30252 3a8778b412bae8f4994052c0b3898442 ""
   (generated)
   "T4paper.blg"
   "T4paper.bbl"
-["pdflatex"] 1462342225 "T4paper.tex" "T4paper.pdf" "T4paper" 1462342408
+["pdflatex"] 1462384538 "T4paper.tex" "T4paper.pdf" "T4paper" 1462384548
   "/etc/texmf/web2c/texmf.cnf" 1443636500 1101 af7716885e081ab43982cab7b4672c1a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1200.tfm" 1136768653 3072 ccae1a240ab272417e4399fe942df546 ""
@@ -43,12 +43,10 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm" 1136768653 1336 3125ccb448c1a09074e3aa4a9832f130 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm" 1136768653 1524 554068197b70979a55370e6c6495f441 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
@@ -177,10 +175,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1443636729 1346346 7f2b8b715a9ddb095afe3697a6ba02b5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1443636658 3822874 e489f12936b416cba899494d5543bde8 ""
   "T4figs.tex" 1462342376 12328 b12ff8f55b9bc0665a1b1dd63a387406 ""
-  "T4paper.aux" 1462342235 18522 6acd065b0d83c4353e0493884bcf2fc9 ""
-  "T4paper.bbl" 1462342225 22370 1fe870f9af4fe8f9db58642a035e31ba "bibtex T4paper"
-  "T4paper.tex" 1462342377 40351 d4b46d2b2f8cb7ab565df3fec0535115 ""
-  "T4tables.tex" 1462342378 22573 3633781e99c596f112ee1bdc56abc5f9 ""
+  "T4paper.aux" 1462384548 18237 a425b8e9e2f93ffefaf03fde7cb13f2c ""
+  "T4paper.bbl" 1462384538 22370 6a7a4a08eb2aaac69e923677d98c5afa "bibtex T4paper"
+  "T4paper.tex" 1462384516 40555 4427d3b470a4861438164c94c1aa8e29 ""
+  "T4tables.tex" 1462343401 19235 53c76621ac0ccf8d4a9ed30decb0b123 ""
   "VMDscripts/Figures/2D-ligands/ligand_set.png" 1462327648 13606 1552d510734bcb05f7ba5ef7fbba6738 ""
   "VMDscripts/Figures/C2O.png" 1460078359 145433 c799e9fc5dded438209eb4eb1fa83009 ""
   "VMDscripts/Figures/Glu108-C2O.png" 1439893479 98376 3eb3cdd6e680849abd20fcdc23ec8546 ""
@@ -206,7 +204,7 @@
   "VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png" 1458685446 92652 575f791890f44bffc19aefbdde77ca85 ""
   "VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png" 1456891781 79928 37abb13d50dc3136fdd311db519a3a30 ""
   (generated)
-  "T4paper.aux"
   "T4paper.log"
-  "acs-T4paper.bib"
   "T4paper.pdf"
+  "acs-T4paper.bib"
+  "T4paper.aux"

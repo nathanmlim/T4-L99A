@@ -20,15 +20,6 @@
   {\relax}
   {\relax}
 
-\bibitem[Merski \latin{et~al.}(2015)Merski, Fischer, Balius, Eidam, and
-  Shoichet]{Merski2015}
-Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
-  \emph{Proceedings of the National Academy of Sciences} \textbf{2015},
-  \emph{112}, 5039--5044\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Overington \latin{et~al.}(2006)Overington, Al-Lazikani, and
   Hopkins]{overington2006many}
 Overington,~J.~P.; Al-Lazikani,~B.; Hopkins,~A.~L. \emph{Nature reviews Drug
@@ -167,6 +158,15 @@ Jonas~Bostr√∂m,~‚.,~*; Anders~Hogner,~‚.; ; Schmitt‚Ä°,~S. \emph{Journal of
   Thornton]{Gutteridge200521}
 Gutteridge,~A.; Thornton,~J. \emph{Journal of Molecular Biology} \textbf{2005},
   \emph{346}, 21 -- 28\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Merski \latin{et~al.}(2015)Merski, Fischer, Balius, Eidam, and
+  Shoichet]{Merski2015}
+Merski,~M.; Fischer,~M.; Balius,~T.~E.; Eidam,~O.; Shoichet,~B.~K.
+  \emph{Proceedings of the National Academy of Sciences} \textbf{2015},
+  \emph{112}, 5039--5044\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
@@ -411,18 +411,6 @@ Feller,~S.~E.; Zhang,~Y.; Pastor,~R.~W.; Brooks,~B.~R. \emph{The Journal of
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
 \EndOfBibitem
-\bibitem[Banks \latin{et~al.}(2005)Banks, Beard, Cao, Cho, Damm, Farid, Felts,
-  Halgren, Mainz, Maple, Murphy, Philipp, Repasky, Zhang, Berne, Friesner,
-  Gallicchio, and Levy]{OPLS2005}
-Banks,~J.~L.; Beard,~H.~S.; Cao,~Y.; Cho,~A.~E.; Damm,~W.; Farid,~R.;
-  Felts,~A.~K.; Halgren,~T.~A.; Mainz,~D.~T.; Maple,~J.~R.; Murphy,~R.;
-  Philipp,~D.~M.; Repasky,~M.~P.; Zhang,~L.~Y.; Berne,~B.~J.; Friesner,~R.~A.;
-  Gallicchio,~E.; Levy,~R.~M. \emph{Journal of Computational Chemistry}
-  \textbf{2005}, \emph{26}, 1752--1780\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
 \bibitem[Harder \latin{et~al.}(2016)Harder, Damm, Maple, Wu, Reboul, Xiang,
   Wang, Lupyan, Dahlgren, Knight, Kaus, Cerutti, Krilov, Jorgensen, Abel, and
   Friesner]{OPLS3}
@@ -431,6 +419,18 @@ Harder,~E.; Damm,~W.; Maple,~J.; Wu,~C.; Reboul,~M.; Xiang,~J.~Y.; Wang,~L.;
   Krilov,~G.; Jorgensen,~W.~L.; Abel,~R.; Friesner,~R.~A. \emph{Journal of
   Chemical Theory and Computation} \textbf{2016}, \emph{12}, 281--296, PMID:
   26584231\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Banks \latin{et~al.}(2005)Banks, Beard, Cao, Cho, Damm, Farid, Felts,
+  Halgren, Mainz, Maple, Murphy, Philipp, Repasky, Zhang, Berne, Friesner,
+  Gallicchio, and Levy]{OPLS2005}
+Banks,~J.~L.; Beard,~H.~S.; Cao,~Y.; Cho,~A.~E.; Damm,~W.; Farid,~R.;
+  Felts,~A.~K.; Halgren,~T.~A.; Mainz,~D.~T.; Maple,~J.~R.; Murphy,~R.;
+  Philipp,~D.~M.; Repasky,~M.~P.; Zhang,~L.~Y.; Berne,~B.~J.; Friesner,~R.~A.;
+  Gallicchio,~E.; Levy,~R.~M. \emph{Journal of Computational Chemistry}
+  \textbf{2005}, \emph{26}, 1752--1780\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax

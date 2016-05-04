@@ -30,7 +30,7 @@
 
 \begin{abstract}
 Despite innovations in sampling techniques for molecular dynamics (MD), reliable prediction of protein-ligand binding free energies from MD remains a challenging problem, even in well studied model binding sites like the apolar cavity of T4 Lysozyme L99A.
-In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands \cite{Merski2015}.
+In this study, we model recent experimental results that show the progressive opening of the binding pocket in response to a series of homologous ligands.
 Even while using enhanced sampling techniques, we demonstrate that the predicted relative binding free energies (RBFE) are still highly sensitive to the initial protein conformational state.
 Particularly, we highlight the importance of sufficient sampling of protein conformational changes and possible techniques for addressing the issue.
 \end{abstract}
@@ -67,7 +67,7 @@ Recent studies on this binding site have found that the protein adopts three dis
 Through a series of eight congeneric ligands, each growing by addition of a single methyl, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
 Using the FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
 In this study---while using the implemented default FEP/REST protocol---we demonstrate how the kinetically distinct protein states and structural rearrangement affects the accuracy and reliability of our predicted relative binding affinities.
-Further, we illustrate the importance of sufficient sampling of protein conformational changes and some modifications or possible techniques to address this issue.
+Further, we illustrate the importance of sufficient sampling of protein conformational changes and how modification of the REST region can potentially address this issue.
 
 \section{Methods}
 \subsection*{Protein/Ligand preparation}
@@ -89,7 +89,8 @@ Generally, two options were taken:\\
 Ligand tail fragments were added using the Build/Fragments toolbar in Maestro  and were not overlaid or docked. 
 As the ligand tails were built, bonds were manually rotated so that the tail was oriented in a similar manner as in their corresponding crystal structure.
 Following, the newly added atoms in the tail were locally minimized while leaving the core in its initial position.
-This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to be included in the REST region. 
+This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to determine the core atoms between the two ligands (LW?)
+%which LigandFEP uses to select the ligand heavy atoms to be included in the REST region. 
 
 \subsection*{Classification of alchemical transformations and color coding}
 Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Table~\ref{tbl:expdata}).
@@ -111,11 +112,12 @@ Both FEP protocols use the default Desmond relaxation protocol and the FEP/REST 
 
 \subsection*{Simulation details}
 Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
-The relaxation protocol beings with a simulation where solute molecules are restrained to their initial positions while minimizing using a Brownian dynamics NVT integrator for 100ps, followed by 12ps simulations at 10K with a NVT ensemble and then a NPT ensemble using the Langevin method\cite{Langevin}.
+The relaxation protocol begins with a simulation where solute molecules are restrained to their initial positions while minimizing using a Brownian dynamics NVT integrator for 100ps, followed by 12ps simulations at 10K with a NVT ensemble and then a NPT ensemble using the Langevin method\cite{Langevin}.
 Next is a 24ps simulation followed by a final 240ps simulation with solute molecules unrestrained, both are carried at room temperature with a NPT ensemble using Langevin.
 Production simulations were initially ran for the default setting of 5ns and then were carried out to a length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
 Here, we use the final 15ns for closed-open simulations and the final 10ns for closed-intermediate to calculate our final free energies, discarding the initial time as additional equilibration time.
-FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with OPLS2005\cite{OPLS2005} and OPLS3\cite{OPLS3} forcefield parameters.
+FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with OPLS3\cite{OPLS3} forcefield parameters.
+Additional simulations were run using the OPLS2005\cite{OPLS2005} and the corresponding data can be found in the supplementary information.
 Here, results and discussion sections will primarily present information from using the LigandFEP protocol with OPLS3 forcefield parameters, additional data not discussed here can be found in the supplementary info.
 
 \subsection*{REST region selection}
@@ -152,13 +154,14 @@ Hysteresis around closed thermodynamic cycles and best estimates of the free ene
 
 \subsection*{Determining the protein conformation state using RMSD}
 In this study, we determine the state of the protein by computing the 'Root-Mean-Square-Deviation'(RMSD) of the protein backbone atoms spanning the F-helix relative to their positions found in the closed (PDB:4W53), intermediate (PDB:4W57), and open (PDB:4W59) crystal structures (Fig~\ref{fig:T4-L99A_tube}).
+%LW: HOW CAN I CLARIFY THIS A BIT?
 The set of RMSDs is computed over the course of the simulation, whereby we use the state with the lowest RMSD to color each time point correspondingly in our analyses of `RMSD/time' and `Color maps'. 
 Here, we use VMD \cite{VMDpaper,VMDalignment} to align and compute the RMSD of our Desmond trajectories relative to crystal structures.
 Further details on the procedure and the scripts used for these analyses are provided in the supplementary info.
 
 For the `RMSD/time' analysis, see Figure~\ref{fig:o_opls3_1/RMSD-replica11}) for reference. 
 Here, we plot the RMSD to the closed helix, represented by the black line, where each time point is colored according to the lowest RMSD state.
-We apply the RMSD/time analysis only to the simulation corresponding to the end state ligand of interest ($\Lambda_{11}$).
+We apply the RMSD/time analysis only to the simulation corresponding to the end state ligand of interest ($\lambda_{11}$).
 By tracking the RMSD relative to the closed helix, we can monitor if the protein opens (by high RMSD with green points) or closes (by low RMSD with purpe points).
 Additionally, we gain some insight on the time required to capture the opening or closing of the binding cavity.
 
@@ -182,11 +185,11 @@ Using color maps, it becomes visually easy to see if intermediate---higher tempe
 Using the default FEP/REST methodology\cite{FEP/REST}, we find calculated free energies significantly depend on the protein starting conformation, especially for large perturbations (i.e. opening the cavity from the closed state).
 To illustrate this, we begin our molecular dynamics simulations both from the protein closed and open conformations then perform alchemical transformations to ligands that occupy another protein conformational state.
 For example, in the alchemical transformation of benzene to n-hexylbenzene---starting from the protein closed state---we expect to see opening of the binding cavity when the ligand is in the fully interacting n-hexylbenzene state.
-In this study, we demonstrate using the default Schr\"{o}dinger FEP protocol settings of a 5ns simulation time and REST region selection does not facilitate adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.
+In this study, we demonstrate using the default Schr\"{o}dinger FEP protocol settings of a 5ns simulation time and REST region selection does not generate adequate sampling of the motion in the F-helix and does not eliminate the dependence on the initial protein state.
 
 %P2: Discuss closed-open case to show the problem in default protocol
 \subsubsection*{Closed-Open Ligand Transformations}
-An examination of the largest alchemical transformation, benzene to n-hexylbenzene, clearly highlights the sampling challenges faced when using the standard FEP/REST protocol.
+An examination of the largest alchemical transformation, benzene to n-hexylbenzene, clearly highlights the sampling challenges faced when using the default FEP/REST protocol.
 From experimental data of ligand occupancies (Table~\ref{tbl:expdata}), we expect in our simulations of n-hexylbenzene to see the protein primarily in the open state over the closed state.
 Instead, we find the protein remains trapped in its initial conformational state whether we start from closed (Fig~\ref{fig:c_opls3_1/RMSD-replica11}) or open (Fig~\ref{fig:o_opls3_1/RMSD-replica11}) over the course of the 5ns simulation.
 From the protein closed simulation, the protein only briefly samples the intermediate state around 3ns but never enters the open conformation.
@@ -198,7 +201,7 @@ Ultimately, we arrive at two very different relative free energies values, where
 
 In the overall set, we similarly observe protein closed simulations to yield positive free energies and negative for protein open simulations. 
 In turn, we find the overall inconsistency to be very high with a RMSI of +4 kcal/mol (Fig~\ref{fig:C2O_xyplot}, Table~\ref{tbl:C-O}). 
-Clearly, despite the use of FEP/REST, we are unable to get sufficient sampling in the protein within the standard 5ns time frame.
+Clearly, despite the use of implemented default FEP/REST protocol, we are unable to get sufficient sampling in the protein within the standard 5ns time frame.
 Instead, we encounter sampling problems as the protein remains in its initial conformational state throughout the simulation. 
 As a result, our calculated free energies exhibit high dependence on the initial protein configuration which is reflected by the large RMSI.
 
@@ -237,7 +240,7 @@ In reference to Figure~\ref{fig:c_opls3_1/colormap} and Figure~\ref{fig:c_opls3_
 %P3 REST improvement quantitatively in C-O and C-I sets
 Collectively, we find only some minor improvements in the RMSI for all our closed-open and closed-intermediate transformations while using pREST. 
 For closed-open transformations (Table~\ref{tbl:C-O_pREST}), the RMSI reduces to +2.78 kcal/mol (previously +4 kcal/mol). 
-On the other hand, for closed-intermediate, the RMSI raises slightly to +0.78 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise. (Table~\ref{tbl:C-I_pREST}).
+On the other hand, for closed-intermediate, the RMSI raises slightly to +0.78 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise.
 Generally, simulations starting from the closed state had $\Delta\Delta G_{calc}$ values that moved towards favorability (i.e. more negative $\Delta\Delta G_{calc}$), while for protein open simulations $\Delta\Delta G_{calc}$ values tended towards unfavorability (i.e. more positive $\Delta\Delta G_{calc}$).
 This is indicative of the fact that pREST is indeed improving sampling, but it is evident that our $\Delta\Delta G_{calc}$ are still far from convergence, given the RMSI is still large, especially for closed/open transformations.
 
@@ -294,7 +297,7 @@ Further, by simulating longer we allow for more exchanges between replicas, whic
 With these modifications to the default protocol, we almost completely converge our $\Delta\Delta G_{calc}$ to the same value regardless of the starting protein conformation.
 
 %P5: Speculation on best practices for other future studies
-Generally, our brute-force approach of simulating longer and multiple trials with varied protein structures is not a desirable or a even a feasible approach, especially in early drug discovery phases.
+Generally, our brute-force approach of simulating longer and multiple trials with varied protein structures is not a desirable or feasible approach, especially in early drug discovery phases.
 At the industrial level, ligand libraries can be large---driving computational cost exponentially if we simulate longer---or experimental structures can be sparse for new therapeutic protein targets.
 For future studies, approaches using Markov State Models (MSMs)\cite{MSM} can potentially be of great use for identifying discrete protein conformations.
 MSMs build a representation of the conformational space from batches of short molecular simulations, whereby the discrete states and transition rates between them can be determined in an efficient manner.
