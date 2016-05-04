@@ -1,14 +1,11 @@
 \documentclass[journal=jctcce,manuscript=article]{achemso}
 
-\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
-\usepackage[T1]{fontenc}       % Use modern font encodings
+\usepackage[version=3]{mhchem}
+\usepackage[T1]{fontenc}       
 \usepackage{graphicx}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage{subfiles}
 \usepackage{subcaption}
-\usepackage{multirow}
-
-\usepackage{adjustbox}
+%\usepackage{multirow}
 
 \author{Nathan M. Lim}
 \email{limn1@uci.edu}
@@ -24,7 +21,7 @@
 \affiliation[University of California---Irvine]
 {Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
 
-\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energby calculation protocols and force fields}
+\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energy calculation protocols and force fields}
 
 \begin{document}
 
@@ -63,8 +60,9 @@ A thorough investigation on how protein conformational changes and the initial p
 
 Here, we apply the now-standard FEP+ protocol, which utilizes replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
 In this mutant, the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
-Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding.
-Through a series of eight congeneric ligands, each growing by addition of a single methyl, the protein responds by a single helix rearrangement to accommodate the growing ligand\cite{Merski2015}.
+Recent studies on this binding site have found that the protein adopts three discrete conformations in response to ligand binding\cite{Merski2015}.
+Through a series of eight congeneric ligands(Fig~\ref{fig:ligand_set}, each growing by addition of a single methyl, the protein responds by a single helix rearrangement to accommodate the growing ligand (Fig~\ref{fig:T4-L99A}).
+As the ligand grows, the binding cavity was observed to incrementally reorganize into three discrete conformations which we will refer to as the closed(Fig~\ref{fig:closed_surface}), intermediate(Fig~\ref{fig:int_surface}), and open states(Fig~\ref{fig:open_surface}).
 Using the FEP/REST protocol and the aforementioned homologous ligand series, we calculate relative protein-ligand binding affinities between ligands that occupy different discrete protein conformational states.
 In this study---while using the implemented default FEP/REST protocol---we demonstrate how the kinetically distinct protein states and structural rearrangement affects the accuracy and reliability of our predicted relative binding affinities.
 Further, we illustrate the importance of sufficient sampling of protein conformational changes and how modification of the REST region can potentially address this issue.
@@ -89,8 +87,7 @@ Generally, two options were taken:\\
 Ligand tail fragments were added using the Build/Fragments toolbar in Maestro  and were not overlaid or docked. 
 As the ligand tails were built, bonds were manually rotated so that the tail was oriented in a similar manner as in their corresponding crystal structure.
 Following, the newly added atoms in the tail were locally minimized while leaving the core in its initial position.
-This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to determine the core atoms between the two ligands (LW?)
-%which LigandFEP uses to select the ligand heavy atoms to be included in the REST region. 
+This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to determine the core atoms between the two ligands.
 
 \subsection*{Classification of alchemical transformations and color coding}
 Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Table~\ref{tbl:expdata}).
@@ -109,6 +106,8 @@ Using the Schr\"{o}dinger application suite (release 2015-3)\cite{Maestro-Desmon
 FEP+ is a fully automated work flow that plans perturbation pathways based off the LOMAP\cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
 LigandFEP is an academic toolkit that generates the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
 Both FEP protocols use the default Desmond relaxation protocol and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}.
+We utilize both FEP protocols in order to demonstrate the academic tool---LigandFEP---would not generate different free energies predictions and thereby is a very powerful tool for academics.
+Here, we only present data using the LigandFEP protocol but data using the FEP+ protocol can be found in the supplementary information.
 
 \subsection*{Simulation details}
 Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
@@ -116,9 +115,9 @@ The relaxation protocol begins with a simulation where solute molecules are rest
 Next is a 24ps simulation followed by a final 240ps simulation with solute molecules unrestrained, both are carried at room temperature with a NPT ensemble using Langevin.
 Production simulations were initially ran for the default setting of 5ns and then were carried out to a length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
 Here, we use the final 15ns for closed-open simulations and the final 10ns for closed-intermediate to calculate our final free energies, discarding the initial time as additional equilibration time.
-FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with OPLS3\cite{OPLS3} forcefield parameters.
-Additional simulations were run using the OPLS2005\cite{OPLS2005} and the corresponding data can be found in the supplementary information.
-Here, results and discussion sections will primarily present information from using the LigandFEP protocol with OPLS3 forcefield parameters, additional data not discussed here can be found in the supplementary info.
+FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with the recently developed OPLS3\cite{OPLS3} forcefield parameters.
+In general, we found the OPLS3 forcefield parameters to perform much better than OPLS2005 and thereby we present data using OPLS3 here.
+Additional data from simulations using the OPLS2005\cite{OPLS2005} forcefields can be found in the supplementary information.
 
 \subsection*{REST region selection}
 In this study, by default, only heavy atoms in the ligand were included in the REST region unless specified otherwise.
@@ -154,8 +153,9 @@ Hysteresis around closed thermodynamic cycles and best estimates of the free ene
 
 \subsection*{Determining the protein conformation state using RMSD}
 In this study, we determine the state of the protein by computing the 'Root-Mean-Square-Deviation'(RMSD) of the protein backbone atoms spanning the F-helix relative to their positions found in the closed (PDB:4W53), intermediate (PDB:4W57), and open (PDB:4W59) crystal structures (Fig~\ref{fig:T4-L99A_tube}).
-%LW: HOW CAN I CLARIFY THIS A BIT?
-The set of RMSDs is computed over the course of the simulation, whereby we use the state with the lowest RMSD to color each time point correspondingly in our analyses of `RMSD/time' and `Color maps'. 
+The set of RMSDs---that is, the RMSD relative to the closed, intermediate, and open states---is computed at each frame over the course of the entire simulation. 
+Then, we use the protein conformational state with the lowest RMSD to correspondingly color each time point in our analyses of `RMSD/time' and `Color maps'.
+Again, we use purple to denote the protein closed state, cyan for the intermediate state, and green for the open state.
 Here, we use VMD \cite{VMDpaper,VMDalignment} to align and compute the RMSD of our Desmond trajectories relative to crystal structures.
 Further details on the procedure and the scripts used for these analyses are provided in the supplementary info.
 
@@ -267,7 +267,7 @@ Now, all our inconsistencies in the final calculated free energies and error fro
 %Even small rearrangements present sampling challenges which impact FE accuracy
 %Magnitude/Impact of initial protein conformation
 In this study, we find that relative free energy calculations can suffer from substantial convergence problems resulting from relatively modest protein conformational changes.
-Although, the protein conformational changes in T4 lysozyme (L99A) are extremely localized to a rearrangement of a single helix (Fig~\ref{fig:T4-L99A_protein},Fig~\ref{fig:T4-L99A_tube}), we still encounter challenges in sampling.
+Although, the protein conformational changes in T4 lysozyme (L99A) are extremely localized to a rearrangement of a single helix (Fig~\ref{fig:T4-L99A}), we still encounter challenges in sampling.
 These problems have profound implications for the accuracy of computed relative free energies in these cases.
 Particularly, we find that calculated relative free energies can depend on the initial protein conformational state by up to 4 kcal/mol.
 
@@ -328,13 +328,8 @@ More importantly, prior to performing binding free energy calculations, we prese
    N.M.L. thanks Dmitry Lupyan and Joseph Goose for helpful discussions and technical support. Financial support for N.M.L. was provided by Schr\"{o}dinger and the National Science Foundation Graduate Research Fellowship (DGE-1321846). D.L.M. appreciates financial support from the National Institutes of Health (1R01GM108889-01). L.W. and R.A. are supported by Schr\"{o}dinger.
 \end{acknowledgement}
 
-\pagebreak
-\section*{Figures}
-\subfile{T4figs}
-
-\clearpage
-\section*{Tables}
-\subfile{T4tables}
+\include{T4figs}
+\include{T4tables}
 
 \clearpage
 \bibliography{references}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  4 MAY 2016 10:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  4 MAY 2016 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,76 +479,25 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/subfiles/subfiles.sty
-Package: subfiles 2012/05/23 Federico Garcia
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks37
-\verbatim@line=\toks38
-\verbatim@in@stream=\read1
-))
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
 \c@subfigure=\count150
 \c@subtable=\count151
-)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen166
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
-
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
-
-(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box45
-)
-\tc@llx=\dimen167
-\tc@lly=\dimen168
-\tc@urx=\dimen169
-\tc@ury=\dimen170
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen171
-\adjbox@Height=\dimen172
-\adjbox@Depth=\dimen173
-\adjbox@Totalheight=\dimen174
-
-(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
-\c@checkoddpage=\count152
-)
-(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box46
-\sift@deathcycles=\count153
-\@vwid@loff=\dimen175
-\@vwid@roff=\dimen176
-)) (./T4paper.aux)
+) (./T4paper.aux (./T4figs.aux) (./T4tables.aux))
 \openout1 = `T4paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 \openout3 = `acs-T4paper.bib'.
 
 
@@ -591,17 +540,17 @@ Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count154
-\scratchdimen=\dimen177
-\scratchbox=\box47
-\nofMPsegments=\count155
-\nofMParguments=\count156
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count157
-\MPscratchDim=\dimen178
-\MPnumerator=\count158
-\makeMPintoPDFobject=\count159
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count152
+\scratchdimen=\dimen166
+\scratchbox=\box45
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count155
+\MPscratchDim=\dimen167
+\MPnumerator=\count156
+\makeMPintoPDFobject=\count157
+\everyMPtoPDFconversion=\toks38
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -633,342 +582,316 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 29.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 76.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
  [4]
-Overfull \hbox (4.57161pt too wide) in paragraph at lines 100--106
+Overfull \hbox (4.57161pt too wide) in paragraph at lines 97--103
 []\T1/cmr/m/n/12 Our sets of al-chem-i-cal trans-for-ma-tions con-sisted of 3 g
 roups: `closed-intermediate', `closed-
  []
 
 
-Overfull \hbox (14.29167pt too wide) in paragraph at lines 100--106
+Overfull \hbox (14.29167pt too wide) in paragraph at lines 97--103
 \T1/cmr/m/n/12 am-ple, the al-chem-i-cal trans-for-ma-tion of ben-zene to n-but
 ylbenzene falls into closed-intermediate
  []
 
-[5] [6]
-Overfull \hbox (70.26546pt too wide) in paragraph at lines 138--141
+[5] [6] [7]
+Overfull \hbox (70.26546pt too wide) in paragraph at lines 137--140
 \T1/cmr/m/n/12 Then we com-pute the over-all inconsistency---referred to as the
  'Root-Mean-Square-Inconsistency'(RMSI)---
  []
 
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] (./T4figs.tex
-<VMDscripts/Figures/T4_lysozyme_edit.png, id=82, 1186.4325pt x 783.92876pt>
+[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+\openout2 = `T4figs.aux'.
+
+ (./T4figs.tex
+<VMDscripts/Figures/T4_lysozyme_edit.png, id=85, 1186.4325pt x 783.92876pt>
 File: VMDscripts/Figures/T4_lysozyme_edit.png Graphic file (type png)
 
 <use VMDscripts/Figures/T4_lysozyme_edit.png>
 Package pdftex.def Info: VMDscripts/Figures/T4_lysozyme_edit.png used on input 
-line 11.
+line 9.
 (pdftex.def)             Requested size: 234.87453pt x 162.60835pt.
 
-<VMDscripts/Figures/ProteinTube.png, id=85, 1186.4325pt x 934.49126pt>
+<VMDscripts/Figures/ProteinTube.png, id=88, 1186.4325pt x 934.49126pt>
 File: VMDscripts/Figures/ProteinTube.png Graphic file (type png)
 
 <use VMDscripts/Figures/ProteinTube.png>
 Package pdftex.def Info: VMDscripts/Figures/ProteinTube.png used on input line 
-18.
+16.
 (pdftex.def)             Requested size: 234.86963pt x 162.60376pt.
 
-<VMDscripts/Figures/closed_surface_trans.png, id=87, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/closed_surface_trans.png, id=90, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/closed_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/closed_surface_trans.png>
 Package pdftex.def Info: VMDscripts/Figures/closed_surface_trans.png used on in
-put line 24.
+put line 22.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/int_surface_trans.png, id=89, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/int_surface_trans.png, id=92, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/int_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/int_surface_trans.png>
 Package pdftex.def Info: VMDscripts/Figures/int_surface_trans.png used on input
- line 31.
+ line 29.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/open_surface_trans.png, id=91, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/open_surface_trans.png, id=94, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/open_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/open_surface_trans.png>
 Package pdftex.def Info: VMDscripts/Figures/open_surface_trans.png used on inpu
-t line 38.
+t line 36.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/2D-ligands/ligand_set.png, id=93, 1062.97125pt x 342.27875p
+<VMDscripts/Figures/2D-ligands/ligand_set.png, id=96, 1062.97125pt x 342.27875p
 t>
 File: VMDscripts/Figures/2D-ligands/ligand_set.png Graphic file (type png)
  <use VMDscripts/Figures/2D-ligands/ligand_set.png>
 Package pdftex.def Info: VMDscripts/Figures/2D-ligands/ligand_set.png used on i
-nput line 43.
+nput line 41.
 (pdftex.def)             Requested size: 352.32246pt x 78.0487pt.
 
-<VMDscripts/Figures/C2O.png, id=95, 1186.4325pt x 783.92876pt>
+<VMDscripts/Figures/C2O.png, id=98, 1186.4325pt x 783.92876pt>
 File: VMDscripts/Figures/C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/C2O.png>
-Package pdftex.def Info: VMDscripts/Figures/C2O.png used on input line 62.
+Package pdftex.def Info: VMDscripts/Figures/C2O.png used on input line 60.
 (pdftex.def)             Requested size: 469.76273pt x 260.16188pt.
 
-<VMDscripts/Figures/Glu108-C2O.png, id=97, 819.06pt x 783.92876pt>
+<VMDscripts/Figures/Glu108-C2O.png, id=100, 819.06pt x 783.92876pt>
 File: VMDscripts/Figures/Glu108-C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/Glu108-C2O.png>
 Package pdftex.def Info: VMDscripts/Figures/Glu108-C2O.png used on input line 6
-7.
+5.
 (pdftex.def)             Requested size: 211.39383pt x 260.16188pt.
 
-<VMDscripts/Figures/Val111-C2O.png, id=99, 819.06pt x 783.92876pt>
+<VMDscripts/Figures/Val111-C2O.png, id=102, 819.06pt x 783.92876pt>
 File: VMDscripts/Figures/Val111-C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/Val111-C2O.png>
 Package pdftex.def Info: VMDscripts/Figures/Val111-C2O.png used on input line 7
-3.
+1.
 (pdftex.def)             Requested size: 211.3847pt x 260.16687pt.
- [18 <./VMDscripts/Figures/T4_lysozyme_edit.png> <./VMDscripts/Figures/ProteinT
-ube.png> <./VMDscripts/Figures/closed_surface_trans.png> <./VMDscripts/Figures/
-int_surface_trans.png> <./VMDscripts/Figures/open_surface_trans.png> <./VMDscri
-pts/Figures/2D-ligands/ligand_set.png>]
-<VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png, id=116, 722.7pt x 361.35p
+ [19
+
+ <./VMDscripts/Figures/T4_lysozyme_edit.png> <./VMDscripts/Figures/ProteinTube.
+png> <./VMDscripts/Figures/closed_surface_trans.png> <./VMDscripts/Figures/int_
+surface_trans.png> <./VMDscripts/Figures/open_surface_trans.png> <./VMDscripts/
+Figures/2D-ligands/ligand_set.png>]
+<VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png, id=120, 722.7pt x 361.35p
 t>
 File: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
 g)
  <use VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png us
-ed on input line 88.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+ed on input line 87.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png, id=118, 722.7pt x 361.35p
+<VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png, id=122, 722.7pt x 361.35p
 t>
 File: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
 g)
  <use VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png us
-ed on input line 93.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+ed on input line 92.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-
-LaTeX Warning: Float too large for page by 21.62933pt on input line 99.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png, id=120, 722.7pt x 36
+<VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png, id=124, 722.7pt x 36
 1.35pt>
 File: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png Graphic file (ty
 pe png)
  <use VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.p
-ng used on input line 106.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+ng used on input line 108.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png, id=122, 722.7pt x 36
+<VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png, id=126, 722.7pt x 36
 1.35pt>
 File: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png Graphic file (ty
 pe png)
  <use VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.p
-ng used on input line 111.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+ng used on input line 113.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png, id=124, 722
+<VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png, id=128, 722
 .7pt x 361.35pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png Graphic
  file (type png)
 
 <use VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-re
-plica11.png used on input line 125.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+plica11.png used on input line 130.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png, id=126, 7
+<VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png, id=130, 7
 22.7pt x 361.35pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png Graph
 ic file (type png)
 
 <use VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png>
 Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-
-replica11.png used on input line 130.
-(pdftex.def)             Requested size: 469.76942pt x 260.17987pt.
+replica11.png used on input line 135.
+(pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png, id=128, 732.0951pt x 404.7
+<VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png, id=132, 732.0951pt x 404.7
 12pt>
 File: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png Graphic file (type png
 )
  <use VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png>
 Package pdftex.def Info: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png use
-d on input line 144.
-(pdftex.def)             Requested size: 234.87843pt x 260.18195pt.
+d on input line 149.
+(pdftex.def)             Requested size: 234.87843pt x 195.13028pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png, id=129, 732.
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png, id=133, 732.
 0951pt x 404.712pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png Graphic 
 file (type png)
 
 <use VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png>
 Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
--0-5ns.png used on input line 150.
-(pdftex.def)             Requested size: 234.87843pt x 260.18195pt.
+-0-5ns.png used on input line 155.
+(pdftex.def)             Requested size: 234.87843pt x 195.13028pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png, id=130, 73
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png, id=134, 73
 2.0951pt x 404.712pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png Graphi
 c file (type png)
 
 <use VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png>
 Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
--45-55ns.png used on input line 156.
-(pdftex.def)             Requested size: 469.76805pt x 260.18195pt.
+-45-55ns.png used on input line 161.
+(pdftex.def)             Requested size: 469.76805pt x 195.13028pt.
 
-
-LaTeX Warning: Float too large for page by 7.13348pt on input line 162.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<VMDscripts/XYplot/C2O_xyplot.png, id=132, 634.5306pt x 648.2619pt>
+<VMDscripts/XYplot/C2O_xyplot.png, id=136, 634.5306pt x 648.2619pt>
 File: VMDscripts/XYplot/C2O_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2O_xyplot.png>
-Package pdftex.def Info: VMDscripts/XYplot/C2O_xyplot.png used on input line 17
-2.
+Package pdftex.def Info: VMDscripts/XYplot/C2O_xyplot.png used on input line 18
+0.
 (pdftex.def)             Requested size: 234.87915pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2O_pREST_xyplot.png, id=133, 646.0938pt x 648.2619pt>
+<VMDscripts/XYplot/C2O_pREST_xyplot.png, id=137, 646.0938pt x 648.2619pt>
 File: VMDscripts/XYplot/C2O_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2O_pREST_xyplot.png>
 Package pdftex.def Info: VMDscripts/XYplot/C2O_pREST_xyplot.png used on input l
-ine 178.
+ine 186.
 (pdftex.def)             Requested size: 234.88078pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2I_xyplot.png, id=134, 633.8079pt x 648.2619pt>
+<VMDscripts/XYplot/C2I_xyplot.png, id=138, 633.8079pt x 648.2619pt>
 File: VMDscripts/XYplot/C2I_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2I_xyplot.png>
-Package pdftex.def Info: VMDscripts/XYplot/C2I_xyplot.png used on input line 18
-3.
+Package pdftex.def Info: VMDscripts/XYplot/C2I_xyplot.png used on input line 19
+1.
 (pdftex.def)             Requested size: 234.87276pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2I_pREST_xyplot.png, id=135, 633.8079pt x 648.2619pt>
+<VMDscripts/XYplot/C2I_pREST_xyplot.png, id=139, 633.8079pt x 648.2619pt>
 File: VMDscripts/XYplot/C2I_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2I_pREST_xyplot.png>
 Package pdftex.def Info: VMDscripts/XYplot/C2I_pREST_xyplot.png used on input l
-ine 189.
+ine 197.
 (pdftex.def)             Requested size: 234.87276pt x 195.13292pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<VMDscripts/XYplot/exp_xyplot.png, id=136, 657.657pt x 650.43pt>
+<VMDscripts/XYplot/exp_xyplot.png, id=140, 657.657pt x 650.43pt>
 File: VMDscripts/XYplot/exp_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/exp_xyplot.png>
-Package pdftex.def Info: VMDscripts/XYplot/exp_xyplot.png used on input line 20
-3.
+Package pdftex.def Info: VMDscripts/XYplot/exp_xyplot.png used on input line 21
+7.
 (pdftex.def)             Requested size: 234.87979pt x 195.1305pt.
 
-<VMDscripts/XYplot/exp_pREST_xyplot.png, id=137, 657.657pt x 650.43pt>
+<VMDscripts/XYplot/exp_pREST_xyplot.png, id=141, 657.657pt x 650.43pt>
 File: VMDscripts/XYplot/exp_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/exp_pREST_xyplot.png>
 Package pdftex.def Info: VMDscripts/XYplot/exp_pREST_xyplot.png used on input l
-ine 209.
+ine 223.
 (pdftex.def)             Requested size: 234.87979pt x 195.1305pt.
+) [20 <./VMDscripts/Figures/C2O.png> <./VMDscripts/Figures/Glu108-C2O.png> <./V
+MDscripts/Figures/Val111-C2O.png>]
+[21 <./VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/o_opl
+s3_1/plots/0-5ns/RMSD-replica11.png>] [22 <./VMDscripts/c_exp_opls3_11/plots/0-
+5ns/RMSD-replica11.png> <./VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11
+.png>] [23 <./VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png
+> <./VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png>]
+[24 <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png> <./V
+MDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png> <./VMDscripts/c_opls3_rest1_
+extend_1e/plots/colormap/cmap-0-5ns.png>] [25 <./VMDscripts/XYplot/C2O_xyplot.p
+ng> <./VMDscripts/XYplot/C2O_pREST_xyplot.png> <./VMDscripts/XYplot/C2I_xyplot.
+png> <./VMDscripts/XYplot/C2I_pREST_xyplot.png>] [26 <./VMDscripts/XYplot/exp_x
+yplot.png> <./VMDscripts/XYplot/exp_pREST_xyplot.png>]
+\openout2 = `T4tables.aux'.
+
+ (./T4tables.tex)
+[27
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [19 <./VMDscripts/Figures/C2O.png> <./VMDscripts/Figures/Glu108-C2O.png> <./V
-MDscripts/Figures/Val111-C2O.png>] [20 <./VMDscripts/c_opls3_1/plots/0-5ns/RMSD
--replica11.png> <./VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png>]
-[21 <./VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/
-o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png>] [22 <./VMDscripts/c_opls3_rest1
-_extend_1e/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/c_opls3_rest1_extend_1
-e/plots/45-55ns/RMSD-replica11.png>] [23 <./VMDscripts/c_opls3_rest1_extend_1e/
-plots/colormap/cmap-45-55ns.png> <./VMDscripts/c_opls3_1/plots/colormap/cmap-0-
-5ns.png> <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png>]
-[24 <./VMDscripts/XYplot/C2O_xyplot.png> <./VMDscripts/XYplot/C2O_pREST_xyplot.
-png> <./VMDscripts/XYplot/C2I_xyplot.png> <./VMDscripts/XYplot/C2I_pREST_xyplot
-.png>] [25 <./VMDscripts/XYplot/exp_xyplot.png> <./VMDscripts/XYplot/exp_pREST_
-xyplot.png>] (./T4tables.tex
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 142.
+] [28] [29] [30] (./T4paper.bbl [31
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 162.
-
-) [26
-
-] [27] [28] (./T4paper.bbl [29
-
-] [30] [31]
+] [32] [33]
 Underfull \hbox (badness 1721) in paragraph at lines 326--332
 []\T1/cmr/m/n/12 Lim, N. M. Schrödinger Academy Molec-u-lar Dy-nam-ics Lig-and 
 FEP Tu-to-rial.
  []
 
-[32]) [33] (./T4paper.aux) ) 
+[34]) [35] (./T4paper.aux (./T4figs.aux) (./T4tables.aux)) ) 
 Here is how much of TeX's memory you used:
- 12385 strings out of 493304
- 220717 string characters out of 6139871
- 314254 words of memory out of 5000000
- 15567 multiletter control sequences out of 15000+600000
- 26040 words of font info for 62 fonts, out of 8000000 for 9000
+ 11820 strings out of 493304
+ 210888 string characters out of 6139871
+ 314108 words of memory out of 5000000
+ 15030 multiletter control sequences out of 15000+600000
+ 25341 words of font info for 61 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 60i,12n,94p,10407b,580s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super
--t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-rm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfs
-s1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfti1200.pfb>
-Output written on T4paper.pdf (33 pages, 12781611 bytes).
+ 60i,12n,94p,10373b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/f
+onts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pf
+b>
+Output written on T4paper.pdf (35 pages, 12779692 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
+ 307 PDF objects out of 1000 (max. 8388607)
+ 177 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

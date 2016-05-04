@@ -2,12 +2,14 @@ This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: T4paper.aux
 The style file: achemso.bst
+A level-1 auxiliary file: T4figs.aux
+A level-1 auxiliary file: T4tables.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: acs-T4paper.bib
 Database file #2: references.bib
 You've used 57 entries,
             2478 wiz_defined-function locations,
-            1152 strings with 19894 characters,
+            1154 strings with 19916 characters,
 and the built_in function-call counts, 20807 in all, are:
 = -- 1630
 > -- 1395
