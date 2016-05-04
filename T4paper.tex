@@ -8,6 +8,8 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 
+\usepackage{adjustbox}
+
 \author{Nathan M. Lim}
 \email{limn1@uci.edu}
 \affiliation[University of California---Irvine]
@@ -22,7 +24,7 @@
 \affiliation[University of California---Irvine]
 {Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
 
-\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energy calculation protocols and force fields}
+\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energby calculation protocols and force fields}
 
 \begin{document}
 
@@ -38,11 +40,11 @@ Particularly, we highlight the importance of sufficient sampling of protein conf
 \section{Introduction}
 Proteins play a central role in many biological processes by modulating many key signaling pathways.
 It is unsurprising to find that proteins make up the vast majority of pharmaceutical drug targets.
-Many small-molecules on the market today induce their therapeutic effect by modulating the proteins biological activity through binding\cite{overington2006many,FCP:FCP548,Lundstrom2009}.
+Many small-molecules on the market today induce their therapeutic effect by modulating the proteins biological activity through binding\cite{overington2006many,FCP:FCP548,Lundstrom2009}. 
 Thus, optimization of protein-ligand binding affinities is a central goal in early pharmaceutical drug design projects.
 
 Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques to assist in lead optimization.
-Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities.
+Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities. 
 Using methods like alchemical free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be computed in a robust and accurate manner.
 By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided\cite{doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda,zheng2008random,gallicchio2011advances,doi:10.1021/ct500161f}.
 Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have considerably improved the accuracy and robustness of FEP calculations. 
@@ -53,9 +55,9 @@ The accuracy and reliability of FEP+ make it a very powerful tool in the hands o
 Although the previous report on FEP+\cite{FEPplus} demonstrates its robustness---like much of the FEP literature---the primary concern focuses on the size of the ligand perturbation or the initial ligand pose and how these factors impact the accuracy of calculated free energies.\cite{mobley2012perspective,doi:10.1021/acs.jctc.5b00214}
 Consideration of effects arising from protein conformational changes have generally received less attention due to the difficulty in addressing the sampling challenges encountered.
 Some computational studies have shown even small simple changes in the protein---like a side-chain rotamer flipping---can cause large errors in affinity predictions if not sampled\cite{Mobley2009489,Mobley20071118} and thus protein conformational changes should not be ignored.
-In the previous FEP+ study\cite{FEPplus}, many of the protein targets used were extremely rigid (i.e. tyk2 and thrombin) or ligand pairs were selected so issues concerning protein conformational changes did not have to be addressed.
-Potentially, this could mean the domain of applicability for the FEP+ protocol appears to be restricted to either extremely rigid proteins or ligand pairs that do not induce a significant protein conformational change.
-Despite its high accuracy, this limits the potential impact FEP calculations can have in industrial drug discovery projects, considering it is extremely common to find that ligand binding causes the protein to adopt a discrete conformation---otherwise known as the "induced-fit" mechanism.
+In the previous FEP+ study\cite{FEPplus}, many of the protein targets used were either extremely rigid (i.e. tyk2 and thrombin) or ligand pairs appear to be selected so issues concerning protein conformational changes did not have to be addressed.
+Potentially, this could mean the domain of applicability for the FEP+ protocol is restricted to either extremely rigid proteins or ligand pairs that do not induce a significant protein conformational change.
+Considering it is extremely common to find that ligand binding causes the protein to adopt a discrete conformation, this limits the potential impact FEP calculations can have in industrial drug discovery projects despite being shown to be highly accurate.
 Furthermore, protein-ligand binding can be more complex than this, where several studies have found a protein can adopt multiple conformations even for the same ligand \cite{doi:10.1021/jm060167o,Gutteridge200521,Merski2015}.
 A thorough investigation on how protein conformational changes and the initial protein configuration affects the accuracy of free energy predictions has yet to be performed, to which we turn to now.
 
@@ -90,7 +92,7 @@ Following, the newly added atoms in the tail were locally minimized while leavin
 This was done in an attempt to correct bond angles and minimize the core RMSD, which LigandFEP uses to select the ligand heavy atoms to be included in the REST region. 
 
 \subsection*{Classification of alchemical transformations and color coding}
-Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Fig~\ref{fig:loop-occ},Table~\ref{tbl:expdata}).
+Here, we classified ligands based on the primary protein conformation (closed, intermediate, or open) the ligand occupies from the experimental studies (Table~\ref{tbl:expdata}).
 To be explicit, the set of closed ligands refers to benzene, toluene, ethylbenzene, and n-propylbenzene; n-/sec-butylbenzene for intermediate; and n-pentyl/n-hexylbezene for open ligands.
 The various protein states and ligands are then assigned a color accordingly: purple for closed, cyan for intermediate, and green for the open state.
 
@@ -195,7 +197,7 @@ By remaining trapped in the initial state, we under-sample the open state if we 
 Ultimately, we arrive at two very different relative free energies values, where the inconsistency is as large as +4.74 kcal/mol for the same transformation of benzene to n-hexylbenzene.
 
 In the overall set, we similarly observe protein closed simulations to yield positive free energies and negative for protein open simulations. 
-In turn, we find the overall inconsistency to be very high with a RMSI of +4 kcal/mol (Fig~\ref{fig:C2O_xyplot},Table~\ref{tbl:C-O}) 
+In turn, we find the overall inconsistency to be very high with a RMSI of +4 kcal/mol (Fig~\ref{fig:C2O_xyplot}, Table~\ref{tbl:C-O}). 
 Clearly, despite the use of FEP/REST, we are unable to get sufficient sampling in the protein within the standard 5ns time frame.
 Instead, we encounter sampling problems as the protein remains in its initial conformational state throughout the simulation. 
 As a result, our calculated free energies exhibit high dependence on the initial protein configuration which is reflected by the large RMSI.
@@ -203,7 +205,7 @@ As a result, our calculated free energies exhibit high dependence on the initial
 \subsubsection*{Closed-Intermediate Ligand Transformations}
 %P3: Discuss close-int case to show there is still a dependence even for small changes
 In the case of closed-intermediate alchemical transformations, we find that the calculated free energies still have some (albeit much smaller) dependence on the initial protein conformation, using the default protocol.
-For this set of alchemical transformations, we find the RMSI to be +0.60 kcal/mol (Fig~\ref{fig:C2I_xyplot},Table~\ref{tbl:C-I}).
+For this set of alchemical transformations, we find the RMSI to be +0.60 kcal/mol (Fig~\ref{fig:C2I_xyplot}, Table~\ref{tbl:C-I}).
 Considering this set involves a smaller protein conformational change and smaller perturbations to the ligand, it is unsurprising to find the RMSI to be much smaller than our closed-open transformation set.
 
 Although, the collective RMSI for closed-intermediate transformations falls below the acceptable range of less than 1 kcal/mol, we can still see a dependence on the initial protein configuration by viewing transformations involving n-butylbenzene.
@@ -327,7 +329,6 @@ More importantly, prior to performing binding free energy calculations, we prese
 \section*{Figures}
 \subfile{T4figs}
 
-
 \clearpage
 \section*{Tables}
 \subfile{T4tables}
@@ -337,7 +338,5 @@ More importantly, prior to performing binding free energy calculations, we prese
 
 %\pagebreak
 %\subfile{T4supp}
-
-
 
 \end{document}
