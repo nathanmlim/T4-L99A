@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  11 MAY 2016 17:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  11 MAY 2016 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,13 +856,13 @@ FEP Tu-to-rial.
 
 [35]) [36] (./T4paper.aux (./T4figs.aux) (./T4tables.aux)) ) 
 Here is how much of TeX's memory you used:
- 11821 strings out of 493304
- 210903 string characters out of 6139871
- 322817 words of memory out of 5000000
- 15031 multiletter control sequences out of 15000+600000
- 25341 words of font info for 61 fonts, out of 8000000 for 9000
+ 11823 strings out of 493304
+ 210924 string characters out of 6139871
+ 318125 words of memory out of 5000000
+ 15032 multiletter control sequences out of 15000+600000
+ 26027 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 60i,12n,94p,10373b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,94p,10373b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/f
 onts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
@@ -886,12 +886,12 @@ f/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.p
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pf
-b>
-Output written on T4paper.pdf (36 pages, 12781949 bytes).
+cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on T4paper.pdf (36 pages, 12788296 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
+ 314 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
