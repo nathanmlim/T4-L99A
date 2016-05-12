@@ -77,8 +77,7 @@ All proteins were prepared and aligned in Maestro\cite{Maestro} using the `Prote
 
 Protein structures were taken from PDBs: 4W52, 4W53, 4W54, 4W55, 4W56, 4W57, 4W58, and 4W59 corresponding to protein-ligand bound structures of benzene, toluene, ethylbenzene, n-propylbenzene, sec-butylbenzene, n-butylbenzene, n-pentylbenzene, and n-hexylbenzene, respectively\cite{Merski2015}.
 Each simulation starts from either the protein closed state (PDB:4W52) or the open state (PDF:4W59).
-When using the FEP+ protocol, ligand crystal structure positions were used as the starting position of the simulation.
-When using the LigandFEP protocol, a similar workflow to the tutorial\cite{LigandFEP} was followed.
+Using LigandFEP, our system preparation follows a similar workflow to the tutorial\cite{LigandFEP}.
 Generally, two options were taken:\\
 (1a) If the simulation starts from the protein closed state, the benzene crystal position was used as a reference for fragment building (PDB:4W52).\\
 (1b) The corresponding ligand in the transformation was built by duplicating benzene in place and adding methyl groups.\\
@@ -102,12 +101,11 @@ Ligands with available experimental binding affinities consisted of benzene, tol
 This gives a total of 26 alchemical transformations in this study, 8 from `closed-intermediate', 8 from `closed-open', and 10 from the experimental set.
  
 \subsection*{FEP protocols}
-Using the Schr\"{o}dinger application suite (release 2015-3)\cite{Maestro-Desmond}, two FEP protocols were used in this project: FEP+\cite{FEPplus} and LigandFEP\cite{LigandFEP}.
+Using the Schr\"{o}dinger application suite (release 2015-3)\cite{Maestro-Desmond}, we utilize a similar protocol to FEP+\cite{FEPplus} called LigandFEP\cite{LigandFEP}.
 FEP+ is a fully automated work flow that plans perturbation pathways based off the LOMAP\cite{LOMAP} mapping algorithm which uses the maximum common substructure (MCS) between any pair of compounds.
 LigandFEP is an academic toolkit that generates the configuration files to perform the free energy calculation but is limited in the sense that the user must plan each perturbation path instead.
-Both FEP protocols use the default Desmond relaxation protocol and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}.
-We utilize both FEP protocols in order to demonstrate the academic tool---LigandFEP---would not generate different free energies predictions and thereby is a very powerful tool for academics.
-Here, we only present data using the LigandFEP protocol but data using the FEP+ protocol can be found in the supplementary information.
+Both LigandFEP and FEP+ use the same Desmond relaxation protocol and the FEP/REST methodology\cite{REST,REST2,FEP/REST,FEP/RESTapp}. 
+By utilizing LigandFEP, we demonstrate LigandFEP can be a powerful tool for academics as it strictly differs only in the level of automation.
 
 \subsection*{Simulation details}
 Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
@@ -118,8 +116,6 @@ Initial `pREST' production simulations were also simulated for 5ns and then were
 For closed-intermediate transformations, we extended `pREST' production simulations up to 25ns, only for cases that were far from convergence with the 5ns simulation time.
 Here, we use the final 15ns for closed-open simulations and the final 10ns for closed-intermediate to calculate our final free energies, discarding the initial time as additional equilibration time.
 FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with the recently developed OPLS3\cite{OPLS3} forcefield parameters.
-In general, we found the OPLS3 forcefield parameters to perform much better than OPLS2005 and thereby we present data using OPLS3 here.
-Additional data from simulations using the OPLS2005\cite{OPLS2005} forcefields can be found in the supplementary information.
 
 \subsection*{REST region selection}
 In this study, by default, only heavy atoms in the ligand were included in the REST region unless specified otherwise.
@@ -333,10 +329,22 @@ More importantly, prior to performing binding free energy calculations, we prese
 \include{T4figs}
 \include{T4tables}
 
+\begin{suppinfo}
+The files are provided in the Supporting Information:
+\begin{itemize}
+  \item RMSD analysis scripts(RMSD-analysis.tcl, plot-RMSD.py): 
+
+  A README.txt file has been provided in the `scripts/' directory that details how to generate the RMSD/time and Colormap plots found in the paper. VMD and the trajectories from the MD simulations are required to perform the analysis. Only trajectories for benzene-nhexylbenzene and benzene-nhexylbenzene simulations have been included and are within the archived data files.
+  \item Archived data of each set alchemical transformations(C-I\_default.tar.gz, C-I\_pPREST.tar.gz, C-O\_default.tar.gz, C-O\_pREST.tar.gz, EXP\_default.tar.gz, EXP\_pREST.tar.gz):
+   
+  Inside each archived directory contains directories named by the ligands involved in the transformation and the protein conformation from which the simulations were started with. For example, `C-O\_default/benzene-nhexylbenzene\_C/' corresponds to the FEP calculation of benzene to n-hexylbenzene, starting from the protein closed state, while using the default protocol. Within each FEP calculation directory are the input .mae files containing the protein/ligand structures, the configuration .msj files, and a README.txt. The README.txt file contains information about each FEP calculation such as the protein starting conformation, ligands involved, forcefields used, set label, free energies corresponding to the complex/solvent simulations, and the final calculated free energy. The output data for each FEP calculation is contained within the `*\_fep1/', where inside the `*\_complex\_12/' or `*\_solvent\_13/' folders are all output files used to calculate the free energies. The final calculated free energy is written in a `result' file, where extended simulations will contain two result files for the calculated free energy when analyzing the 0-5ns time frame and the 15-25ns or 40-55ns time frame. 
+
+  For FEP calculations where an RMSD analysis was performed in the paper(ex.`C-O\_default/benzene-nhexylbenzene\_C'), an `RMSD-analysis/' folder is provided. Inside are `replica#.rmsd' files that contain the set of RMSDs relative to each protein conformation over each replica's trajectory. The resulting RMSD/time and Colormaps can be found inside the `RMSD-analysis/plots/' folder. The trajectories are also provided inside the output `*\_fep1/' folder within the `*\_complex\_10/' directory.
+\end{itemize}
+
+\end{suppinfo}
+
 \clearpage
 \bibliography{references}
-
-%\pagebreak
-%\subfile{T4supp}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  11 MAY 2016 18:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  12 MAY 2016 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,28 +597,28 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
  [4]
-Overfull \hbox (4.57161pt too wide) in paragraph at lines 97--103
+Overfull \hbox (4.57161pt too wide) in paragraph at lines 96--102
 []\T1/cmr/m/n/12 Our sets of al-chem-i-cal trans-for-ma-tions con-sisted of 3 g
 roups: `closed-intermediate', `closed-
  []
 
 
-Overfull \hbox (14.29167pt too wide) in paragraph at lines 97--103
+Overfull \hbox (14.29167pt too wide) in paragraph at lines 96--102
 \T1/cmr/m/n/12 am-ple, the al-chem-i-cal trans-for-ma-tion of ben-zene to n-but
 ylbenzene falls into closed-intermediate
  []
 
-[5] [6] [7]
-Overfull \hbox (70.26546pt too wide) in paragraph at lines 139--142
+[5] [6]
+Overfull \hbox (70.26546pt too wide) in paragraph at lines 135--138
 \T1/cmr/m/n/12 Then we com-pute the over-all inconsistency---referred to as the
  'Root-Mean-Square-Inconsistency'(RMSI)---
  []
 
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17]
 \openout2 = `T4figs.aux'.
 
  (./T4figs.tex
-<VMDscripts/Figures/T4_lysozyme_edit.png, id=85, 1186.4325pt x 783.92876pt>
+<VMDscripts/Figures/T4_lysozyme_edit.png, id=82, 1186.4325pt x 783.92876pt>
 File: VMDscripts/Figures/T4_lysozyme_edit.png Graphic file (type png)
 
 <use VMDscripts/Figures/T4_lysozyme_edit.png>
@@ -626,7 +626,7 @@ Package pdftex.def Info: VMDscripts/Figures/T4_lysozyme_edit.png used on input
 line 9.
 (pdftex.def)             Requested size: 234.87453pt x 162.60835pt.
 
-<VMDscripts/Figures/ProteinTube.png, id=88, 1186.4325pt x 934.49126pt>
+<VMDscripts/Figures/ProteinTube.png, id=85, 1186.4325pt x 934.49126pt>
 File: VMDscripts/Figures/ProteinTube.png Graphic file (type png)
 
 <use VMDscripts/Figures/ProteinTube.png>
@@ -634,7 +634,7 @@ Package pdftex.def Info: VMDscripts/Figures/ProteinTube.png used on input line
 16.
 (pdftex.def)             Requested size: 234.86963pt x 162.60376pt.
 
-<VMDscripts/Figures/closed_surface_trans.png, id=90, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/closed_surface_trans.png, id=87, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/closed_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/closed_surface_trans.png>
@@ -642,7 +642,7 @@ Package pdftex.def Info: VMDscripts/Figures/closed_surface_trans.png used on in
 put line 22.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/int_surface_trans.png, id=92, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/int_surface_trans.png, id=89, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/int_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/int_surface_trans.png>
@@ -650,7 +650,7 @@ Package pdftex.def Info: VMDscripts/Figures/int_surface_trans.png used on input
  line 29.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/open_surface_trans.png, id=94, 1203.5364pt x 694.5147pt>
+<VMDscripts/Figures/open_surface_trans.png, id=91, 1203.5364pt x 694.5147pt>
 File: VMDscripts/Figures/open_surface_trans.png Graphic file (type png)
 
 <use VMDscripts/Figures/open_surface_trans.png>
@@ -658,7 +658,7 @@ Package pdftex.def Info: VMDscripts/Figures/open_surface_trans.png used on inpu
 t line 36.
 (pdftex.def)             Requested size: 155.00945pt x 162.60925pt.
 
-<VMDscripts/Figures/2D-ligands/ligand_set.png, id=96, 1062.97125pt x 342.27875p
+<VMDscripts/Figures/2D-ligands/ligand_set.png, id=93, 1062.97125pt x 342.27875p
 t>
 File: VMDscripts/Figures/2D-ligands/ligand_set.png Graphic file (type png)
  <use VMDscripts/Figures/2D-ligands/ligand_set.png>
@@ -666,14 +666,14 @@ Package pdftex.def Info: VMDscripts/Figures/2D-ligands/ligand_set.png used on i
 nput line 41.
 (pdftex.def)             Requested size: 352.32246pt x 78.0487pt.
 
-<VMDscripts/Figures/C2O.png, id=98, 1186.4325pt x 783.92876pt>
+<VMDscripts/Figures/C2O.png, id=95, 1186.4325pt x 783.92876pt>
 File: VMDscripts/Figures/C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/C2O.png>
 Package pdftex.def Info: VMDscripts/Figures/C2O.png used on input line 60.
 (pdftex.def)             Requested size: 469.76273pt x 260.16188pt.
 
-<VMDscripts/Figures/Glu108-C2O.png, id=100, 819.06pt x 783.92876pt>
+<VMDscripts/Figures/Glu108-C2O.png, id=97, 819.06pt x 783.92876pt>
 File: VMDscripts/Figures/Glu108-C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/Glu108-C2O.png>
@@ -681,20 +681,20 @@ Package pdftex.def Info: VMDscripts/Figures/Glu108-C2O.png used on input line 6
 5.
 (pdftex.def)             Requested size: 211.39383pt x 260.16188pt.
 
-<VMDscripts/Figures/Val111-C2O.png, id=102, 819.06pt x 783.92876pt>
+<VMDscripts/Figures/Val111-C2O.png, id=99, 819.06pt x 783.92876pt>
 File: VMDscripts/Figures/Val111-C2O.png Graphic file (type png)
 
 <use VMDscripts/Figures/Val111-C2O.png>
 Package pdftex.def Info: VMDscripts/Figures/Val111-C2O.png used on input line 7
 1.
 (pdftex.def)             Requested size: 211.3847pt x 260.16687pt.
- [19
+ [18
 
  <./VMDscripts/Figures/T4_lysozyme_edit.png> <./VMDscripts/Figures/ProteinTube.
 png> <./VMDscripts/Figures/closed_surface_trans.png> <./VMDscripts/Figures/int_
 surface_trans.png> <./VMDscripts/Figures/open_surface_trans.png> <./VMDscripts/
 Figures/2D-ligands/ligand_set.png>]
-<VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png, id=120, 722.7pt x 361.35p
+<VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png, id=116, 722.7pt x 361.35p
 t>
 File: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
 g)
@@ -703,7 +703,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png us
 ed on input line 87.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png, id=122, 722.7pt x 361.35p
+<VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png, id=118, 722.7pt x 361.35p
 t>
 File: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png Graphic file (type pn
 g)
@@ -712,7 +712,7 @@ Package pdftex.def Info: VMDscripts/o_opls3_1/plots/0-5ns/RMSD-replica11.png us
 ed on input line 92.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png, id=124, 722.7pt x 36
+<VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png, id=120, 722.7pt x 36
 1.35pt>
 File: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.png Graphic file (ty
 pe png)
@@ -721,7 +721,7 @@ Package pdftex.def Info: VMDscripts/c_exp_opls3_11/plots/0-5ns/RMSD-replica11.p
 ng used on input line 108.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png, id=126, 722.7pt x 36
+<VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png, id=122, 722.7pt x 36
 1.35pt>
 File: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.png Graphic file (ty
 pe png)
@@ -730,7 +730,7 @@ Package pdftex.def Info: VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11.p
 ng used on input line 113.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png, id=128, 722
+<VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png, id=124, 722
 .7pt x 361.35pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png Graphic
  file (type png)
@@ -740,7 +740,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-re
 plica11.png used on input line 130.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png, id=130, 7
+<VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png, id=126, 7
 22.7pt x 361.35pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png Graph
 ic file (type png)
@@ -750,7 +750,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-
 replica11.png used on input line 135.
 (pdftex.def)             Requested size: 469.76942pt x 195.12814pt.
 
-<VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png, id=132, 732.0951pt x 404.7
+<VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png, id=128, 732.0951pt x 404.7
 12pt>
 File: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png Graphic file (type png
 )
@@ -759,7 +759,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png use
 d on input line 149.
 (pdftex.def)             Requested size: 234.87843pt x 195.13028pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png, id=133, 732.
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png, id=129, 732.
 0951pt x 404.712pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-0-5ns.png Graphic 
 file (type png)
@@ -769,7 +769,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
 -0-5ns.png used on input line 155.
 (pdftex.def)             Requested size: 234.87843pt x 195.13028pt.
 
-<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png, id=134, 73
+<VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png, id=130, 73
 2.0951pt x 404.712pt>
 File: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png Graphi
 c file (type png)
@@ -779,7 +779,7 @@ Package pdftex.def Info: VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap
 -45-55ns.png used on input line 161.
 (pdftex.def)             Requested size: 469.76805pt x 195.13028pt.
 
-<VMDscripts/XYplot/C2O_xyplot.png, id=136, 634.5306pt x 648.2619pt>
+<VMDscripts/XYplot/C2O_xyplot.png, id=132, 634.5306pt x 648.2619pt>
 File: VMDscripts/XYplot/C2O_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2O_xyplot.png>
@@ -787,7 +787,7 @@ Package pdftex.def Info: VMDscripts/XYplot/C2O_xyplot.png used on input line 18
 0.
 (pdftex.def)             Requested size: 234.87915pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2O_pREST_xyplot.png, id=137, 646.0938pt x 648.2619pt>
+<VMDscripts/XYplot/C2O_pREST_xyplot.png, id=133, 646.0938pt x 648.2619pt>
 File: VMDscripts/XYplot/C2O_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2O_pREST_xyplot.png>
@@ -795,7 +795,7 @@ Package pdftex.def Info: VMDscripts/XYplot/C2O_pREST_xyplot.png used on input l
 ine 186.
 (pdftex.def)             Requested size: 234.88078pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2I_xyplot.png, id=138, 633.8079pt x 648.2619pt>
+<VMDscripts/XYplot/C2I_xyplot.png, id=134, 633.8079pt x 648.2619pt>
 File: VMDscripts/XYplot/C2I_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2I_xyplot.png>
@@ -803,7 +803,7 @@ Package pdftex.def Info: VMDscripts/XYplot/C2I_xyplot.png used on input line 19
 1.
 (pdftex.def)             Requested size: 234.87276pt x 195.13292pt.
 
-<VMDscripts/XYplot/C2I_pREST_xyplot.png, id=139, 633.8079pt x 648.2619pt>
+<VMDscripts/XYplot/C2I_pREST_xyplot.png, id=135, 633.8079pt x 648.2619pt>
 File: VMDscripts/XYplot/C2I_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/C2I_pREST_xyplot.png>
@@ -811,7 +811,7 @@ Package pdftex.def Info: VMDscripts/XYplot/C2I_pREST_xyplot.png used on input l
 ine 197.
 (pdftex.def)             Requested size: 234.87276pt x 195.13292pt.
 
-<VMDscripts/XYplot/exp_xyplot.png, id=140, 657.657pt x 650.43pt>
+<VMDscripts/XYplot/exp_xyplot.png, id=136, 657.657pt x 650.43pt>
 File: VMDscripts/XYplot/exp_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/exp_xyplot.png>
@@ -819,48 +819,71 @@ Package pdftex.def Info: VMDscripts/XYplot/exp_xyplot.png used on input line 21
 7.
 (pdftex.def)             Requested size: 234.87979pt x 195.1305pt.
 
-<VMDscripts/XYplot/exp_pREST_xyplot.png, id=141, 657.657pt x 650.43pt>
+<VMDscripts/XYplot/exp_pREST_xyplot.png, id=137, 657.657pt x 650.43pt>
 File: VMDscripts/XYplot/exp_pREST_xyplot.png Graphic file (type png)
 
 <use VMDscripts/XYplot/exp_pREST_xyplot.png>
 Package pdftex.def Info: VMDscripts/XYplot/exp_pREST_xyplot.png used on input l
 ine 223.
 (pdftex.def)             Requested size: 234.87979pt x 195.1305pt.
-) [20 <./VMDscripts/Figures/C2O.png> <./VMDscripts/Figures/Glu108-C2O.png> <./V
+) [19 <./VMDscripts/Figures/C2O.png> <./VMDscripts/Figures/Glu108-C2O.png> <./V
 MDscripts/Figures/Val111-C2O.png>]
-[21 <./VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/o_opl
-s3_1/plots/0-5ns/RMSD-replica11.png>] [22 <./VMDscripts/c_exp_opls3_11/plots/0-
+[20 <./VMDscripts/c_opls3_1/plots/0-5ns/RMSD-replica11.png> <./VMDscripts/o_opl
+s3_1/plots/0-5ns/RMSD-replica11.png>] [21 <./VMDscripts/c_exp_opls3_11/plots/0-
 5ns/RMSD-replica11.png> <./VMDscripts/o_exp_opls3_24/plots/0-5ns/RMSD-replica11
-.png>] [23 <./VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png
+.png>] [22 <./VMDscripts/c_opls3_rest1_extend_1e/plots/0-5ns/RMSD-replica11.png
 > <./VMDscripts/c_opls3_rest1_extend_1e/plots/45-55ns/RMSD-replica11.png>]
-[24 <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png> <./V
+[23 <./VMDscripts/c_opls3_rest1_extend_1e/plots/colormap/cmap-45-55ns.png> <./V
 MDscripts/c_opls3_1/plots/colormap/cmap-0-5ns.png> <./VMDscripts/c_opls3_rest1_
-extend_1e/plots/colormap/cmap-0-5ns.png>] [25 <./VMDscripts/XYplot/C2O_xyplot.p
+extend_1e/plots/colormap/cmap-0-5ns.png>] [24 <./VMDscripts/XYplot/C2O_xyplot.p
 ng> <./VMDscripts/XYplot/C2O_pREST_xyplot.png> <./VMDscripts/XYplot/C2I_xyplot.
-png> <./VMDscripts/XYplot/C2I_pREST_xyplot.png>] [26 <./VMDscripts/XYplot/exp_x
+png> <./VMDscripts/XYplot/C2I_pREST_xyplot.png>] [25 <./VMDscripts/XYplot/exp_x
 yplot.png> <./VMDscripts/XYplot/exp_pREST_xyplot.png>]
 \openout2 = `T4tables.aux'.
 
  (./T4tables.tex)
-[27
+[26
 
 
-] [28] [29] [30] [31] (./T4paper.bbl [32
+] [27] [28] [29] [30]
+Overfull \hbox (36.63176pt too wide) in paragraph at lines 345--345
+[]\T1/cmr/m/n/12 Archived data of each set al-chem-i-cal transformations(C-I_de
+fault.tar.gz, C-I_pPREST.tar.gz,
+ []
 
+! You can't use `macro parameter character #' in horizontal mode.
+<argument> ...r is provided. Inside are `replica##
+                                                  .rmsd' files that contain ...
+l.345 \end{suppinfo}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
-] [33] [34]
+[31
+
+]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 345.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [32]
+(./T4paper.bbl [33
+
+] [34] [35]
 Underfull \hbox (badness 1721) in paragraph at lines 326--332
 []\T1/cmr/m/n/12 Lim, N. M. Schrödinger Academy Molec-u-lar Dy-nam-ics Lig-and 
 FEP Tu-to-rial.
  []
 
-[35]) [36] (./T4paper.aux (./T4figs.aux) (./T4tables.aux)) ) 
+[36]) [37] (./T4paper.aux (./T4figs.aux) (./T4tables.aux)) ) 
 Here is how much of TeX's memory you used:
- 11823 strings out of 493304
- 210924 string characters out of 6139871
- 318125 words of memory out of 5000000
- 15032 multiletter control sequences out of 15000+600000
- 26027 words of font info for 62 fonts, out of 8000000 for 9000
+ 11838 strings out of 493304
+ 211446 string characters out of 6139871
+ 317951 words of memory out of 5000000
+ 15043 multiletter control sequences out of 15000+600000
+ 26340 words of font info for 63 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  60i,13n,94p,10373b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/f
@@ -887,11 +910,12 @@ f/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public
 fb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf
 /fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on T4paper.pdf (36 pages, 12788296 bytes).
+b></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on T4paper.pdf (37 pages, 12811480 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 324 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

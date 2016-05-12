@@ -7,44 +7,44 @@ A level-1 auxiliary file: T4tables.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: acs-T4paper.bib
 Database file #2: references.bib
-You've used 57 entries,
+You've used 56 entries,
             2478 wiz_defined-function locations,
-            1154 strings with 19916 characters,
-and the built_in function-call counts, 20807 in all, are:
-= -- 1630
-> -- 1395
+            1144 strings with 19335 characters,
+and the built_in function-call counts, 19974 in all, are:
+= -- 1584
+> -- 1302
 < -- 28
-+ -- 547
-- -- 490
-* -- 2305
-:= -- 2872
-add.period$ -- 67
-call.type$ -- 57
++ -- 510
+- -- 454
+* -- 2205
+:= -- 2750
+add.period$ -- 66
+call.type$ -- 56
 change.case$ -- 3
 chr.to.int$ -- 1
-cite$ -- 57
-duplicate$ -- 1131
-empty$ -- 1276
-format.name$ -- 571
-if$ -- 3918
+cite$ -- 56
+duplicate$ -- 1083
+empty$ -- 1251
+format.name$ -- 534
+if$ -- 3776
 int.to.chr$ -- 0
 int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 358
-num.names$ -- 170
-pop$ -- 103
+newline$ -- 352
+num.names$ -- 167
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 1
 stack$ -- 0
-substring$ -- 1160
-swap$ -- 1274
-text.length$ -- 114
+substring$ -- 1130
+swap$ -- 1196
+text.length$ -- 112
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 387
+type$ -- 380
 warning$ -- 0
-while$ -- 202
+while$ -- 198
 width$ -- 0
-write$ -- 688
+write$ -- 676

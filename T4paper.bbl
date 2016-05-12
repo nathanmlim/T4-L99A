@@ -2,7 +2,7 @@
 \providecommand*\mcitethebibliography{\thebibliography}
 \csname @ifundefined\endcsname{endmcitethebibliography}
   {\let\endmcitethebibliography\endthebibliography}{}
-\begin{mcitethebibliography}{57}
+\begin{mcitethebibliography}{56}
 \providecommand*\natexlab[1]{#1}
 \providecommand*\mciteSetBstSublistMode[1]{}
 \providecommand*\mciteSetBstMaxWidthForm[2]{}
@@ -419,18 +419,6 @@ Harder,~E.; Damm,~W.; Maple,~J.; Wu,~C.; Reboul,~M.; Xiang,~J.~Y.; Wang,~L.;
   Krilov,~G.; Jorgensen,~W.~L.; Abel,~R.; Friesner,~R.~A. \emph{Journal of
   Chemical Theory and Computation} \textbf{2016}, \emph{12}, 281--296, PMID:
   26584231\relax
-\mciteBstWouldAddEndPuncttrue
-\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
-{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
-\EndOfBibitem
-\bibitem[Banks \latin{et~al.}(2005)Banks, Beard, Cao, Cho, Damm, Farid, Felts,
-  Halgren, Mainz, Maple, Murphy, Philipp, Repasky, Zhang, Berne, Friesner,
-  Gallicchio, and Levy]{OPLS2005}
-Banks,~J.~L.; Beard,~H.~S.; Cao,~Y.; Cho,~A.~E.; Damm,~W.; Farid,~R.;
-  Felts,~A.~K.; Halgren,~T.~A.; Mainz,~D.~T.; Maple,~J.~R.; Murphy,~R.;
-  Philipp,~D.~M.; Repasky,~M.~P.; Zhang,~L.~Y.; Berne,~B.~J.; Friesner,~R.~A.;
-  Gallicchio,~E.; Levy,~R.~M. \emph{Journal of Computational Chemistry}
-  \textbf{2005}, \emph{26}, 1752--1780\relax
 \mciteBstWouldAddEndPuncttrue
 \mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
 {\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
