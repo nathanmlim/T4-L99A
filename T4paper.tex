@@ -303,17 +303,18 @@ More importantly, prior to performing binding free energy calculations, we prese
 
 \begin{suppinfo}
 The files are provided in the Supporting Information:
-\begin{itemize}
-  \item RMSD analysis scripts(RMSD-analysis.tcl, plot-RMSD.py): 
 
-  A README.txt file has been provided in the `scripts/' directory that details how to generate the RMSD/time and Colormap plots found in the paper. VMD and the trajectories from the MD simulations are required to perform the analysis. Only trajectories for benzene-nhexylbenzene and benzene-nhexylbenzene simulations have been included and are within the archived data files.
-  \item Archived data of each set alchemical transformations(C-I\_default.tar.gz, C-I\_pPREST.tar.gz, C-O\_default.tar.gz, C-O\_pREST.tar.gz, EXP\_default.tar.gz, EXP\_pREST.tar.gz):
-   
-  Inside each archived directory contains directories named by the ligands involved in the transformation and the protein conformation from which the simulations were started with. For example, `C-O\_default/benzene-nhexylbenzene\_C/' corresponds to the FEP calculation of benzene to n-hexylbenzene, starting from the protein closed state, while using the default protocol. Within each FEP calculation directory are the input .mae files containing the protein/ligand structures, the configuration .msj files, and a README.txt. The README.txt file contains information about each FEP calculation such as the protein starting conformation, ligands involved, forcefields used, set label, free energies corresponding to the complex/solvent simulations, and the final calculated free energy. The output data for each FEP calculation is contained within the `*\_fep1/', where inside the `*\_complex\_12/' or `*\_solvent\_13/' folders are all output files used to calculate the free energies. The final calculated free energy is written in a `result' file, where extended simulations will contain two result files for the calculated free energy when analyzing the 0-5ns time frame and the 15-25ns or 40-55ns time frame. 
 
-  For FEP calculations where an RMSD analysis was performed in the paper(ex.`C-O\_default/benzene-nhexylbenzene\_C'), an `RMSD-analysis/' folder is provided. Inside are `replica\#.rmsd' files that contain the set of RMSDs relative to each protein conformation over each replica's trajectory. The resulting RMSD/time and Colormaps can be found inside the `RMSD-analysis/plots/' folder. The trajectories are also provided inside the output `*\_fep1/' folder within the `*\_complex\_10/' directory.
-\end{itemize}
+\begin{description}
+\item [RMSD analysis scripts:]\texttt{RMSD-analysis.tcl} and \texttt{plot-RMSD.py}\\
+A \texttt{README.txt} file has been provided in the `\texttt{scripts/}' directory that details how to generate the RMSD/time and Colormap plots found in the paper. VMD and the trajectories from the MD simulations are required to perform the analysis. Only trajectories for benzene-nhexylbenzene and benzene-nhexylbenzene simulations have been included and are within the archived data files.
+\end{description}   
 
+\begin{description}
+\item [FEP data:]\texttt{C-I\_default.tar.gz}, \texttt{C-I\_pPREST.tar.gz}, \texttt{C-O\_default.tar.gz}, \texttt{C-O\_pREST.tar.gz}, \texttt{EXP\_default.tar.gz,} and \texttt{EXP\_pREST.tar.gz}\\
+Inside each archived directory contains directories named by the ligands involved in the transformation and the protein conformation from which the simulations were started with. For example, `\texttt{C-O\_default/benzene-nhexylbenzene\_C/}' corresponds to the FEP calculation of benzene to n-hexylbenzene, starting from the protein closed state, while using the default protocol. Within each FEP calculation directory are the input \texttt{.mae} files containing the protein/ligand structures, the simulation configuration \texttt{.msj} files, and a \texttt{README.txt}. The \texttt{README.txt} file contains information about each FEP calculation such as the protein starting conformation, ligands involved, forcefields used, set label, free energies corresponding to the complex/solvent simulations, and the final calculated free energy. The output data for each FEP calculation is contained within the `\texttt{*\_fep1/}', where inside the `\texttt{*\_complex\_12/}' or `\texttt{*\_solvent\_13/}' folders are all output files used to calculate the free energies. The final calculated free energy is written in a `\texttt{result}' file, where extended simulations will contain two result files for the calculated free energy when analyzing the 0-5ns time frame and the 15-25ns or 40-55ns time frame.\\ 
+For FEP calculations where an RMSD analysis was performed in the paper (ex.`\texttt{C-O\_default/benzene-nhexylbenzene\_C}'), an `\texttt{RMSD-analysis/}' folder is provided. Inside are `\texttt{replica\#.rmsd}' files that contain the set of RMSDs relative to each protein conformation over each replica's trajectory. The resulting RMSD/time and Colormap plots can be found inside the `\texttt{RMSD-analysis/plots/}' folders. The trajectories are also provided inside the output `\texttt{*\_fep1/}' folder within the `\texttt{*\_complex\_10/}' directory.
+\end{description}
 \end{suppinfo}
 
 \clearpage

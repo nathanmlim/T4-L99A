@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  12 MAY 2016 15:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.30)  12 MAY 2016 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,20 +846,27 @@ yplot.png> <./VMDscripts/XYplot/exp_pREST_xyplot.png>]
 
 
 ] [27] [28] [29] [30]
-Overfull \hbox (36.63176pt too wide) in paragraph at lines 318--318
-[]\T1/cmr/m/n/12 Archived data of each set al-chem-i-cal transformations(C-I_de
-fault.tar.gz, C-I_pPREST.tar.gz,
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 318.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (44.43706pt too wide) in paragraph at lines 318--318
+[]\T1/cmtt/m/n/12 C-I_default.tar.gz\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 C-I_pPREST
+.tar.gz\T1/cmr/m/n/12 , \T1/cmtt/m/n/12 C-O_default.tar.gz\T1/cmr/m/n/12 , \T1/
+cmtt/m/n/12 C-O_pREST.tar.gz\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (46.9324pt too wide) in paragraph at lines 318--318
+\T1/cmr/m/n/12 For FEP cal-cu-la-tions where an RMSD anal-y-sis was per-formed 
+in the pa-per, an `\T1/cmtt/m/n/12 RMSD-analysis/\T1/cmr/m/n/12 '
  []
 
 [31
 
-]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 318.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [32]
-(./T4paper.bbl [33
+] [32] (./T4paper.bbl [33
 
 ] [34] [35]
 Underfull \hbox (badness 1721) in paragraph at lines 326--332
@@ -902,7 +909,7 @@ fb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf
 cm-super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0800.pf
 b></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on T4paper.pdf (37 pages, 12811852 bytes).
+Output written on T4paper.pdf (37 pages, 12824109 bytes).
 PDF statistics:
  324 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
