@@ -64,6 +64,7 @@ def xyplot(data,xlabel,units):
       ax1.set_ylabel(r' $\Delta\Delta$G calc ({}/mol)'.format(units), fontsize=20)
       txt = r"$RMSE^C$"+"= {:.2}\n".format(cRMSE)+r"$RMSE^O$"+"= {:.2}".format(oRMSE)#+r"$R^2:$ C={:.2} O={:.2}".format(cR,oR)
       
+
       #Set axes parameters
       ax1.tick_params(axis='both',labelsize=18)
 

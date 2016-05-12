@@ -113,7 +113,9 @@ Here, we only present data using the LigandFEP protocol but data using the FEP+ 
 Desmond\cite{DESMONDSoftware,DESMONDarticle,DESMONDPaper1,DESMONDPaper2} simulation protocols have been described previously in the supporting information\cite{FEPplus} or can be found in greater detail in the Desmond User Manual\cite{DESMONDManual}.
 The relaxation protocol begins with a simulation where solute molecules are restrained to their initial positions while minimizing using a Brownian dynamics NVT integrator for 100ps, followed by 12ps simulations at 10K with a NVT ensemble and then a NPT ensemble using the Langevin method\cite{Langevin}.
 Next is a 24ps simulation followed by a final 240ps simulation with solute molecules unrestrained, both are carried at room temperature with a NPT ensemble using Langevin.
-Production simulations were initially ran for the default setting of 5ns and then were carried out to a length of up to 55ns for closed-open transformations and up to 25ns for closed-intermediate transformations.
+Production simulations with the default REST region were ran for the default setting of 5ns. 
+Initial `pREST' production simulations were also simulated for 5ns and then were carried out to a length of up to 55ns for all closed-open transformations. 
+For closed-intermediate transformations, we extended `pREST' production simulations up to 25ns, only for cases that were far from convergence with the 5ns simulation time.
 Here, we use the final 15ns for closed-open simulations and the final 10ns for closed-intermediate to calculate our final free energies, discarding the initial time as additional equilibration time.
 FEP/REST simulations were run on four GeForce GTX Titan Black GPUs using the Desmond/GPU engine with the recently developed OPLS3\cite{OPLS3} forcefield parameters.
 In general, we found the OPLS3 forcefield parameters to perform much better than OPLS2005 and thereby we present data using OPLS3 here.
@@ -239,8 +241,8 @@ In reference to Figure~\ref{fig:c_opls3_1/colormap} and Figure~\ref{fig:c_opls3_
  
 %P3 REST improvement quantitatively in C-O and C-I sets
 Collectively, we find only some minor improvements in the RMSI for all our closed-open and closed-intermediate transformations while using pREST. 
-For closed-open transformations (Table~\ref{tbl:C-O_pREST}), the RMSI reduces to +2.78 kcal/mol (previously +4 kcal/mol). 
-On the other hand, for closed-intermediate, the RMSI raises slightly to +0.78 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise.
+For closed-open transformations (Table~\ref{tbl:C-O_pREST}), the RMSI reduces to +2.82 kcal/mol (previously +4 kcal/mol). 
+On the other hand, for closed-intermediate, the RMSI raises slightly to +0.79 kcal/mol (previously +0.60 kcal/mol), which may be due to statistical noise (Table~\ref{tbl:C-I_pREST}).
 Generally, simulations starting from the closed state had $\Delta\Delta G_{calc}$ values that moved towards favorability (i.e. more negative $\Delta\Delta G_{calc}$), while for protein open simulations $\Delta\Delta G_{calc}$ values tended towards unfavorability (i.e. more positive $\Delta\Delta G_{calc}$).
 This is indicative of the fact that pREST is indeed improving sampling, but it is evident that our $\Delta\Delta G_{calc}$ are still far from convergence, given the RMSI is still large, especially for closed/open transformations.
 
@@ -258,7 +260,7 @@ We only show the final 10ns in our RMSD/time analysis to avoid overcrowding data
 
 %P3 Longer simulation improvements quantitatively
 By simulating longer with pREST we dramatically increase our sampling of the intermediate and open protein states and almost entirely eliminate the dependence on the initial protein conformational state.
-For the set of closed-open transformations the RMSI dramatically falls to +0.57 kcal/mol (Fig.~\ref{fig:C2O_xyplot_pREST},Table ~\ref{tbl:C-O_pREST-40-55ns}) and a RMSI of +0.42 kcal/mol for the closed-intermediate (Fig.~\ref{fig:C2I_xyplot_pREST},Table ~\ref{tbl:C-I_pRESText}).
+For the set of closed-open transformations the RMSI dramatically falls to +0.57 kcal/mol (Fig.~\ref{fig:C2O_xyplot_pREST},Table ~\ref{tbl:C-O_pREST-40-55ns}) and a RMSI of +0.43 kcal/mol for the closed-intermediate (Fig.~\ref{fig:C2I_xyplot_pREST},Table ~\ref{tbl:C-I_pRESText}).
 Similarly, for experimental ligand transformations, our RMSE for protein closed simulations falls to +0.54 kcal/mol (Fig.~\ref{fig:exp_xyplot_pREST},Table~\ref{tbl:exp_pREST_set}).
 Now, all our inconsistencies in the final calculated free energies and error from experiment fall within a much more reasonable range of less than +1 kcal/mol.
  

@@ -1,25 +1,12 @@
 \documentclass[T4paper.tex]{subfiles}
 \begin{suppinfo}
-\section{Experimental}
-\subsection{Discrete Conformations and the Ligands}
-T4 L99A contains an engineered apolar cavity which is our binding site of interest.
-The 8 congeneric ligands are all apolar and begins with a simple benzene ring.
-Subsequent ligands are simply addition of a methyl group to generate a growing tail up until n-hexylbenzene.
-In response to the growing ligand, the crystal structures show the protein will adopt into 3 conformations aptly named: closed, intermediate, and open.
-Primarily, the motion of the protein occurs in the F-helix (residues 107-115), which serves as a sort of gating mechanism into the apolar cavity.
-As the ligand tail expands, the F-helix transitions from closed to open, exposing the cavity to the bulk solvent.
-From observed electron densities of the F-helix in \cite{Merski2015}-Fig2, the ligands occupy each of the conformations given in Table: ~\ref{tbl:loop-occ}
 
-From a protein conformation clustering analysis, shown \cite{Merski2015}, Val111 occupies 3 distinct states iin accordance to the 3 protein conformations.
-Visualization of side-chain Val111 from the x-stal structures, shows the backbone alpha-carbon moving ~1.25\AA when transitioning from closed to intermediate, ~3.25\AA intermediate to open, and ~3.50\AA closed to open.
-From our MD simulations, it is primarily the repulsive interactions between the ligands and Val111 that drive the F-helix to the open state.
-
-\subsection{Ligand Binding Affinities}
-Table ~\ref{tbl:lig-aff}
-Details of the ligand binding affinities and how they were obtained can be found in the paper \cite{Merski2015} \\
-***Section "Energy of Ligand Binding and Conformational Strain"***\\
-Ligands n-pentylbenzene and n-hexylbenzene affinities are inaccessible due to solubility limits.
-Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rises linearly.
+%Input files for calculations used in paper
+%Limit output files to only
+%Supporting files???
+%Scripts used in analysis
+%Section on OPLS2005/OPLS3
+%Section on LigandFEP/FEP
 
 \section{FEP+ vs. LigandFEP}
    \begin{itemize}
@@ -64,31 +51,3 @@ Generally, as the ligands grow from benzene to n-butylbenzene, the affinity rise
    \item ***INSERT COMPARISON BETWEEN NORMAL AND PREST RUNS WITH EXPERIMENTAL ddG ***
    \item Show pREST increases agreement with experiment and lowers error from protein starting conformation.
    \end{itemize}
-
-\subsection{Intermediate Ligands}
-***Insert all data***
-\subsection{Open Ligands}
-Simulations starting from closed give a predicted ddG of +2.74 kcal/mol and from open +1.37 kcal/mol.
-Upon closer inspection of the closed simulations corresponding to the final state of n-hexylbenzene, we find that the protein does not remain trapped in its initial state.
-Instead, the region of the helix around Gly113 briefly opens to relieve the strain but quickly closes back.
-Hence, we still see some strain energy as the protein fails to completely stabilize into the open conformation.
-Viewing the open simulations, reveals that the protein is no longer trapped only in the open state and makes transitions into the intermediate and closed states.
-In making these transitions, the protein also experiences strain as the tail pushes the F-helix back into open from the other conformational states.\\
-
-***INSERT RMSD GRAPH SHOWING TRANSITIONS BETWEEN STATES FOR BENZENE TO NHEXYL***\\
-***By comparing these graphs we show that inclusion of protein residues in the REST region does allow for more/faster transitions between states***\\
-***Compare pREST runs with default REST in order to show that pREST allows for the protein to get of being trapped in its initial state.\\
-
-Here we have shown pREST allows for more motion in the helix in comparison to the default REST protocol.
-Although there is a reduction in the discrepancy, it is still fairly large (+1.37 kcal/mol).
-Thus, we cannot say these are converged, where this poor convergence results from inadequate sampling of all the protein conformational states.
-Such is the case of closed pREST simulations of n-hexylbenzene, where we only see a partial opening of the helix.
-Similarly, in open pREST simulations with n-hexylbenzene, the helix does not enter the closed conformation.
-Where as it is expected to at least partially occupy the closed state, according to the loop/ligand occupancy table.
-It seems likely that the overall motion of the helix is not entirely accessible in the range of up to 50ns (longest we have simulated).\\
-
-***INSERT DATA FROM 55ns pREST simulations***\\
-***Table showing all closed to open cases***\\
-***Here we can show that the discrepancy does not entirely go away, but gradually gets smaller with smaller perturbations***\\
-***Show that in 50ns the protein is only barely able to stabilize in the open state and vice versa***\\
-\end{suppinfo}

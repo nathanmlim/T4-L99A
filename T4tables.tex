@@ -4,7 +4,8 @@
 \centering
 \caption{Experimental protein-ligand occupancies and affinities: 
 Listed are the PDB codes of the corresponding protein-ligand complex crystal structures and the ligand occupancies\cite{Merski2015} for the closed(C), intermediate(I), and open(O) protein conformations by percentage. 
-Shaded in grey or listed explictly under the `Set' column is each ligand's primary state of occupancy which we use to categorize our alchemical transformation sets. 
+Shaded in grey or listed explictly under the `Set' column is each ligand's primary state of occupancy which we use to categorize our alchemical transformation sets.
+Binding affinities for n-pentylbenzene and n-hexylbenzene were inaccessible due to solubility limits\cite{Merski2015}. 
 Experimental binding free energies and their uncertainties are in units of kcal/mol\cite{T4affinity}.
 }
 \label{tbl:expdata}
@@ -36,66 +37,96 @@ Experimental binding free energies and their uncertainties are in units of kcal/
 \label{tbl:C-I}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$            \\ \hline
-benzene         & n-butylbenzene   & 0.58                                   & 0.07                       & -0.59                                & 0.09                       & \cellcolor[HTML]{FFCCC9}1.17 \\ \hline
-toluene         & n-butylbenzene   & -0.28                                  & 0.06                       & -1.27                                & 0.09                      & \cellcolor[HTML]{9AFF99}0.99 \\ \hline
-ethylbenzene    & n-butylbenzene   & 0.24                                   & 0.07                       & -0.23                                & 0.07                       & \cellcolor[HTML]{9AFF99}0.47 \\ \hline
-n-propylbenzene & n-butylbenzene   & 0.99                                   & 0.06                       & 0.63                                 & 0.04                       & \cellcolor[HTML]{9AFF99}0.36 \\ \hline
-benzene         & sec-butylbenzene & 2.36                                   & 0.09                       & 2.14                                 & 0.11                       & \cellcolor[HTML]{9AFF99}0.22 \\ \hline
-toluene         & sec-butylbenzene & 1.47                                   & 0.07                       & 1.14                                 & 0.09                      & \cellcolor[HTML]{9AFF99}0.33 \\ \hline
-ethylbenzene    & sec-butylbenzene & 1.90                                   & 0.08                       & 1.77                                 & 0.07                       & \cellcolor[HTML]{9AFF99}0.13 \\ \hline
-n-propylbenzene & sec-butylbenzene & 2.86                                   & 0.06                       & 2.67                                 & 0.05                      & \cellcolor[HTML]{9AFF99}0.19 \\ \hline
+\textbf{Ligand 1}   & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$            \\ \hline
+benzene         & n-butylbenzene   & 0.58    & 0.07  & -0.59  & 0.08  & \cellcolor[HTML]{FFCCC9}1.17 \\ \hline
+toluene         & n-butylbenzene   & -0.28   & 0.06  & -1.27  & 0.09  & \cellcolor[HTML]{9AFF99}0.99 \\ \hline
+ethylbenzene    & n-butylbenzene   & 0.24    & 0.06  & -0.23  & 0.07  & \cellcolor[HTML]{9AFF99}0.47 \\ \hline
+n-propylbenzene & n-butylbenzene   & 0.99    & 0.06  & 0.63   & 0.04  & \cellcolor[HTML]{9AFF99}0.36 \\ \hline
+benzene         & sec-butylbenzene & 2.36    & 0.09  & 2.14   & 0.11  & \cellcolor[HTML]{9AFF99}0.22 \\ \hline
+toluene         & sec-butylbenzene & 1.47    & 0.07  & 1.14   & 0.08  & \cellcolor[HTML]{9AFF99}0.33 \\ \hline
+ethylbenzene    & sec-butylbenzene & 1.90    & 0.08  & 1.77   & 0.08  & \cellcolor[HTML]{9AFF99}0.13 \\ \hline
+n-propylbenzene & sec-butylbenzene & 2.86    & 0.06  & 2.67   & 0.05  & \cellcolor[HTML]{9AFF99}0.19 \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[!htb]
-\centering
-\caption{Closed-Intermediate Transformations pREST (15-25ns):
+ \centering
+ \caption{Closed-Intermediate Transformations pREST:
  Calculated free energies and their uncertainties in `closed-intermediate' alchemical transformations from `pREST' simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$).
- Free energies are in units of kcal/mol. 
+ Free energies were calculated using frames from 0 to 5ns. 
+ Free energies are in units of kcal/mol.
  The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
  Inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
- RMSI is 0.42 kcal/mol.
+ RMSI is 0.79 kcal/mol.
+ Table is represnted in Fig~\ref{fig:C2I_xyplot_pREST}.
+ }
+ \label{tbl:C-I_pREST}
+ \begin{tabular}{|c|c|c|c|c|c|c|}
+ \hline
+ \textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$ \\ \hline
+benzene         & n-butylbenzene   & -0.07   & 0.10     & -0.72     & 0.12     & \cellcolor[HTML]{9AFF99}0.65 \\ \hline
+toluene         & n-butylbenzene   & 0.89    & 0.10     & -0.42     & 0.08     & \cellcolor[HTML]{FFCCC9}1.31 \\ \hline
+ethylbenzene    & n-butylbenzene   & -0.20   & 0.09     & -0.43     & 0.08     & \cellcolor[HTML]{9AFF99}0.23 \\ \hline
+n-propylbenzene & n-butylbenzene   & 1.02    & 0.06     & 0.49      & 0.06     & \cellcolor[HTML]{9AFF99}0.53 \\ \hline
+benzene         & sec-butylbenzene & 0.45    & 0.08     & 1.34      & 0.12     & \cellcolor[HTML]{9AFF99}0.89 \\ \hline
+toluene         & sec-butylbenzene & 0.60    & 0.12     & 0.60      & 0.10     & \cellcolor[HTML]{9AFF99}0.00 \\ \hline
+ethylbenzene    & sec-butylbenzene & 1.09    & 0.10     & 1.69      & 0.09     & \cellcolor[HTML]{9AFF99}0.60 \\ \hline
+n-propylbenzene & sec-butylbenzene & 1.88    & 0.07     & 3.05      & 0.07     & \cellcolor[HTML]{FFCCC9}1.17 \\ \hline
+ \end{tabular}
+ \end{table}
+
+
+\begin{table}[!htb]
+\centering
+\caption{Closed-Intermediate Transformations pREST *Extended:
+ Calculated free energies and their uncertainties in `closed-intermediate' alchemical transformations from `pREST' simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$).
+ Free energies were calculated using frames from 15 to 25ns. 
+ Free energies are in units of kcal/mol.
+ The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
+ Inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
+ RMSI is 0.43 kcal/mol.
  Table is represnted in Fig~\ref{fig:C2I_xyplot_pREST}.
 }
 \label{tbl:C-I_pRESText}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$ \\ \hline
-benzene         & n-butylbenzene   & -1.15                                   & 0.09                       & -0.72                                & 0.12                       & \cellcolor[HTML]{9AFF99}0.43 \\ \hline
-toluene         & n-butylbenzene   & -0.52                                  & 0.09                       & -0.36                                & 0.09                       & \cellcolor[HTML]{9AFF99}0.16 \\ \hline
-ethylbenzene    & n-butylbenzene   & -0.20                                   & 0.09                       & -0.43                                & 0.08                       & \cellcolor[HTML]{9AFF99}0.23 \\ \hline
-n-propylbenzene & n-butylbenzene   & 0.53                                  & 0.07                       & 0.49                                 & 0.06                       & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
-benzene         & sec-butylbenzene & 0.45                                   & 0.08                       & 1.34                                 & 0.12                       & \cellcolor[HTML]{9AFF99}0.89 \\ \hline
-toluene         & sec-butylbenzene & 0.60                                   & 0.12                       & 0.60                                 & 0.10                       & \cellcolor[HTML]{9AFF99}0.0 \\ \hline
-ethylbenzene    & sec-butylbenzene & 1.09                                   & 0.10                       & 1.69                                 & 0.09                       & \cellcolor[HTML]{9AFF99}0.60 \\ \hline
-n-propylbenzene & sec-butylbenzene & 1.88                                   & 0.07                       & 1.84                                 & 0.06                       & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
+benzene          & n-butylbenzene   & -1.14*    & 0.09  & -0.72   & 0.12  & \cellcolor[HTML]{9AFF99}0.42 \\ \hline
+toluene          & n-butylbenzene   & -0.62*    & 0.09  & -0.96*  & 0.09  & \cellcolor[HTML]{9AFF99}0.34 \\ \hline
+ethylbenzene     & n-butylbenzene   & -0.20     & 0.09  & -0.43   & 0.08  & \cellcolor[HTML]{9AFF99}0.23 \\ \hline
+n-propylbenzene  & n-butylbenzene   & 0.51*     & 0.06  & 0.49    & 0.06  & \cellcolor[HTML]{9AFF99}0.02 \\ \hline
+benzene          & sec-butylbenzene & 0.45      & 0.08  & 1.34    & 0.12  & \cellcolor[HTML]{9AFF99}0.89 \\ \hline
+toluene          & sec-butylbenzene & 0.60      & 0.12  & 0.60    & 0.10  & \cellcolor[HTML]{9AFF99}0.00 \\ \hline
+ethylbenzene     & sec-butylbenzene & 1.09      & 0.10  & 1.69    & 0.09  & \cellcolor[HTML]{9AFF99}0.60 \\ \hline
+n-propylbenzene  & sec-butylbenzene & 1.88      & 0.07  & 1.84*   & 0.06  & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
 \end{tabular}
+*
 \end{table}
 
 
 \begin{table}[!htb]
 \centering
 \caption{Closed-Open Transformations:
-Calculated free energies and their uncertainties in `closed-open' alchemical transformations from simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$). 
- Free energies are in units of kcal/mol. 
- The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
- Inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
- RMSI is 4.0 kcal/mol.
- Table is represented in Fig~\ref{fig:C2O_xyplot}.
+Calculated free energies and their uncertainties in `closed-open' alchemical transformations from simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$).
+Free energies were calculated using frames from 0 to 5ns.  
+Free energies are in units of kcal/mol. 
+The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
+Inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
+RMSI is 4.0 kcal/mol.
+Table is represented in Fig~\ref{fig:C2O_xyplot}.
 }
 \label{tbl:C-O}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\textbf{Ligand 1}       & \textbf{Ligand 2}    & boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$ \\ \hline
-benzene         & n-pentylbenzene & 2.36                                   & 0.12                       & -1.33                                & 0.11                      & \cellcolor[HTML]{FFCCC9}3.69 \\ \hline
-toluene         & n-pentylbenzene & 1.77                                   & 0.09                       & 0.34                                 & 0.10                       & \cellcolor[HTML]{FFCCC9}1.43 \\ \hline
-ethylbenzene    & n-pentylbenzene & 2.45                                   & 0.08                       & 0.46                                 & 0.09                       & \cellcolor[HTML]{FFCCC9}1.99 \\ \hline
-n-propylbenzene & n-pentylbenzene & 3.46                                   & 0.08                       & -0.22                                & 0.08                      & \cellcolor[HTML]{FFCCC9}3.68 \\ \hline
-benzene         & n-hexylbenzene  & 4.13                                   & 0.16                       & -0.61                                & 0.15                       & \cellcolor[HTML]{FFCCC9}4.74 \\ \hline
-toluene         & n-hexylbenzene  & 2.90                                   & 0.14                       & -1.63                                & 0.08                       & \cellcolor[HTML]{FFCCC9}4.53 \\ \hline
-ethylbenzene    & n-hexylbenzene  & 3.63                                   & 0.11                       & -0.76                                & 0.09                       & \cellcolor[HTML]{FFCCC9}4.39 \\ \hline
-n-propylbenzene & n-hexylbenzene  & 5.85                                   & 0.10                       & 0.13                                 & 0.06                       & \cellcolor[HTML]{FFCCC9}5.72 \\ \hline
+\textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$ \\ \hline
+benzene         & n-pentylbenzene & 2.36       & 0.12  & -1.33  & 0.10  & \cellcolor[HTML]{FFCCC9}3.69 \\ \hline
+toluene         & n-pentylbenzene & 1.77       & 0.09  & 0.34   & 0.10  & \cellcolor[HTML]{FFCCC9}1.43 \\ \hline
+ethylbenzene    & n-pentylbenzene & 2.45       & 0.08  & 0.46   & 0.09  & \cellcolor[HTML]{FFCCC9}1.99 \\ \hline
+n-propylbenzene & n-pentylbenzene & 3.46       & 0.08  & -0.22  & 0.07  & \cellcolor[HTML]{FFCCC9}3.68 \\ \hline
+benzene         & n-hexylbenzene  & 4.13       & 0.16  & -0.61  & 0.15  & \cellcolor[HTML]{FFCCC9}4.74 \\ \hline
+toluene         & n-hexylbenzene  & 2.90       & 0.13  & -1.63  & 0.08  & \cellcolor[HTML]{FFCCC9}4.53 \\ \hline
+ethylbenzene    & n-hexylbenzene  & 3.63       & 0.11  & -0.76  & 0.09  & \cellcolor[HTML]{FFCCC9}4.39 \\ \hline
+n-propylbenzene & n-hexylbenzene  & 5.85       & 0.10  & 0.13   & 0.06  & \cellcolor[HTML]{FFCCC9}5.72 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -105,28 +136,30 @@ n-propylbenzene & n-hexylbenzene  & 5.85                                   & 0.1
 Calculated free energies and their uncertainties in `closed-open' alchemical transformations from `pREST' simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$).
 Free energies are in units of kcal/mol. 
 The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
-The inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively. 
+The inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
+RMSI is 2.82 kcal/mol. 
 }
 \label{tbl:C-O_pREST}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$\\ \hline
-benzene         & n-pentylbenzene & 1.45                                   & 0.13                       & 0.15                                & 0.10                       & \cellcolor[HTML]{FFCCC9}1.30 \\ \hline
-toluene         & n-pentylbenzene & 1.40                                   & 0.13                       & 0.82                                 & 0.11                       & \cellcolor[HTML]{9AFF99}0.58 \\ \hline
-ethylbenzene    & n-pentylbenzene & 2.89                                   & 0.10                       & 1.32                                 & 0.10                      & \cellcolor[HTML]{FFCCC9}1.57 \\ \hline
-n-propylbenzene & n-pentylbenzene & 4.40                                   & 0.12                       & 1.06                                & 0.09                       & \cellcolor[HTML]{FFCCC9}3.34 \\ \hline
-benzene         & n-hexylbenzene  & 2.74                                   & 0.19                       & 1.37                                & 0.13                       & \cellcolor[HTML]{FFCCC9}1.37 \\ \hline
-toluene         & n-hexylbenzene  & 3.21                                   & 0.15                       & -1.08                                & 0.09                       & \cellcolor[HTML]{FFCCC9}4.29 \\ \hline
-ethylbenzene    & n-hexylbenzene  & 3.39                                   & 0.11                       & -0.14                                & 0.10                       & \cellcolor[HTML]{FFCCC9}3.53 \\ \hline
-n-propylbenzene & n-hexylbenzene  & 4.93                                   & 0.12                       & 1.28                                 & 0.10                       & \cellcolor[HTML]{FFCCC9}3.65 \\ \hline
+benzene         & n-pentylbenzene & 1.49       & 0.13     & 0.07   & 0.10     & \cellcolor[HTML]{FFCCC9}1.42 \\ \hline
+toluene         & n-pentylbenzene & 1.41       & 0.12     & 0.79   & 0.13     & \cellcolor[HTML]{9AFF99}0.62 \\ \hline
+ethylbenzene    & n-pentylbenzene & 2.90       & 0.10     & 1.23   & 0.09     & \cellcolor[HTML]{FFCCC9}1.67 \\ \hline
+n-propylbenzene & n-pentylbenzene & 4.25       & 0.09     & 1.01   & 0.07     & \cellcolor[HTML]{FFCCC9}3.24 \\ \hline
+benzene         & n-hexylbenzene  & 2.75       & 0.14     & 1.25   & 0.11     & \cellcolor[HTML]{FFCCC9}1.50 \\ \hline
+toluene         & n-hexylbenzene  & 3.22       & 0.11     & -1.15  & 0.11     & \cellcolor[HTML]{FFCCC9}4.37 \\ \hline
+ethylbenzene    & n-hexylbenzene  & 3.34       & 0.12     & -0.22  & 0.11     & \cellcolor[HTML]{FFCCC9}3.56 \\ \hline
+n-propylbenzene & n-hexylbenzene  & 4.93       & 0.12     & 1.21   & 0.11     & \cellcolor[HTML]{FFCCC9}3.72 \\ \hline
 \end{tabular}
 \end{table}
 
 \begin{table}[!htb]
 \centering
-\caption{Closed-Open Transformations pREST (40-55ns):
+\caption{Closed-Open Transformations pREST Extended:
 Calculated free energies and their uncertainties in `closed-open' alchemical transformations from extended `pREST' simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$). 
- Free energies are in units of kcal/mol. 
+ Free energies are in units of kcal/mol.
+ Free energies were calculated using frames from 40 to 55ns. 
  The inconsistency(\boldmath$\Delta\Delta G_{\varepsilon}$) is obtained from the difference in the relative free energies between protein closed and open simulations. 
  Inconsistency is highlighted red or green if above or below 1 kcal/mol, respectively.
  RMSI is 0.57 kcal/mol.
@@ -136,14 +169,14 @@ Calculated free energies and their uncertainties in `closed-open' alchemical tra
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
 \textbf{Ligand 1}       & \textbf{Ligand 2}    & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ & \boldmath$\Delta\Delta G_{\varepsilon}$ \\ \hline
-benzene         & n-pentylbenzene & 1.86                                   & 0.06                       & 1.50                                & 0.06                       & \cellcolor[HTML]{9AFF99}0.36 \\ \hline
-toluene         & n-pentylbenzene & 1.03                                   & 0.06                       & 0.71                                 & 0.06                       & \cellcolor[HTML]{9AFF99}0.32 \\ \hline
-ethylbenzene    & n-pentylbenzene & 1.69                                   & 0.06                       & 1.60                                 & 0.06                       & \cellcolor[HTML]{9AFF99}0.09 \\ \hline
-n-propylbenzene & n-pentylbenzene & 3.43                                   & 0.04                       & 2.44                                & 0.04                       & \cellcolor[HTML]{9AFF99}0.99 \\ \hline
-benzene         & n-hexylbenzene  & 2.14                                   & 0.08                       & 1.41                                & 0.07                       & \cellcolor[HTML]{9AFF99}0.73 \\ \hline
-toluene         & n-hexylbenzene  & 0.33                                   & 0.08                       & 1.16                                & 0.06                       & \cellcolor[HTML]{9AFF99}0.84 \\ \hline
-ethylbenzene    & n-hexylbenzene  & 1.97                                   & 0.07                       & 2.39                                & 0.06                       & \cellcolor[HTML]{9AFF99}0.42 \\ \hline
-n-propylbenzene & n-hexylbenzene  & 3.49                                   & 0.06                       & 3.44                                 & 0.05                       & \cellcolor[HTML]{9AFF99}0.05 \\ \hline
+benzene         & n-pentylbenzene & 1.37       & 0.08     & 1.41    & 0.08      & \cellcolor[HTML]{9AFF99}0.04 \\ \hline
+toluene         & n-pentylbenzene & 1.08       & 0.08     & 0.81    & 0.07      & \cellcolor[HTML]{9AFF99}0.27 \\ \hline
+ethylbenzene    & n-pentylbenzene & 1.71       & 0.08     & 1.50    & 0.07      & \cellcolor[HTML]{9AFF99}0.21 \\ \hline
+n-propylbenzene & n-pentylbenzene & 3.20       & 0.06     & 2.34    & 0.05      & \cellcolor[HTML]{9AFF99}0.86 \\ \hline
+benzene         & n-hexylbenzene  & 2.15       & 0.09     & 1.14    & 0.08      & \cellcolor[HTML]{FFCCC9}1.01 \\ \hline
+toluene         & n-hexylbenzene  & 0.32       & 0.10     & 1.10    & 0.07      & \cellcolor[HTML]{9AFF99}0.78 \\ \hline
+ethylbenzene    & n-hexylbenzene  & 1.96       & 0.08     & 2.17    & 0.07      & \cellcolor[HTML]{9AFF99}0.21 \\ \hline
+n-propylbenzene & n-hexylbenzene  & 3.38       & 0.07     & 3.12    & 0.06      & \cellcolor[HTML]{9AFF99}0.26 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -164,13 +197,13 @@ Calculated free energies are from simulations that were started from the protein
 \textbf{Ligand 1} & \textbf{Ligand 2}  & \boldmath$\Delta G_{exp}$  & \boldmath$\sigma_{exp}$ & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ \\ \hline
 benzene         & toluene         & -0.33        & 0.16            & 0.71       & 0.04          & 0.59       & 0.05          \\ \hline
 benzene         & ethylbenzene    & -0.19        & 0.17            & 0.15       & 0.05          & -0.09      & 0.06          \\ \hline
-benzene         & n-propylbenzene & -1.36        & 0.16            & -0.82      & 0.07          & 0.06       & 0.06          \\ \hline
-toluene         & ethylbenzene    & -0.24        & 0.08            & -0.59      & 0.05          & 0.05       & 0.05          \\ \hline
-toluene         & n-propylbenzene & -1.03        & 0.04            & -2.21      & 0.05          & 0.05       & 0.05          \\ \hline
-ethylbenzene    & n-propylbenzene & -0.79        & 0.07            & -0.86      & 0.05          & 0.03       & 0.03          \\ \hline
-benzene         & n-butylbenzene  & -1.51        & 0.16            & 0.58       & 0.07          & -0.59      & 0.09          \\ \hline
-toluene         & n-butylbenzene  & -1.18        & 0.04            & -0.28      & 0.06          & 0.09       & 0.09          \\ \hline
-ethylbenzene    & n-butylbenzene  & -0.94        & 0.07            & 0.24       & 0.07          & -0.23      & 0.07          \\ \hline
+benzene         & n-propylbenzene & -1.36        & 0.16            & -0.82      & 0.06          & -0.69      & 0.08          \\ \hline
+benzene         & n-butylbenzene  & -1.51        & 0.16            & 0.58       & 0.07          & -0.59      & 0.08          \\ \hline
+toluene         & ethylbenzene    & -0.24        & 0.08            & -0.59      & 0.04          & -0.40      & 0.05          \\ \hline
+toluene         & n-propylbenzene & -1.03        & 0.04            & -2.21      & 0.05          & -0.89      & 0.05          \\ \hline
+toluene         & n-butylbenzene  & -1.18        & 0.04            & -0.28      & 0.06          & -1.27       & 0.09         \\ \hline
+ethylbenzene    & n-propylbenzene & -0.79        & 0.07            & -0.86      & 0.05          & -0.80       & 0.03         \\ \hline
+ethylbenzene    & n-butylbenzene  & -0.94        & 0.07            & 0.24       & 0.06          & -0.23      & 0.07          \\ \hline
 n-propylbenzene & n-butylbenzene  & -0.15        & 0.03            & 0.99       & 0.06          & 0.63       & 0.04          \\ \hline
 \end{tabular}
 \end{table}
@@ -182,22 +215,22 @@ Experimental and calculated free energies with their uncertainties in alchemical
 Calculated free energies are from `pREST' simulations that were started from the protein closed state(\boldmath$\Delta\Delta G_{C}$) versus the protein open state(\boldmath$\Delta\Delta G_{O}$). 
  Free energies are in units of kcal/mol.
  Here, we compare \boldmath$\Delta\Delta G_{C}$ and \boldmath$\Delta\Delta G_{O}$ against \boldmath$\Delta G_{exp}$ to compute the error with experiment.
- RMSE is 0.54 kcal/mol and 0.56 kcal/mol for closed and open simulations, respectively.
+ RMSE is 0.54 kcal/mol and 0.50 kcal/mol for closed and open simulations, respectively.
  Table is represented in Fig~\ref{fig:exp_xyplot_pREST}.
 }
 \label{tbl:exp_pREST_set}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
 \textbf{Ligand 1} & \textbf{Ligand 2} & \boldmath$\Delta G_{exp}$  & \boldmath$\sigma_{exp}$ & \boldmath$\Delta\Delta G_{C}$ & \boldmath$\sigma_{C}$ & \boldmath$\Delta\Delta G_{O}$ & \boldmath$\sigma_{O}$ \\ \hline
-benzene         & toluene         & -0.33        & 0.16            & 0.10       & 0.08          & 0.31       & 0.07          \\ \hline
-benzene         & ethylbenzene    &-0.19 & 0.17  & -0.20 & 0.08  & -0.62 & 0.08          \\ \hline
-benzene         & n-propylbenzene & -1.36 & 0.16 & -1.57 & 0.09  & -1.26 & 0.09         \\ \hline
+benzene         & toluene         & -0.33 & 0.16  & 0.10  & 0.08  & 0.31  & 0.06          \\ \hline
+benzene         & ethylbenzene    &-0.19  & 0.17  & -0.20 & 0.08  & -0.62 & 0.08          \\ \hline
+benzene         & n-propylbenzene & -1.36 & 0.16  & -1.57 & 0.09  & -1.26 & 0.09         \\ \hline
+benzene         & n-butylbenzene  & -1.51 & 0.16  & -1.14 & 0.11  & -0.72 & 0.12         \\ \hline
 toluene         & ethylbenzene    & -0.24 & 0.08  & -0.84 & 0.07  & -0.83 & 0.07          \\ \hline
 toluene         & n-propylbenzene & -1.03 & 0.04  & -1.91 & 0.09  & -1.44 & 0.08          \\ \hline
+toluene         & n-butylbenzene  & -1.18 & 0.04  & -0.62 & 0.09  & -0.96 & 0.09          \\ \hline
 ethylbenzene    & n-propylbenzene & -0.79 & 0.07  & -1.08 & 0.07  & -0.80 & 0.06         \\ \hline
-benzene         & n-butylbenzene  & -1.51 & 0.16 & -1.15 & 0.11  & -0.72 & 0.12         \\ \hline
-toluene         & n-butylbenzene  & -1.18 & 0.04  & -0.65 & 0.09  & -0.36 & 0.09         \\ \hline
 ethylbenzene    & n-butylbenzene  & -0.94 & 0.07  & -0.20 & 0.09  & -0.43 & 0.08         \\ \hline
-n-propylbenzene & n-butylbenzene  & -0.15 & 0.03  & 0.53  & 0.07  & 0.49  & 0.06       \\ \hline
+n-propylbenzene & n-butylbenzene  & -0.15 & 0.03  & 0.51  & 0.06  & 0.49  & 0.06       \\ \hline
 \end{tabular}
 \end{table}
