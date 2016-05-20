@@ -42,14 +42,14 @@ Thus, optimization of protein-ligand binding affinities is a central goal in ear
 
 Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques to assist in lead optimization in pharmaceutical drug discovery.
 Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities. 
-Using methods like alchemical free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be computed in a robust and accurate manner.
+Using alchemical methods like free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be computed in a robust and accurate manner.
 By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided\cite{doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda,zheng2008random,gallicchio2011advances,doi:10.1021/ct500161f}.
-Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have considerably improved the accuracy and robustness of FEP calculations. 
-The recent development of FEP+, a fully automated FEP protocol with implemented modern methodologies, reduces overall workload and the potential for human error in setup and analysis of these types of calculations.
-Using this modern FEP protocol, previous studies\cite{FEPplus} have demonstrated it to yield highly accurate free energy predictions in a wide range of pharmaceutically relevant protein targets and ligands.
+Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have considerably improved the accuracy and robustness of alchemical calculations. 
+The recent development of FEP+, a fully automated alchemical protocol implemented with modern methodologies, reduces overall workload and the potential for human error in setup and analysis of these types of calculations.
+Using this protocol, previous studies\cite{FEPplus} have demonstrated it to yield highly accurate free energy predictions in a wide range of pharmaceutically relevant protein targets and ligands.
 The accuracy and reliability of FEP+ make it a very powerful tool in the hands of medicinal chemists for efficient optimization of lead compounds.
 
-Although the previous report on FEP+\cite{FEPplus} demonstrates its robustness---like much of the FEP literature---a primary concern focuses on the size of the ligand perturbation or the initial ligand pose and how these factors impact the accuracy of calculated free energies.\cite{mobley2012perspective,doi:10.1021/acs.jctc.5b00214}
+Although the previous report on FEP+\cite{FEPplus} demonstrates its robustness, a primary concern focuses on the size of the ligand perturbation or the initial ligand pose and how these factors impact the accuracy of calculated free energies.\cite{mobley2012perspective,doi:10.1021/acs.jctc.5b00214}
 Consideration of effects arising from protein conformational changes have generally received less attention due to the difficulty in addressing the sampling challenges encountered.
 Some computational studies have shown even small simple changes in the protein---like a side-chain rotamer flipping---can cause large errors in affinity predictions if not sampled\cite{Mobley2009489,Mobley20071118} and thus protein conformational changes should be carefully sampled.
 In the previous FEP+ study\cite{FEPplus}, many of the protein targets used were either extremely rigid (i.e. tyk2 and thrombin) or ligand pairs often avoid issues relating to protein conformational changes.
@@ -289,11 +289,11 @@ It would have been especially challenging as there would essentially be no indic
 Only from prior knowledge of the discrete states and by our tedious systematic trials were we able to identify and address the bias in our final calculated free energies.  
 It may be comforting that even without this prior knowledge, good to very good agreement with experiment is obtained for the majority of ligands. However, one should keep in mind that this study was carefully designed to probe the potential difficulties caused by these conformational changes; most lysozyme ligands studied previously do not induce such significant conformational changes. 
 
-Although FEP calculations have shown tremendous recent successes on a variety of protein targets\cite{FEPplus}, we demonstrate challenges in protein sampling remain. 
+Although alchemical free energy calculations have shown tremendous recent successes on a variety of protein targets\cite{FEPplus}, we demonstrate challenges in protein sampling remain. 
 Using T4 lysozyme (L99A) as our simple model system, we highlight sampling problems even from a relatively small (~1-3.5\AA) and localized single helix rearrangement in response to a series of growing ligands.
 Through this study, we show using a typical 5ns simulation with only ligand atoms in the REST region, yields free energies that are sensitive to the initial protein conformation. 
 Only by longer simulation times and expansion of the REST region to include key protein residues were we able to eliminate the dependence on the starting conformation.
-This study demonstrates that special attention and care should be exercised when performing FEP calculations where regions of flexibility surround the binding site.
+This study demonstrates that special attention and care should be exercised when performing alchemical free energy calculations where regions of flexibility surround the binding site.
 More importantly, prior to performing binding free energy calculations, we present strong evidence on the importance of identifying the occurrence of protein conformational changes upon ligand binding, 
 
 \begin{acknowledgement}
