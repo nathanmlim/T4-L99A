@@ -134,7 +134,7 @@ Throughout this study, we measure the inconsistency ($\Delta\Delta G_{\boldsymbo
   \mathbf{\Delta\Delta G_{\boldsymbol{\varepsilon_n}}}  = \left |  \Delta\Delta G_{ \color[HTML]{800080}\mathbf{C_n}  } - \Delta\Delta G_{ \color[HTML]{008000}\mathbf{O_n} }\right | 
   \label{eqn:diffG}
 \end{equation}
-Then we compute the overall inconsistency---referred to as the 'Root-Mean-Square-Inconsistency'(RMSI)---for each set of alchemical transformations.
+Then we compute the overall inconsistency---referred to as the 'Root-Mean-Square-Inconsistency' (RMSI)---for each set of alchemical transformations.
 The RMSI is calculated by using the differences ($\Delta\Delta G_{\boldsymbol{\varepsilon_n}}$) obtained from the comparisons between protein open and closed simulations.
 \begin{equation}
 \mathbf{RMSI} = \sqrt{   \frac{ \sum_{n} (\Delta\Delta G\varepsilon_{n} )^2  } {n}}
@@ -150,7 +150,7 @@ Calculated free energies were determined using the Bennett acceptance ratio\cite
 Hysteresis around closed thermodynamic cycles and best estimates of the free energies with their errors were calculated using the cycle closure algorithm discussed in a previous publication\cite{FEP/REST}.
 
 \subsection*{Determining the protein conformation state using RMSD}
-In this study, we determine the state of the protein by computing the 'Root-Mean-Square-Deviation'(RMSD) of the protein backbone atoms spanning the F-helix relative to their positions found in the closed (PDB:4W53), intermediate (PDB:4W57), and open (PDB:4W59) crystal structures (Fig~\ref{fig:T4-L99A_tube}).
+In this study, we determine the state of the protein by computing the 'Root-Mean-Square-Deviation' (RMSD) of the protein backbone atoms spanning the F-helix relative to their positions found in the closed (PDB:4W53), intermediate (PDB:4W57), and open (PDB:4W59) crystal structures (Fig~\ref{fig:T4-L99A_tube}).
 The set of RMSDs---that is, the RMSD relative to the closed, intermediate, and open states---is computed at each frame over the course of the entire simulation. 
 Then, we use the protein conformational state with the lowest RMSD to correspondingly color each time point in our analyses of `RMSD/time' and `Color maps'.
 Again, we use purple to denote the protein closed state, cyan for the intermediate state, and green for the open state.
@@ -160,13 +160,13 @@ Further details on the procedure and the scripts used for these analyses are pro
 For the `RMSD/time' analysis, see Figure~\ref{fig:o_opls3_1/RMSD-replica11}) for reference. 
 Here, we plot the RMSD to the closed helix, represented by the black line, where each time point is colored according to the lowest RMSD state.
 We apply the RMSD/time analysis only to the simulation corresponding to the end state ligand of interest ($\lambda_{11}$).
-By tracking the RMSD relative to the closed helix, we can monitor if the protein opens (by high RMSD with green points) or closes (by low RMSD with purpe points).
+By tracking the RMSD relative to the closed helix, we can monitor if the protein opens (by high RMSD with green points) or closes (by low RMSD with purple points).
 Additionally, we gain some insight on the time required to capture the opening or closing of the binding cavity.
 
 It is important to note that by limiting our view to only the end-state replica, we encounter time points that may appear contradictory, at a glance. 
 For example in figure~\ref{fig:o_opls3_1/RMSD-replica11}, between 3-4ns there are two frames where the protein is closed and the RMSD is slightly greater than 2.0\AA.
 Following, there is one frame where the protein is open but the RMSD is lower than 2.0\AA.
-This appears to be an artifact of coordinate swapping during replica exchanges from other intermediate lambda windows, resulting in apparently contradictory time points.
+This is an effect of coordinate swapping during replica exchanges from other intermediate lambda windows, resulting in apparently contradictory time points.
 
 We address this limitation by viewing all replicas in what we call `Color maps', see Figure~\ref{fig:c_opls3_rest1_1/colormap} for an example.
 Essentially, our 'Color map' analysis is the same as our 'RMSD/time' plots but without the RMSD line plot.
@@ -302,19 +302,20 @@ More importantly, prior to performing binding free energy calculations, we prese
 \end{acknowledgement}
 
 \include{T4figs}
-\include{T4tables}
+
 
 \begin{suppinfo}
-The following files are provided in the Supporting Information:
+\include{T4tables}
+All related data sets and analysis tools are available online and described below.
+The files can be downloaded at http://n2t.net/ark:/b7280/d1js3b (doi:10.7280/D1JS3B). 
 \begin{description}
 \item [Prepared protein-ligand crystal structures:]\texttt{xtal\_prepped.tar.gz}\\
 Contains the reference protein-ligand crystal structures that have been aligned and prepared through the `Protein Preparation Wizard' tool as \texttt{.mae} files.
 \item [RMSD analysis:]\texttt{scripts.tar.gz}\\
 Contains the scripts \texttt{RMSD-analysis.tcl} and \texttt{plot-RMSD.py} used for RMSD analysis. A \texttt{README.txt} file has been provided which details how to generate the RMSD/time and Colormap plots found in the paper. 
 \item [FEP data:]\texttt{C-I\_default.tar.gz}, \texttt{C-I\_pPREST.tar.gz}, \texttt{C-O\_default.tar.gz}, \\ \texttt{C-O\_pREST.tar.gz}, \texttt{EXP\_default.tar.gz,} and \texttt{EXP\_pREST.tar.gz}\\
-Contains archived data from the FEP calculations for each alchemical transformation set, where within each archived set are directories for individual FEP calculations. These contain input \texttt{.mae} files containing the protein/ligand structures, the simulation configuration \texttt{.msj} files, energy files, and a \texttt{README.txt} that summarizes information about each FEP calculation. Trajectories have been neglected due to file size limitations.
+Contains archived data from the FEP calculations for each alchemical transformation set, where within each archived set are directories for individual FEP calculations. These contain input \texttt{.mae} files containing the protein/ligand structures, the simulation configuration \texttt{.msj} files, energy files, and a \texttt{README.txt} that summarizes information about each FEP calculation. Complete trajectories are included.
 \end{description}
-A full set of Supporting Information files including trajectory data can be downloaded at http://n2t.net/ark:/b7280/d1js3b (doi:10.7280/D1JS3B).
 
 \end{suppinfo}
 
