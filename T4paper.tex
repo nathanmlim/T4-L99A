@@ -271,7 +271,6 @@ Similarly, for experimental ligand transformations, our RMSE for protein closed 
 Now, all our inconsistencies in the final calculated free energies and error from experiment fall within a much more reasonable range of less than +1 kcal/mol.  
 
 It is very interesting to note that this overall level of agreement (a typical error of less than 1 kcal/mol) between our calculated values and experiment for the compounds for which we have affinity data -- the smaller compounds, for which the inconsistency is relatively low -- is actually quite good, better than what was reported in the previous work~\cite{FEPplus}.  This may be due to the relative simplicity of the ligand modifications (methyl groups only) as well as the high quality of the experimental binding assay, ITC. In contrast, larger apparent errors in other tests may in some cases be due to lower quality experimental data. 
-%DLM: Discussed with RA and the point he was trying to make was not that the results are so accurate here, but rather that in OTHER tests, experimental noise may lead the results to look worse than they are. Trying to add that here. 
  
 \section{Discussion}
 In this study, we find  that relative free energy calculations for this system can suffer from substantial convergence problems resulting from relatively modest protein conformational changes.
@@ -284,8 +283,6 @@ By our RMSD analyses, we show the protein remains trapped in its initial state t
 Because it remains trapped, we are unable to adequately sample the necessary protein conformational states and thereby obtain inconsistent $\Delta\Delta Gs_{calc}$ depending on whether we start simulations from the open or closed protein configuration.  
 This inconsistency can be large, especially for the larger compounds which bind primarily in the open conformation, for which we do not have experimental binding affinities. 
 However, interestingly, when we start our simulations from the open structure, the lack of adequate sampling of the closed structure does not lead to particularly large errors for the smaller ligands which bind primarily in the closed structure (Table~S\ref{tbl:C-I}). 
-%DLM: Robert was trying to make the point that it's really odd that having the protein stuck in the open conformation doesn't introduce huge errors for the closed/intermediate ligands; I've rephrased to make that clearer. 
-
 
 Without prior knowledge of preferred protein conformational states on ligand binding, we can arrive at very different binding affinity predictions based on the initial protein state being used in the simulation.
 By starting from the protein closed state and growing the ligand we obtain $\Delta\Delta G_{calc}$ values that appear overly positive or unfavorable due to high protein-ligand energy strain and inability to sample the open state, for this system.
@@ -323,7 +320,6 @@ More importantly, prior to performing binding free energy calculations, we prese
 \end{acknowledgement}
 
 \include{T4figs}
-
 
 \begin{suppinfo}
 All related data sets and analysis tools are available online and described below.
