@@ -54,20 +54,17 @@ Images were created using Maestro\cite{Maestro}.}
    \centering
    \caption{Selected residues in pREST}
    \label{fig:C2O}
-    %\frame{\includegraphics[scale=0.25, trim={5cm 3cm 3cm 1cm}, clip, width=\linewidth, height=0.4\textheight]{Figures/Protein/C2O.png}}
-   \frame{\includegraphics[trim={5cm 3cm 3cm 1cm}, clip, height=0.4\textheight]{Figures/Protein/C2O.png}}
+   \frame{\includegraphics[trim={0cm 3cm 0cm 1cm}, clip, height=0.4\textheight]{Figures/Protein/C2O.png}}
 \end{subfigure}\hfill
 \centering
-\begin{subfigure}{.4\textwidth}
+\begin{subfigure}{.45\textwidth}
   \centering
-  %\frame{\includegraphics[trim={1cm 1cm 8cm 2cm}, clip, width=\linewidth, height=0.3\textheight]{Figures/Protein/Glu108-C2O.png}}
-   \frame{\includegraphics[trim={0cm 0cm 8cm 2cm}, clip, height=0.4\textheight]{Figures/Protein/Glu108-C2O.png}}
+   \frame{\includegraphics[trim={1cm 0cm 8cm 2cm}, clip, height=0.4\textheight]{Figures/Protein/Glu108-C2O.png}}
    \caption{Residue Glu108}
    \label{fig:Glu108-C2O}
 \end{subfigure}\hfill
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.55\textwidth}
    \centering
-   %\frame{\includegraphics[trim={5cm 1cm 0cm 3cm}, clip, width=\linewidth, height=0.3\textheight]{Figures/Protein/Val111-C2O.png}}
    \frame{\includegraphics[trim={2cm 0cm 0cm 0cm}, clip, height=0.4\textheight]{Figures/Protein/Val111-C2O.png}}
    \caption{Residue Val111}
    \label{fig:Val111-C2O}
@@ -158,7 +155,7 @@ Fig.~\ref{fig:C2O_xyplot} plots relative free energies obtained using the defaul
 Fig.~\ref{fig:C2O_xyplot_pREST} are the final computed free energies with simulations carried out to 55ns using pREST, giving RMSI of 0.57 kcal/mol. 
 Fig.~\ref{fig:C2I_xyplot} plots relative free energies from the `closed-intermediate' set using the default protocol which gives an RMSI of 0.6 kcal/mol. 
 Fig.~\ref{fig:C2I_xyplot_pREST} are free energies with simulations carried out up to 25ns using pREST, giving RMSI of 0.43 kcal/mol. 
-Numerical data for each plot can be found in Tables~\ref{tbl:C-I}, \ref{tbl:C-I_pRESText}, \ref{tbl:C-O}, and \ref{tbl:C-O_pREST-40-55ns}.
+Numerical data for each plot can be found in Tables~S\ref{tbl:C-I}, S\ref{tbl:C-I_pRESText}, \ref{tbl:C-O}, and SS\ref{tbl:C-O_pREST-40-55ns}.
 }
 \label{fig:conf-xyplots}
 \end{figure}
@@ -179,9 +176,11 @@ Numerical data for each plot can be found in Tables~\ref{tbl:C-I}, \ref{tbl:C-I_
    \frame{\includegraphics[width=\linewidth, height=0.3\textheight]{Figures/XYplot/exp_pREST_xyplot.png}}
 \end{subfigure}\hfill
 \caption{$\Delta\Delta G_{calc}$ from MD simulations beginning from the protein closed (purple) and open (green) state compared against $\Delta\Delta G_{exp}$. 
-Fig.~\ref{fig:exp_xyplot} plots free energies obtained using the default protocol which gives a 1.0 kcal/mol and 0.58 kcal/mol RMSE for protein closed and open simulations, respectively. 
+Fig.~\ref{fig:exp_xyplot} plots free energies obtained using the default protocol which gives a 1.0 kcal/mol and 0.58 kcal/mol RMSE for protein closed and open simulations, respectively.
+Total RMSI using the default protocol is 0.68 kcal/mol. 
 Fig.~\ref{fig:exp_xyplot_pREST} plots the final free energies after applying pREST, yielding an RMSE of 0.54 for protein closed and 0.50 kcal/mol for protein closed simulations.
-Numerical data for each plot can be found in Tables~\ref{tbl:exp_set} and \ref{tbl:exp_pREST_set}.
+Total RMSI using the pREST protocol is 0.31 kcal/mol.
+Numerical data for each plot can be found in Tables~S\ref{tbl:exp_set} and S\ref{tbl:exp_pREST_set}.
 } 
 \label{fig:exp-xyplots}
 \end{figure}

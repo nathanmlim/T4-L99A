@@ -44,16 +44,24 @@ Thus, optimization of protein-ligand binding affinities is a central goal in ear
 
 Recent advancements in technology and computational chemistry have led to increasing use of computer-aided drug design techniques to assist in lead optimization in pharmaceutical drug discovery.
 Since accuracy and reliability of the approach being used is critical for success, it is here where the most rigorous of methods like free energy calculations can be applied in the prediction of protein-ligand binding affinities. 
-Using alchemical methods like free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics simulations, the difference in binding free energies between two ligands can be computed in a robust and accurate manner.
+Using alchemical methods like free energy perturbation (FEP), thermodynamic integration, and $\lambda$-dynamics on molecular dynamics (MD) simulations, the difference in binding free energies between two ligands can be computed in a robust and accurate manner.
 By computing relative binding free energies, much of the computational cost and difficulties of absolute binding free energy calculations is avoided\cite{doi:10.1021/ct5000296,chipot2007free,chodera2011alchemical,knight2009lambda,zheng2008random,gallicchio2011advances,doi:10.1021/ct500161f}.
 Other advancements in forcefields, sampling algorithms, and emergence of GPU computing have considerably improved the accuracy and robustness of alchemical calculations. 
 The recent development of FEP+, a fully automated alchemical protocol implemented with modern methodologies, reduces overall workload and the potential for human error in setup and analysis of these types of calculations.
 Using this protocol, previous studies\cite{FEPplus} have demonstrated it to yield highly accurate free energy predictions in a wide range of pharmaceutically relevant protein targets and ligands.
-The accuracy and reliability of FEP+ make it a very powerful tool in the hands of medicinal chemists for efficient optimization of lead compounds.
+The accuracy and reliability of FEP+ makes it a very powerful tool in the hands of medicinal chemists for efficient optimization of lead compounds.
 
-Although the previous report on FEP+\cite{FEPplus} demonstrates its robustness, a primary concern focuses on the size of the ligand perturbation or the initial ligand pose and how these factors impact the accuracy of calculated free energies.\cite{mobley2012perspective,doi:10.1021/acs.jctc.5b00214}
-Consideration of effects arising from protein conformational changes have generally received less attention due to the difficulty in addressing the sampling challenges encountered.
-Some computational studies have shown even small simple changes in the protein---like a side-chain rotamer flipping---can cause large errors in affinity predictions if not sampled\cite{Mobley2009489,Mobley20071118,Jiang:2010tg,Meng:2015gj} and thus protein conformational changes should be carefully sampled.
+Although the previous report on FEP+\cite{FEPplus} demonstrates its robustness, the primary concern focuses on the size of the ligand perturbation or the initial ligand pose and how these factors impact the accuracy of calculated free energies\cite{mobley2012perspective,doi:10.1021/acs.jctc.5b00214}.
+Careful consideration of effects arising from protein conformational changes have generally received less attention due to the difficulty in addressing the sampling challenges encountered when simulating proteins.
+The difficulty in protein sampling lies primiarly in the timescales required to adequately capture a complete biomolecular event. 
+Timescales of such events can range from nanoseconds to milliseconds (or even seconds)\cite{elber2005long}.
+In MD simulations, the system evolves in time through series of short time steps (i.e. 2 fs) by repeatedely computing the forces on each individual atom in accordance to Newton's laws of motion at each time step.
+Not only must a computer perform numerous calculations at each time step, but it must repeat this process an enourmous amount of times to generate a trajectory that is on timescale for your biological process of interest\cite{karplus2005molecular}.
+Furthering the difficulty, with using `vanilla' MD simulations, the system will more than likely remain kinetically trapped in an energy minima, thereby preventing any further exploration of the protein conformational space and obtaining proper sampling.
+Some computational studies have shown even small simple changes in the protein---like a side-chain rotamer flipping---can cause large errors in affinity predictions if not properly sampled\cite{Mobley2009489,Mobley20071118,Jiang:2010tg,Meng:2015gj}.
+Overcoming these high energy barriers is no easy feat; whereby a number of distinct approaches like metadynamics\cite{laio2002escaping}, accelerated MD\cite{hamelberg2004accelerated}, and temperature accelerated MD\cite{Maragliano2006168} aim to solve this problem of kinetic traps but may fall short in some cases\cite{borhani2012future}.
+Thus, careful sampling of protein conformational changes is critical for accurate and reliable affinity predictions. 
+
 In the previous FEP+ study\cite{FEPplus}, other than simply restricting ourselves to congeneric series with multiple reported crystal structures, no effort was made to either include or exclude cases where the protein or ligand binding mode may reorganize.  
 However, it is entirely possible some of the outliers reported in that work may be due to protein conformational reorganization.
 The testing of the FEP+ technology on cases where protein reorganization has been well-characterized experimentally may provide an opportunity probe potential pathological cases, and further provides an opportunity to discover how to further improve the technology. While some studies suggest protein reorganization on ligand binding can be relatively common (i.e. as reviewed by~\cite{Mobley:2009bm}), it is far from well understood how often this can be a challenge for binding prediction.  
@@ -224,7 +232,7 @@ In the case of closed-intermediate alchemical transformations, we find that the 
 For this set of alchemical transformations, we find the RMSI to be +0.60 kcal/mol (Fig~\ref{fig:C2I_xyplot}, Table~S\ref{tbl:C-I}).
 Considering this set involves a smaller protein conformational change and smaller perturbations to the ligand, it is unsurprising to find the RMSI to be much smaller than our closed-open transformation set.
 
-Although, the collective RMSI for closed-intermediate transformations falls below the acceptable range of less than 1 kcal/mol, we can still see a dependence on the initial protein configuration by viewing transformations involving butylbenzene.
+Although, the collective RMSI for closed-intermediate transformations falls in the acceptable range of less than 1 kcal/mol, we can still see a dependence on the initial protein configuration by viewing transformations involving butylbenzene.
 For these cases in particular, we observe the same pattern of protein closed simulations yielding positive free energies and negative for protein open simulations. 
 We do not see this pattern for transformations with sec-butylbenzene as it does not partially occupy the open state, unlike butylbenzene (Table~\ref{tbl:expdata}).
 Through this observation, we demonstrate further that the default protocol does not eliminate the free energy dependence on the protein starting conformation, even for smaller perturbations. 
@@ -233,6 +241,7 @@ However, the level of discrepancy is an 0.6 kcal/mol RMSI, which may or may not 
 \subsubsection*{Experimental Ligand Transformations}
 Now, when we compare $\Delta\Delta G_{calc}$ against $\Delta\Delta G_{exp}$, we find that simulations starting from the protein closed conformation are further from converging to $\Delta\Delta G_{exp}$ than when starting from the protein open conformation. 
 Here, we calculate the RMS-'Error' with experiment and find the RMSE for protein closed simulations to be +1.0 kcal/mol and +0.58 kcal/mol with protein open (Fig~\ref{fig:exp_xyplot},Table~S\ref{tbl:exp_set}).
+Our total RMSI falls within our acceptable range at 0.68 kcal/mol.
 However, the fact that protein open simulations are much closer to $\Delta\Delta G_{exp}$, once again does demonstrate our calculated free energies depend on the initial protein state.
 Unsurprisingly, the large RMSE seen for protein closed simulations primarily comes from transformations involving butylbenzene.
 Evidently, we find the simulations involving butylbenzene remain trapped in their respective starting conformations, resulting in inadequate sampling in the protein closed simulations (Fig.~\ref{fig:c_exp_opls3_11/RMSD-replica11}) versus the protein open simulations (Fig.~\ref{fig:o_exp_opls3_24/RMSD-replica11}).
@@ -267,7 +276,7 @@ In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we ill
 
 By simulating longer with pREST we dramatically increase our sampling of the intermediate and open protein states and almost entirely eliminate the dependence on the initial protein conformational state.
 For the set of closed-open transformations the RMSI dramatically falls to +0.57 kcal/mol (Fig.~\ref{fig:C2O_xyplot_pREST},Table ~S\ref{tbl:C-O_pREST-40-55ns}) and a RMSI of +0.43 kcal/mol for the closed-intermediate (Fig.~\ref{fig:C2I_xyplot_pREST},Table ~S\ref{tbl:C-I_pRESText}).
-Similarly, for experimental ligand transformations, our RMSE for protein closed simulations falls to +0.54 kcal/mol (Fig.~\ref{fig:exp_xyplot_pREST},Table~S\ref{tbl:exp_pREST_set}).
+Similarly, for experimental ligand transformations, our RMSE for protein closed simulations falls to +0.54 kcal/mol and the RMSI reduces to 0.31 kcal/mol (Fig.~\ref{fig:exp_xyplot_pREST},Table~S\ref{tbl:exp_pREST_set}).
 Now, all our inconsistencies in the final calculated free energies and error from experiment fall within a much more reasonable range of less than +1 kcal/mol.  
 
 It is very interesting to note that this overall level of agreement (a typical error of less than 1 kcal/mol) between our calculated values and experiment for the compounds for which we have affinity data -- the smaller compounds, for which the inconsistency is relatively low -- is actually quite good, better than what was reported in the previous work~\cite{FEPplus}.  This may be due to the relative simplicity of the ligand modifications (methyl groups only) as well as the high quality of the experimental binding assay, ITC. In contrast, larger apparent errors in other tests may in some cases be due to lower quality experimental data. 
