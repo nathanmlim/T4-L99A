@@ -66,7 +66,7 @@ In the previous FEP+ study\cite{FEPplus}, other than simply restricting ourselve
 However, it is entirely possible some of the outliers reported in that work may be due to protein conformational reorganization.
 The testing of the FEP+ technology on cases where protein reorganization has been well-characterized experimentally may provide an opportunity probe potential pathological cases, and further provides an opportunity to discover how to further improve the technology. While some studies suggest protein reorganization on ligand binding can be relatively common (i.e. as reviewed by~\cite{Mobley:2009bm}), it is far from well understood how often this can be a challenge for binding prediction.  
 Regardless, it is clear that protein-ligand binding can be highly complex, and multiple stable protein conformations may be populated even for the same ligand \cite{doi:10.1021/jm060167o,Gutteridge200521,Merski2015}.
-Thus, there is a great need to understand how protein conformational changes and the choice of starting protein conformation may affect the reliability of free energy predictions.       
+Thus, there is a great need to understand how protein conformational changes and the choice of starting protein conformation may affect the reliability of free energy predictions.  
 
 Here, we apply the now-standard FEP protocol used in ~\cite{FEPplus}, which utilizes replica exchange with solute tempering (FEP/REST)\cite{FEP/REST}, to a very simple model binding site in an engineered mutant of T4 lysozyme (L99A).
 In this mutant, the L99A mutation creates a small apolar binding site that has been studied extensively experimentally\cite{eriksson1992response,eriksson1993similar,T4affinity,doi:10.1021/bi00027a007} and computationally by docking\cite{wei2002model,wei2004testing,graves2005decoys,Merski2015} and free energy methods\cite{Mobley20071118,hermans1997inclusion,boresch2003absolute,deng2006calculation,mann2000modeling,Boyce2009,FEP/REST,FEP/RESTapp}.
@@ -272,7 +272,8 @@ Returning to our most extreme transformation, benzene to hexylbenzene, we have s
 Now, when we run much longer we see far more sampling of the open protein conformational state in the final 10ns window (Fig~\ref{fig:c_opls3_rest1_1/45-55ns/RMSD-replica11}).
 Note that, for closed-open transformations we use the final 15ns to compute the final free energies.
 We only show the final 10ns in our RMSD/time analysis to avoid overcrowding data points.
-In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we illustrate the dramatic increase in protein conformational sampling in stark contrast to our previous 5ns simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}). 
+In viewing all the replicas (Fig~\ref{fig:c_opls3_rest1_1/cmap-45-55ns}), we illustrate the dramatic increase in protein conformational sampling in stark contrast to our previous 5ns simulations (Fig~\ref{fig:c_opls3_rest1_1/colormap}).
+An additional analysis comparing the protein-ligand contacts between the default and pREST protocol can be found in the Supporting Information (Fig. S1).
 
 By simulating longer with pREST we dramatically increase our sampling of the intermediate and open protein states and almost entirely eliminate the dependence on the initial protein conformational state.
 For the set of closed-open transformations the RMSI dramatically falls to +0.57 kcal/mol (Fig.~\ref{fig:C2O_xyplot_pREST},Table ~S\ref{tbl:C-O_pREST-40-55ns}) and a RMSI of +0.43 kcal/mol for the closed-intermediate (Fig.~\ref{fig:C2I_xyplot_pREST},Table ~S\ref{tbl:C-I_pRESText}).
@@ -331,6 +332,48 @@ More importantly, prior to performing binding free energy calculations, we prese
 \include{T4figs}
 
 \begin{suppinfo}
+
+\section*{Simulation Interactions Diagrams}
+Using the `Simulation Interactions Diagram' tool provided with Desmond, we count the number of hydrophobic contacts between the ligand and each of the surrounding protein residues at each frame.
+Hydrophobic contacts are categorized into three groups: $\pi$-Cation, $\pi-\pi$, and Other.
+The $\pi$-Cation contact is defined as an aromatic and charged group that are within 4.5\AA.
+$\pi-\pi$ contacts are when two aromatic groups are stacked face-to-face or face-to-edge.
+Hydrophobic contacts that are classified as Other are when hydrophobic side-chains are within 3.6\AA of a ligand's aromatic or aliphatic carbons.
+
+Through this protein-ligand contact analysis, we can see if the ligand forms the same interactions regardless of the initial protein configuration.
+In Figure~\ref{fig:contactmap}, we analyze the hydrophobic contacts for hexylbenzene in either the protein closed (purple) or open (green) MD simulations and represent the difference in red.
+Here, we represent the number of protein-ligand hydrophobic contacts as a percentage for the length of the MD simulations.
+Again, we analyze frames from 0-5ns with the default protocol and 45-55ns with the pREST protocol.
+
+Given hexylbenzene prefers the open conformation, we should expect to see Val111 contact the hexylbenzene at a percent closer to that of the protein open simulation.
+Using the default protocol, we show Val111 is in contact with hexylbenzene for 40.4\% of the protein closed simulation and 9.6\% of the protein open simulation, approximately a 30.8\% difference in the interaction percentage.
+On the other hand, with the pREST protocol---where Val111 is included into the REST region---this difference dramatically reduces to 0.5\%.
+Now, regardless of our initial protein starting conformation, Val111 comes in contact with the ligand 7.9\% and 8.4\% of the protein closed and open simulations, close to what we would have expected judging from our protein open simulation using the default protocol.
+Furthermore, we can compute the mean absolute difference (MAD) across all residues to yield 10.5\% for the default protocol and 2.8\% with the pREST protocol.
+Overall, the reduction in the difference in protein-ligand contacts indicates the bias from the initial protein configuration is almost entirely eliminated from using pREST.
+
+\setcounter{figure}{0} 
+\begin{figure}[!ht]
+\begin{subfigure}{\textwidth}
+   \centering
+   \frame{\includegraphics[scale=0.6]{Figures/ContactMap/benzene-hexylbenzene_CM_def.png}}
+\end{subfigure}
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \frame{\includegraphics[scale=0.6]{Figures/ContactMap/benzene-hexylbenzene_CM_pREST.png}}
+\end{subfigure}
+\label{fig:contactmap}
+\caption{Bar plot of interaction percentage of protein-ligand hydrophobic contacts over the course of a trajectory. 
+From the benzene to hexylbenzene transformation, these plots correspond to the hexylbenzene ($\lambda_{11}$) state from closed (purple) and open (green) simulations using the default versus pREST protocols.
+The mean absolute difference (MAD) in interaction percentage is represented in red.
+MAD for the default protocol is 10.5\% and 2.8\% for the pREST protocol.
+}
+\end{figure}
+
+\include{T4tables}
+
+\section*{Data Sets and Analysis Tool Download}
 All related data sets and analysis tools are available online and described below.
 The files can be downloaded at http://n2t.net/ark:/b7280/d1js3b (doi:10.7280/D1JS3B). 
 \begin{description}
@@ -342,7 +385,7 @@ Contains the scripts \texttt{RMSD-analysis.tcl} and \texttt{plot-RMSD.py} used f
 Contains archived data from the FEP calculations for each alchemical transformation set, where within each archived set are directories for individual FEP calculations. These contain input \texttt{.mae} files containing the protein/ligand structures, the simulation configuration \texttt{.msj} files, energy files, and a \texttt{README.txt} that summarizes information about each FEP calculation. Complete trajectories are included.
 \end{description}
 
-\include{T4tables}
+
 
 \end{suppinfo}
 
