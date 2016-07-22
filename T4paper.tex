@@ -20,8 +20,7 @@
 \affiliation[University of California---Irvine]
 {Department of Pharmaceutical Sciences, University of California---Irvine, Irvine, California 92697, United States}
 
-\title{Reducing the sensitivity in binding free energy calculations to protein reorganization via application of a system-tailored enhanced sampling scheme}
-%\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energy calculation protocols and force fields}
+\title{Sensitivity in relative binding free energies from incremental ligand changes within a simple model binding site using modern free energy calculation protocols and force fields}
 
 \begin{document}
 
@@ -242,8 +241,6 @@ Although, the level of discrepancy (0.6 kcal/mol) is quite small for this set.
 \subsubsection*{Experimental Ligand Transformations}
 Now, when we compare $\Delta\Delta G_{calc}$ against $\Delta\Delta G_{exp}$, we find that simulations starting from the protein closed conformation are further from converging to $\Delta\Delta G_{exp}$ than when starting from the protein open conformation. 
 Here, we calculate the RMS-'Error' with experiment and find the RMSE for protein closed simulations to be +1.0 kcal/mol and +0.58 kcal/mol with protein open (Fig~\ref{fig:exp_xyplot},Table~S\ref{tbl:exp_set}).
-%Hence it is interesting to observe that, even with these convergence artifacts outstanding, good agreement with the experimental data is obtained with either choice of the initial structure---comparable to what has been previously reported~\cite{FEPplus}.
-%NML: Similar statement to line 285?
 Our total RMSI falls within our acceptable range at 0.68 kcal/mol.
 However, the fact that protein open simulations are much closer to $\Delta\Delta G_{exp}$, once again does demonstrate our calculated free energies depend on the initial protein state.
 Unsurprisingly, the relatively larger RMSE seen for protein closed simulations primarily comes from transformations involving butylbenzene.
@@ -292,7 +289,6 @@ In this study, we find that relative free energy calculations for this system ca
 Although the protein conformational changes in T4 lysozyme (L99A) are extremely localized to a rearrangement of a single helix (Fig~\ref{fig:T4-L99A}), we still encounter challenges in sampling, likely due to the slow timescale associated with the reorganization of protein secondary structure.
 These problems have clear implications for the accuracy of computed relative free energies in these cases. 
 Particularly, we find that calculated relative free energies can depend on the initial protein conformational state by up to 4 kcal/mol.
-%Although, the implication on total prediction accuracy from this observation remains unclear.
 
 By looking at alchemical transformations that involve a conformation change in the protein, we show the $\Delta\Delta Gs_{calc}$ may be sensitive to the initial protein conformational state when utilizing the default implemented FEP protocol.
 This sensitivity occurs primarily when the alchemical transformation involves mutating ligands that mainly occupy the closed state (i.e. benzene to propyl) into ligands that occupy the intermediate state (i.e. (sec-)butyl) or, especially, the open state (pentyl/hexyl) (Table~\ref{tbl:expdata}).
